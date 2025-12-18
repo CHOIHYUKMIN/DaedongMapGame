@@ -20,10 +20,33 @@
                 <h1>말랑말랑<br>대동맛지도</h1>
                 <p class="subtitle">서울경기편</p>
             </div>
+            <div class="map-selection-container">
+                <h3 style="color: #F57C00; margin-bottom: 15px; text-align: center;">지역을 선택하세요</h3>
+                <div class="korea-map-wrapper">
+                    <svg viewBox="0 0 400 300" class="korea-map">
+                        <!-- 경기도 영역 (SVG path) -->
+                        <path class="region-area region-gyeonggi-area locked" d="M 50,50 L 350,50 L 350,250 L 50,250 Z"
+                            opacity="0.3" />
+
+                        <!-- 서울 영역 (중앙, 클릭 가능) -->
+                        <circle class="region-area region-seoul-area" cx="200" cy="150" r="60"
+                            onclick="Game.selectRegion('seoul')" />
+
+                        <!-- 텍스트 레이블 -->
+                        <text x="200" y="145" text-anchor="middle" class="region-label-large">서울</text>
+                        <text x="200" y="165" text-anchor="middle" class="region-sublabel">10개 동네</text>
+
+                        <text x="100" y="100" text-anchor="middle" class="region-label-small">경기도</text>
+                        <text x="100" y="115" text-anchor="middle" class="region-sublabel-small">준비중</text>
+                    </svg>
+                    <p style="text-align: center; color: #999; font-size: 12px; margin-top: 10px;">
+                        서울을 클릭하세요
+                    </p>
+                </div>
+            </div>
             <div class="menu-buttons">
-                <button class="btn-large" onclick="Game.showCharacterSelect()">게임 시작</button>
-                <button class="btn-large" onclick="Game.showSettings()">설정</button>
                 <button class="btn-large" onclick="Game.showInfo()">게임 정보</button>
+                <button class="btn-large" onclick="Game.showSettings()">설정</button>
             </div>
             <div class="version">v0.1 프로토타입</div>
         </div>
