@@ -22,6 +22,7 @@ const Game = {
         this.loadUserData();
         this.showMainMenu();
         this.setupCharacterSelect();
+        this.initRegionMap();
     },
 
     // 화면 전환
@@ -334,6 +335,73 @@ const Game = {
         } else if (region === 'gyeonggi') {
             alert('경기도 지역은 준비 중입니다!\n곧 업데이트될 예정입니다. 😊');
         }
+    },
+
+    initRegionMap() {
+        // 지역 선택 지도 생성
+        if (this.regionMap) {
+            this.regionMap.remove();
+        }
+
+        const koreaCenter = [37.5, 127.0];
+
+        this.regionMap = L.map('region-map', {
+            center: koreaCenter,
+            zoom: 9,
+            zoomControl: false,
+            scrollWheelZoom: false,
+            dragging: false,
+            doubleClickZoom: false
+        });
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap',
+            maxZoom: 11,
+            minZoom: 9
+        }).addTo(this.regionMap);
+
+        // 서울 마커
+        const seoulMarker = L.circle([37.5665, 126.9780], {
+            color: '#FF6B9D',
+            fillColor: '#FF6B9D',
+            fillOpacity: 0.5,
+            radius: 15000
+        }).addTo(this.regionMap);
+
+        seoulMarker.bindPopup(`
+            <div style="text-align: center; padding: 10px;">
+                <strong style="font-size: 18px;">서울</strong><br>
+                <p style="margin: 5px 0;">10개 동네</p>
+                <button onclick="Game.selectRegion('seoul')" style="
+                    background: linear-gradient(135deg, #FF6B9D, #C44569);
+                    color: white;
+                    border: none;
+                    padding: 8px 20px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    font-weight: bold;
+                ">시작하기</button>
+            </div>
+        `);
+
+        seoulMarker.on('click', () => {
+            seoulMarker.openPopup();
+        });
+
+        // 경기도 영역 (잠금)
+        const gyeonggiArea = L.circle([37.4, 127.3], {
+            color: '#999',
+            fillColor: '#ccc',
+            fillOpacity: 0.3,
+            radius: 30000
+        }).addTo(this.regionMap);
+
+        gyeonggiArea.bindPopup(`
+            <div style="text-align: center; padding: 10px;">
+                <strong style="font-size: 18px; color: #999;">경기도</strong><br>
+                <p style="margin: 5px 0; color: #999;">🔒 준비 중</p>
+            </div>
+        `);
     },
 
     // 지도 렌더링 (Leaflet.js 사용)

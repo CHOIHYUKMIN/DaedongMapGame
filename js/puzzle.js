@@ -648,18 +648,42 @@ const Puzzle = {
         document.getElementById('moves-left').textContent = this.movesLeft;
     },
 
-    checkWinCondition() {
+    async checkWinCondition() {
         if (this.score >= this.currentLevel.target) {
+            // 목표 달성! 특수 블록 보너스
+            await this.activateRemainingSpecialBlocks();
             setTimeout(() => this.showResult(true), 500);
         } else if (this.movesLeft <= 0) {
             setTimeout(() => this.showResult(false), 500);
         }
     },
 
+    async activateRemainingSpecialBlocks() {
+        const specialBlocks = [];
+
+        // 모든 특수 블록 찾기
+        for (let y = 0; y < this.gridSize; y++) {
+            for (let x = 0; x < this.gridSize; x++) {
+                const type = this.grid[y][x];
+                if (type >= 100 && type <= 104) {
+                    specialBlocks.push({ x, y, type });
+                }
+            }
+        }
+
+        if (specialBlocks.length === 0) return;
+
+        // 하나씩 터트리기
+        for (const block of specialBlocks) {
+            await this.activateSpecialBlock(block.x, block.y, block.type);
+            await this.sleep(300);
+        }
+    },
+
     showResult(win) {
         const popup = document.getElementById('result-popup');
         document.getElementById('result-title').textContent = win ? '레벨 클리어!' : '실패...';
-        document.getElementById('result-score').textContent = `점수: ${this.score}`;
+        document.getElementById('result-score').textContent = `최종 점수: ${this.score}`;
 
         if (win) {
             const stars = this.score >= this.currentLevel.target * 1.5 ? '⭐⭐⭐' :
