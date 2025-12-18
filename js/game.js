@@ -487,20 +487,24 @@ const Game = {
     },
 
     // 레벨 클리어 처리
-    onLevelClear(levelId, score) {
+    onLevelClear(levelId, score, rewardItemId = null) {
         console.log(`레벨 ${levelId} 클리어! 점수: ${score}`);
 
-        // 클리어 기록
+        // 레벨 클리어 기록
         if (!this.userData.clearedLevels.includes(levelId)) {
             this.userData.clearedLevels.push(levelId);
         }
 
-        // 보상 지급
+        // 아이템 획득 (맛집 풀에서 선택된 아이템 또는 기본 아이템)
+        const itemId = rewardItemId || GameData.levels.find(l => l.id === levelId)?.reward;
+        if (itemId) {
+            this.userData.inventory.push(itemId);
+        }
+
+        // 보상 지급 (기존 로직 유지)
         const level = GameData.levels.find(l => l.id === levelId);
         if (level) {
-            this.userData.inventory.push(level.reward);
-            this.userData.gold += 100;
-
+            this.userData.gold += 100; // Gold reward
             // 맛집 스테이지 보너스
             if (level.isAd) {
                 this.userData.mp += 50;

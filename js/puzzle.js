@@ -692,14 +692,48 @@ const Puzzle = {
 
             const rewardList = document.getElementById('reward-list');
             rewardList.innerHTML = '';
-            const item = GameData.items[this.currentLevel.reward];
-            if (item) {
-                const li = document.createElement('li');
-                li.textContent = `${item.name} (${item.desc})`;
-                rewardList.appendChild(li);
-            }
 
-            Game.onLevelClear(this.currentLevel.id, this.score);
+            // 동네 맛집 풀에서 랜덤 아이템 선택
+            const levelId = this.currentLevel.id;
+            const restaurantPool = GameData.restaurantPools[levelId];
+
+            if (restaurantPool && restaurantPool.restaurants.length > 0) {
+                // 랜덤으로 맛집 선택
+                const randomIndex = Math.floor(Math.random() * restaurantPool.restaurants.length);
+                const selectedRestaurant = restaurantPool.restaurants[randomIndex];
+
+                // 아이템 데이터에 등록 (동적으로)
+                if (!GameData.items[selectedRestaurant.itemId]) {
+                    GameData.items[selectedRestaurant.itemId] = {
+                        name: selectedRestaurant.name,
+                        rarity: selectedRestaurant.rarity,
+                        effect: "FOOD",
+                        value: 10,
+                        desc: `${restaurantPool.name}의 ${selectedRestaurant.restaurant}`,
+                        restaurant: selectedRestaurant.restaurant
+                    };
+                }
+
+                // 리스트에 표시
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <strong>${selectedRestaurant.name}</strong><br>
+                    <small style="color: #999;">📍 ${selectedRestaurant.restaurant} (${restaurantPool.name})</small>
+                `;
+                rewardList.appendChild(li);
+
+                // Game.onLevelClear에 선택된 아이템 전달
+                Game.onLevelClear(this.currentLevel.id, this.score, selectedRestaurant.itemId);
+            } else {
+                // 풀이 없으면 기본 아이템
+                const item = GameData.items[this.currentLevel.reward];
+                if (item) {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.name} (${item.desc})`;
+                    rewardList.appendChild(li);
+                }
+                Game.onLevelClear(this.currentLevel.id, this.score);
+            }
 
             // 3초 후 자동으로 다음 레벨로 이동
             setTimeout(() => {
