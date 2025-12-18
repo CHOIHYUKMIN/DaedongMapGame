@@ -136,69 +136,69 @@ const Game = {
         }
     },
 
-    // 지도 렌더링
+    // 지도 렌더링 (Leaflet.js 사용)
     renderMap() {
-        const container = document.getElementById('level-nodes');
-        container.innerHTML = '';
+        // 기존 지도 제거
+        if (this.map) {
+            this.map.remove();
+        }
 
-        // 실제 서울 지도 기반 좌표 (중구/종로구 중심)
-        const pathPositions = [
-            { x: 200, y: 250 },   // 1. 태평로1가 (시청)
-            { x: 250, y: 230 },   // 2. 소공동 (동쪽)
-            { x: 280, y: 260 },   // 3. 명동 (남동쪽)
-            { x: 320, y: 240 },   // 4. 을지로 (동쪽)
-            { x: 340, y: 300 },   // 5. 장충동 (남산 동쪽)
-            { x: 150, y: 200 },   // 6. 인사동 (서쪽)
-            { x: 120, y: 280 },   // 7. 광장시장 (남쪽)
-            { x: 100, y: 150 },   // 8. 삼청동 (북쪽)
-            { x: 60, y: 100 },    // 9. 평창동 (더 북쪽)
-            { x: 280, y: 350 }    // 10. 남산 (남쪽)
+        // 서울 중심 좌표
+        const seoulCenter = [37.5665, 126.9780];
+
+        // Leaflet 지도 생성
+        this.map = L.map('seoul-map', {
+            center: seoulCenter,
+            zoom: 13,
+            zoomControl: true,
+            scrollWheelZoom: true
+        });
+
+        // OpenStreetMap 타일 레이어
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap',
+            maxZoom: 18
+        }).addTo(this.map);
+
+        // 레벨 실제 좌표
+        const levelLocations = [
+            { lat: 37.5665, lng: 126.9780 },  // 1. 시청
+            { lat: 37.5640, lng: 126.9810 },  // 2. 소공동
+            { lat: 37.5636, lng: 126.9826 },  // 3. 명동
+            { lat: 37.5664, lng: 126.9910 },  // 4. 을지로
+            { lat: 37.5610, lng: 127.0050 },  // 5. 장충동
+            { lat: 37.5730, lng: 126.9850 },  // 6. 인사동
+            { lat: 37.5705, lng: 127.0000 },  // 7. 광장시장
+            { lat: 37.5860, lng: 126.9830 },  // 8. 삼청동
+            { lat: 37.6100, lng: 126.9750 },  // 9. 평창동
+            { lat: 37.5512, lng: 126.9882 }   // 10. 남산
         ];
 
         GameData.levels.forEach((level, index) => {
-            const node = document.createElement('div');
-            node.className = 'level-node';
+            const loc = levelLocations[index];
+            if (!loc) return;
 
-            // 좌표 설정
-            const pos = pathPositions[index] || { x: 100, y: 100 };
-            node.style.left = pos.x + 'px';
-            node.style.top = pos.y + 'px';
+            const isCleared = this.userData.clearedLevels.includes(level.id);
+            const isLocked = level.id > 1 && !this.userData.clearedLevels.includes(level.id - 1);
 
-            // 클리어 여부 확인
-            if (this.userData.clearedLevels.includes(level.id)) {
-                node.classList.add('cleared');
-            }
+            const iconHtml = `<div style="background: ${isCleared ? 'linear-gradient(135deg, #FFD700, #FFA500)' : isLocked ? '#ccc' : 'linear-gradient(135deg, #FF6B9D, #C44569)'};border: 3px solid ${isCleared ? '#FFA500' : isLocked ? '#999' : '#C44569'};border-radius: 50%;width: 40px;height: 40px;display: flex;align-items: center;justify-content: center;color: white;font-weight: bold;font-size: 16px;box-shadow: 0 2px 8px rgba(0,0,0,0.3);cursor: ${isLocked ? 'not-allowed' : 'pointer'};opacity: ${isLocked ? '0.5' : '1'};">${level.id}</div>`;
 
-            // 잠금 여부
-            if (level.id > 1 && !this.userData.clearedLevels.includes(level.id - 1)) {
-                node.classList.add('locked');
-                node.onclick = () => alert('이전 레벨을 먼저 클리어하세요!');
+            const marker = L.marker([loc.lat, loc.lng], {
+                icon: L.divIcon({
+                    html: iconHtml,
+                    className: 'custom-marker',
+                    iconSize: [40, 40],
+                    iconAnchor: [20, 20]
+                })
+            }).addTo(this.map);
+
+            marker.bindPopup(`<div style="text-align: center; padding: 5px;"><strong>${level.name}</strong><br>${isCleared ? '✅ 클리어!' : isLocked ? '🔒 잠김' : '목표: ' + level.target + '점'}</div>`);
+
+            if (!isLocked) {
+                marker.on('click', () => this.showPuzzle(level.id));
             } else {
-                node.onclick = () => this.showPuzzle(level.id);
+                marker.on('click', () => alert('이전 레벨을 먼저 클리어하세요!'));
             }
-
-            // 레벨 정보
-            const levelNumber = document.createElement('div');
-            levelNumber.className = 'level-number';
-            levelNumber.textContent = level.id;
-
-            const levelName = document.createElement('div');
-            levelName.className = 'level-name';
-            levelName.textContent = level.name.split(' ').pop(); // 마지막 단어만 (동 이름)
-
-            node.appendChild(levelNumber);
-            node.appendChild(levelName);
-
-            // 맛집 스테이지 표시
-            if (level.isAd) {
-                node.style.background = 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)';
-                const icon = document.createElement('div');
-                icon.style.fontSize = '16px';
-                icon.textContent = '🍴';
-                node.appendChild(icon);
-            }
-
-            container.appendChild(node);
         });
     },
 
