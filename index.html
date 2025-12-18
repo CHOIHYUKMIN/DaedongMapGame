@@ -117,8 +117,15 @@
             <div id="puzzle-board"></div>
 
             <div class="puzzle-bottom-bar">
-                <button class="skill-btn" onclick="Puzzle.useSkill()">🔥 스킬</button>
-                <button class="item-btn" onclick="Puzzle.useHammer()">🔨</button>
+                <button class="booster-btn" id="hammer-btn" onclick="Puzzle.activateBooster('HAMMER')">
+                    🔨 <span id="hammer-count">0</span>
+                </button>
+                <button class="booster-btn" id="bomb-btn" onclick="Puzzle.activateBooster('BOMB')">
+                    💣 <span id="bomb-count">0</span>
+                </button>
+                <button class="booster-btn" id="rainbow-btn" onclick="Puzzle.activateBooster('RAINBOW')">
+                    🌈 <span id="rainbow-count">0</span>
+                </button>
                 <button class="pause-btn" onclick="Game.pauseGame()">⏸️</button>
             </div>
         </div>

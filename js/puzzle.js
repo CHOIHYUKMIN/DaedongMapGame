@@ -16,9 +16,11 @@ const Puzzle = {
         this.movesLeft = this.currentLevel.moves;
         this.score = 0;
         this.selectedBlock = null;
+        this.activeBooster = null;
 
         this.createBoard();
         this.updateUI();
+        this.updateBoosterCounts();
     },
 
     createBoard() {
@@ -102,6 +104,12 @@ const Puzzle = {
             block.style.transform = '';
             block.style.zIndex = '';
             block.classList.remove('selected');
+
+            // 부스터 활성화 중이면 부스터 사용
+            if (this.activeBooster && dragDuration < 200 && Math.abs(deltaX) < 10 && Math.abs(deltaY) < 10) {
+                this.useBooster(x, y);
+                return;
+            }
 
             // 특수 블록 클릭 감지 (짧은 시간 + 짧은 거리 = 탭)
             const blockType = this.grid[y][x];
@@ -690,12 +698,128 @@ const Puzzle = {
         popup.classList.add('active');
     },
 
-    useSkill() {
-        alert('스킬 사용 (미구현)');
+    activeBooster: null,
+
+    activateBooster(boosterType) {
+        if (this.isAnimating) return;
+
+        // 보유 개수 확인
+        if (Game.userData.boosters[boosterType] <= 0) {
+            alert('부스터가 부족합니다!\n인벤토리에서 조합하세요.');
+            return;
+        }
+
+        // 이전 활성화 취소
+        document.querySelectorAll('.booster-btn').forEach(btn => btn.classList.remove('active'));
+
+        // 활성화 상태 설정
+        this.activeBooster = boosterType;
+        const btnId = boosterType === 'HAMMER' ? 'hammer-btn' :
+            boosterType === 'BOMB' ? 'bomb-btn' : 'rainbow-btn';
+        document.getElementById(btnId).classList.add('active');
+
+        alert(`${GameData.boosters[boosterType].name} 활성화!\n\n블록을 클릭하세요.`);
     },
 
-    useHammer() {
-        alert('망치 아이템 사용 (미구현)');
+    async useBooster(x, y) {
+        if (!this.activeBooster || this.isAnimating) return;
+
+        const boosterType = this.activeBooster;
+        const booster = GameData.boosters[boosterType];
+
+        this.isAnimating = true;
+
+        // 부스터 소비
+        Game.userData.boosters[boosterType]--;
+        Game.saveUserData();
+        this.updateBoosterCounts();
+
+        // 활성화 해제
+        this.activeBooster = null;
+        document.querySelectorAll('.booster-btn').forEach(btn => btn.classList.remove('active'));
+
+        const blocksToRemove = [];
+
+        if (boosterType === 'HAMMER') {
+            // 망치: 블록 1개 제거
+            blocksToRemove.push({ x, y });
+        } else if (boosterType === 'BOMB') {
+            // 폭탄: 3x3 영역 제거
+            for (let dy = -1; dy <= 1; dy++) {
+                for (let dx = -1; dx <= 1; dx++) {
+                    const nx = x + dx;
+                    const ny = y + dy;
+                    if (nx >= 0 && nx < this.gridSize && ny >= 0 && ny < this.gridSize) {
+                        if (this.grid[ny][nx] !== -1) {
+                            blocksToRemove.push({ x: nx, y: ny });
+                        }
+                    }
+                }
+            }
+        } else if (boosterType === 'RAINBOW') {
+            // 레인보우: 같은 색 블록 전체 제거
+            const targetColor = this.grid[y][x];
+            if (targetColor >= 0 && targetColor < 100) {
+                for (let cy = 0; cy < this.gridSize; cy++) {
+                    for (let cx = 0; cx < this.gridSize; cx++) {
+                        if (this.grid[cy][cx] === targetColor) {
+                            blocksToRemove.push({ x: cx, y: cy });
+                        }
+                    }
+                }
+            }
+        }
+
+        // 점수 추가
+        this.score += blocksToRemove.length * 150;
+        this.updateUI();
+
+        // 블록 제거 애니메이션
+        blocksToRemove.forEach(pos => {
+            const blocks = document.querySelectorAll('.block');
+            const index = pos.y * this.gridSize + pos.x;
+            const block = blocks[index];
+
+            if (block) {
+                block.classList.add('exploding');
+                this.createParticles(block, this.grid[pos.y][pos.x]);
+            }
+
+            this.grid[pos.y][pos.x] = -1;
+        });
+
+        await this.sleep(500);
+
+        this.renderBoard();
+        await this.sleep(200);
+
+        // 중력 적용
+        await this.applyGravity();
+
+        // 새 블록 생성
+        this.fillEmpty();
+        this.renderBoard();
+        await this.sleep(300);
+
+        // 연쇄 매칭 확인
+        const newMatchResult = this.findMatches();
+        if (newMatchResult.matches.length > 0) {
+            await this.processMatches(newMatchResult.matches, newMatchResult.matchGroups);
+        }
+
+        this.isAnimating = false;
+        this.checkWinCondition();
+    },
+
+    updateBoosterCounts() {
+        document.getElementById('hammer-count').textContent = Game.userData.boosters.HAMMER;
+        document.getElementById('bomb-count').textContent = Game.userData.boosters.BOMB;
+        document.getElementById('rainbow-count').textContent = Game.userData.boosters.RAINBOW;
+
+        // 버튼 비활성화 처리
+        document.getElementById('hammer-btn').disabled = Game.userData.boosters.HAMMER <= 0;
+        document.getElementById('bomb-btn').disabled = Game.userData.boosters.BOMB <= 0;
+        document.getElementById('rainbow-btn').disabled = Game.userData.boosters.RAINBOW <= 0;
     },
 
     sleep(ms) {
