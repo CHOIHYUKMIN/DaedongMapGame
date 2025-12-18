@@ -1,0 +1,11 @@
+CharID,Name,AgeGroup,Gender,PassiveSkill,PassiveValue,Description,SpriteFile
+CH_10M,개구쟁이 스케이터,10대,남성,EXP_BOOST,5,경험치 획득량 +5%,char_10m.png
+CH_10F,떡볶이 요정,10대,여성,EXP_BOOST,5,경험치 획득량 +5%,char_10f.png
+CH_20M,배낭 여행가,20대,남성,CAFE_BONUS,10,카페/디저트 스테이지 점수 +10%,char_20m.png
+CH_20F,카페 투어리스트,20대,여성,CAFE_BONUS,10,카페/디저트 스테이지 점수 +10%,char_20f.png
+CH_30M,넥타이 부대,30대,남성,GOLD_BOOST,5,골드 획득량 +5%,char_30m.png
+CH_30F,워라밸 요정,30대,여성,GOLD_BOOST,5,골드 획득량 +5%,char_30f.png
+CH_40M,아웃도어 형님,40~50대,남성,STAMINA_REGEN,1,체력 회복 속도 증가,char_40m.png
+CH_40F,파워 워킹 누님,40~50대,여성,STAMINA_REGEN,1,체력 회복 속도 증가,char_40f.png
+CH_60M,낭만 가객,60대+,남성,ITEM_DROP,5,아이템 드롭 확률 +5%,char_60m.png
+CH_60F,손맛 장인,60대+,여성,ITEM_DROP,5,아이템 드롭 확률 +5%,char_60f.png

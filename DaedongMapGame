@@ -1,0 +1,184 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using AntiGravity.Engine; // 가상의 엔진 네임스페이스 (실제 엔진에 맞게 수정 가능)
+
+// ==========================================================
+// [프로젝트] 말랑말랑 대동맛지도 - 통합 시스템
+// ==========================================================
+
+public class DaedongMapGame : MonoBehaviour {
+
+    // [1] 싱글톤: 어디서든 접근 가능
+    public static DaedongMapGame Instance;
+
+    // [2] 게임 상태 변수
+    public int PlayerGold = 0;
+    public int PlayerMP = 0; // 맛포인트 (O2O 핵심)
+    public List<LevelData> LevelList = new List<LevelData>();
+    public List<ItemData> ItemList = new List<ItemData>();
+    
+    // [3] 퍼즐 변수
+    public GameObject[,] Grid = new GameObject[7, 7]; // 7x7 격자
+    private LevelData currentLevelInfo;
+
+    // ==========================================================
+    // [4] 데이터 베이스 (CSV 파일을 대신하는 내부 문자열 데이터)
+    // ==========================================================
+    private string rawLevelCSV = 
+@"ID,RegionName,Mission,Target,Moves,Reward,IsAd
+1,서울 태평로1가,SCORE,1000,15,IT_001,FALSE
+2,서울 소공동,COLLECT,10,20,IT_002,FALSE
+3,서울 명동,GIMMICK,5,25,IT_003,FALSE
+4,수원 팔달구,BOSS,1,30,IT_005,TRUE"; // 4번은 맛집 홍보 스테이지
+
+    private string rawItemCSV =
+@"ID,Name,Type,Value
+IT_001,시청앞꿀떡,HP,10
+IT_002,을지로노가리,ATK,5
+IT_005,수원왕갈비,SKILL,50";
+
+    // ==========================================================
+    // [5] 초기화 및 실행 (Start)
+    // ==========================================================
+    void Awake() {
+        Instance = this;
+        DontDestroyOnLoad(this.gameObject);
+        
+        Debug.Log(">>> 대동맛지도 게임 엔진 가동 시작");
+        
+        // 1. 데이터 로드 (외부 파일 없이 내부 문자열 파싱)
+        LoadDatabase();
+
+        // 2. 테스트: 바로 4번(수원 맛집) 스테이지 시작해보기
+        StartLevel(4);
+    }
+
+    void LoadDatabase() {
+        // 레벨 데이터 파싱
+        string[] levelLines = rawLevelCSV.Split('\n');
+        for (int i = 1; i < levelLines.Length; i++) { // 헤더 건너뜀
+            string[] row = levelLines[i].Trim().Split(',');
+            if (row.Length < 2) continue;
+
+            LevelData data = new LevelData();
+            data.ID = int.Parse(row[0]);
+            data.RegionName = row[1];
+            data.MissionType = row[2];
+            data.TargetVal = int.Parse(row[3]);
+            data.Moves = int.Parse(row[4]);
+            data.RewardItem = row[5];
+            data.IsAdStage = bool.Parse(row[6]);
+            LevelList.Add(data);
+        }
+
+        // 아이템 데이터 파싱
+        string[] itemLines = rawItemCSV.Split('\n');
+        for (int i = 1; i < itemLines.Length; i++) {
+            string[] row = itemLines[i].Trim().Split(',');
+            if (row.Length < 2) continue;
+
+            ItemData data = new ItemData();
+            data.ID = row[0];
+            data.Name = row[1];
+            data.Type = row[2];
+            data.Value = int.Parse(row[3]);
+            ItemList.Add(data);
+        }
+        
+        Debug.Log($"[시스템] 데이터 로드 완료: 레벨({LevelList.Count}개), 아이템({ItemList.Count}개)");
+    }
+
+    // ==========================================================
+    // [6] 퍼즐 게임 로직 (Puzzle Logic)
+    // ==========================================================
+    public void StartLevel(int levelID) {
+        currentLevelInfo = LevelList.Find(x => x.ID == levelID);
+        if (currentLevelInfo == null) return;
+
+        Debug.Log($"[게임시작] 지역: {currentLevelInfo.RegionName} / 목표: {currentLevelInfo.MissionType}");
+        
+        // 보드 생성 (가상)
+        InitializeBoard();
+    }
+
+    void InitializeBoard() {
+        // 실제로는 여기서 BlockPrefab을 Instantiate 해야 함
+        Debug.Log("[시스템] 7x7 퍼즐 보드 생성 중...");
+        for(int x=0; x<7; x++) {
+            for(int y=0; y<7; y++) {
+                // 랜덤 블록 배치 로직 (0~4)
+                int randomBlock = UnityEngine.Random.Range(0, 5);
+                // Grid[x,y] = Instantiate(...); 
+            }
+        }
+    }
+
+    // 유저 입력: 블록 스왑 (Swap)
+    public void TrySwapBlock(int x1, int y1, int x2, int y2) {
+        Debug.Log($"[입력] ({x1},{y1}) <-> ({x2},{y2}) 블록 교체 시도");
+        
+        // 매칭 검사 시뮬레이션
+        bool isMatch = CheckMatchLogic(); 
+        
+        if (isMatch) {
+            OnMatchSuccess();
+        } else {
+            Debug.Log("[실패] 매칭되지 않음. 블록 원위치.");
+        }
+    }
+
+    bool CheckMatchLogic() {
+        // 실제 3-Match 알고리즘이 들어갈 자리
+        return true; // 테스트를 위해 무조건 성공한다고 가정
+    }
+
+    void OnMatchSuccess() {
+        Debug.Log(">>> 팡! 블록이 터졌습니다!");
+        
+        // [O2O 핵심] 맛집 스테이지라면 포인트 지급
+        if (currentLevelInfo.IsAdStage) {
+            PlayerMP += 10;
+            Debug.Log($"[맛집 보너스] 맛포인트(MP) 획득! 현재 MP: {PlayerMP}");
+            
+            // 쿠폰 발급 로직
+            GenerateCoupon();
+        }
+        
+        // 보스전 데미지 처리 등...
+    }
+
+    // ==========================================================
+    // [7] O2O 쿠폰 및 저장 시스템 (Offline Feature)
+    // ==========================================================
+    void GenerateCoupon() {
+        // 서버 없이 로컬에서 난수 쿠폰 생성
+        string date = DateTime.Now.ToString("yyyyMMdd");
+        string code = $"KBJ-{date}-{UnityEngine.Random.Range(1000,9999)}";
+        
+        Debug.Log($"★ 축하합니다! 맛집 쿠폰이 발급되었습니다: [{code}]");
+        Debug.Log("이 화면을 캡처해서 사장님께 보여주세요.");
+    }
+}
+
+// ==========================================================
+// [데이터 클래스 정의] (파일 하나에 포함)
+// ==========================================================
+[System.Serializable]
+public class LevelData {
+    public int ID;
+    public string RegionName;
+    public string MissionType;
+    public int TargetVal;
+    public int Moves;
+    public string RewardItem;
+    public bool IsAdStage; // 맛집 여부
+}
+
+[System.Serializable]
+public class ItemData {
+    public string ID;
+    public string Name;
+    public string Type;
+    public int Value;
+}
