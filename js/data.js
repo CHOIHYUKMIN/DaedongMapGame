@@ -38,5 +38,46 @@ const GameData = {
         { id: "CH_40F", name: "파워 워킹 누님", age: "40", gender: "F", skill: "STAMINA_REGEN", value: 1, desc: "체력 회복 속도 증가" },
         { id: "CH_60M", name: "낭만 가객", age: "60", gender: "M", skill: "ITEM_DROP", value: 5, desc: "아이템 드롭 확률 +5%" },
         { id: "CH_60F", name: "손맛 장인", age: "60", gender: "F", skill: "ITEM_DROP", value: 5, desc: "아이템 드롭 확률 +5%" }
+    ],
+
+    boosters: {
+        "HAMMER": { name: "망치", icon: "🔨", desc: "블록 1개를 제거합니다", effect: "REMOVE_ONE" },
+        "BOMB": { name: "폭탄", icon: "💣", desc: "3x3 영역을 폭파합니다", effect: "REMOVE_AREA" },
+        "RAINBOW": { name: "레인보우", icon: "🌈", desc: "같은 색 블록을 모두 제거합니다", effect: "REMOVE_COLOR" }
+    },
+
+    craftingRecipes: [
+        {
+            id: "RECIPE_HAMMER",
+            name: "망치",
+            icon: "🔨",
+            desc: "블록 1개를 제거합니다",
+            materials: [
+                { rarity: "C", count: 3 }
+            ],
+            result: { type: "BOOSTER", id: "HAMMER", count: 1 }
+        },
+        {
+            id: "RECIPE_BOMB",
+            name: "폭탄",
+            icon: "💣",
+            desc: "3x3 영역을 폭파합니다",
+            materials: [
+                { rarity: "B", count: 2 },
+                { rarity: "A", count: 1 }
+            ],
+            result: { type: "BOOSTER", id: "BOMB", count: 1 }
+        },
+        {
+            id: "RECIPE_RAINBOW",
+            name: "레인보우",
+            icon: "🌈",
+            desc: "같은 색 블록을 모두 제거합니다",
+            materials: [
+                { rarity: "A", count: 2 },
+                { rarity: "SP", count: 1 }
+            ],
+            result: { type: "BOOSTER", id: "RAINBOW", count: 1 }
+        }
     ]
 };

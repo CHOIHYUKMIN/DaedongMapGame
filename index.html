@@ -177,6 +177,30 @@
             </div>
         </div>
 
+        <!-- 조합 팝업 -->
+        <div id="crafting-popup" class="popup">
+            <div class="popup-content crafting-content">
+                <h2>🔨 아이템 조합</h2>
+
+                <!-- 레시피 목록 -->
+                <div class="recipe-list">
+                    <h3>조합법</h3>
+                    <div id="recipe-grid"></div>
+                </div>
+
+                <!-- 선택된 레시피 정보 -->
+                <div id="selected-recipe" class="selected-recipe">
+                    <p style="text-align: center; color: #999;">레시피를 선택하세요</p>
+                </div>
+
+                <!-- 버튼 -->
+                <div class="button-row">
+                    <button class="btn" onclick="Game.closeCrafting()">닫기</button>
+                    <button class="btn btn-primary" id="craft-btn" onclick="Game.executeCraft()" disabled>조합하기</button>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- JavaScript -->

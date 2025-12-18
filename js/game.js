@@ -7,7 +7,12 @@ const Game = {
         hearts: 5,
         selectedCharacter: null,
         inventory: [],
-        clearedLevels: []
+        clearedLevels: [],
+        boosters: {
+            HAMMER: 0,
+            BOMB: 0,
+            RAINBOW: 0
+        }
     },
 
     selectedAge: null,
@@ -135,7 +140,131 @@ const Game = {
     },
 
     showCrafting() {
-        alert('🔨 아이템 조합\n\n아이템 조합 시스템은 다음 업데이트에서 제공됩니다!');
+        const popup = document.getElementById('crafting-popup');
+        popup.classList.add('active');
+
+        this.selectedRecipe = null;
+        this.renderRecipes();
+    },
+
+    renderRecipes() {
+        const grid = document.getElementById('recipe-grid');
+        grid.innerHTML = '';
+
+        GameData.craftingRecipes.forEach(recipe => {
+            const card = document.createElement('div');
+            card.className = 'recipe-card';
+
+            // 재료 텍스트
+            const materialText = recipe.materials.map(m =>
+                `${m.rarity}×${m.count}`
+            ).join(', ');
+
+            card.innerHTML = `
+                <div class="recipe-icon">${recipe.icon}</div>
+                <div class="recipe-name">${recipe.name}</div>
+                <div class="recipe-materials">${materialText}</div>
+            `;
+
+            card.onclick = () => this.selectRecipe(recipe);
+            grid.appendChild(card);
+        });
+    },
+
+    selectRecipe(recipe) {
+        this.selectedRecipe = recipe;
+
+        // 모든 카드에서 selected 제거
+        document.querySelectorAll('.recipe-card').forEach(c => c.classList.remove('selected'));
+
+        // 선택된 카드 하이라이트
+        event.currentTarget.classList.add('selected');
+
+        // 재료 확인 및 표시
+        this.displayRecipeDetails(recipe);
+    },
+
+    displayRecipeDetails(recipe) {
+        const container = document.getElementById('selected-recipe');
+
+        // 인벤토리에서 등급별 아이템 개수 집계
+        const rarityCount = {};
+        this.userData.inventory.forEach(itemId => {
+            const item = GameData.items[itemId];
+            if (item) {
+                rarityCount[item.rarity] = (rarityCount[item.rarity] || 0) + 1;
+            }
+        });
+
+        // 재료 충족 여부 확인
+        let canCraft = true;
+        const materialsList = recipe.materials.map(material => {
+            const has = rarityCount[material.rarity] || 0;
+            const hasEnough = has >= material.count;
+            if (!hasEnough) canCraft = false;
+
+            return `
+                <div class="material-item ${hasEnough ? 'has' : 'missing'}">
+                    <div class="material-icon">${material.rarity === 'C' ? '⚪' : material.rarity === 'B' ? '🟢' : material.rarity === 'A' ? '🔵' : '🟣'}</div>
+                    <div class="material-text">
+                        <strong>${material.rarity}등급 아이템</strong><br>
+                        <small>필요: ${material.count}개 / 보유: ${has}개</small>
+                    </div>
+                    <div class="material-status">${hasEnough ? '✅' : '❌'}</div>
+                </div>
+            `;
+        }).join('');
+
+        container.innerHTML = `
+            <h4>${recipe.icon} ${recipe.name}</h4>
+            <p>${recipe.desc}</p>
+            <div class="materials-list">
+                <strong>필요한 재료:</strong>
+                ${materialsList}
+            </div>
+        `;
+
+        // 조합 버튼 활성화/비활성화
+        const craftBtn = document.getElementById('craft-btn');
+        craftBtn.disabled = !canCraft;
+    },
+
+    executeCraft() {
+        if (!this.selectedRecipe) return;
+
+        const recipe = this.selectedRecipe;
+
+        // 재료 소비
+        const usedItems = [];
+        recipe.materials.forEach(material => {
+            let needed = material.count;
+            for (let i = this.userData.inventory.length - 1; i >= 0 && needed > 0; i--) {
+                const itemId = this.userData.inventory[i];
+                const item = GameData.items[itemId];
+                if (item && item.rarity === material.rarity) {
+                    usedItems.push(this.userData.inventory.splice(i, 1)[0]);
+                    needed--;
+                }
+            }
+        });
+
+        // 부스터 획득
+        this.userData.boosters[recipe.result.id] += recipe.result.count;
+
+        this.saveUserData();
+
+        alert(`✨ 조합 성공!\n\n${recipe.icon} ${recipe.name}을(를) 획득했습니다!\n\n사용한 재료:\n${usedItems.map(id => GameData.items[id].name).join(', ')}`);
+
+        // UI 갱신
+        this.renderRecipes();
+        if (this.selectedRecipe) {
+            this.displayRecipeDetails(this.selectedRecipe);
+        }
+    },
+
+    closeCrafting() {
+        document.getElementById('crafting-popup').classList.remove('active');
+        this.selectedRecipe = null;
     },
 
     showShop() {
