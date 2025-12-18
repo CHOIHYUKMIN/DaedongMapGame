@@ -53,18 +53,89 @@ const Game = {
     },
 
     showInventory() {
-        let message = '🎒 인벤토리\n\n';
+        const popup = document.getElementById('inventory-popup');
+        popup.classList.add('active');
+
+        // 캐릭터 정보 표시
+        const character = GameData.characters.find(c => c.id === this.userData.selectedCharacter);
+        if (character) {
+            // 캐릭터 이모지 (나이/성별별)
+            const avatarEmojis = {
+                '10M': '👦', '10F': '👧',
+                '20M': '🧑', '20F': '👩',
+                '30M': '👨‍💼', '30F': '👩‍💼',
+                '40M': '👨‍🦰', '40F': '👩‍🦰',
+                '60M': '👴', '60F': '👵'
+            };
+            const emojiKey = character.age + character.gender;
+
+            document.getElementById('inventory-avatar').textContent = avatarEmojis[emojiKey] || '👤';
+            document.getElementById('inventory-char-name').textContent = character.name;
+            document.getElementById('inventory-char-desc').textContent = character.desc;
+            document.getElementById('inventory-char-skill').textContent = character.skill;
+        }
+
+        // 아이템 목록 표시
+        const grid = document.getElementById('inventory-grid');
+        grid.innerHTML = '';
+
         if (this.userData.inventory.length === 0) {
-            message += '아이템이 없습니다.';
+            grid.innerHTML = `
+                <div class="empty-inventory">
+                    <div class="empty-inventory-icon">📦</div>
+                    <p>아이템이 없습니다</p>
+                    <p style="font-size: 12px;">레벨을 클리어하여 아이템을 획득하세요!</p>
+                </div>
+            `;
         } else {
+            // 아이템 개수 집계
+            const itemCounts = {};
             this.userData.inventory.forEach(itemId => {
+                itemCounts[itemId] = (itemCounts[itemId] || 0) + 1;
+            });
+
+            // 아이템 카드 생성
+            Object.entries(itemCounts).forEach(([itemId, count]) => {
                 const item = GameData.items[itemId];
                 if (item) {
-                    message += `• ${item.name} (${item.desc})\n`;
+                    const itemEmojis = {
+                        'HP_HEAL': '❤️',
+                        'GOLD': '💰',
+                        'ATK': '⚔️',
+                        'SKILL_UP': '🔥',
+                        'COOLDOWN': '⏱️',
+                        'HP_MAX': '💪',
+                        'MP_INSTANT': '🎫',
+                        'UNLOCK': '🏆'
+                    };
+
+                    const card = document.createElement('div');
+                    card.className = `item-card rarity-${item.rarity}`;
+                    card.innerHTML = `
+                        <div class="item-icon">${itemEmojis[item.effect] || '🍱'}</div>
+                        <div class="item-name">${item.name}</div>
+                        <div class="item-count">×${count}</div>
+                    `;
+                    card.onclick = () => this.showItemDetail(itemId);
+                    grid.appendChild(card);
                 }
             });
         }
-        alert(message);
+    },
+
+    closeInventory() {
+        document.getElementById('inventory-popup').classList.remove('active');
+    },
+
+    showItemDetail(itemId) {
+        const item = GameData.items[itemId];
+        if (item) {
+            alert(`📦 ${item.name}\n\n${item.desc}\n\n등급: ${item.rarity}\n효과: ${item.effect} +${item.value}`);
+        }
+    },
+
+    showCrafting() {
+        alert('🔨 아이템 조합\n\n아이템 조합 시스템은 다음 업데이트에서 제공됩니다!');
     },
 
     showShop() {
