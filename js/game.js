@@ -174,6 +174,16 @@ const Game = {
             { lat: 37.5512, lng: 126.9882 }   // 10. 남산
         ];
 
+        // 경로 선 그리기 (레벨 순서대로)
+        const pathCoordinates = levelLocations.map(loc => [loc.lat, loc.lng]);
+        L.polyline(pathCoordinates, {
+            color: '#FF6B9D',
+            weight: 4,
+            opacity: 0.6,
+            smoothFactor: 1,
+            dashArray: '10, 10'
+        }).addTo(this.map);
+
         GameData.levels.forEach((level, index) => {
             const loc = levelLocations[index];
             if (!loc) return;
