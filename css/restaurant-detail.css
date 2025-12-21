@@ -1,0 +1,140 @@
+/* 맛집 상세 정보 팝업 스타일 */
+.restaurant-detail-content {
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.restaurant-detail-content h2 {
+    font-size: 24px;
+    color: #FF6B9D;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.restaurant-detail-content .restaurant-name {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.restaurant-info {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row .label {
+    font-weight: 600;
+    color: #495057;
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+.info-row .value {
+    color: #212529;
+    text-align: right;
+    flex: 1;
+    word-break: keep-all;
+}
+
+.info-row .phone-link {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.info-row .phone-link:hover {
+    text-decoration: underline;
+}
+
+.restaurant-detail-content .description {
+    line-height: 1.6;
+    color: #495057;
+    margin: 20px 0;
+    padding: 15px;
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    border-radius: 4px;
+}
+
+.external-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.external-links .btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-naver {
+    background: #03C75A;
+    color: white;
+    border: none;
+}
+
+.btn-naver:hover {
+    background: #02b350;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(3, 199, 90, 0.3);
+}
+
+.btn-kakao {
+    background: #FEE500;
+    color: #3C1E1E;
+    border: none;
+}
+
+.btn-kakao:hover {
+    background: #fdd800;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(254, 229, 0, 0.3);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #999;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.close-btn:hover {
+    background: #f8f9fa;
+    color: #333;
+}

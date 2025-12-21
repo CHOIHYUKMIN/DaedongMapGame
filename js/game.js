@@ -380,10 +380,37 @@ const Game = {
     },
 
     selectRegion(region) {
+        // 지역 데이터 가져오기
+        const regionData = typeof RegionData !== 'undefined' ? RegionData.getRegion(region) : null;
+
         if (region === 'seoul') {
-            this.showCharacterSelect();
+            // 서울: 레벨 1-10
+            this.currentRegion = 'seoul';
+            this.regionLevelOffset = 0;
+
+            // If user already has a character, go directly to map
+            if (this.userData.selectedCharacter) {
+                this.showMap();
+            } else {
+                // New user needs to select character first
+                this.showCharacterSelect();
+            }
+        } else if (region === 'busan') {
+            // 부산: 레벨 11-18
+            this.currentRegion = 'busan';
+            this.regionLevelOffset = 10;
+
+            if (this.userData.selectedCharacter) {
+                this.showMap();
+            } else {
+                this.showCharacterSelect();
+            }
         } else if (region === 'gyeonggi') {
             alert('경기도 지역은 준비 중입니다!\n곧 업데이트될 예정입니다. 😊');
+        } else {
+            // 기타 지역 (아직 미구현)
+            const regionName = regionData ? regionData.name : region;
+            alert(`${regionName} 지역은 준비 중입니다!\n곧 업데이트될 예정입니다. 😊`);
         }
     },
 
