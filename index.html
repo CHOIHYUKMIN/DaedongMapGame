@@ -6,78 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>말랑말랑 대동맛지도</title>
+    <title>말랑말랑 ?�?�맛지??/title>
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-    <link rel="stylesheet" href="css/style.css?v=1.1.0">
-    <link rel="stylesheet" href="css/mobile.css?v=1.1.0">
-    <link rel="stylesheet" href="css/blocks.css?v=1.1.0">
-    <link rel="stylesheet" href="css/ui-enhancements.css?v=1.1.0">
-    <link rel="stylesheet" href="css/animations.css?v=1.1.0">
-    <link rel="stylesheet" href="css/costume.css?v=1.1.0">
+    <link rel="stylesheet" href="css/style.css?v=1.2.0">
+    <link rel="stylesheet" href="css/mobile.css?v=1.2.0">
+    <link rel="stylesheet" href="css/blocks.css?v=1.2.0">
+    <link rel="stylesheet" href="css/ui-enhancements.css?v=1.2.0">
+    <link rel="stylesheet" href="css/animations.css?v=1.2.0">
+    <link rel="stylesheet" href="css/costume.css?v=1.2.0">
 </head>
 
 <body>
-    <!-- 메인 컨테이너 -->
+    <!-- 메인 컨테?�너 -->
     <div id="game-container">
 
-        <!-- 메인 메뉴 화면 -->
+        <!-- 메인 메뉴 ?�면 -->
         <div id="main-menu" class="screen active">
             <div class="title">
-                <h1>말랑말랑<br>대동맛지도</h1>
-                <p class="subtitle">서울경기편</p>
+                <h1>말랑말랑<br>?�?�맛지??/h1>
+                <p class="subtitle">?�울경기??/p>
             </div>
             <div class="map-selection-container">
-                <h3 style="color: #F57C00; margin-bottom: 15px; text-align: center;">지역을 선택하세요</h3>
+                <h3 style="color: #F57C00; margin-bottom: 15px; text-align: center;">지??�� ?�택?�세??/h3>
                 <div id="region-map" style="width: 100%; height: 400px; border-radius: 15px; overflow: hidden;"></div>
                 <p style="text-align: center; color: #999; font-size: 12px; margin-top: 10px;">
-                    지도에서 서울을 클릭하세요
+                    지?�에???�울???�릭?�세??
                 </p>
             </div>
             <div class="menu-buttons">
-                <button class="btn-large" onclick="Game.showInfo()">게임 정보</button>
-                <button class="btn-large" onclick="Game.showSettings()">설정</button>
+                <button class="btn-large" onclick="Game.showInfo()">게임 ?�보</button>
+                <button class="btn-large" onclick="Game.showSettings()">?�정</button>
             </div>
-            <div class="version">v0.1 프로토타입</div>
+            <div class="version">v0.1 ?�로?��???/div>
         </div>
 
-        <!-- 캐릭터 선택 화면 -->
+        <!-- 캐릭???�택 ?�면 -->
         <div id="character-select" class="screen">
-            <h2>탐험가 선택</h2>
-            <p class="subtitle">나이와 성별을 선택하세요</p>
+            <h2>?�험가 ?�택</h2>
+            <p class="subtitle">?�이?� ?�별???�택?�세??/p>
 
             <div class="age-selector">
-                <button class="age-btn" data-age="10">10대</button>
-                <button class="age-btn" data-age="20">20대</button>
-                <button class="age-btn" data-age="30">30대</button>
-                <button class="age-btn" data-age="40">40~50대</button>
-                <button class="age-btn" data-age="60">60대+</button>
+                <button class="age-btn" data-age="10">10?�</button>
+                <button class="age-btn" data-age="20">20?�</button>
+                <button class="age-btn" data-age="30">30?�</button>
+                <button class="age-btn" data-age="40">40~50?�</button>
+                <button class="age-btn" data-age="60">60?�+</button>
             </div>
 
             <div class="gender-selector">
-                <button class="gender-btn" data-gender="M">남성</button>
-                <button class="gender-btn" data-gender="F">여성</button>
+                <button class="gender-btn" data-gender="M">?�성</button>
+                <button class="gender-btn" data-gender="F">?�성</button>
             </div>
 
             <div id="selected-character" class="character-preview">
-                <p>캐릭터를 선택해주세요</p>
+                <p>캐릭?��? ?�택?�주?�요</p>
             </div>
 
             <div class="button-row">
-                <button class="btn" onclick="Game.showMainMenu()">뒤로</button>
-                <button class="btn btn-primary" onclick="Game.startGame()">시작하기</button>
+                <button class="btn" onclick="Game.showMainMenu()">?�로</button>
+                <button class="btn btn-primary" onclick="Game.startGame()">?�작?�기</button>
             </div>
         </div>
 
-        <!-- 지도 화면 -->
+        <!-- 지???�면 -->
         <div id="map-screen" class="screen">
             <div class="top-bar">
                 <div class="resource-display">
-                    <span class="resource">💰 <span id="gold-display">0</span></span>
-                    <span class="resource">🎫 <span id="mp-display">0</span></span>
-                    <span class="resource">❤️ <span id="heart-display">5</span></span>
+                    <span class="resource">?�� <span id="gold-display">0</span></span>
+                    <span class="resource">?�� <span id="mp-display">0</span></span>
+                    <span class="resource">?�️ <span id="heart-display">5</span></span>
                 </div>
             </div>
 
@@ -86,181 +86,181 @@
             </div>
 
             <div class="bottom-bar">
-                <button class="icon-btn" onclick="Game.showMap()">🗺️ 지도</button>
-                <button class="icon-btn" onclick="Game.showInventory()">🎒 가방</button>
-                <button class="icon-btn" onclick="Game.showShop()">🏪 상점</button>
-                <button class="icon-btn" onclick="Game.showSettings()">⚙️ 설정</button>
+                <button class="icon-btn" onclick="Game.showMap()">?���?지??/button>
+                <button class="icon-btn" onclick="Game.showInventory()">?�� 가�?/button>
+                <button class="icon-btn" onclick="Game.showShop()">?�� ?�점</button>
+                <button class="icon-btn" onclick="Game.showSettings()">?�️ ?�정</button>
             </div>
         </div>
 
-        <!-- 퍼즐 게임 화면 -->
+        <!-- ?�즐 게임 ?�면 -->
         <div id="puzzle-screen" class="screen">
             <div class="puzzle-top-bar">
-                <div id="level-info">레벨 1</div>
-                <div id="mission-info">목표: <span id="target-score"></span>1000</span>점</div>
-                <div id="score-info">점수: <span id="current-score">0</span>점</div>
-                <div id="moves-info">이동: <span id="moves-left">15</span></div>
+                <div id="level-info">?�벨 1</div>
+                <div id="mission-info">목표: <span id="target-score"></span>1000</span>??/div>
+                <div id="score-info">?�수: <span id="current-score">0</span>??/div>
+                <div id="moves-info">?�동: <span id="moves-left">15</span></div>
             </div>
 
             <div id="puzzle-board"></div>
 
             <div class="puzzle-bottom-bar">
                 <button class="booster-btn" id="hammer-btn" onclick="Puzzle.activateBooster('HAMMER')">
-                    🔨 <span id="hammer-count">0</span>
+                    ?�� <span id="hammer-count">0</span>
                 </button>
                 <button class="booster-btn" id="bomb-btn" onclick="Puzzle.activateBooster('BOMB')">
-                    💣 <span id="bomb-count">0</span>
+                    ?�� <span id="bomb-count">0</span>
                 </button>
                 <button class="booster-btn" id="rainbow-btn" onclick="Puzzle.activateBooster('RAINBOW')">
-                    🌈 <span id="rainbow-count">0</span>
+                    ?�� <span id="rainbow-count">0</span>
                 </button>
-                <button class="pause-btn" onclick="Game.pauseGame()">⏸️</button>
+                <button class="pause-btn" onclick="Game.pauseGame()">?�️</button>
             </div>
         </div>
 
-        <!-- 결과 팝업 -->
+        <!-- 결과 ?�업 -->
         <div id="result-popup" class="popup">
             <div class="popup-content">
-                <h2 id="result-title">레벨 클리어!</h2>
-                <div id="result-stars">⭐⭐⭐</div>
-                <p id="result-score">점수: 5000</p>
+                <h2 id="result-title">?�벨 ?�리??</h2>
+                <div id="result-stars">⭐⭐�?/div>
+                <p id="result-score">?�수: 5000</p>
                 <div id="result-rewards">
                     <p>보상:</p>
                     <ul id="reward-list"></ul>
                 </div>
                 <p id="next-level-msg" style="margin-top: 20px; color: #999; font-size: 14px;">
-                    3초 후 다음 레벨로 이동합니다...
+                    3�????�음 ?�벨�??�동?�니??..
                 </p>
                 <div class="button-row">
-                    <button class="btn" onclick="Game.showMap()">지도로</button>
-                    <button class="btn btn-primary" onclick="Game.retryLevel()">재도전</button>
+                    <button class="btn" onclick="Game.showMap()">지?�로</button>
+                    <button class="btn btn-primary" onclick="Game.retryLevel()">?�도??/button>
                 </div>
             </div>
         </div>
 
-        <!-- 인벤토리 팝업 -->
+        <!-- ?�벤?�리 ?�업 -->
         <div id="inventory-popup" class="popup">
             <div class="popup-content inventory-content">
-                <h2>🎒 인벤토리</h2>
+                <h2>?�� ?�벤?�리</h2>
 
-                <!-- 캐릭터 정보 -->
+                <!-- 캐릭???�보 -->
                 <div class="character-info">
-                    <div class="character-avatar" id="inventory-avatar">👤</div>
+                    <div class="character-avatar" id="inventory-avatar">?��</div>
                     <div class="character-details">
-                        <h3 id="inventory-char-name">캐릭터 이름</h3>
-                        <p id="inventory-char-desc">캐릭터 설명</p>
+                        <h3 id="inventory-char-name">캐릭???�름</h3>
+                        <p id="inventory-char-desc">캐릭???�명</p>
                         <div class="character-skill">
-                            <span>🌟</span>
-                            <span id="inventory-char-skill">스킬</span>
+                            <span>?��</span>
+                            <span id="inventory-char-skill">?�킬</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- 아이템 목록 -->
+                <!-- ?�이??목록 -->
                 <div class="inventory-items">
-                    <h3>보유 아이템</h3>
+                    <h3>보유 ?�이??/h3>
                     <div id="inventory-grid" class="item-grid">
-                        <!-- 아이템들이 여기 표시됨 -->
+                        <!-- ?�이?�들???�기 ?�시??-->
                     </div>
                 </div>
 
                 <!-- 버튼 -->
                 <div class="button-row">
-                    <button class="btn" onclick="Game.closeInventory()">닫기</button>
-                    <button class="btn" onclick="CostumeUI.open()">🎨 캐릭터 꾸미기</button>
-                    <button class="btn btn-primary" onclick="Game.showCrafting()">조합하기</button>
+                    <button class="btn" onclick="Game.closeInventory()">?�기</button>
+                    <button class="btn" onclick="CostumeUI.open()">?�� 캐릭??꾸�?�?/button>
+                    <button class="btn btn-primary" onclick="Game.showCrafting()">조합?�기</button>
                 </div>
             </div>
         </div>
 
-        <!-- 조합 팝업 -->
+        <!-- 조합 ?�업 -->
         <div id="crafting-popup" class="popup">
             <div class="popup-content crafting-content">
-                <h2>🔨 아이템 조합</h2>
+                <h2>?�� ?�이??조합</h2>
 
-                <!-- 레시피 목록 -->
+                <!-- ?�시??목록 -->
                 <div class="recipe-list">
-                    <h3>조합법</h3>
+                    <h3>조합�?/h3>
                     <div id="recipe-grid"></div>
                 </div>
 
-                <!-- 선택된 레시피 정보 -->
+                <!-- ?�택???�시???�보 -->
                 <div id="selected-recipe" class="selected-recipe">
-                    <p style="text-align: center; color: #999;">레시피를 선택하세요</p>
+                    <p style="text-align: center; color: #999;">?�시?��? ?�택?�세??/p>
                 </div>
 
                 <!-- 버튼 -->
                 <div class="button-row">
-                    <button class="btn" onclick="Game.closeCrafting()">닫기</button>
-                    <button class="btn btn-primary" id="craft-btn" onclick="Game.executeCraft()" disabled>조합하기</button>
+                    <button class="btn" onclick="Game.closeCrafting()">?�기</button>
+                    <button class="btn btn-primary" id="craft-btn" onclick="Game.executeCraft()" disabled>조합?�기</button>
                 </div>
             </div>
         </div>
 
-        <!-- 코스튬 커스터마이징 화면 -->
+        <!-- 코스??커스?�마?�징 ?�면 -->
         <div id="costume-screen" class="screen">
-            <h2>🎨 캐릭터 꾸미기</h2>
+            <h2>?�� 캐릭??꾸�?�?/h2>
 
-            <!-- 캐릭터 프리뷰 -->
+            <!-- 캐릭???�리�?-->
             <div class="costume-preview-container">
                 <canvas id="costume-preview-canvas" width="512" height="512"></canvas>
             </div>
 
-            <!-- 스탯 보너스 요약 -->
+            <!-- ?�탯 보너???�약 -->
             <div class="stat-bonus-summary">
-                <h3>✨ 현재 코스튬 보너스</h3>
+                <h3>???�재 코스??보너??/h3>
                 <div class="stat-bonus-list" id="stat-bonus-list">
-                    <!-- 보너스 항목들이 여기 표시됨 -->
+                    <!-- 보너????��?�이 ?�기 ?�시??-->
                 </div>
             </div>
 
-            <!-- 카테고리 탭 -->
+            <!-- 카테고리 ??-->
             <div class="costume-category-tabs">
-                <button class="costume-tab active" data-category="heads" onclick="CostumeUI.showCategory('heads')">🧢
+                <button class="costume-tab active" data-category="heads" onclick="CostumeUI.showCategory('heads')">?��
                     모자</button>
-                <button class="costume-tab" data-category="tops" onclick="CostumeUI.showCategory('tops')">👕 상의</button>
-                <button class="costume-tab" data-category="bottoms" onclick="CostumeUI.showCategory('bottoms')">👖
-                    하의</button>
-                <button class="costume-tab" data-category="bags" onclick="CostumeUI.showCategory('bags')">🎒 가방</button>
+                <button class="costume-tab" data-category="tops" onclick="CostumeUI.showCategory('tops')">?�� ?�의</button>
+                <button class="costume-tab" data-category="bottoms" onclick="CostumeUI.showCategory('bottoms')">?��
+                    ?�의</button>
+                <button class="costume-tab" data-category="bags" onclick="CostumeUI.showCategory('bags')">?�� 가�?/button>
                 <button class="costume-tab" data-category="accessories"
-                    onclick="CostumeUI.showCategory('accessories')">🕶️ 액세서리</button>
-                <button class="costume-tab" data-category="special" onclick="CostumeUI.showCategory('special')">✨
-                    특수</button>
+                    onclick="CostumeUI.showCategory('accessories')">?���??�세?�리</button>
+                <button class="costume-tab" data-category="special" onclick="CostumeUI.showCategory('special')">??
+                    ?�수</button>
             </div>
 
-            <!-- 코스튬 그리드 -->
+            <!-- 코스??그리??-->
             <div id="costume-grid" class="costume-grid">
-                <!-- 코스튬 아이템들이 여기 표시됨 -->
+                <!-- 코스???�이?�들???�기 ?�시??-->
             </div>
 
             <!-- 버튼 -->
             <div class="button-row">
-                <button class="btn" onclick="Game.showInventory()">뒤로</button>
-                <button class="btn btn-primary" onclick="CostumeUI.saveAndClose()">저장</button>
+                <button class="btn" onclick="Game.showInventory()">?�로</button>
+                <button class="btn btn-primary" onclick="CostumeUI.saveAndClose()">?�??/button>
             </div>
         </div>
 
-        <!-- 코스튬 상세 모달 -->
+        <!-- 코스???�세 모달 -->
         <div id="costume-detail-modal" class="costume-detail-modal">
             <div class="costume-detail-content">
                 <div class="costume-detail-icon" id="detail-icon">
-                    <!-- 코스튬 아이콘 -->
+                    <!-- 코스???�이�?-->
                 </div>
-                <h3 class="costume-detail-name" id="detail-name">코스튬 이름</h3>
-                <p class="costume-detail-description" id="detail-description">코스튬 설명</p>
+                <h3 class="costume-detail-name" id="detail-name">코스???�름</h3>
+                <p class="costume-detail-description" id="detail-description">코스???�명</p>
 
                 <div class="costume-detail-stats" id="detail-stats">
-                    <!-- 스탯 정보 -->
+                    <!-- ?�탯 ?�보 -->
                 </div>
 
                 <div class="costume-unlock-info" id="detail-unlock" style="display: none;">
-                    <!-- 잠금 해제 조건 -->
+                    <!-- ?�금 ?�제 조건 -->
                 </div>
 
                 <div class="button-row">
-                    <button class="btn" onclick="CostumeUI.closeDetail()">닫기</button>
+                    <button class="btn" onclick="CostumeUI.closeDetail()">?�기</button>
                     <button class="btn btn-primary" id="detail-equip-btn"
-                        onclick="CostumeUI.equipFromDetail()">장착</button>
+                        onclick="CostumeUI.equipFromDetail()">?�착</button>
                 </div>
             </div>
         </div>
@@ -272,13 +272,13 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <!-- Version Info -->
-    <script src="version.js?v=1.1.0"></script>
+    <script src="version.js?v=1.2.0"></script>
 
-    <script src="js/data.js?v=1.1.0"></script>
-    <script src="js/puzzle.js?v=1.1.0"></script>
-    <script src="js/costume.js?v=1.1.0"></script>
-    <script src="js/costume-ui.js?v=1.1.0"></script>
-    <script src="js/game.js?v=1.1.0"></script>
+    <script src="js/data.js?v=1.2.0"></script>
+    <script src="js/puzzle.js?v=1.2.0"></script>
+    <script src="js/costume.js?v=1.2.0"></script>
+    <script src="js/costume-ui.js?v=1.2.0"></script>
+    <script src="js/game.js?v=1.2.0"></script>
 </body>
 
 </html>
