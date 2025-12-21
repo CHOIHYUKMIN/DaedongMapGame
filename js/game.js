@@ -21,7 +21,6 @@ const Game = {
     init() {
         this.loadUserData();
         this.setupCharacterSelect();
-        this.initRegionMap();
 
         // 이미 캐릭터를 선택한 적이 있으면 메인 메뉴로, 아니면 캐릭터 선택으로
         if (this.userData.selectedCharacter) {
@@ -40,6 +39,15 @@ const Game = {
 
     showMainMenu() {
         this.showScreen('main-menu');
+        // 메인 메뉴가 표시된 후 지도 초기화
+        setTimeout(() => {
+            if (!this.regionMap) {
+                this.initRegionMap();
+            } else {
+                // 지도가 이미 있으면 크기 재조정
+                this.regionMap.invalidateSize();
+            }
+        }, 100);
     },
 
     showCharacterSelect() {

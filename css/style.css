@@ -10,13 +10,15 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     overflow: hidden;
     touch-action: manipulation;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 #game-container {
     width: 100vw;
     height: 100vh;
-    max-width: 540px;
-    margin: 0 auto;
     background: white;
     position: relative;
     overflow: hidden;
@@ -56,13 +58,15 @@ body {
 /* 메인 메뉴 */
 #main-menu {
     background: linear-gradient(180deg, #FFD1DC 0%, #FFE4E9 100%);
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding: 20px;
+    overflow-y: auto;
 }
 
 .title {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     animation: titleBounce 1s ease-out;
 }
 
@@ -83,10 +87,10 @@ body {
 }
 
 .title h1 {
-    font-size: 48px;
+    font-size: 42px;
     color: #FF6B9D;
     text-shadow: 3px 3px 0 rgba(255, 255, 255, 0.5);
-    line-height: 1.3;
+    line-height: 1.2;
     animation: titleGlow 2s ease-in-out infinite;
 }
 
@@ -104,9 +108,9 @@ body {
 }
 
 .subtitle {
-    font-size: 18px;
+    font-size: 16px;
     color: #666;
-    margin-top: 10px;
+    margin-top: 5px;
     animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
@@ -125,16 +129,34 @@ body {
 .menu-buttons {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+    padding: 0 20px;
 }
 
 .map-selection-container {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
-    padding: 30px;
-    margin: 20px auto 30px;
-    max-width: 500px;
+    padding: 20px;
+    margin: 15px 20px;
+    width: calc(100% - 40px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.map-selection-container h3 {
+    color: #F57C00;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#region-map {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #e0e0e0;
 }
 
 .korea-map-wrapper {
@@ -209,8 +231,8 @@ body {
 }
 
 .btn-large {
-    padding: 18px 60px;
-    font-size: 24px;
+    padding: 15px 40px;
+    font-size: 20px;
     font-weight: bold;
     border: none;
     border-radius: 50px;
@@ -221,6 +243,7 @@ body {
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .btn-large::before {
