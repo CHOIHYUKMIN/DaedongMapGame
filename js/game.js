@@ -20,9 +20,16 @@ const Game = {
 
     init() {
         this.loadUserData();
-        this.showMainMenu();
         this.setupCharacterSelect();
         this.initRegionMap();
+
+        // 이미 캐릭터를 선택한 적이 있으면 메인 메뉴로, 아니면 캐릭터 선택으로
+        if (this.userData.selectedCharacter) {
+            this.showMainMenu();
+        } else {
+            // 처음 접속하는 사용자
+            this.showCharacterSelect();
+        }
     },
 
     // 화면 전환
@@ -51,7 +58,37 @@ const Game = {
     },
 
     showSettings() {
-        alert('설정 화면 (미구현)');
+        const options = [
+            '캐릭터 변경',
+            '게임 초기화',
+            '닫기'
+        ];
+
+        const choice = prompt(
+            '⚙️ 설정\n\n' +
+            '1. 캐릭터 변경\n' +
+            '2. 게임 초기화\n' +
+            '3. 닫기\n\n' +
+            '번호를 입력하세요:'
+        );
+
+        switch (choice) {
+            case '1':
+                this.changeCharacter();
+                break;
+            case '2':
+                this.resetGame();
+                break;
+            case '3':
+            default:
+                break;
+        }
+    },
+
+    changeCharacter() {
+        if (confirm('캐릭터를 변경하시겠습니까?\n\n현재 진행 상황은 유지됩니다.')) {
+            this.showCharacterSelect();
+        }
     },
 
     showInfo() {
@@ -309,11 +346,17 @@ const Game = {
 
         if (character) {
             preview.innerHTML = `
-                <h3>${character.name}</h3>
-                <p>${character.desc}</p>
-                <p style="margin-top: 10px; color: #00796B;">
-                    고유 능력: ${character.skill}
-                </p>
+                <div style="text-align: center;">
+                    <img src="${character.image}" alt="${character.name}" 
+                         style="width: 200px; height: 200px; object-fit: contain; margin-bottom: 15px; 
+                                border-radius: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                                padding: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
+                    <h3>${character.name}</h3>
+                    <p>${character.desc}</p>
+                    <p style="margin-top: 10px; color: #00796B;">
+                        고유 능력: ${character.skill}
+                    </p>
+                </div>
             `;
             this.userData.selectedCharacter = character.id;
         }
@@ -326,6 +369,13 @@ const Game = {
         }
 
         this.saveUserData();
+
+        // 처음 캐릭터를 선택한 경우 환영 메시지
+        const character = GameData.characters.find(c => c.id === this.userData.selectedCharacter);
+        if (character && !this.userData.clearedLevels.length) {
+            alert(`🎉 환영합니다!\n\n${character.name}님, 서울 맛집 여행을 시작합니다!\n\n고유 능력: ${character.skill}`);
+        }
+
         this.showMap();
     },
 

@@ -2,16 +2,136 @@
 
 const GameData = {
     levels: [
-        { id: 1, name: "서울 중구 태평로1가", type: "SCORE", target: 1000, moves: 15, reward: "IT_001", isAd: false },
-        { id: 2, name: "서울 중구 소공동", type: "SCORE", target: 1500, moves: 20, reward: "IT_002", isAd: false },
-        { id: 3, name: "서울 중구 명동", type: "SCORE", target: 2000, moves: 25, reward: "IT_003", isAd: false },
-        { id: 4, name: "서울 중구 을지로", type: "SCORE", target: 2500, moves: 20, reward: "IT_004", isAd: false },
-        { id: 5, name: "서울 중구 장충동", type: "SCORE", target: 3000, moves: 25, reward: "IT_005", isAd: false },
-        { id: 6, name: "서울 종로구 인사동", type: "SCORE", target: 3500, moves: 20, reward: "IT_006", isAd: false },
-        { id: 7, name: "광장시장", type: "SCORE", target: 4000, moves: 30, reward: "IT_100", isAd: true },
-        { id: 8, name: "서울 종로구 삼청동", type: "SCORE", target: 4500, moves: 25, reward: "IT_007", isAd: false },
-        { id: 9, name: "서울 종로구 평창동", type: "SCORE", target: 5000, moves: 30, reward: "IT_008", isAd: false },
-        { id: 10, name: "남산 예장동", type: "SCORE", target: 6000, moves: 35, reward: "IT_999", isAd: false }
+        {
+            id: 1,
+            name: "서울 중구 태평로1가",
+            type: "SCORE",
+            target: 1000,
+            moves: 15,
+            reward: "IT_001",
+            isAd: false,
+            blockTheme: {
+                name: "관공서 지구",
+                emojis: ["🏛️", "📋", "📊", "💼", "🏢"]
+            }
+        },
+        {
+            id: 2,
+            name: "서울 중구 소공동",
+            type: "SCORE",
+            target: 1500,
+            moves: 20,
+            reward: "IT_002",
+            isAd: false,
+            blockTheme: {
+                name: "비즈니스 거리",
+                emojis: ["💼", "🏢", "☕", "📱", "💻"]
+            }
+        },
+        {
+            id: 3,
+            name: "서울 중구 명동",
+            type: "SCORE",
+            target: 2000,
+            moves: 25,
+            reward: "IT_003",
+            isAd: false,
+            blockTheme: {
+                name: "쇼핑 천국",
+                emojis: ["👗", "💄", "🛍️", "💍", "👜"]
+            }
+        },
+        {
+            id: 4,
+            name: "서울 중구 을지로",
+            type: "SCORE",
+            target: 2500,
+            moves: 20,
+            reward: "IT_004",
+            isAd: false,
+            blockTheme: {
+                name: "공구 거리",
+                emojis: ["🔧", "🔨", "⚙️", "🖨️", "📐"]
+            }
+        },
+        {
+            id: 5,
+            name: "서울 중구 장충동",
+            type: "SCORE",
+            target: 3000,
+            moves: 25,
+            reward: "IT_005",
+            isAd: false,
+            blockTheme: {
+                name: "전통 음식",
+                emojis: ["🍖", "🥘", "🍲", "🥟", "🍜"]
+            }
+        },
+        {
+            id: 6,
+            name: "서울 종로구 인사동",
+            type: "SCORE",
+            target: 3500,
+            moves: 20,
+            reward: "IT_006",
+            isAd: false,
+            blockTheme: {
+                name: "전통 문화",
+                emojis: ["🏮", "🎭", "🖼️", "🎨", "🪔"]
+            }
+        },
+        {
+            id: 7,
+            name: "광장시장",
+            type: "SCORE",
+            target: 4000,
+            moves: 30,
+            reward: "IT_100",
+            isAd: true,
+            blockTheme: {
+                name: "전통 시장",
+                emojis: ["🍱", "🥙", "🍢", "🍡", "🧈"]
+            }
+        },
+        {
+            id: 8,
+            name: "서울 종로구 삼청동",
+            type: "SCORE",
+            target: 4500,
+            moves: 25,
+            reward: "IT_007",
+            isAd: false,
+            blockTheme: {
+                name: "갤러리 거리",
+                emojis: ["☕", "🎨", "📚", "🍰", "🖼️"]
+            }
+        },
+        {
+            id: 9,
+            name: "서울 종로구 평창동",
+            type: "SCORE",
+            target: 5000,
+            moves: 30,
+            reward: "IT_008",
+            isAd: false,
+            blockTheme: {
+                name: "한옥 마을",
+                emojis: ["🏡", "🌲", "🍃", "🏔️", "🌸"]
+            }
+        },
+        {
+            id: 10,
+            name: "남산 예장동",
+            type: "SCORE",
+            target: 6000,
+            moves: 35,
+            reward: "IT_999",
+            isAd: false,
+            blockTheme: {
+                name: "남산 타워",
+                emojis: ["🗼", "📸", "🎡", "🌆", "🏰"]
+            }
+        }
     ],
 
     items: {
@@ -28,16 +148,16 @@ const GameData = {
     },
 
     characters: [
-        { id: "CH_10M", name: "개구쟁이 스케이터", age: "10", gender: "M", skill: "EXP_BOOST", value: 5, desc: "경험치 획득량 +5%" },
-        { id: "CH_10F", name: "떡볶이 요정", age: "10", gender: "F", skill: "EXP_BOOST", value: 5, desc: "경험치 획득량 +5%" },
-        { id: "CH_20M", name: "배낭 여행가", age: "20", gender: "M", skill: "CAFE_BONUS", value: 10, desc: "카페/디저트 스테이지 점수 +10%" },
-        { id: "CH_20F", name: "카페 투어리스트", age: "20", gender: "F", skill: "CAFE_BONUS", value: 10, desc: "카페/디저트 스테이지 점수 +10%" },
-        { id: "CH_30M", name: "넥타이 부대", age: "30", gender: "M", skill: "GOLD_BOOST", value: 5, desc: "골드 획득량 +5%" },
-        { id: "CH_30F", name: "워라밸 요정", age: "30", gender: "F", skill: "GOLD_BOOST", value: 5, desc: "골드 획득량 +5%" },
-        { id: "CH_40M", name: "아웃도어 형님", age: "40", gender: "M", skill: "STAMINA_REGEN", value: 1, desc: "체력 회복 속도 증가" },
-        { id: "CH_40F", name: "파워 워킹 누님", age: "40", gender: "F", skill: "STAMINA_REGEN", value: 1, desc: "체력 회복 속도 증가" },
-        { id: "CH_60M", name: "낭만 가객", age: "60", gender: "M", skill: "ITEM_DROP", value: 5, desc: "아이템 드롭 확률 +5%" },
-        { id: "CH_60F", name: "손맛 장인", age: "60", gender: "F", skill: "ITEM_DROP", value: 5, desc: "아이템 드롭 확률 +5%" }
+        { id: "CH_10M", name: "개구쟁이 스케이터", age: "10", gender: "M", skill: "EXP_BOOST", value: 5, desc: "경험치 획득량 +5%", image: "images/characters/ch_10m.png" },
+        { id: "CH_10F", name: "떡볶이 요정", age: "10", gender: "F", skill: "EXP_BOOST", value: 5, desc: "경험치 획득량 +5%", image: "images/characters/ch_10f.png" },
+        { id: "CH_20M", name: "배낭 여행가", age: "20", gender: "M", skill: "CAFE_BONUS", value: 10, desc: "카페/디저트 스테이지 점수 +10%", image: "images/characters/ch_20m.png" },
+        { id: "CH_20F", name: "카페 투어리스트", age: "20", gender: "F", skill: "CAFE_BONUS", value: 10, desc: "카페/디저트 스테이지 점수 +10%", image: "images/characters/ch_20f.png" },
+        { id: "CH_30M", name: "넥타이 부대", age: "30", gender: "M", skill: "GOLD_BOOST", value: 5, desc: "골드 획득량 +5%", image: "images/characters/ch_30m.png" },
+        { id: "CH_30F", name: "워라밸 요정", age: "30", gender: "F", skill: "GOLD_BOOST", value: 5, desc: "골드 획득량 +5%", image: "images/characters/ch_30f.png" },
+        { id: "CH_40M", name: "아웃도어 형님", age: "40", gender: "M", skill: "STAMINA_REGEN", value: 1, desc: "체력 회복 속도 증가", image: "images/characters/ch_40m.png" },
+        { id: "CH_40F", name: "파워 워킹 누님", age: "40", gender: "F", skill: "STAMINA_REGEN", value: 1, desc: "체력 회복 속도 증가", image: "images/characters/ch_40f.png" },
+        { id: "CH_60M", name: "낭만 가객", age: "60", gender: "M", skill: "ITEM_DROP", value: 5, desc: "아이템 드롭 확률 +5%", image: "images/characters/ch_60m.png" },
+        { id: "CH_60F", name: "손맛 장인", age: "60", gender: "F", skill: "ITEM_DROP", value: 5, desc: "아이템 드롭 확률 +5%", image: "images/characters/ch_60f.png" }
     ],
 
     boosters: {

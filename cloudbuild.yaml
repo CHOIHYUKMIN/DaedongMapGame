@@ -1,0 +1,45 @@
+steps:
+  # Docker 이미지 빌드
+  - name: 'gcr.io/cloud-builders/docker'
+    args: 
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/daedong-map-game:$SHORT_SHA'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/daedong-map-game:latest'
+      - '.'
+  
+  # Container Registry에 푸시
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/daedong-map-game:$SHORT_SHA']
+  
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/daedong-map-game:latest']
+  
+  # Cloud Run 배포
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'daedong-map-game'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/daedong-map-game:$SHORT_SHA'
+      - '--region'
+      - 'asia-northeast3'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--memory'
+      - '256Mi'
+      - '--max-instances'
+      - '10'
+      - '--min-instances'
+      - '0'
+
+images:
+  - 'gcr.io/$PROJECT_ID/daedong-map-game:$SHORT_SHA'
+  - 'gcr.io/$PROJECT_ID/daedong-map-game:latest'
+
+options:
+  logging: CLOUD_LOGGING_ONLY

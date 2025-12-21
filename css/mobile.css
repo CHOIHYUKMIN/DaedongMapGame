@@ -1,0 +1,278 @@
+/* ===== 모바일 최적화 미디어 쿼리 ===== */
+
+/* 스마트폰 세로 모드 (480px 이하) */
+@media (max-width: 480px) {
+
+    /* 타이틀 크기 조정 */
+    .title h1 {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    /* 퍼즐 보드 최적화 */
+    #puzzle-board {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2px;
+        padding: 5px;
+        max-width: 100%;
+    }
+
+    .block {
+        font-size: 18px;
+        border-radius: 8px;
+    }
+
+    /* 퍼즐 상단 바 */
+    .puzzle-top-bar {
+        font-size: 11px;
+        padding: 8px;
+        gap: 5px;
+    }
+
+    #level-info {
+        font-size: 13px;
+    }
+
+    #moves-info {
+        font-size: 14px;
+    }
+
+    /* 부스터 버튼 */
+    .booster-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .booster-btn span {
+        font-size: 10px;
+    }
+
+    .puzzle-bottom-bar {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .pause-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    /* 버튼 크기 터치 친화적으로 */
+    .btn {
+        padding: 14px 25px;
+        font-size: 15px;
+        min-height: 44px;
+        /* iOS 권장 최소 터치 영역 */
+    }
+
+    .btn-large {
+        font-size: 18px;
+        padding: 16px 35px;
+    }
+
+    /* 하단 네비게이션 바 */
+    .icon-btn {
+        padding: 12px 10px;
+        font-size: 12px;
+        min-height: 48px;
+    }
+
+    /* 리소스 표시 */
+    .resource-display {
+        font-size: 14px;
+    }
+
+    /* 팝업 */
+    .popup-content {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .popup h2 {
+        font-size: 20px;
+    }
+
+    /* 나이/성별 선택 버튼 */
+    .age-btn,
+    .gender-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+        min-height: 44px;
+    }
+
+    /* 캐릭터 미리보기 */
+    .character-preview {
+        padding: 20px;
+        min-height: 120px;
+    }
+
+    .character-preview h3 {
+        font-size: 18px;
+    }
+
+    /* 지도 마커 */
+    .custom-marker {
+        transform: scale(0.9);
+    }
+
+    /* 결과 팝업 */
+    #result-stars {
+        font-size: 32px;
+    }
+
+    /* 인벤토리 */
+    .item-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .item-card {
+        padding: 10px;
+    }
+
+    .item-icon {
+        font-size: 28px;
+    }
+
+    .item-name {
+        font-size: 11px;
+    }
+
+    /* 레시피 그리드 */
+    #recipe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .recipe-card {
+        padding: 10px;
+    }
+}
+
+/* 작은 스마트폰 (360px 이하) */
+@media (max-width: 360px) {
+    .title h1 {
+        font-size: 28px;
+    }
+
+    #puzzle-board {
+        gap: 1px;
+        padding: 3px;
+    }
+
+    .block {
+        font-size: 16px;
+        border-radius: 6px;
+    }
+
+    .booster-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .puzzle-top-bar {
+        font-size: 10px;
+        padding: 6px;
+    }
+}
+
+/* 가로 모드 최적화 */
+@media (orientation: landscape) and (max-height: 600px) {
+    #game-container {
+        max-width: 100vw;
+    }
+
+    /* 퍼즐 화면 가로 모드 */
+    .puzzle-top-bar {
+        padding: 5px 10px;
+        font-size: 11px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #level-info {
+        grid-column: 1 / 3;
+        font-size: 12px;
+    }
+
+    #mission-info {
+        grid-column: 3 / 4;
+    }
+
+    #score-info {
+        grid-column: 4 / 5;
+    }
+
+    #moves-info {
+        grid-column: 1 / -1;
+        font-size: 13px;
+    }
+
+    .puzzle-bottom-bar {
+        padding: 8px;
+        gap: 10px;
+    }
+
+    #puzzle-board {
+        max-width: 400px;
+        max-height: calc(100vh - 180px);
+        margin: 5px auto;
+    }
+
+    /* 메인 메뉴 가로 모드 */
+    .title {
+        margin-bottom: 30px;
+    }
+
+    .title h1 {
+        font-size: 36px;
+    }
+
+    .map-selection-container {
+        padding: 20px;
+        margin: 10px auto;
+    }
+
+    #region-map {
+        height: 300px !important;
+    }
+}
+
+/* 태블릿 (481px ~ 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    #puzzle-board {
+        max-width: 450px;
+        gap: 3px;
+    }
+
+    .block {
+        font-size: 22px;
+    }
+
+    .booster-btn {
+        width: 65px;
+        height: 65px;
+        font-size: 26px;
+    }
+}
+
+/* 고해상도 디스플레이 최적화 */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .block {
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-large {
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/* 다크 모드 지원 (선택사항) */
+@media (prefers-color-scheme: dark) {
+    /* 필요시 다크 모드 스타일 추가 */
+}

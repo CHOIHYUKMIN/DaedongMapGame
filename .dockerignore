@@ -1,0 +1,41 @@
+# Git 관련
+.git
+.gitignore
+.gitattributes
+
+# 문서 파일
+*.md
+README*
+CHANGELOG*
+docs/
+
+# Godot 관련 파일
+project.godot
+scenes/
+scripts/
+DaedongMapGame
+
+# 개발 환경
+.vscode/
+.idea/
+*.log
+
+# 웹 빌드 (web 폴더는 제외)
+web/
+
+# Node.js
+node_modules/
+package.json
+package-lock.json
+
+# 임시 파일
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# CI/CD
+.github/
+cloudbuild.yaml
+firebase.json
+.firebaserc

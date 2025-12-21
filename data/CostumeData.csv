@@ -1,0 +1,17 @@
+CostumeID,Name,Category,Rarity,UnlockCondition,UnlockValue,StatBonus,BonusValue,Description,SpriteFile
+CS_001,기본 야구모자,heads,C,LEVEL,5,NONE,0,시원한 캐주얼 스타일,hat_cap_01.png
+CS_002,요리사 모자,heads,B,ITEM,IT_005,GOLD_BOOST,5,장충동 왕족발 마스터,hat_chef_01.png
+CS_003,왕관 액세서리,heads,A,ITEM,IT_020,EXP_BOOST,10,수원 왕갈비의 기운,acc_crown_01.png
+CS_010,기본 티셔츠,tops,C,LEVEL,1,NONE,0,깔끔한 일상복,top_tshirt_basic.png
+CS_011,후드티,tops,B,LEVEL,15,STAMINA_REGEN,1,편안한 캐주얼,top_hoodie_01.png
+CS_012,배달 조끼,tops,B,REGION,강남구,SPEED_BOOST,5,빠른 배달의 달인,top_delivery_vest.png
+CS_013,요리사 앞치마,tops,A,REGION,서울중구,GOLD_BOOST,10,맛집의 달인,top_apron_chef.png
+CS_020,청바지,bottoms,C,LEVEL,1,NONE,0,기본 청바지,bottom_jeans_basic.png
+CS_021,정장 바지,bottoms,B,LEVEL,25,GOLD_BOOST,5,비즈니스 스타일,bottom_pants_suit.png
+CS_030,기본 백팩,bags,C,LEVEL,5,INVENTORY,1,가방 슬롯 +1,bag_backpack_basic.png
+CS_031,명품 백팩,bags,A,GOLD,10000,GOLD_BOOST,10,강남 스타일,bag_backpack_luxury.png
+CS_032,배달 가방,bags,B,LEVEL,20,SPEED_BOOST,5,빠른 이동,bag_delivery.png
+CS_040,뿔테 안경,accessories,B,LEVEL,20,ITEM_DROP,3,지적인 이미지,acc_glasses_01.png
+CS_041,목걸이,accessories,A,REGION,강남구,GOLD_BOOST,8,럭셔리 스타일,acc_necklace_01.png
+CS_050,반짝이 효과,special,A,ACHIEVEMENT,별3개_10회,SCORE_BOOST,5,빛나는 퍼즐 마스터,fx_sparkle_star.png
+CS_051,황금 후광,special,S,ACHIEVEMENT,전지역_클리어,EXP_BOOST,20,대동맛지도 정복자,fx_aura_gold.png

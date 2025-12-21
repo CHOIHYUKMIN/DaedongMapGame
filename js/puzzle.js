@@ -48,9 +48,17 @@ const Puzzle = {
         }
     },
 
+
     getBlockEmoji(type) {
-        const emojis = ['🎒', '🍯', '🏮', '🌲', '🎭'];
-        return emojis[type];
+        // 지역별 블록 테마 사용
+        if (this.currentLevel && this.currentLevel.blockTheme) {
+            const themeEmojis = this.currentLevel.blockTheme.emojis;
+            return themeEmojis[type % themeEmojis.length];
+        }
+
+        // 기본 이모지 (하위 호환성)
+        const defaultEmojis = ['🎒', '🍯', '🏮', '🌲', '🎭'];
+        return defaultEmojis[type];
     },
 
     // 드래그 이벤트 설정
@@ -685,10 +693,22 @@ const Puzzle = {
         document.getElementById('result-title').textContent = win ? '레벨 클리어!' : '실패...';
         document.getElementById('result-score').textContent = `최종 점수: ${this.score}`;
 
+
         if (win) {
-            const stars = this.score >= this.currentLevel.target * 1.5 ? '⭐⭐⭐' :
-                this.score >= this.currentLevel.target * 1.2 ? '⭐⭐' : '⭐';
-            document.getElementById('result-stars').textContent = stars;
+            // 별 개수 계산
+            const starCount = this.score >= this.currentLevel.target * 1.5 ? 3 :
+                this.score >= this.currentLevel.target * 1.2 ? 2 : 1;
+
+            // 별 표시 (채워진 별 + 빈 별)
+            const filledStars = '⭐'.repeat(starCount);
+            const emptyStars = '☆'.repeat(3 - starCount);
+
+            const starsElement = document.getElementById('result-stars');
+            starsElement.innerHTML = `
+                <div style="font-size: 48px; margin: 20px 0;">
+                    <span style="color: #FFD700; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">${filledStars}</span><span style="color: #999; opacity: 0.3;">${emptyStars}</span>
+                </div>
+            `;
 
             const rewardList = document.getElementById('reward-list');
             rewardList.innerHTML = '';

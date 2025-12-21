@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/blocks.css">
+    <link rel="stylesheet" href="css/ui-enhancements.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/costume.css">
 </head>
 
 <body>
@@ -162,6 +167,7 @@
                 <!-- 버튼 -->
                 <div class="button-row">
                     <button class="btn" onclick="Game.closeInventory()">닫기</button>
+                    <button class="btn" onclick="CostumeUI.open()">🎨 캐릭터 꾸미기</button>
                     <button class="btn btn-primary" onclick="Game.showCrafting()">조합하기</button>
                 </div>
             </div>
@@ -191,6 +197,74 @@
             </div>
         </div>
 
+        <!-- 코스튬 커스터마이징 화면 -->
+        <div id="costume-screen" class="screen">
+            <h2>🎨 캐릭터 꾸미기</h2>
+
+            <!-- 캐릭터 프리뷰 -->
+            <div class="costume-preview-container">
+                <canvas id="costume-preview-canvas" width="512" height="512"></canvas>
+            </div>
+
+            <!-- 스탯 보너스 요약 -->
+            <div class="stat-bonus-summary">
+                <h3>✨ 현재 코스튬 보너스</h3>
+                <div class="stat-bonus-list" id="stat-bonus-list">
+                    <!-- 보너스 항목들이 여기 표시됨 -->
+                </div>
+            </div>
+
+            <!-- 카테고리 탭 -->
+            <div class="costume-category-tabs">
+                <button class="costume-tab active" data-category="heads" onclick="CostumeUI.showCategory('heads')">🧢
+                    모자</button>
+                <button class="costume-tab" data-category="tops" onclick="CostumeUI.showCategory('tops')">👕 상의</button>
+                <button class="costume-tab" data-category="bottoms" onclick="CostumeUI.showCategory('bottoms')">👖
+                    하의</button>
+                <button class="costume-tab" data-category="bags" onclick="CostumeUI.showCategory('bags')">🎒 가방</button>
+                <button class="costume-tab" data-category="accessories"
+                    onclick="CostumeUI.showCategory('accessories')">🕶️ 액세서리</button>
+                <button class="costume-tab" data-category="special" onclick="CostumeUI.showCategory('special')">✨
+                    특수</button>
+            </div>
+
+            <!-- 코스튬 그리드 -->
+            <div id="costume-grid" class="costume-grid">
+                <!-- 코스튬 아이템들이 여기 표시됨 -->
+            </div>
+
+            <!-- 버튼 -->
+            <div class="button-row">
+                <button class="btn" onclick="Game.showInventory()">뒤로</button>
+                <button class="btn btn-primary" onclick="CostumeUI.saveAndClose()">저장</button>
+            </div>
+        </div>
+
+        <!-- 코스튬 상세 모달 -->
+        <div id="costume-detail-modal" class="costume-detail-modal">
+            <div class="costume-detail-content">
+                <div class="costume-detail-icon" id="detail-icon">
+                    <!-- 코스튬 아이콘 -->
+                </div>
+                <h3 class="costume-detail-name" id="detail-name">코스튬 이름</h3>
+                <p class="costume-detail-description" id="detail-description">코스튬 설명</p>
+
+                <div class="costume-detail-stats" id="detail-stats">
+                    <!-- 스탯 정보 -->
+                </div>
+
+                <div class="costume-unlock-info" id="detail-unlock" style="display: none;">
+                    <!-- 잠금 해제 조건 -->
+                </div>
+
+                <div class="button-row">
+                    <button class="btn" onclick="CostumeUI.closeDetail()">닫기</button>
+                    <button class="btn btn-primary" id="detail-equip-btn"
+                        onclick="CostumeUI.equipFromDetail()">장착</button>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- JavaScript -->
@@ -199,6 +273,8 @@
 
     <script src="js/data.js"></script>
     <script src="js/puzzle.js"></script>
+    <script src="js/costume.js"></script>
+    <script src="js/costume-ui.js"></script>
     <script src="js/game.js"></script>
 </body>
 
