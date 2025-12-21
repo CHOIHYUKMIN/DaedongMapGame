@@ -28,10 +28,18 @@ const Puzzle = {
         const board = document.getElementById('puzzle-board');
         board.innerHTML = '';
 
+        // 난이도 계산
+        const difficulty = this.calculateDifficulty();
+        this.gridSize = difficulty.gridSize;
+        const blockTypeCount = difficulty.blockTypes;
+
+        // 그리드 크기 조정
+        board.style.gridTemplateColumns = `repeat(${this.gridSize}, 1fr)`;
+
         for (let y = 0; y < this.gridSize; y++) {
             this.grid[y] = [];
             for (let x = 0; x < this.gridSize; x++) {
-                const type = Math.floor(Math.random() * 5);
+                const type = Math.floor(Math.random() * blockTypeCount);
                 this.grid[y][x] = type;
 
                 const block = document.createElement('div');
@@ -59,6 +67,25 @@ const Puzzle = {
         // 기본 이모지 (하위 호환성)
         const defaultEmojis = ['🎒', '🍯', '🏮', '🌲', '🎭'];
         return defaultEmojis[type];
+    },
+
+    // 난이도 계산 (레벨 ID 기반)
+    calculateDifficulty() {
+        const levelId = this.currentLevel.id;
+
+        // 20레벨까지는 5가지 블록
+        // 21-40레벨은 6가지 블록
+        // 41-60레벨은 7가지 블록
+        // 61+ 레벨은 8가지 블록
+        if (levelId <= 20) {
+            return { blockTypes: 5, gridSize: 7 };
+        } else if (levelId <= 40) {
+            return { blockTypes: 6, gridSize: 7 };
+        } else if (levelId <= 60) {
+            return { blockTypes: 7, gridSize: 8 };
+        } else {
+            return { blockTypes: 8, gridSize: 8 };
+        }
     },
 
     // 드래그 이벤트 설정
@@ -598,10 +625,13 @@ const Puzzle = {
     },
 
     fillEmpty() {
+        const difficulty = this.calculateDifficulty();
+        const blockTypeCount = difficulty.blockTypes;
+
         for (let y = 0; y < this.gridSize; y++) {
             for (let x = 0; x < this.gridSize; x++) {
                 if (this.grid[y][x] === -1) {
-                    this.grid[y][x] = Math.floor(Math.random() * 5);
+                    this.grid[y][x] = Math.floor(Math.random() * blockTypeCount);
                 }
             }
         }
@@ -650,10 +680,28 @@ const Puzzle = {
     },
 
     updateUI() {
-        document.getElementById('level-info').textContent = this.currentLevel.name;
-        document.getElementById('target-score').textContent = this.currentLevel.target;
+        document.getElementById('level-info').textContent = this.currentLevel.regionName || this.currentLevel.name;
+        document.getElementById('target-score').textContent = this.currentLevel.targetVal || this.currentLevel.target;
         document.getElementById('current-score').textContent = this.score;
         document.getElementById('moves-left').textContent = this.movesLeft;
+
+        // 실시간 별 상태 업데이트
+        const targetScore = this.currentLevel.targetVal || this.currentLevel.target;
+        let starCount = 0;
+        if (this.score >= targetScore * 1.5) {
+            starCount = 3;
+        } else if (this.score >= targetScore * 1.2) {
+            starCount = 2;
+        } else if (this.score >= targetScore) {
+            starCount = 1;
+        }
+
+        const filledStars = '⭐'.repeat(starCount);
+        const emptyStars = '☆'.repeat(3 - starCount);
+        const starElement = document.getElementById('star-status');
+        if (starElement) {
+            starElement.innerHTML = `<span style="color: #FFD700">${filledStars}</span><span style="color: #999; opacity: 0.4">${emptyStars}</span>`;
+        }
     },
 
     async checkWinCondition() {

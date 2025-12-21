@@ -1,0 +1,194 @@
+/* ========================================
+   퍼즐 화면 개선 - 모바일 최적화
+   ======================================== */
+
+/* 퍼즐 상단 바 재구성 */
+.puzzle-top-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.puzzle-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+#level-info {
+    font-size: 14px;
+    font-weight: 600;
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.puzzle-stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 10px;
+    opacity: 0.9;
+    margin-bottom: 2px;
+}
+
+.stat-value {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#moves-info {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* 별 상태 표시 */
+.star-status {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    font-size: 16px;
+}
+
+/* 퍼즐 화면 전체 높이 제한 */
+#puzzle-screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#puzzle-board {
+    flex: 1;
+    max-height: calc(100vh - 280px);
+    overflow: hidden;
+    margin: 10px auto;
+}
+
+.puzzle-bottom-bar {
+    flex-shrink: 0;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 480px) {
+    .puzzle-top-bar {
+        padding: 8px;
+        gap: 6px;
+    }
+
+    #level-info {
+        font-size: 12px;
+    }
+
+    .puzzle-stats-row {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6px;
+        font-size: 11px;
+    }
+
+    .stat-label {
+        font-size: 9px;
+    }
+
+    .stat-value {
+        font-size: 14px;
+    }
+
+    #moves-info {
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    .star-status {
+        font-size: 14px;
+    }
+
+    #puzzle-board {
+        max-height: calc(100vh - 250px);
+        margin: 5px auto;
+    }
+
+    .puzzle-bottom-bar {
+        padding: 8px;
+    }
+
+    .booster-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+}
+
+/* 작은 화면 (360px 이하) */
+@media (max-width: 360px) {
+    .puzzle-stats-row {
+        font-size: 10px;
+        gap: 4px;
+    }
+
+    .stat-value {
+        font-size: 13px;
+    }
+
+    #puzzle-board {
+        max-height: calc(100vh - 230px);
+        margin: 3px auto;
+    }
+
+    .booster-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+}
+
+/* 가로 모드 */
+@media (orientation: landscape) and (max-height: 600px) {
+    .puzzle-top-bar {
+        flex-direction: row;
+        align-items: center;
+        padding: 6px 10px;
+    }
+
+    .puzzle-top-row {
+        flex: 1;
+        gap: 15px;
+    }
+
+    .puzzle-stats-row {
+        flex: 1.5;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #moves-info {
+        min-width: 100px;
+    }
+
+    #puzzle-board {
+        max-height: calc(100vh - 140px);
+        max-width: 60vw;
+    }
+}
