@@ -1,0 +1,602 @@
+/* Restaurant Collection System Styles */
+
+/* Collection Screen */
+#collection-screen {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.collection-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.collection-header h2 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.collection-header .close-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.collection-header .close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+/* Collection Stats */
+.collection-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+}
+
+/* Collection Filters */
+.collection-filters {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-group {
+    margin-bottom: 15px;
+}
+
+.filter-group:last-child {
+    margin-bottom: 0;
+}
+
+.filter-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: normal;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.filter-group input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* Collection List */
+.collection-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+/* Collection Card */
+.collection-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.collection-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.collection-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.collection-card:hover::before {
+    opacity: 1;
+}
+
+.collection-card.favorite {
+    border: 2px solid #ff6b6b;
+}
+
+.collection-card.favorite::before {
+    background: #ff6b6b;
+    opacity: 1;
+}
+
+/* Card Header */
+.card-header {
+    margin-bottom: 15px;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.card-title h3 {
+    flex: 1;
+    font-size: 18px;
+    margin: 0;
+    color: #333;
+}
+
+.rarity-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+.rarity-S {
+    background: #ff6b6b;
+}
+
+.rarity-A {
+    background: #4ecdc4;
+}
+
+.rarity-B {
+    background: #95e1d3;
+}
+
+.rarity-C {
+    background: #c7c7c7;
+}
+
+.favorite-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ddd;
+    transition: all 0.3s ease;
+    padding: 5px;
+}
+
+.favorite-btn:hover {
+    transform: scale(1.2);
+}
+
+.favorite-btn.active {
+    color: #ff6b6b;
+}
+
+.restaurant-name {
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+}
+
+/* Card Body */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Star Rating */
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.star-rating {
+    display: flex;
+    gap: 4px;
+}
+
+.star-rating i {
+    font-size: 20px;
+    color: #ddd;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.star-rating i:hover,
+.star-rating i.active {
+    color: #ffd700;
+    transform: scale(1.1);
+}
+
+/* Visit Info */
+.visit-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.visit-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.visit-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.visit-checkbox span {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Info Row */
+.info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.info-row i {
+    color: #667eea;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* Card Actions */
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.btn-detail,
+.btn-external {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-detail {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.btn-detail:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.btn-external {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.btn-external:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* Restaurant Detail Popup (Enhanced) */
+.restaurant-detail-content {
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.restaurant-detail-content .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    color: #333;
+    font-size: 24px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.restaurant-detail-content .close-btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+    transform: rotate(90deg);
+}
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.detail-header h2 {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+}
+
+.detail-body {
+    margin-top: 20px;
+}
+
+.info-section {
+    margin-bottom: 20px;
+}
+
+.description-section {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.description-section p {
+    margin: 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+.external-links {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.external-link-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.external-link-btn.naver {
+    background: #03C75A;
+    color: white;
+}
+
+.external-link-btn.kakao {
+    background: #FEE500;
+    color: #000;
+}
+
+.external-link-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Collection Info in Detail Popup */
+.collection-info {
+    background: #f0f4ff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.collection-info h4 {
+    margin: 0 0 15px 0;
+    color: #667eea;
+    font-size: 18px;
+}
+
+.my-rating,
+.my-visits,
+.my-notes {
+    margin-bottom: 15px;
+}
+
+.my-rating:last-child,
+.my-visits:last-child,
+.my-notes:last-child {
+    margin-bottom: 0;
+}
+
+.my-rating label,
+.my-notes label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.star-rating-large {
+    display: flex;
+    gap: 8px;
+}
+
+.star-rating-large i {
+    font-size: 32px;
+    color: #ddd;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.star-rating-large i:hover,
+.star-rating-large i.active {
+    color: #ffd700;
+    transform: scale(1.15);
+}
+
+.my-visits {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #667eea;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-small:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+}
+
+.my-notes textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.my-notes textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .collection-list {
+        grid-template-columns: 1fr;
+    }
+
+    .collection-filters {
+        padding: 15px;
+    }
+
+    .filter-group {
+        margin-bottom: 12px;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .collection-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-actions {
+        flex-direction: column;
+    }
+
+    .external-links {
+        flex-direction: column;
+    }
+
+    .my-visits {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* FontAwesome Icons (if not already included) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');

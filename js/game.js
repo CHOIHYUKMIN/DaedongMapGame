@@ -576,6 +576,27 @@ const Game = {
         const itemId = rewardItemId || GameData.levels.find(l => l.id === levelId)?.reward;
         if (itemId) {
             this.userData.inventory.push(itemId);
+
+            // 맛집 도감에 추가 (Restaurant Collection System)
+            if (window.RestaurantCollection) {
+                // Find restaurant data from restaurantPools
+                let restaurantData = null;
+                for (const poolLevelId in GameData.restaurantPools) {
+                    const pool = GameData.restaurantPools[poolLevelId];
+                    const found = pool.restaurants.find(r => r.itemId === itemId);
+                    if (found) {
+                        restaurantData = found;
+                        break;
+                    }
+                }
+
+                if (restaurantData) {
+                    const added = RestaurantCollection.addRestaurant(itemId, restaurantData);
+                    if (added) {
+                        console.log(`맛집 도감에 추가됨: ${restaurantData.name}`);
+                    }
+                }
+            }
         }
 
         // 보상 지급 (기존 로직 유지)
@@ -590,7 +611,7 @@ const Game = {
         }
 
         this.saveUserData();
-    },
+    }
 
     retryLevel() {
         document.getElementById('result-popup').classList.remove('active');

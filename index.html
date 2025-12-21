@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/animations.css?v=1.3.0">
     <link rel="stylesheet" href="css/costume.css?v=1.3.0">
     <link rel="stylesheet" href="css/puzzle-layout.css?v=1.3.0">
+    <link rel="stylesheet" href="css/restaurant-collection.css?v=1.3.0">
 
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
@@ -56,10 +57,133 @@
                 </p>
             </div>
             <div class="menu-buttons">
+                <button class="btn-large" id="collection-btn">📖 맛집 도감</button>
                 <button class="btn-large" onclick="Game.showInfo()">게임 정보</button>
                 <button class="btn-large" onclick="Game.showSettings()">설정</button>
             </div>
             <div class="version">v0.1 프로토타입</div>
+        </div>
+
+        <!-- 맛집 도감 화면 -->
+        <div id="collection-screen" class="screen">
+            <div class="collection-header">
+                <h2>📖 맛집 도감</h2>
+                <button id="collection-close-btn" class="close-btn">✕</button>
+            </div>
+
+            <!-- 통계 요약 -->
+            <div id="collection-stats" class="collection-stats">
+                <!-- Stats will be populated by JS -->
+            </div>
+
+            <!-- 필터 및 정렬 -->
+            <div class="collection-filters">
+                <div class="filter-group">
+                    <label>방문 상태:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="visited-filter" value="all" checked> 전체</label>
+                        <label><input type="radio" name="visited-filter" value="visited"> 방문함</label>
+                        <label><input type="radio" name="visited-filter" value="not-visited"> 미방문</label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label>최소 별점:</label>
+                    <select id="rating-filter">
+                        <option value="all">전체</option>
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐ 이상</option>
+                        <option value="3">⭐⭐⭐ 이상</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>등급:</label>
+                    <select id="rarity-filter">
+                        <option value="all">전체</option>
+                        <option value="S">S등급</option>
+                        <option value="A">A등급</option>
+                        <option value="B">B등급</option>
+                        <option value="C">C등급</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label><input type="checkbox" id="favorite-filter"> 즐겨찾기만</label>
+                </div>
+                <div class="filter-group">
+                    <label>정렬:</label>
+                    <select id="sort-select">
+                        <option value="dateAdded">최근 추가순</option>
+                        <option value="rating">별점 높은순</option>
+                        <option value="visitCount">재방문 많은순</option>
+                        <option value="name">이름순</option>
+                        <option value="lastVisit">최근 방문순</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 맛집 목록 -->
+            <div id="collection-list" class="collection-list">
+                <!-- Restaurant cards will be populated by JS -->
+            </div>
+        </div>
+
+        <!-- 맛집 상세 정보 팝업 (Enhanced) -->
+        <div id="restaurant-detail-popup" class="popup">
+            <div class="popup-content restaurant-detail-content">
+                <button class="close-btn" onclick="RestaurantDetail.hide()">✕</button>
+                <div class="detail-header">
+                    <span id="detail-rarity-badge" class="rarity-badge">S</span>
+                    <h2 id="detail-name">맛집 이름</h2>
+                </div>
+                <h3 id="detail-restaurant" class="restaurant-name">식당명</h3>
+
+                <div class="detail-body">
+                    <div class="info-section">
+                        <div class="info-row" id="detail-address-row">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="detail-address"></span>
+                        </div>
+                        <div class="info-row" id="detail-phone-row">
+                            <i class="fas fa-phone"></i>
+                            <span id="detail-phone"></span>
+                        </div>
+                        <div class="info-row" id="detail-category-row">
+                            <i class="fas fa-utensils"></i>
+                            <span id="detail-category"></span>
+                        </div>
+                    </div>
+
+                    <div class="description-section" id="detail-description-section">
+                        <p id="detail-description"></p>
+                    </div>
+
+                    <div class="external-links" id="detail-links">
+                        <!-- External links will be added by JS -->
+                    </div>
+
+                    <!-- Collection Info (if in collection) -->
+                    <div class="collection-info" id="detail-collection-info" style="display: none;">
+                        <h4>내 기록</h4>
+                        <div class="my-rating">
+                            <label>내 별점:</label>
+                            <div class="star-rating-large" id="detail-star-rating">
+                                <!-- Stars will be added by JS -->
+                            </div>
+                        </div>
+                        <div class="my-visits">
+                            <label class="visit-checkbox">
+                                <input type="checkbox" id="detail-visited-checkbox">
+                                <span>방문함 (<span id="detail-visit-count">0</span>회)</span>
+                            </label>
+                            <button class="btn-small" id="detail-add-visit-btn">+1 방문 추가</button>
+                        </div>
+                        <div class="my-notes">
+                            <label>메모:</label>
+                            <textarea id="detail-notes" placeholder="이 맛집에 대한 메모를 작성하세요..." rows="3"></textarea>
+                            <button class="btn-small" id="detail-save-notes-btn">메모 저장</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- 캐릭터 선택 화면 -->
@@ -300,6 +424,8 @@
     <script src="js/data.js?v=1.3.0"></script>
     <script src="js/region.js?v=1.3.0"></script>
     <script src="js/restaurant.js?v=1.3.0"></script>
+    <script src="js/restaurant-detail.js?v=1.3.0"></script>
+    <script src="js/restaurant-collection.js?v=1.3.0"></script>
     <script src="js/puzzle.js?v=1.3.0"></script>
     <script src="js/costume.js?v=1.3.0"></script>
     <script src="js/costume-ui.js?v=1.3.0"></script>

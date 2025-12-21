@@ -172,6 +172,13 @@ const FirestoreSync = {
                     Game.saveUserData(); // localStorage에도 저장
                 }
 
+                // Restaurant Collection 복원
+                if (data.restaurantCollection && window.RestaurantCollection) {
+                    RestaurantCollection.collection = data.restaurantCollection;
+                    RestaurantCollection.saveCollection(); // localStorage에도 저장
+                    console.log('맛집 도감 데이터 복원 완료');
+                }
+
                 return data;
             } else {
                 console.log('신규 사용자 - Firestore에 데이터 생성');
@@ -192,7 +199,8 @@ const FirestoreSync = {
 
             const docRef = db.collection('users').doc(userId || user.uid);
 
-            await docRef.set({
+            // Prepare data to save
+            const saveData = {
                 profile: {
                     email: user.email,
                     displayName: user.displayName,
@@ -201,7 +209,14 @@ const FirestoreSync = {
                 },
                 gameData: Game.userData,
                 updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-            }, { merge: true });
+            };
+
+            // Include restaurant collection if available
+            if (window.RestaurantCollection && RestaurantCollection.collection) {
+                saveData.restaurantCollection = RestaurantCollection.collection;
+            }
+
+            await docRef.set(saveData, { merge: true });
 
             console.log('✅ Firestore 저장 완료');
         } catch (error) {
