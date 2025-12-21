@@ -432,17 +432,17 @@ const Game = {
 
         this.regionMap = L.map('region-map', {
             center: koreaCenter,
-            zoom: 9,
+            zoom: 8,
             zoomControl: false,
             scrollWheelZoom: false,
-            dragging: false,
+            dragging: true,
             doubleClickZoom: false
         });
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap',
             maxZoom: 11,
-            minZoom: 9
+            minZoom: 7
         }).addTo(this.regionMap);
 
         // 서울 마커
