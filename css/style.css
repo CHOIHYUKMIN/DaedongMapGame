@@ -162,7 +162,7 @@ body {
     overflow: hidden;
     background: #e0e0e0;
     position: relative;
-    z-index: 1;
+    z-index: 10;
 }
 
 /* Leaflet 컨테이너 명시적 스타일 */
@@ -170,6 +170,16 @@ body {
     width: 100% !important;
     height: 100% !important;
     background: #e0e0e0;
+    cursor: grab;
+}
+
+#region-map .leaflet-container:active {
+    cursor: grabbing;
+}
+
+/* Leaflet 드래그 중 커서 */
+#region-map .leaflet-dragging .leaflet-container {
+    cursor: grabbing !important;
 }
 
 #region-map .leaflet-tile-pane {
@@ -178,6 +188,19 @@ body {
 
 #region-map .leaflet-overlay-pane {
     z-index: 3;
+}
+
+/* Leaflet 마커 클릭 영역 확대 */
+#region-map .leaflet-marker-icon,
+#region-map .leaflet-interactive {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+}
+
+/* Circle 마커 클릭 영역 확대 */
+#region-map path.leaflet-interactive {
+    cursor: pointer !important;
+    stroke-width: 5 !important;
 }
 
 .map-selection-container p {

@@ -408,19 +408,12 @@ const Game = {
         const regionData = typeof RegionData !== 'undefined' ? RegionData.getRegion(region) : null;
 
         if (region === 'seoul') {
-            // 서울: 레벨 1-10
+            // 서울: 25개 구 지도 표시
             this.currentRegion = 'seoul';
             this.regionLevelOffset = 0;
-
-            // If user already has a character, go directly to map
-            if (this.userData.selectedCharacter) {
-                this.showMap();
-            } else {
-                // New user needs to select character first
-                this.showCharacterSelect();
-            }
+            this.showGuMap('seoul'); // 구 지도 표시
         } else if (region === 'busan') {
-            // 부산: 레벨 11-18
+            // 부산: 레벨 11-18 (나중에 구 지도로 변경 예정)
             this.currentRegion = 'busan';
             this.regionLevelOffset = 10;
 
@@ -435,6 +428,394 @@ const Game = {
             // 기타 지역 (아직 미구현)
             const regionName = regionData ? regionData.name : region;
             alert(`${regionName} 지역은 준비 중입니다!\n곧 업데이트될 예정입니다. 😊`);
+        }
+    },
+
+    // 구(區) 지도 표시
+    showGuMap(cityId) {
+        console.log(`🗺️ ${cityId} 구 지도 표시`);
+
+        const screen = document.getElementById('main-menu');
+        if (!screen) return;
+
+        // 기존 지도 제거
+        if (this.regionMap) {
+            this.regionMap.remove();
+            this.regionMap = null;
+        }
+
+        // 타이틀 업데이트
+        const titleDiv = screen.querySelector('.title');
+        if (titleDiv) {
+            titleDiv.innerHTML = `
+                <button onclick="Game.showMainMenu()" style="
+                    position: absolute;
+                    left: 20px;
+                    top: 15px;
+                    background: rgba(255,255,255,0.9);
+                    border: none;
+                    padding: 8px 16px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                ">← 뒤로</button>
+                <h1>서울특별시 > 구 선택</h1>
+            `;
+        }
+
+        // 지도 컨테이너 업데이트
+        const mapContainer = screen.querySelector('.map-selection-container');
+        if (mapContainer) {
+            mapContainer.querySelector('h3').textContent = '서울 25개 구';
+            mapContainer.querySelector('p').textContent = '구를 선택하세요';
+        }
+
+        // 구 지도 초기화
+        setTimeout(() => {
+            this.initGuMap(cityId);
+        }, 300);
+    },
+
+    // 구 지도 초기화
+    initGuMap(cityId) {
+        console.log(`🗺️ ${cityId} 구 지도 초기화 시작...`);
+
+        const mapContainer = document.getElementById('region-map');
+        if (!mapContainer) {
+            console.error('❌ 지도 컨테이너를 찾을 수 없습니다');
+            return;
+        }
+
+        // 서울 중심 좌표
+        const seoulCenter = [37.5665, 126.9780];
+
+        try {
+            this.regionMap = L.map('region-map', {
+                center: seoulCenter,
+                zoom: 11,
+                zoomControl: true,
+                scrollWheelZoom: true,
+                dragging: true,
+                doubleClickZoom: true,
+                touchZoom: true,
+                boxZoom: true,
+                keyboard: true,
+                attributionControl: true,
+                tap: true,
+                tapTolerance: 15
+            });
+
+            const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap',
+                maxZoom: 14,
+                minZoom: 10
+            });
+
+            tileLayer.addTo(this.regionMap);
+            console.log('✅ 타일 레이어 추가 완료');
+
+            // 서울 구 데이터 로드
+            if (typeof SeoulGuData !== 'undefined') {
+                const gus = SeoulGuData.getGusByCity(cityId);
+                const completedGus = this.userData.completedGus || [];
+
+                gus.forEach(gu => {
+                    // 중구는 항상 해제, 나머지는 조건 확인
+                    const isUnlocked = gu.id === 'seoul_junggu' ||
+                        (gu.unlockCondition === 'NONE') ||
+                        (gu.unlockCondition.startsWith('COMPLETE_') &&
+                            completedGus.includes(gu.unlockCondition.replace('COMPLETE_', '')));
+
+                    const marker = L.circle(gu.center, {
+                        color: isUnlocked ? gu.color : '#999',
+                        fillColor: isUnlocked ? gu.color : '#ccc',
+                        fillOpacity: isUnlocked ? 0.6 : 0.4,
+                        radius: 3000,
+                        weight: 5,
+                        interactive: true,
+                        bubblingMouseEvents: false
+                    }).addTo(this.regionMap);
+
+                    const popupContent = isUnlocked ? `
+                        <div style="text-align: center; padding: 10px; min-width: 150px;">
+                            <strong style="font-size: 18px;">${gu.icon} ${gu.name}</strong><br>
+                            <p style="margin: 5px 0; font-size: 12px;">${gu.description}</p>
+                            <p style="margin: 5px 0;">${gu.dongCount}개 동</p>
+                            <button onclick="Game.selectGu('${gu.id}')" style="
+                                background: linear-gradient(135deg, ${gu.color}, ${this.darkenColor(gu.color)});
+                                color: white;
+                                border: none;
+                                padding: 10px 24px;
+                                border-radius: 20px;
+                                cursor: pointer;
+                                font-weight: bold;
+                                margin-top: 5px;
+                                font-size: 14px;
+                            ">선택하기</button>
+                        </div>
+                    ` : `
+                        <div style="text-align: center; padding: 10px; min-width: 150px;">
+                            <strong style="font-size: 18px; color: #999;">${gu.icon} ${gu.name}</strong><br>
+                            <p style="margin: 5px 0; color: #999; font-size: 12px;">🔒 잠금</p>
+                            <p style="margin: 5px 0; color: #999; font-size: 11px;">이전 구를 완료하세요</p>
+                        </div>
+                    `;
+
+                    marker.bindPopup(popupContent, {
+                        closeButton: true,
+                        autoClose: false,
+                        closeOnClick: false
+                    });
+
+                    marker.on('click', function (e) {
+                        L.DomEvent.stopPropagation(e);
+                        console.log(`🖱️ ${gu.name} 클릭됨`);
+                        this.openPopup();
+                    });
+
+                    marker.on('mouseover', function (e) {
+                        this.setStyle({
+                            fillOpacity: isUnlocked ? 0.8 : 0.6
+                        });
+                    });
+
+                    marker.on('mouseout', function (e) {
+                        this.setStyle({
+                            fillOpacity: isUnlocked ? 0.6 : 0.4
+                        });
+                    });
+                });
+
+                console.log(`✅ ${gus.length}개 구 마커 추가 완료`);
+            } else {
+                console.error('❌ SeoulGuData가 로드되지 않음');
+            }
+
+            // 지도 크기 재조정
+            setTimeout(() => {
+                if (this.regionMap) {
+                    this.regionMap.invalidateSize();
+                }
+            }, 100);
+
+        } catch (error) {
+            console.error('❌ 구 지도 초기화 오류:', error);
+        }
+    },
+
+    // 구 선택
+    selectGu(guId) {
+        console.log(`📍 구 선택: ${guId}`);
+
+        const gu = typeof SeoulGuData !== 'undefined' ? SeoulGuData.getGu(guId) : null;
+        if (!gu) {
+            console.error('구 데이터를 찾을 수 없습니다:', guId);
+            return;
+        }
+
+        this.currentGu = guId;
+
+        // 강남구만 동 지도 구현됨
+        if (guId === 'seoul_gangnam') {
+            this.showDongMap(guId);
+        } else {
+            // 나머지 구는 아직 미구현
+            alert(`${gu.name}은 준비 중입니다!\n강남구만 플레이 가능합니다. 😊`);
+        }
+    },
+
+    // 동(洞) 지도 표시
+    showDongMap(guId) {
+        console.log(`🗺️ ${guId} 동 지도 표시`);
+
+        const gu = typeof SeoulGuData !== 'undefined' ? SeoulGuData.getGu(guId) : null;
+        const screen = document.getElementById('main-menu');
+        if (!screen || !gu) return;
+
+        // 기존 지도 제거
+        if (this.regionMap) {
+            this.regionMap.remove();
+            this.regionMap = null;
+        }
+
+        // 타이틀 업데이트
+        const titleDiv = screen.querySelector('.title');
+        if (titleDiv) {
+            titleDiv.innerHTML = `
+                <button onclick="Game.showGuMap('seoul')" style="
+                    position: absolute;
+                    left: 20px;
+                    top: 15px;
+                    background: rgba(255,255,255,0.9);
+                    border: none;
+                    padding: 8px 16px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                ">← 뒤로</button>
+                <h1>서울 > ${gu.name} > 동 선택</h1>
+            `;
+        }
+
+        // 지도 컨테이너 업데이트
+        const mapContainer = screen.querySelector('.map-selection-container');
+        if (mapContainer) {
+            mapContainer.querySelector('h3').textContent = `${gu.name} ${gu.dongCount}개 동`;
+            mapContainer.querySelector('p').textContent = '동을 선택하세요';
+        }
+
+        // 동 지도 초기화
+        setTimeout(() => {
+            this.initDongMap(guId);
+        }, 300);
+    },
+
+    // 동 지도 초기화
+    initDongMap(guId) {
+        console.log(`🗺️ ${guId} 동 지도 초기화 시작...`);
+
+        const mapContainer = document.getElementById('region-map');
+        if (!mapContainer) {
+            console.error('❌ 지도 컨테이너를 찾을 수 없습니다');
+            return;
+        }
+
+        const gu = typeof SeoulGuData !== 'undefined' ? SeoulGuData.getGu(guId) : null;
+        if (!gu) return;
+
+        try {
+            this.regionMap = L.map('region-map', {
+                center: gu.center,
+                zoom: 13,
+                zoomControl: true,
+                scrollWheelZoom: true,
+                dragging: true,
+                doubleClickZoom: true,
+                touchZoom: true,
+                boxZoom: true,
+                keyboard: true,
+                attributionControl: true,
+                tap: true,
+                tapTolerance: 15
+            });
+
+            const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap',
+                maxZoom: 16,
+                minZoom: 12
+            });
+
+            tileLayer.addTo(this.regionMap);
+            console.log('✅ 타일 레이어 추가 완료');
+
+            // 동 데이터 로드
+            if (typeof GangnamDongData !== 'undefined') {
+                const dongs = GangnamDongData.getDongsByGu(guId);
+                const completedDongs = this.userData.completedDongs || [];
+
+                dongs.forEach(dong => {
+                    // 역삼1동은 항상 해제
+                    const isUnlocked = dong.id === 'seoul_gangnam_yeoksam1' ||
+                        (dong.unlockCondition === 'NONE') ||
+                        (dong.unlockCondition.startsWith('COMPLETE_') &&
+                            completedDongs.includes(dong.unlockCondition.replace('COMPLETE_', '')));
+
+                    const marker = L.circle(dong.center, {
+                        color: isUnlocked ? dong.color : '#999',
+                        fillColor: isUnlocked ? dong.color : '#ccc',
+                        fillOpacity: isUnlocked ? 0.6 : 0.4,
+                        radius: 500,
+                        weight: 5,
+                        interactive: true,
+                        bubblingMouseEvents: false
+                    }).addTo(this.regionMap);
+
+                    const popupContent = isUnlocked ? `
+                        <div style="text-align: center; padding: 10px; min-width: 150px;">
+                            <strong style="font-size: 16px;">${dong.icon} ${dong.name}</strong><br>
+                            <p style="margin: 5px 0; font-size: 11px;">${dong.description}</p>
+                            <p style="margin: 5px 0; font-size: 12px;">${dong.levelCount}개 레벨</p>
+                            <button onclick="Game.selectDong('${dong.id}')" style="
+                                background: linear-gradient(135deg, ${dong.color}, ${this.darkenColor(dong.color)});
+                                color: white;
+                                border: none;
+                                padding: 8px 20px;
+                                border-radius: 20px;
+                                cursor: pointer;
+                                font-weight: bold;
+                                margin-top: 5px;
+                                font-size: 13px;
+                            ">선택하기</button>
+                        </div>
+                    ` : `
+                        <div style="text-align: center; padding: 10px; min-width: 150px;">
+                            <strong style="font-size: 16px; color: #999;">${dong.icon} ${dong.name}</strong><br>
+                            <p style="margin: 5px 0; color: #999; font-size: 11px;">🔒 잠금</p>
+                            <p style="margin: 5px 0; color: #999; font-size: 10px;">이전 동을 완료하세요</p>
+                        </div>
+                    `;
+
+                    marker.bindPopup(popupContent, {
+                        closeButton: true,
+                        autoClose: false,
+                        closeOnClick: false
+                    });
+
+                    marker.on('click', function (e) {
+                        L.DomEvent.stopPropagation(e);
+                        console.log(`🖱️ ${dong.name} 클릭됨`);
+                        this.openPopup();
+                    });
+
+                    marker.on('mouseover', function (e) {
+                        this.setStyle({
+                            fillOpacity: isUnlocked ? 0.8 : 0.6
+                        });
+                    });
+
+                    marker.on('mouseout', function (e) {
+                        this.setStyle({
+                            fillOpacity: isUnlocked ? 0.6 : 0.4
+                        });
+                    });
+                });
+
+                console.log(`✅ ${dongs.length}개 동 마커 추가 완료`);
+            } else {
+                console.error('❌ GangnamDongData가 로드되지 않음');
+            }
+
+            // 지도 크기 재조정
+            setTimeout(() => {
+                if (this.regionMap) {
+                    this.regionMap.invalidateSize();
+                }
+            }, 100);
+
+        } catch (error) {
+            console.error('❌ 동 지도 초기화 오류:', error);
+        }
+    },
+
+    // 동 선택
+    selectDong(dongId) {
+        console.log(`📍 동 선택: ${dongId}`);
+
+        const dong = typeof GangnamDongData !== 'undefined' ? GangnamDongData.getDong(dongId) : null;
+        if (!dong) {
+            console.error('동 데이터를 찾을 수 없습니다:', dongId);
+            return;
+        }
+
+        this.currentDong = dongId;
+
+        // 캐릭터 선택 또는 레벨 지도로 이동
+        if (this.userData.selectedCharacter) {
+            this.showMap();
+        } else {
+            this.showCharacterSelect();
         }
     },
 
@@ -468,7 +849,12 @@ const Game = {
                 scrollWheelZoom: true, // 마우스 휠 줌 활성화
                 dragging: true, // 드래그 활성화
                 doubleClickZoom: true, // 더블클릭 줌 활성화
-                attributionControl: true
+                touchZoom: true, // 터치 줌 활성화
+                boxZoom: true, // 박스 줌 활성화
+                keyboard: true, // 키보드 네비게이션
+                attributionControl: true,
+                tap: true, // 모바일 탭 이벤트
+                tapTolerance: 15 // 탭 허용 오차
             });
 
             console.log('✅ Leaflet 지도 객체 생성 완료');
@@ -501,6 +887,13 @@ const Game = {
             // 지도 준비 완료 이벤트
             this.regionMap.whenReady(() => {
                 console.log('✅ 지도 준비 완료');
+
+                // 드래그 핸들러 강제 활성화
+                if (this.regionMap.dragging) {
+                    this.regionMap.dragging.enable();
+                    console.log('✅ 드래그 핸들러 활성화');
+                }
+
                 // 여러 번 크기 재조정 시도
                 this.regionMap.invalidateSize();
                 setTimeout(() => {
@@ -533,7 +926,9 @@ const Game = {
                         fillColor: isUnlocked ? region.color : '#ccc',
                         fillOpacity: isUnlocked ? 0.6 : 0.4,
                         radius: radius,
-                        weight: 3
+                        weight: 5,
+                        interactive: true,
+                        bubblingMouseEvents: false
                     }).addTo(this.regionMap);
 
                     const popupContent = isUnlocked ? `
@@ -570,6 +965,7 @@ const Game = {
 
                     // 클릭 이벤트 - 즉시 팝업 열기
                     marker.on('click', function (e) {
+                        L.DomEvent.stopPropagation(e);
                         console.log(`🖱️ ${region.shortName} 클릭됨`);
                         this.openPopup();
                     });
