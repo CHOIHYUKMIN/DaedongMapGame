@@ -162,6 +162,22 @@ body {
     overflow: hidden;
     background: #e0e0e0;
     position: relative;
+    z-index: 1;
+}
+
+/* Leaflet 컨테이너 명시적 스타일 */
+#region-map .leaflet-container {
+    width: 100% !important;
+    height: 100% !important;
+    background: #e0e0e0;
+}
+
+#region-map .leaflet-tile-pane {
+    z-index: 2;
+}
+
+#region-map .leaflet-overlay-pane {
+    z-index: 3;
 }
 
 .map-selection-container p {

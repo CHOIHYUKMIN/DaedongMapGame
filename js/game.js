@@ -39,7 +39,7 @@ const Game = {
 
     showMainMenu() {
         this.showScreen('main-menu');
-        // 메인 메뉴가 표시된 후 지도 초기화
+        // 메인 메뉴가 표시된 후 지도 초기화 (충분한 지연 시간 확보)
         setTimeout(() => {
             if (!this.regionMap) {
                 this.initRegionMap();
@@ -47,13 +47,23 @@ const Game = {
                 setTimeout(() => {
                     if (this.regionMap) {
                         this.regionMap.invalidateSize();
+                        console.log('🔄 지도 크기 재조정 (300ms)');
                     }
                 }, 300);
+                setTimeout(() => {
+                    if (this.regionMap) {
+                        this.regionMap.invalidateSize();
+                        // 강제로 지도 다시 그리기
+                        this.regionMap.setView([37.5, 127.0], 8);
+                        console.log('🔄 지도 강제 새로고침 (1000ms)');
+                    }
+                }, 1000);
             } else {
                 // 지도가 이미 있으면 크기 재조정
                 this.regionMap.invalidateSize();
+                this.regionMap.setView([37.5, 127.0], 8);
             }
-        }, 200);
+        }, 300);
     },
 
     showCharacterSelect() {

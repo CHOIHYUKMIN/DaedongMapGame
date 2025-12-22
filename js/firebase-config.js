@@ -70,13 +70,13 @@ function updateLoginUI(isLoggedIn, user = null) {
     if (isLoggedIn && user) {
         loginBtn.style.display = 'none';
         if (userInfo) {
-            userInfo.style.display = 'block';
+            userInfo.style.display = 'flex';
             userInfo.innerHTML = `
-        <img src="${user.photoURL || '/images/default-avatar.png'}" 
-             style="width: 32px; height: 32px; border-radius: 50%;">
-        <span>${user.displayName || user.email}</span>
-        <button onclick="FirebaseAuth.logout()">로그아웃</button>
-      `;
+                <img src="${user.photoURL || '/images/default-avatar.png'}" 
+                     style="width: 36px; height: 36px; border-radius: 50%; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.2);"
+                     onclick="if(confirm('로그아웃 하시겠습니까?')) FirebaseAuth.logout();"
+                     title="${user.displayName || user.email}">
+            `;
         }
     } else {
         loginBtn.style.display = 'block';
