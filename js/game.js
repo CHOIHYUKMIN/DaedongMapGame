@@ -457,17 +457,17 @@ const Game = {
         // 컨테이너 크기 확인
         console.log('지도 컨테이너 크기:', mapContainer.offsetWidth, 'x', mapContainer.offsetHeight);
 
-        const koreaCenter = [37.5, 127.0];
+        const koreaCenter = [36.5, 127.8]; // 한국 중심
 
         try {
-            // 지도 생성
+            // 지도 생성 - 인터랙션 활성화
             this.regionMap = L.map('region-map', {
                 center: koreaCenter,
-                zoom: 8,
-                zoomControl: false,
-                scrollWheelZoom: false,
-                dragging: true,
-                doubleClickZoom: false,
+                zoom: 7,
+                zoomControl: true, // 줌 컨트롤 표시
+                scrollWheelZoom: true, // 마우스 휠 줌 활성화
+                dragging: true, // 드래그 활성화
+                doubleClickZoom: true, // 더블클릭 줌 활성화
                 attributionControl: true
             });
 
@@ -476,8 +476,8 @@ const Game = {
             // 타일 레이어 추가
             const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap',
-                maxZoom: 11,
-                minZoom: 7
+                maxZoom: 13,
+                minZoom: 6
             });
 
             tileLayer.addTo(this.regionMap);
@@ -517,53 +517,113 @@ const Game = {
                 }, 500);
             });
 
-            // 서울 마커
-            const seoulMarker = L.circle([37.5665, 126.9780], {
-                color: '#FF6B9D',
-                fillColor: '#FF6B9D',
-                fillOpacity: 0.5,
-                radius: 15000
-            }).addTo(this.regionMap);
+            // RegionData에서 모든 지역 가져오기
+            if (typeof RegionData !== 'undefined') {
+                const regions = RegionData.getAllRegions();
 
-            seoulMarker.bindPopup(`
-                <div style="text-align: center; padding: 10px;">
-                    <strong style="font-size: 18px;">서울</strong><br>
-                    <p style="margin: 5px 0;">10개 동네</p>
-                    <button onclick="Game.selectRegion('seoul')" style="
-                        background: linear-gradient(135deg, #FF6B9D, #C44569);
-                        color: white;
-                        border: none;
-                        padding: 8px 20px;
-                        border-radius: 20px;
-                        cursor: pointer;
-                        font-weight: bold;
-                    ">시작하기</button>
-                </div>
-            `);
+                regions.forEach(region => {
+                    // 서울과 부산만 활성화, 나머지는 잠금
+                    const isUnlocked = region.id === 'seoul' || region.id === 'busan';
 
-            seoulMarker.on('click', () => {
-                seoulMarker.openPopup();
-            });
+                    const marker = L.circle(region.center, {
+                        color: isUnlocked ? region.color : '#999',
+                        fillColor: isUnlocked ? region.color : '#ccc',
+                        fillOpacity: isUnlocked ? 0.5 : 0.3,
+                        radius: region.id === 'seoul' || region.id === 'busan' ? 15000 : 20000
+                    }).addTo(this.regionMap);
 
-            // 경기도 영역 (잠금)
-            const gyeonggiArea = L.circle([37.4, 127.3], {
-                color: '#999',
-                fillColor: '#ccc',
-                fillOpacity: 0.3,
-                radius: 30000
-            }).addTo(this.regionMap);
+                    const popupContent = isUnlocked ? `
+                        <div style="text-align: center; padding: 10px;">
+                            <strong style="font-size: 18px;">${region.icon} ${region.shortName}</strong><br>
+                            <p style="margin: 5px 0; font-size: 12px;">${region.description}</p>
+                            <p style="margin: 5px 0;">${region.levels}개 레벨</p>
+                            <button onclick="Game.selectRegion('${region.id}')" style="
+                                background: linear-gradient(135deg, ${region.color}, ${this.darkenColor(region.color)});
+                                color: white;
+                                border: none;
+                                padding: 8px 20px;
+                                border-radius: 20px;
+                                cursor: pointer;
+                                font-weight: bold;
+                                margin-top: 5px;
+                            ">시작하기</button>
+                        </div>
+                    ` : `
+                        <div style="text-align: center; padding: 10px;">
+                            <strong style="font-size: 18px; color: #999;">${region.icon} ${region.shortName}</strong><br>
+                            <p style="margin: 5px 0; color: #999; font-size: 12px;">🔒 준비 중</p>
+                        </div>
+                    `;
 
-            gyeonggiArea.bindPopup(`
-                <div style="text-align: center; padding: 10px;">
-                    <strong style="font-size: 18px; color: #999;">경기도</strong><br>
-                    <p style="margin: 5px 0; color: #999;">🔒 준비 중</p>
-                </div>
-            `);
+                    marker.bindPopup(popupContent);
+
+                    marker.on('click', () => {
+                        marker.openPopup();
+                    });
+                });
+
+                console.log(`✅ ${regions.length}개 지역 마커 추가 완료`);
+            } else {
+                console.warn('⚠️ RegionData가 로드되지 않음 - 기본 마커만 표시');
+
+                // RegionData가 없을 경우 기본 마커
+                const seoulMarker = L.circle([37.5665, 126.9780], {
+                    color: '#FF6B9D',
+                    fillColor: '#FF6B9D',
+                    fillOpacity: 0.5,
+                    radius: 15000
+                }).addTo(this.regionMap);
+
+                seoulMarker.bindPopup(`
+                    <div style="text-align: center; padding: 10px;">
+                        <strong style="font-size: 18px;">서울</strong><br>
+                        <p style="margin: 5px 0;">10개 동네</p>
+                        <button onclick="Game.selectRegion('seoul')" style="
+                            background: linear-gradient(135deg, #FF6B9D, #C44569);
+                            color: white;
+                            border: none;
+                            padding: 8px 20px;
+                            border-radius: 20px;
+                            cursor: pointer;
+                            font-weight: bold;
+                        ">시작하기</button>
+                    </div>
+                `);
+
+                seoulMarker.on('click', () => {
+                    seoulMarker.openPopup();
+                });
+            }
 
             console.log('✅ 지역 선택 지도 초기화 완료');
         } catch (error) {
             console.error('❌ 지도 초기화 오류:', error);
         }
+    },
+
+    // 색상을 어둡게 만드는 헬퍼 함수
+    darkenColor(color) {
+        // 간단한 색상 어둡게 하기
+        const colorMap = {
+            '#FF6B9D': '#C44569', // 서울
+            '#4682B4': '#2F5F8F', // 부산
+            '#FF6347': '#CC4F39', // 대구
+            '#20B2AA': '#188F88', // 인천
+            '#9370DB': '#7556B3', // 광주
+            '#FFD700': '#CCB000', // 대전
+            '#FF8C00': '#CC7000', // 울산
+            '#32CD32': '#28A428', // 세종
+            '#8A2BE2': '#6F22B8', // 경기
+            '#D2691E': '#A85318', // 강원
+            '#6A5ACD': '#5447A4', // 충북
+            '#BA55D3': '#9444A8', // 충남
+            '#CD5C5C': '#A44A4A', // 전북
+            '#8B0000': '#6F0000', // 전남
+            '#2F4F4F': '#243F3F', // 경북
+            '#5F9EA0': '#4C7E80', // 경남
+            '#B0C4DE': '#8C9CB4'  // 제주
+        };
+        return colorMap[color] || color;
     },
 
     // 지도 렌더링 (Leaflet.js 사용)
