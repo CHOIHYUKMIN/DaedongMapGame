@@ -1050,20 +1050,45 @@ const Game = {
         return colorMap[color] || color;
     },
 
-    // 지도 렌더링 (Leaflet.js 사용)
+    // 지도 렌더링 (Leaflet.js 사용) - 동별 레벨 시스템 지원
     renderMap() {
         // 기존 지도 제거
         if (this.map) {
             this.map.remove();
         }
 
-        // 서울 중심 좌표
-        const seoulCenter = [37.5665, 126.9780];
+        // 현재 동 데이터 가져오기
+        let center, zoom, levels;
+
+        if (this.currentDong) {
+            // 동이 선택된 경우 - 동 데이터 사용
+            const dong = typeof GangnamDongData !== 'undefined' ?
+                GangnamDongData.getDong(this.currentDong) : null;
+
+            if (dong) {
+                center = dong.center;
+                zoom = dong.zoom || 15;
+                // 동별 레벨 생성 (levelCount 기반)
+                levels = this.generateDongLevels(dong);
+                console.log(`📍 ${dong.name} 레벨 생성:`, levels.length, '개');
+            } else {
+                // 폴백: 기본 서울 중심
+                console.warn('⚠️ 동 데이터를 찾을 수 없음, 기본 레벨 사용');
+                center = [37.5665, 126.9780];
+                zoom = 13;
+                levels = this.getDefaultLevels();
+            }
+        } else {
+            // 동이 선택되지 않은 경우 - 기존 로직 (부산 등)
+            center = [37.5665, 126.9780];
+            zoom = 13;
+            levels = this.getDefaultLevels();
+        }
 
         // Leaflet 지도 생성
         this.map = L.map('seoul-map', {
-            center: seoulCenter,
-            zoom: 13,
+            center: center,
+            zoom: zoom,
             zoomControl: true,
             scrollWheelZoom: true
         });
@@ -1074,7 +1099,36 @@ const Game = {
             maxZoom: 18
         }).addTo(this.map);
 
-        // 레벨 실제 좌표
+        // 레벨 마커 추가
+        this.renderLevelMarkers(levels);
+    },
+
+    // 동별 레벨 생성 헬퍼 함수
+    generateDongLevels(dong) {
+        const levels = [];
+        const baseLatLng = dong.center;
+
+        for (let i = 0; i < dong.levelCount; i++) {
+            // 동 중심 주변에 레벨 배치 (원형 배치)
+            const angle = (i / dong.levelCount) * 2 * Math.PI;
+            const radius = 0.004; // 약 400m
+
+            levels.push({
+                id: `${dong.id}_level_${i + 1}`,
+                name: `${dong.name} ${i + 1}`,
+                lat: baseLatLng[0] + Math.cos(angle) * radius,
+                lng: baseLatLng[1] + Math.sin(angle) * radius,
+                target: 1000 + (i * 200),
+                reward: `IT_${dong.id}_${i + 1}`,
+                dongId: dong.id
+            });
+        }
+
+        return levels;
+    },
+
+    // 기본 레벨 가져오기 (부산 등)
+    getDefaultLevels() {
         const levelLocations = [
             { lat: 37.5665, lng: 126.9780 },  // 1. 시청
             { lat: 37.5640, lng: 126.9810 },  // 2. 소공동
@@ -1088,35 +1142,34 @@ const Game = {
             { lat: 37.5512, lng: 126.9882 }   // 10. 남산
         ];
 
-        // 경로 선 그리기 (레벨 순서대로)
-        const pathCoordinates = levelLocations.map(loc => [loc.lat, loc.lng]);
-        L.polyline(pathCoordinates, {
-            color: '#FF6B9D',
-            weight: 4,
-            opacity: 0.6,
-            smoothFactor: 1,
-            dashArray: '10, 10'
-        }).addTo(this.map);
+        return GameData.levels.slice(this.regionLevelOffset, this.regionLevelOffset + 10).map((level, index) => ({
+            ...level,
+            lat: levelLocations[index].lat,
+            lng: levelLocations[index].lng
+        }));
+    },
 
-        GameData.levels.forEach((level, index) => {
-            const loc = levelLocations[index];
-            if (!loc) return;
-
+    // 레벨 마커 렌더링 헬퍼 함수
+    renderLevelMarkers(levels) {
+        levels.forEach((level, index) => {
             const isCleared = this.userData.clearedLevels.includes(level.id);
-            const isLocked = level.id > 1 && !this.userData.clearedLevels.includes(level.id - 1);
+            const isLocked = index > 0 && !this.userData.clearedLevels.includes(levels[index - 1].id);
 
-            const iconHtml = `<div style="background: ${isCleared ? 'linear-gradient(135deg, #FFD700, #FFA500)' : isLocked ? '#ccc' : 'linear-gradient(135deg, #FF6B9D, #C44569)'};border: 3px solid ${isCleared ? '#FFA500' : isLocked ? '#999' : '#C44569'};border-radius: 50%;width: 40px;height: 40px;display: flex;align-items: center;justify-content: center;color: white;font-weight: bold;font-size: 16px;box-shadow: 0 2px 8px rgba(0,0,0,0.3);cursor: ${isLocked ? 'not-allowed' : 'pointer'};opacity: ${isLocked ? '0.5' : '1'};">${level.id}</div>`;
-
-            const marker = L.marker([loc.lat, loc.lng], {
+            const marker = L.marker([level.lat, level.lng], {
                 icon: L.divIcon({
-                    html: iconHtml,
+                    html: `<div class="level-node ${isCleared ? 'cleared' : ''} ${isLocked ? 'locked' : ''}">
+                        <div class="level-number">${index + 1}</div>
+                    </div>`,
                     className: 'custom-marker',
                     iconSize: [40, 40],
                     iconAnchor: [20, 20]
                 })
             }).addTo(this.map);
 
-            marker.bindPopup(`<div style="text-align: center; padding: 5px;"><strong>${level.name}</strong><br>${isCleared ? '✅ 클리어!' : isLocked ? '🔒 잠김' : '목표: ' + level.target + '점'}</div>`);
+            marker.bindPopup(`<div style="text-align: center; padding: 5px;">
+                <strong>${level.name}</strong><br>
+                ${isCleared ? '✅ 클리어!' : isLocked ? '🔒 잠김' : '목표: ' + level.target + '점'}
+            </div>`);
 
             if (!isLocked) {
                 marker.on('click', () => this.showPuzzle(level.id));
@@ -1208,6 +1261,13 @@ const Game = {
             console.log('저장된 게임 로드 완료');
         } else {
             console.log('새 게임 시작');
+        }
+    },
+
+    exitPuzzle() {
+        if (confirm('퍼즐을 종료하고 지도로 돌아가시겠습니까?')) {
+            document.getElementById('result-popup').classList.remove('active');
+            this.showMap();
         }
     },
 
