@@ -166,10 +166,13 @@ const FirestoreSync = {
                 const data = doc.data();
                 console.log('Firestore 데이터 로드:', data);
 
-                // Game.userData에 병합
-                if (data.gameData) {
+                // Game.userData에 병합 (Game 객체가 로드된 경우에만)
+                if (data.gameData && typeof Game !== 'undefined') {
                     Object.assign(Game.userData, data.gameData);
                     Game.saveUserData(); // localStorage에도 저장
+                } else if (data.gameData) {
+                    console.log('⏳ Game 객체 대기 중... localStorage에 임시 저장');
+                    localStorage.setItem('daedongMapGame', JSON.stringify(data.gameData));
                 }
 
                 // Restaurant Collection 복원
@@ -177,6 +180,9 @@ const FirestoreSync = {
                     RestaurantCollection.collection = data.restaurantCollection;
                     RestaurantCollection.saveCollection(); // localStorage에도 저장
                     console.log('맛집 도감 데이터 복원 완료');
+                } else if (data.restaurantCollection) {
+                    console.log('⏳ RestaurantCollection 대기 중... localStorage에 임시 저장');
+                    localStorage.setItem('restaurantCollection', JSON.stringify(data.restaurantCollection));
                 }
 
                 return data;
@@ -233,13 +239,15 @@ const FirestoreSync = {
                 const data = doc.data();
                 console.log('실시간 데이터 업데이트:', data);
 
-                // 다른 기기에서 변경된 데이터 반영
-                if (data.gameData) {
+                // 다른 기기에서 변경된 데이터 반영 (Game 객체가 로드된 경우에만)
+                if (data.gameData && typeof Game !== 'undefined') {
                     Object.assign(Game.userData, data.gameData);
                     // UI 업데이트
                     if (typeof Game.updateUI === 'function') {
                         Game.updateUI();
                     }
+                } else if (data.gameData) {
+                    console.log('⏳ Game 객체 대기 중... 실시간 업데이트 보류');
                 }
             }
         }, (error) => {

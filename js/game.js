@@ -696,7 +696,7 @@ const Game = {
         }
 
         this.saveUserData();
-    }
+    },
 
     retryLevel() {
         document.getElementById('result-popup').classList.remove('active');
