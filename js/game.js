@@ -429,14 +429,28 @@ const Game = {
     },
 
     initRegionMap() {
+        console.log('🗺️ 지역 선택 지도 초기화 시작...');
+
         // 지역 선택 지도 생성
         if (this.regionMap) {
+            console.log('기존 지도 제거');
             this.regionMap.remove();
+            this.regionMap = null;
         }
+
+        const mapContainer = document.getElementById('region-map');
+        if (!mapContainer) {
+            console.error('❌ 지도 컨테이너를 찾을 수 없습니다');
+            return;
+        }
+
+        // 컨테이너 크기 확인
+        console.log('지도 컨테이너 크기:', mapContainer.offsetWidth, 'x', mapContainer.offsetHeight);
 
         const koreaCenter = [37.5, 127.0];
 
         try {
+            // 지도 생성
             this.regionMap = L.map('region-map', {
                 center: koreaCenter,
                 zoom: 8,
@@ -447,31 +461,50 @@ const Game = {
                 attributionControl: true
             });
 
+            console.log('✅ Leaflet 지도 객체 생성 완료');
+
+            // 타일 레이어 추가
             const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap',
                 maxZoom: 11,
                 minZoom: 7
             });
 
+            tileLayer.addTo(this.regionMap);
+            console.log('✅ 타일 레이어 추가 완료');
+
+            // 타일 로드 이벤트
             tileLayer.on('load', () => {
-                console.log('지도 타일 로드 완료');
-                if (this.regionMap) {
-                    this.regionMap.invalidateSize();
-                }
+                console.log('✅ 지도 타일 로드 완료');
+                setTimeout(() => {
+                    if (this.regionMap) {
+                        this.regionMap.invalidateSize();
+                        console.log('🔄 지도 크기 재조정 (타일 로드 후)');
+                    }
+                }, 100);
             });
 
             tileLayer.on('tileerror', (error) => {
-                console.error('타일 로드 오류:', error);
+                console.error('❌ 타일 로드 오류:', error);
             });
 
-            tileLayer.addTo(this.regionMap);
-
-            // 지도가 완전히 로드된 후 크기 재조정
+            // 지도 준비 완료 이벤트
             this.regionMap.whenReady(() => {
-                console.log('지도 준비 완료');
+                console.log('✅ 지도 준비 완료');
+                // 여러 번 크기 재조정 시도
+                this.regionMap.invalidateSize();
                 setTimeout(() => {
-                    this.regionMap.invalidateSize();
+                    if (this.regionMap) {
+                        this.regionMap.invalidateSize();
+                        console.log('🔄 지도 크기 재조정 (준비 완료 후)');
+                    }
                 }, 100);
+                setTimeout(() => {
+                    if (this.regionMap) {
+                        this.regionMap.invalidateSize();
+                        console.log('🔄 지도 크기 재조정 (최종)');
+                    }
+                }, 500);
             });
 
             // 서울 마커
@@ -517,9 +550,9 @@ const Game = {
                 </div>
             `);
 
-            console.log('지역 선택 지도 초기화 완료');
+            console.log('✅ 지역 선택 지도 초기화 완료');
         } catch (error) {
-            console.error('지도 초기화 오류:', error);
+            console.error('❌ 지도 초기화 오류:', error);
         }
     },
 
