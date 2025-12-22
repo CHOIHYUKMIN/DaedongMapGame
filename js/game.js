@@ -525,15 +525,19 @@ const Game = {
                     // 서울과 부산만 활성화, 나머지는 잠금
                     const isUnlocked = region.id === 'seoul' || region.id === 'busan';
 
+                    // 더 큰 반경으로 클릭하기 쉽게
+                    const radius = region.id === 'seoul' || region.id === 'busan' ? 20000 : 25000;
+
                     const marker = L.circle(region.center, {
                         color: isUnlocked ? region.color : '#999',
                         fillColor: isUnlocked ? region.color : '#ccc',
-                        fillOpacity: isUnlocked ? 0.5 : 0.3,
-                        radius: region.id === 'seoul' || region.id === 'busan' ? 15000 : 20000
+                        fillOpacity: isUnlocked ? 0.6 : 0.4,
+                        radius: radius,
+                        weight: 3
                     }).addTo(this.regionMap);
 
                     const popupContent = isUnlocked ? `
-                        <div style="text-align: center; padding: 10px;">
+                        <div style="text-align: center; padding: 10px; min-width: 150px;">
                             <strong style="font-size: 18px;">${region.icon} ${region.shortName}</strong><br>
                             <p style="margin: 5px 0; font-size: 12px;">${region.description}</p>
                             <p style="margin: 5px 0;">${region.levels}개 레벨</p>
@@ -541,24 +545,46 @@ const Game = {
                                 background: linear-gradient(135deg, ${region.color}, ${this.darkenColor(region.color)});
                                 color: white;
                                 border: none;
-                                padding: 8px 20px;
+                                padding: 10px 24px;
                                 border-radius: 20px;
                                 cursor: pointer;
                                 font-weight: bold;
                                 margin-top: 5px;
+                                font-size: 14px;
                             ">시작하기</button>
                         </div>
                     ` : `
-                        <div style="text-align: center; padding: 10px;">
+                        <div style="text-align: center; padding: 10px; min-width: 150px;">
                             <strong style="font-size: 18px; color: #999;">${region.icon} ${region.shortName}</strong><br>
                             <p style="margin: 5px 0; color: #999; font-size: 12px;">🔒 준비 중</p>
+                            <p style="margin: 5px 0; color: #999; font-size: 11px;">곧 업데이트 예정입니다</p>
                         </div>
                     `;
 
-                    marker.bindPopup(popupContent);
+                    // 팝업 바인딩
+                    marker.bindPopup(popupContent, {
+                        closeButton: true,
+                        autoClose: false,
+                        closeOnClick: false
+                    });
 
-                    marker.on('click', () => {
-                        marker.openPopup();
+                    // 클릭 이벤트 - 즉시 팝업 열기
+                    marker.on('click', function (e) {
+                        console.log(`🖱️ ${region.shortName} 클릭됨`);
+                        this.openPopup();
+                    });
+
+                    // 마우스 오버 시 커서 변경
+                    marker.on('mouseover', function (e) {
+                        this.setStyle({
+                            fillOpacity: isUnlocked ? 0.8 : 0.6
+                        });
+                    });
+
+                    marker.on('mouseout', function (e) {
+                        this.setStyle({
+                            fillOpacity: isUnlocked ? 0.6 : 0.4
+                        });
                     });
                 });
 
@@ -570,8 +596,9 @@ const Game = {
                 const seoulMarker = L.circle([37.5665, 126.9780], {
                     color: '#FF6B9D',
                     fillColor: '#FF6B9D',
-                    fillOpacity: 0.5,
-                    radius: 15000
+                    fillOpacity: 0.6,
+                    radius: 20000,
+                    weight: 3
                 }).addTo(this.regionMap);
 
                 seoulMarker.bindPopup(`
@@ -582,7 +609,7 @@ const Game = {
                             background: linear-gradient(135deg, #FF6B9D, #C44569);
                             color: white;
                             border: none;
-                            padding: 8px 20px;
+                            padding: 10px 24px;
                             border-radius: 20px;
                             cursor: pointer;
                             font-weight: bold;
@@ -590,8 +617,9 @@ const Game = {
                     </div>
                 `);
 
-                seoulMarker.on('click', () => {
-                    seoulMarker.openPopup();
+                seoulMarker.on('click', function () {
+                    console.log('🖱️ 서울 클릭됨');
+                    this.openPopup();
                 });
             }
 
