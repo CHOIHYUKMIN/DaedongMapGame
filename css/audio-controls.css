@@ -1,0 +1,204 @@
+/* 오디오 컨트롤 UI */
+.audio-controls {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.audio-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.audio-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.audio-btn:active {
+    transform: scale(0.95);
+}
+
+.audio-btn.disabled {
+    background: linear-gradient(135deg, #ccc 0%, #999 100%);
+    opacity: 0.6;
+}
+
+/* 볼륨 슬라이더 */
+.volume-control {
+    position: fixed;
+    bottom: 140px;
+    right: 20px;
+    z-index: 999;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 200px;
+}
+
+.volume-control.show {
+    display: flex;
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.volume-control h4 {
+    margin: 0;
+    font-size: 14px;
+    color: #667eea;
+    text-align: center;
+}
+
+.volume-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #e0e0e0;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    background: #764ba2;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.volume-slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    background: #764ba2;
+}
+
+.volume-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+}
+
+/* 설정 팝업에 오디오 설정 추가 */
+.settings-section {
+    margin: 20px 0;
+}
+
+.settings-section h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+.setting-label {
+    font-size: 14px;
+    color: #333;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background: #ccc;
+    border-radius: 13px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.toggle-switch.active {
+    background: #667eea;
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.toggle-switch.active::after {
+    transform: translateX(24px);
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+    .audio-controls {
+        bottom: 70px;
+        right: 15px;
+    }
+    
+    .audio-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    .volume-control {
+        bottom: 125px;
+        right: 15px;
+        min-width: 180px;
+    }
+}
