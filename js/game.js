@@ -531,7 +531,7 @@ const Game = {
                         color: isUnlocked ? gu.color : '#999',
                         fillColor: isUnlocked ? gu.color : '#ccc',
                         fillOpacity: isUnlocked ? 0.6 : 0.4,
-                        radius: 3000,
+                        radius: 2000,
                         weight: 5,
                         interactive: true,
                         bubblingMouseEvents: false
@@ -726,7 +726,7 @@ const Game = {
                         color: isUnlocked ? dong.color : '#999',
                         fillColor: isUnlocked ? dong.color : '#ccc',
                         fillOpacity: isUnlocked ? 0.6 : 0.4,
-                        radius: 500,
+                        radius: 400,
                         weight: 5,
                         interactive: true,
                         bubblingMouseEvents: false
@@ -918,8 +918,8 @@ const Game = {
                     // 서울과 부산만 활성화, 나머지는 잠금
                     const isUnlocked = region.id === 'seoul' || region.id === 'busan';
 
-                    // 더 큰 반경으로 클릭하기 쉽게
-                    const radius = region.id === 'seoul' || region.id === 'busan' ? 20000 : 25000;
+                    // 적절한 크기로 조정 (너무 크지 않게)
+                    const radius = region.id === 'seoul' || region.id === 'busan' ? 15000 : 18000;
 
                     const marker = L.circle(region.center, {
                         color: isUnlocked ? region.color : '#999',

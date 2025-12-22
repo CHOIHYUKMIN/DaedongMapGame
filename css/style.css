@@ -532,7 +532,15 @@ body {
 /* 퍼즐 화면 */
 #puzzle-screen {
     background: linear-gradient(180deg, #E8EAF6 0%, #C5CAE9 100%);
+    pointer-events: none;
+    /* 비활성 상태에서 클릭 차단 방지 */
 }
+
+/* 퍼즐 화면 활성화 시 pointer-events 복원 */
+#puzzle-screen.active {
+    pointer-events: auto;
+}
+
 
 .puzzle-top-bar {
     display: grid;
