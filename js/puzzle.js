@@ -24,6 +24,9 @@ const Puzzle = {
         console.log(`✅ 레벨 찾음: ${this.currentLevel.name}`);
         console.log(`🎨 blockTheme:`, this.currentLevel.blockTheme);
 
+        // 이모지 매핑 초기화 (중복 방지를 위해 셔플)
+        this.initEmojiMapping();
+
         this.movesLeft = this.currentLevel.moves;
         this.score = 0;
         this.selectedBlock = null;
@@ -32,6 +35,22 @@ const Puzzle = {
         this.createBoard();
         this.updateUI();
         this.updateBoosterCounts();
+    },
+
+    // 이모지 매핑 초기화 - 각 타입에 고유한 이모지 할당
+    initEmojiMapping() {
+        if (this.currentLevel && this.currentLevel.blockTheme) {
+            const themeEmojis = [...this.currentLevel.blockTheme.emojis];
+            // Fisher-Yates 셔플로 순서 랜덤화
+            for (let i = themeEmojis.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [themeEmojis[i], themeEmojis[j]] = [themeEmojis[j], themeEmojis[i]];
+            }
+            this.emojiMapping = themeEmojis;
+            console.log(`🎯 이모지 매핑:`, this.emojiMapping);
+        } else {
+            this.emojiMapping = ['🎒', '🍯', '🏮', '🌲', '🎭'];
+        }
     },
 
     createBoard() {
@@ -69,7 +88,12 @@ const Puzzle = {
 
 
     getBlockEmoji(type) {
-        // 지역별 블록 테마 사용
+        // 초기화된 이모지 매핑 사용 (중복 방지)
+        if (this.emojiMapping && this.emojiMapping[type]) {
+            return this.emojiMapping[type];
+        }
+
+        // 지역별 블록 테마 사용 (폴백)
         if (this.currentLevel && this.currentLevel.blockTheme) {
             const themeEmojis = this.currentLevel.blockTheme.emojis;
             return themeEmojis[type % themeEmojis.length];
@@ -343,15 +367,20 @@ const Puzzle = {
         const elem2 = blocks[index2];
 
         // 스와이프 애니메이션 (블록이 서로 교환되는 모습)
-        const dx = (block2.x - block1.x) * (elem1.offsetWidth + 4);
-        const dy = (block2.y - block1.y) * (elem1.offsetHeight + 4);
+        const gap = 3; // CSS gap과 동일
+        const dx = (block2.x - block1.x) * (elem1.offsetWidth + gap);
+        const dy = (block2.y - block1.y) * (elem1.offsetHeight + gap);
 
-        elem1.style.transition = 'transform 0.3s ease-out';
-        elem2.style.transition = 'transform 0.3s ease-out';
+        // 더 부드러운 애니메이션 - cubic-bezier 사용
+        const smoothEasing = 'cubic-bezier(0.34, 1.56, 0.64, 1)';
+        elem1.style.transition = `transform 0.25s ${smoothEasing}`;
+        elem2.style.transition = `transform 0.25s ${smoothEasing}`;
         elem1.style.transform = `translate(${dx}px, ${dy}px)`;
         elem2.style.transform = `translate(${-dx}px, ${-dy}px)`;
+        elem1.style.zIndex = '10';
+        elem2.style.zIndex = '10';
 
-        await this.sleep(300);
+        await this.sleep(250);
 
         // 그리드에서 교환
         const temp = this.grid[block1.y][block1.x];
@@ -363,11 +392,13 @@ const Puzzle = {
         elem2.style.transition = '';
         elem1.style.transform = '';
         elem2.style.transform = '';
+        elem1.style.zIndex = '';
+        elem2.style.zIndex = '';
 
         this.renderBoard();
 
-        // 매칭 확인
-        await this.sleep(100);
+        // 매칭 확인 (딜레이 줄임)
+        await this.sleep(50);
         const matchResult = this.findMatches();
 
         if (matchResult.matches.length > 0) {
@@ -381,16 +412,17 @@ const Puzzle = {
             this.grid[block1.y][block1.x] = this.grid[block2.y][block2.x];
             this.grid[block2.y][block2.x] = temp;
 
-            // 되돌리는 애니메이션
+            // 되돌리는 애니메이션 (더 빠르게)
             this.renderBoard();
-            await this.sleep(100);
+            await this.sleep(50);
 
             const blocks2 = document.querySelectorAll('.block');
             const elem1_new = blocks2[index1];
             const elem2_new = blocks2[index2];
 
-            elem1_new.style.transition = 'transform 0.2s ease-out';
-            elem2_new.style.transition = 'transform 0.2s ease-out';
+            const bounceEasing = 'cubic-bezier(0.68, -0.55, 0.27, 1.55)';
+            elem1_new.style.transition = `transform 0.2s ${bounceEasing}`;
+            elem2_new.style.transition = `transform 0.2s ${bounceEasing}`;
             elem1_new.style.transform = `translate(${dx}px, ${dy}px)`;
             elem2_new.style.transform = `translate(${-dx}px, ${-dy}px)`;
 
