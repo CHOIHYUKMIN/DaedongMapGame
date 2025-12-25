@@ -532,6 +532,18 @@ const Game = {
             tileLayer.addTo(this.regionMap);
             console.log('✅ 타일 레이어 추가 완료');
 
+            // 마커들을 저장할 배열
+            const markers = [];
+
+            // 줌 레벨에 따른 반경 계산 함수
+            const getRadiusByZoom = (zoom) => {
+                // 기본 줌 11에서 반경 2000m
+                // 줌이 1 증가할 때마다 반경 50% 감소
+                const baseRadius = 2000;
+                const baseZoom = 11;
+                return baseRadius * Math.pow(0.6, zoom - baseZoom);
+            };
+
             // 서울 구 데이터 로드
             if (typeof SeoulGuData !== 'undefined') {
                 const gus = SeoulGuData.getGusByCity(cityId);
@@ -548,11 +560,13 @@ const Game = {
                         color: isUnlocked ? gu.color : '#999',
                         fillColor: isUnlocked ? gu.color : '#ccc',
                         fillOpacity: isUnlocked ? 0.6 : 0.4,
-                        radius: 2000,
-                        weight: 5,
+                        radius: getRadiusByZoom(11),
+                        weight: 3,
                         interactive: true,
                         bubblingMouseEvents: false
                     }).addTo(this.regionMap);
+
+                    markers.push(marker);
 
                     const popupContent = isUnlocked ? `
                         <div style="text-align: center; padding: 10px; min-width: 150px;">
@@ -608,6 +622,16 @@ const Game = {
             } else {
                 console.error('❌ SeoulGuData가 로드되지 않음');
             }
+
+            // 줌 이벤트 리스너 - 마커 크기 조정
+            this.regionMap.on('zoomend', () => {
+                const currentZoom = this.regionMap.getZoom();
+                const newRadius = getRadiusByZoom(currentZoom);
+                markers.forEach(marker => {
+                    marker.setRadius(newRadius);
+                });
+                console.log(`🔍 줌 레벨: ${currentZoom}, 마커 반경: ${Math.round(newRadius)}m`);
+            });
 
             // 지도 크기 재조정
             setTimeout(() => {
@@ -735,6 +759,17 @@ const Game = {
             tileLayer.addTo(this.regionMap);
             console.log('✅ 타일 레이어 추가 완료');
 
+            // 마커들을 저장할 배열
+            const markers = [];
+
+            // 줌 레벨에 따른 반경 계산 함수
+            const getRadiusByZoom = (zoom) => {
+                // 기본 줌 13에서 반경 400m
+                const baseRadius = 400;
+                const baseZoom = 13;
+                return baseRadius * Math.pow(0.6, zoom - baseZoom);
+            };
+
             // 동 데이터 로드
             if (typeof GangnamDongData !== 'undefined') {
                 const dongs = GangnamDongData.getDongsByGu(guId);
@@ -751,11 +786,13 @@ const Game = {
                         color: isUnlocked ? dong.color : '#999',
                         fillColor: isUnlocked ? dong.color : '#ccc',
                         fillOpacity: isUnlocked ? 0.6 : 0.4,
-                        radius: 400,
-                        weight: 5,
+                        radius: getRadiusByZoom(13),
+                        weight: 3,
                         interactive: true,
                         bubblingMouseEvents: false
                     }).addTo(this.regionMap);
+
+                    markers.push(marker);
 
                     const popupContent = isUnlocked ? `
                         <div style="text-align: center; padding: 10px; min-width: 150px;">
@@ -811,6 +848,16 @@ const Game = {
             } else {
                 console.error('❌ GangnamDongData가 로드되지 않음');
             }
+
+            // 줌 이벤트 리스너 - 마커 크기 조정
+            this.regionMap.on('zoomend', () => {
+                const currentZoom = this.regionMap.getZoom();
+                const newRadius = getRadiusByZoom(currentZoom);
+                markers.forEach(marker => {
+                    marker.setRadius(newRadius);
+                });
+                console.log(`🔍 줌 레벨: ${currentZoom}, 마커 반경: ${Math.round(newRadius)}m`);
+            });
 
             // 지도 크기 재조정
             setTimeout(() => {
