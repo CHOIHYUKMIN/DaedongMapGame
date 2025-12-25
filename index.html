@@ -274,12 +274,13 @@
                     <p>보상:</p>
                     <ul id="reward-list"></ul>
                 </div>
-                <p id="next-level-msg" style="margin-top: 20px; color: #999; font-size: 14px;">
-                    3초 후 다음 레벨로 이동합니다..
+                <p id="next-level-msg" style="margin-top: 15px; color: #667eea; font-size: 14px; font-weight: bold;">
+                    🎉 축하합니다!
                 </p>
                 <div class="button-row">
                     <button class="btn" onclick="Game.showMap()">지도로</button>
-                    <button class="btn btn-primary" onclick="Game.retryLevel()">재도전</button>
+                    <button class="btn" onclick="Game.retryLevel()">재도전</button>
+                    <button class="btn btn-primary btn-next-level" id="next-level-btn" onclick="Game.goToNextLevel()" style="display: none;">다음 레벨 →</button>
                 </div>
             </div>
         </div>

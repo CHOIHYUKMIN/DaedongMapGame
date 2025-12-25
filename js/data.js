@@ -244,7 +244,143 @@ const GameData = {
                 name: "바다 사원",
                 emojis: ["🛕", "🌊", "🐉", "🙏", "⛩️"]
             }
-        }
+        },
+        // 강원도 레벨 (19-26)
+        { id: 19, name: "강원 춘천 닭갈비", regionName: "춘천 닭갈비거리", type: "SCORE", target: 3000, moves: 20, reward: "IT_GW_001", isAd: false, blockTheme: { name: "춘천 닭갈비", emojis: ["🍗", "🔥", "🥘", "🌶️", "🧀"] } },
+        { id: 20, name: "강원 속초 오징어순대", regionName: "속초 중앙시장", type: "COLLECT", target: 12, moves: 22, reward: "IT_GW_002", isAd: false, blockTheme: { name: "속초 오징어", emojis: ["🦑", "🐙", "🌊", "🏖️", "⛵"] } },
+        { id: 21, name: "강원 강릉 커피거리", regionName: "강릉 안목해변", type: "SCORE", target: 3500, moves: 24, reward: "IT_GW_003", isAd: false, blockTheme: { name: "커피 거리", emojis: ["☕", "🌊", "🏖️", "☀️", "🌅"] } },
+        { id: 22, name: "강원 평창 메밀전병", regionName: "평창 봉평장터", type: "COLLECT", target: 14, moves: 26, reward: "IT_GW_004", isAd: false, blockTheme: { name: "메밀 음식", emojis: ["🥞", "🌾", "⛰️", "❄️", "🎿"] } },
+        { id: 23, name: "강원 정선 곤드레밥", regionName: "정선 아리랑시장", type: "SCORE", target: 4000, moves: 28, reward: "IT_GW_005", isAd: false, blockTheme: { name: "산나물 밥상", emojis: ["🍚", "🌿", "⛰️", "🥬", "🍃"] } },
+        { id: 24, name: "강원 동해 물회", regionName: "동해 추암해변", type: "COLLECT", target: 16, moves: 30, reward: "IT_GW_006", isAd: false, blockTheme: { name: "동해 물회", emojis: ["🐟", "🌊", "🧊", "🥒", "🌶️"] } },
+        { id: 25, name: "강원 원주 막국수", regionName: "원주 막국수촌", type: "SCORE", target: 4500, moves: 32, reward: "IT_GW_007", isAd: false, blockTheme: { name: "막국수", emojis: ["🍜", "🥒", "🌾", "❄️", "🧊"] } },
+        { id: 26, name: "강원 설악산", regionName: "설악산 대청봉", type: "SCORE", target: 5000, moves: 35, reward: "IT_GW_999", isAd: false, blockTheme: { name: "설악산", emojis: ["⛰️", "🌲", "🦌", "🏔️", "🌄"] } },
+
+        // 대구광역시 레벨 (27-33)
+        { id: 27, name: "대구 동인동 찜갈비", regionName: "대구 동인동", type: "SCORE", target: 3500, moves: 22, reward: "IT_DG_001", isAd: false, blockTheme: { name: "찜갈비", emojis: ["🍖", "🔥", "🥘", "🌶️", "🍯"] } },
+        { id: 28, name: "대구 서문시장", regionName: "대구 서문시장", type: "COLLECT", target: 14, moves: 24, reward: "IT_DG_002", isAd: false, blockTheme: { name: "전통시장", emojis: ["🛍️", "🍱", "🥟", "🍢", "🏮"] } },
+        { id: 29, name: "대구 막창골목", regionName: "대구 안지랑", type: "SCORE", target: 4000, moves: 26, reward: "IT_DG_003", isAd: false, blockTheme: { name: "막창", emojis: ["🥩", "🔥", "🍺", "🧄", "🌶️"] } },
+        { id: 30, name: "대구 따로국밥", regionName: "대구 북성로", type: "COLLECT", target: 16, moves: 28, reward: "IT_DG_004", isAd: false, blockTheme: { name: "따로국밥", emojis: ["🍲", "🥘", "🍚", "🌶️", "🧄"] } },
+        { id: 31, name: "대구 납작만두", regionName: "대구 중앙로", type: "SCORE", target: 4500, moves: 30, reward: "IT_DG_005", isAd: false, blockTheme: { name: "납작만두", emojis: ["🥟", "🍱", "🥢", "🧄", "🌶️"] } },
+        { id: 32, name: "대구 팔공산", regionName: "팔공산 관봉", type: "COLLECT", target: 18, moves: 32, reward: "IT_DG_006", isAd: false, blockTheme: { name: "팔공산", emojis: ["⛰️", "🌲", "🛕", "🌄", "🍂"] } },
+        { id: 33, name: "대구 83타워", regionName: "대구 83타워", type: "SCORE", target: 5000, moves: 35, reward: "IT_DG_999", isAd: false, blockTheme: { name: "83타워", emojis: ["🗼", "🌃", "🎡", "📸", "🌆"] } },
+
+        // 인천광역시 레벨 (34-40)
+        { id: 34, name: "인천 차이나타운", regionName: "인천 차이나타운", type: "SCORE", target: 3500, moves: 22, reward: "IT_IC_001", isAd: false, blockTheme: { name: "짜장면", emojis: ["🍜", "🥟", "🏮", "🐉", "🎎"] } },
+        { id: 35, name: "인천 신포시장", regionName: "신포국제시장", type: "COLLECT", target: 14, moves: 24, reward: "IT_IC_002", isAd: false, blockTheme: { name: "닭강정", emojis: ["🍗", "🌶️", "🍯", "🧄", "🥢"] } },
+        { id: 36, name: "인천 송도", regionName: "송도 센트럴파크", type: "SCORE", target: 4000, moves: 26, reward: "IT_IC_003", isAd: false, blockTheme: { name: "송도", emojis: ["🏙️", "🌃", "🏢", "🌉", "🚇"] } },
+        { id: 37, name: "인천 월미도", regionName: "월미도 놀이공원", type: "COLLECT", target: 16, moves: 28, reward: "IT_IC_004", isAd: false, blockTheme: { name: "월미도", emojis: ["🎡", "🎢", "🎠", "🌊", "🏖️"] } },
+        { id: 38, name: "인천 소래포구", regionName: "소래포구 어시장", type: "SCORE", target: 4500, moves: 30, reward: "IT_IC_005", isAd: false, blockTheme: { name: "소래 젓갈", emojis: ["🦐", "🦀", "🐙", "🦑", "🐟"] } },
+        { id: 39, name: "인천 강화도", regionName: "강화도 순무", type: "COLLECT", target: 18, moves: 32, reward: "IT_IC_006", isAd: false, blockTheme: { name: "강화 특산물", emojis: ["🥕", "🌾", "🏺", "🏛️", "⛩️"] } },
+        { id: 40, name: "인천대교", regionName: "인천대교 전망대", type: "SCORE", target: 5000, moves: 35, reward: "IT_IC_999", isAd: false, blockTheme: { name: "인천대교", emojis: ["🌉", "🚗", "🌊", "🌅", "📸"] } },
+
+        // 광주광역시 레벨 (41-46)
+        { id: 41, name: "광주 양동시장", regionName: "광주 양동시장", type: "SCORE", target: 3500, moves: 22, reward: "IT_GJ_001", isAd: false, blockTheme: { name: "시장 먹거리", emojis: ["🍱", "🥟", "🍢", "🍡", "🏮"] } },
+        { id: 42, name: "광주 오리탕", regionName: "광주 오리탕거리", type: "COLLECT", target: 14, moves: 24, reward: "IT_GJ_002", isAd: false, blockTheme: { name: "오리탕", emojis: ["🦆", "🥘", "🍲", "🌶️", "🧄"] } },
+        { id: 43, name: "광주 떡갈비", regionName: "광주 송정떡갈비", type: "SCORE", target: 4000, moves: 26, reward: "IT_GJ_003", isAd: false, blockTheme: { name: "떡갈비", emojis: ["🍖", "🔥", "🍱", "🥢", "🌶️"] } },
+        { id: 44, name: "광주 무등산", regionName: "무등산 정상", type: "COLLECT", target: 16, moves: 28, reward: "IT_GJ_004", isAd: false, blockTheme: { name: "무등산", emojis: ["⛰️", "🌲", "🌄", "🍃", "🦌"] } },
+        { id: 45, name: "광주 남도음식", regionName: "광주 전통한정식", type: "SCORE", target: 4500, moves: 30, reward: "IT_GJ_005", isAd: false, blockTheme: { name: "한정식", emojis: ["🍚", "🥘", "🍲", "🥬", "🌶️"] } },
+        { id: 46, name: "광주 5·18 민주광장", regionName: "5·18 민주광장", type: "SCORE", target: 5000, moves: 35, reward: "IT_GJ_999", isAd: false, blockTheme: { name: "민주광장", emojis: ["🏛️", "🕊️", "🌹", "📚", "🎨"] } },
+
+        // 대전광역시 레벨 (47-52)
+        { id: 47, name: "대전 성심당", regionName: "대전 성심당 본점", type: "SCORE", target: 3500, moves: 22, reward: "IT_DJ_001", isAd: false, blockTheme: { name: "성심당 빵", emojis: ["🍞", "🥐", "🥖", "🧁", "☕"] } },
+        { id: 48, name: "대전 은행동 칼국수", regionName: "대전 은행동", type: "COLLECT", target: 14, moves: 24, reward: "IT_DJ_002", isAd: false, blockTheme: { name: "칼국수", emojis: ["🍜", "🥟", "🥢", "🌶️", "🧄"] } },
+        { id: 49, name: "대전 중앙시장", regionName: "대전 중앙시장", type: "SCORE", target: 4000, moves: 26, reward: "IT_DJ_003", isAd: false, blockTheme: { name: "전통시장", emojis: ["🛍️", "🍱", "🥟", "🍢", "🏮"] } },
+        { id: 50, name: "대전 대청호", regionName: "대청호 은어", type: "COLLECT", target: 16, moves: 28, reward: "IT_DJ_004", isAd: false, blockTheme: { name: "대청호", emojis: ["🐟", "🌊", "🚤", "🏞️", "🌅"] } },
+        { id: 51, name: "대전 한밭수목원", regionName: "한밭수목원", type: "SCORE", target: 4500, moves: 30, reward: "IT_DJ_005", isAd: false, blockTheme: { name: "수목원", emojis: ["🌳", "🌲", "🌷", "🦋", "🌺"] } },
+        { id: 52, name: "대전 엑스포", regionName: "대전 엑스포과학공원", type: "SCORE", target: 5000, moves: 35, reward: "IT_DJ_999", isAd: false, blockTheme: { name: "엑스포", emojis: ["🔬", "🧪", "🚀", "🤖", "🎡"] } },
+
+        // 울산광역시 레벨 (53-57)
+        { id: 53, name: "울산 언양불고기", regionName: "언양 불고기거리", type: "SCORE", target: 4000, moves: 24, reward: "IT_US_001", isAd: false, blockTheme: { name: "언양불고기", emojis: ["🥩", "🔥", "🍖", "🥬", "🧄"] } },
+        { id: 54, name: "울산 대왕암", regionName: "대왕암공원", type: "COLLECT", target: 16, moves: 26, reward: "IT_US_002", isAd: false, blockTheme: { name: "대왕암", emojis: ["🌊", "🏖️", "🌅", "⛰️", "📸"] } },
+        { id: 55, name: "울산 태화강", regionName: "태화강 대공원", type: "SCORE", target: 4500, moves: 28, reward: "IT_US_003", isAd: false, blockTheme: { name: "태화강", emojis: ["🌊", "🦢", "🌳", "🌸", "🚶"] } },
+        { id: 56, name: "울산 방어회", regionName: "울산 방어축제", type: "COLLECT", target: 18, moves: 30, reward: "IT_US_004", isAd: false, blockTheme: { name: "방어회", emojis: ["🐟", "🍱", "🌊", "❄️", "🥢"] } },
+        { id: 57, name: "울산 현대자동차", regionName: "현대자동차 공장", type: "SCORE", target: 5000, moves: 35, reward: "IT_US_999", isAd: false, blockTheme: { name: "자동차 도시", emojis: ["🚗", "🏭", "⚙️", "🔧", "🏗️"] } },
+
+        // 세종특별자치시 레벨 (58-62)
+        { id: 58, name: "세종 한국식당", regionName: "세종 한정식", type: "SCORE", target: 4000, moves: 24, reward: "IT_SJ_001", isAd: false, blockTheme: { name: "한정식", emojis: ["🍚", "🥘", "🍲", "🥬", "🌶️"] } },
+        { id: 59, name: "세종호수공원", regionName: "세종호수공원", type: "COLLECT", target: 16, moves: 26, reward: "IT_SJ_002", isAd: false, blockTheme: { name: "호수공원", emojis: ["🌊", "🦢", "🌳", "🚶", "🌅"] } },
+        { id: 60, name: "세종 전통시장", regionName: "세종 조치원시장", type: "SCORE", target: 4500, moves: 28, reward: "IT_SJ_003", isAd: false, blockTheme: { name: "전통시장", emojis: ["🛍️", "🍱", "🥟", "🍢", "🏮"] } },
+        { id: 61, name: "세종 연기벌", regionName: "연기벌 들녘", type: "COLLECT", target: 18, moves: 30, reward: "IT_SJ_004", isAd: false, blockTheme: { name: "연기벌", emojis: ["🌾", "🌳", "🚜", "🌅", "🌻"] } },
+        { id: 62, name: "세종 정부청사", regionName: "세종 정부청사", type: "SCORE", target: 5000, moves: 35, reward: "IT_SJ_999", isAd: false, blockTheme: { name: "행정수도", emojis: ["🏛️", "🏢", "📋", "📊", "⚖️"] } },
+
+        // 경기도 레벨 (63-74)
+        { id: 63, name: "경기 수원 왕갈비", regionName: "수원 왕갈비거리", type: "SCORE", target: 4000, moves: 24, reward: "IT_GG_001", isAd: false, blockTheme: { name: "수원 왕갈비", emojis: ["🍖", "🔥", "🥘", "🌶️", "🧄"] } },
+        { id: 64, name: "경기 수원화성", regionName: "수원화성 행궁", type: "COLLECT", target: 16, moves: 26, reward: "IT_GG_002", isAd: false, blockTheme: { name: "수원화성", emojis: ["🏯", "🏛️", "🎎", "📚", "🌳"] } },
+        { id: 65, name: "경기 성남 분당", regionName: "분당 카페거리", type: "SCORE", target: 4200, moves: 27, reward: "IT_GG_003", isAd: false, blockTheme: { name: "분당 카페", emojis: ["☕", "🍰", "🥐", "🏢", "🌃"] } },
+        { id: 66, name: "경기 용인 에버랜드", regionName: "에버랜드", type: "COLLECT", target: 17, moves: 28, reward: "IT_GG_004", isAd: false, blockTheme: { name: "에버랜드", emojis: ["🎢", "🎠", "🎡", "🐼", "🎪"] } },
+        { id: 67, name: "경기 고양 일산", regionName: "일산 호수공원", type: "SCORE", target: 4400, moves: 29, reward: "IT_GG_005", isAd: false, blockTheme: { name: "일산", emojis: ["🌊", "🌳", "🚶", "🌸", "☀️"] } },
+        { id: 68, name: "경기 의정부 부대찌개", regionName: "의정부 부대찌개거리", type: "COLLECT", target: 18, moves: 30, reward: "IT_GG_006", isAd: false, blockTheme: { name: "부대찌개", emojis: ["🍲", "🌭", "🧀", "🌶️", "🍜"] } },
+        { id: 69, name: "경기 파주 임진각", regionName: "임진각 평화누리", type: "SCORE", target: 4600, moves: 31, reward: "IT_GG_007", isAd: false, blockTheme: { name: "임진각", emojis: ["🕊️", "🌾", "🏛️", "🌳", "🎗️"] } },
+        { id: 70, name: "경기 가평 닭갈비", regionName: "가평 닭갈비", type: "COLLECT", target: 19, moves: 32, reward: "IT_GG_008", isAd: false, blockTheme: { name: "가평 닭갈비", emojis: ["🍗", "🥘", "🌶️", "🧀", "🥬"] } },
+        { id: 71, name: "경기 평택 소머리국밥", regionName: "평택 소머리국밥", type: "SCORE", target: 4800, moves: 33, reward: "IT_GG_009", isAd: false, blockTheme: { name: "소머리국밥", emojis: ["🍲", "🥘", "🍚", "🌶️", "🧄"] } },
+        { id: 72, name: "경기 이천 쌀밥", regionName: "이천 쌀밥", type: "COLLECT", target: 20, moves: 34, reward: "IT_GG_010", isAd: false, blockTheme: { name: "이천 쌀밥", emojis: ["🍚", "🌾", "🥘", "🍲", "🥬"] } },
+        { id: 73, name: "경기 안산 다문화", regionName: "안산 다문화거리", type: "SCORE", target: 5000, moves: 35, reward: "IT_GG_011", isAd: false, blockTheme: { name: "다문화", emojis: ["🌍", "🍜", "🥘", "🍲", "🥟"] } },
+        { id: 74, name: "경기 광교호수공원", regionName: "광교호수공원", type: "SCORE", target: 5500, moves: 38, reward: "IT_GG_999", isAd: false, blockTheme: { name: "광교호수", emojis: ["🌊", "🏞️", "🚶", "🌳", "🌸"] } },
+
+        // 충청북도 레벨 (75-80)
+        { id: 75, name: "충북 청주 직지", regionName: "청주 직지사", type: "SCORE", target: 4000, moves: 24, reward: "IT_CB_001", isAd: false, blockTheme: { name: "직지", emojis: ["📖", "🏛️", "📜", "🖋️", "📚"] } },
+        { id: 76, name: "충북 충주댐", regionName: "충주댐", type: "COLLECT", target: 16, moves: 26, reward: "IT_CB_002", isAd: false, blockTheme: { name: "충주댐", emojis: ["🌊", "🏞️", "⚡", "🚤", "🏔️"] } },
+        { id: 77, name: "충북 제천 약초", regionName: "제천 약초시장", type: "SCORE", target: 4300, moves: 28, reward: "IT_CB_003", isAd: false, blockTheme: { name: "약초", emojis: ["🌿", "🍵", "💊", "🌾", "🏥"] } },
+        { id: 78, name: "충북 단양 마늘", regionName: "단양 마늘축제", type: "COLLECT", target: 17, moves: 29, reward: "IT_CB_004", isAd: false, blockTheme: { name: "단양 마늘", emojis: ["🧄", "🌾", "⛰️", "🏞️", "🚣"] } },
+        { id: 79, name: "충북 괴산 고추", regionName: "괴산 청결고추", type: "SCORE", target: 4600, moves: 31, reward: "IT_CB_005", isAd: false, blockTheme: { name: "청결고추", emojis: ["🌶️", "🌾", "🔥", "☀️", "🚜"] } },
+        { id: 80, name: "충북 속리산", regionName: "속리산 법주사", type: "SCORE", target: 5000, moves: 35, reward: "IT_CB_999", isAd: false, blockTheme: { name: "속리산", emojis: ["⛰️", "🛕", "🌲", "🍂", "🦌"] } },
+
+        // 충청남도 레벨 (81-87)
+        { id: 81, name: "충남 천안 호두과자", regionName: "천안 호두과자", type: "SCORE", target: 4000, moves: 24, reward: "IT_CN_001", isAd: false, blockTheme: { name: "호두과자", emojis: ["🥜", "🍰", "🥐", "☕", "🎁"] } },
+        { id: 82, name: "충남 아산 어리굴젓", regionName: "아산 어리굴젓", type: "COLLECT", target: 16, moves: 26, reward: "IT_CN_002", isAd: false, blockTheme: { name: "어리굴젓", emojis: ["🦪", "🌊", "🌶️", "🧄", "🍚"] } },
+        { id: 83, name: "충남 공주 밤", regionName: "공주 밤축제", type: "SCORE", target: 4300, moves: 28, reward: "IT_CN_003", isAd: false, blockTheme: { name: "공주 밤", emojis: ["🌰", "🍂", "🌳", "🏯", "🏛️"] } },
+        { id: 84, name: "충남 부여 백제", regionName: "부여 백제문화단지", type: "COLLECT", target: 17, moves: 29, reward: "IT_CN_004", isAd: false, blockTheme: { name: "백제문화", emojis: ["🏛️", "👑", "⚔️", "📚", "🏺"] } },
+        { id: 85, name: "충남 보령 굴", regionName: "보령 굴축제", type: "SCORE", target: 4600, moves: 31, reward: "IT_CN_005", isAd: false, blockTheme: { name: "보령 굴", emojis: ["🦪", "🌊", "🏖️", "🔥", "🧄"] } },
+        { id: 86, name: "충남 서산 간척지", regionName: "서산 간척지", type: "COLLECT", target: 18, moves: 32, reward: "IT_CN_006", isAd: false, blockTheme: { name: "서산", emojis: ["🌾", "🚜", "🌅", "🦆", "🌊"] } },
+        { id: 87, name: "충남 태안 해변", regionName: "태안 몽산포", type: "SCORE", target: 5000, moves: 35, reward: "IT_CN_999", isAd: false, blockTheme: { name: "태안 해변", emojis: ["🏖️", "🌊", "🌅", "🐚", "☀️"] } },
+
+        // 전북특별자치도 레벨 (88-94)
+        { id: 88, name: "전북 전주 비빔밥", regionName: "전주 한옥마을", type: "SCORE", target: 4500, moves: 26, reward: "IT_JB_001", isAd: false, blockTheme: { name: "전주 비빔밥", emojis: ["🍚", "🥘", "🥬", "🌶️", "🥚"] } },
+        { id: 89, name: "전북 전주 콩나물국밥", regionName: "전주 남부시장", type: "COLLECT", target: 17, moves: 28, reward: "IT_JB_002", isAd: false, blockTheme: { name: "콩나물국밥", emojis: ["🍲", "🌱", "🍚", "🌶️", "🧄"] } },
+        { id: 90, name: "전북 군산 빵", regionName: "군산 이성당", type: "SCORE", target: 4800, moves: 30, reward: "IT_JB_003", isAd: false, blockTheme: { name: "군산 빵", emojis: ["🍞", "🥐", "☕", "🥖", "🧁"] } },
+        { id: 91, name: "전북 순창 고추장", regionName: "순창 고추장마을", type: "COLLECT", target: 18, moves: 31, reward: "IT_JB_004", isAd: false, blockTheme: { name: "순창 고추장", emojis: ["🌶️", "🥘", "🏺", "🌾", "🔥"] } },
+        { id: 92, name: "전북 정읍 내장산", regionName: "내장산 단풍", type: "SCORE", target: 5000, moves: 33, reward: "IT_JB_005", isAd: false, blockTheme: { name: "내장산", emojis: ["⛰️", "🍂", "🌳", "🍁", "🦌"] } },
+        { id: 93, name: "전북 김제 지평선", regionName: "김제 지평선축제", type: "COLLECT", target: 19, moves: 34, reward: "IT_JB_006", isAd: false, blockTheme: { name: "지평선", emojis: ["🌾", "🚜", "🌅", "🏞️", "☀️"] } },
+        { id: 94, name: "전북 무주 반딧불", regionName: "무주 반딧불축제", type: "SCORE", target: 5500, moves: 38, reward: "IT_JB_999", isAd: false, blockTheme: { name: "반딧불", emojis: ["✨", "🌌", "⛰️", "🌲", "🦋"] } },
+
+        // 전라남도 레벨 (95-102)
+        { id: 95, name: "전남 여수 게장", regionName: "여수 게장백반", type: "SCORE", target: 4500, moves: 26, reward: "IT_JN_001", isAd: false, blockTheme: { name: "여수 게장", emojis: ["🦀", "🌊", "🍚", "🌶️", "🧄"] } },
+        { id: 96, name: "전남 순천만", regionName: "순천만 갈대밭", type: "COLLECT", target: 17, moves: 28, reward: "IT_JN_002", isAd: false, blockTheme: { name: "순천만", emojis: ["🌾", "🌊", "🦆", "🌅", "📸"] } },
+        { id: 97, name: "전남 보성 녹차", regionName: "보성 녹차밭", type: "SCORE", target: 4800, moves: 30, reward: "IT_JN_003", isAd: false, blockTheme: { name: "보성 녹차", emojis: ["🍵", "🌱", "☕", "🏞️", "🌿"] } },
+        { id: 98, name: "전남 벌교 꼬막", regionName: "벌교 꼬막정식", type: "COLLECT", target: 18, moves: 31, reward: "IT_JN_004", isAd: false, blockTheme: { name: "벌교 꼬막", emojis: ["🦪", "🌊", "🍚", "🧄", "🌶️"] } },
+        { id: 99, name: "전남 장흥 한우", regionName: "장흥 한우축제", type: "SCORE", target: 5000, moves: 33, reward: "IT_JN_005", isAd: false, blockTheme: { name: "장흥 한우", emojis: ["🥩", "🐄", "🔥", "🌾", "🍖"] } },
+        { id: 100, name: "전남 목포 낙지", regionName: "목포 연포탕", type: "COLLECT", target: 19, moves: 34, reward: "IT_JN_006", isAd: false, blockTheme: { name: "낙지연포탕", emojis: ["🐙", "🌊", "🌶️", "🍲", "🧄"] } },
+        { id: 101, name: "전남 해남 땅끝", regionName: "해남 땅끝마을", type: "SCORE", target: 5300, moves: 36, reward: "IT_JN_007", isAd: false, blockTheme: { name: "땅끝마을", emojis: ["🌊", "🏖️", "🌅", "🗺️", "🚶"] } },
+        { id: 102, name: "전남 신안 천일염", regionName: "신안 염전", type: "SCORE", target: 5800, moves: 40, reward: "IT_JN_999", isAd: false, blockTheme: { name: "천일염", emojis: ["🧂", "☀️", "🌊", "🏝️", "🚜"] } },
+
+        // 경상북도 레벨 (103-111)
+        { id: 103, name: "경북 안동 찜닭", regionName: "안동 찜닭골목", type: "SCORE", target: 4500, moves: 26, reward: "IT_GB_001", isAd: false, blockTheme: { name: "안동 찜닭", emojis: ["🍗", "🥘", "🌶️", "🥔", "🧄"] } },
+        { id: 104, name: "경북 경주 빵", regionName: "경주 황남빵", type: "COLLECT", target: 17, moves: 28, reward: "IT_GB_002", isAd: false, blockTheme: { name: "경주 빵", emojis: ["🥐", "🥜", "☕", "🏯", "🎎"] } },
+        { id: 105, name: "경북 경주 불국사", regionName: "불국사 석굴암", type: "SCORE", target: 4800, moves: 30, reward: "IT_GB_003", isAd: false, blockTheme: { name: "불국사", emojis: ["🛕", "⛩️", "🏯", "🌸", "📚"] } },
+        { id: 106, name: "경북 포항 과메기", regionName: "포항 구룡포", type: "COLLECT", target: 18, moves: 31, reward: "IT_GB_004", isAd: false, blockTheme: { name: "과메기", emojis: ["🐟", "❄️", "🌊", "🧄", "🌶️"] } },
+        { id: 107, name: "경북 구미 왕소금빵", regionName: "구미 왕소금빵", type: "SCORE", target: 5000, moves: 33, reward: "IT_GB_005", isAd: false, blockTheme: { name: "왕소금빵", emojis: ["🥐", "🧂", "☕", "🍞", "🧈"] } },
+        { id: 108, name: "경북 문경 오미자", regionName: "문경 오미자축제", type: "COLLECT", target: 19, moves: 34, reward: "IT_GB_006", isAd: false, blockTheme: { name: "오미자", emojis: ["🍒", "🍵", "⛰️", "🌿", "💊"] } },
+        { id: 109, name: "경북 청송 사과", regionName: "청송 사과", type: "SCORE", target: 5300, moves: 36, reward: "IT_GB_007", isAd: false, blockTheme: { name: "청송 사과", emojis: ["🍎", "🌳", "🍂", "🚜", "🌾"] } },
+        { id: 110, name: "경북 영주 한우", regionName: "영주 한우", type: "COLLECT", target: 20, moves: 37, reward: "IT_GB_008", isAd: false, blockTheme: { name: "영주 한우", emojis: ["🥩", "🐄", "🔥", "🌾", "🍖"] } },
+        { id: 111, name: "경북 첨성대", regionName: "경주 첨성대", type: "SCORE", target: 6000, moves: 40, reward: "IT_GB_999", isAd: false, blockTheme: { name: "첨성대", emojis: ["🏯", "⭐", "🌙", "🔭", "📚"] } },
+
+        // 경상남도 레벨 (112-119)
+        { id: 112, name: "경남 통영 굴", regionName: "통영 굴구이", type: "SCORE", target: 4500, moves: 26, reward: "IT_GN_001", isAd: false, blockTheme: { name: "통영 굴", emojis: ["🦪", "🔥", "🌊", "🧄", "🍋"] } },
+        { id: 113, name: "경남 진주 냉면", regionName: "진주 냉면", type: "COLLECT", target: 17, moves: 28, reward: "IT_GN_002", isAd: false, blockTheme: { name: "진주 냉면", emojis: ["🍜", "❄️", "🧊", "🥒", "🥚"] } },
+        { id: 114, name: "경남 거제 멸치", regionName: "거제 멸치축제", type: "SCORE", target: 4800, moves: 30, reward: "IT_GN_003", isAd: false, blockTheme: { name: "거제 멸치", emojis: ["🐟", "🌊", "☀️", "🏖️", "🚢"] } },
+        { id: 115, name: "경남 밀양 돼지국밥", regionName: "밀양 돼지국밥", type: "COLLECT", target: 18, moves: 31, reward: "IT_GN_004", isAd: false, blockTheme: { name: "돼지국밥", emojis: ["🍲", "🥘", "🍚", "🌶️", "🧄"] } },
+        { id: 116, name: "경남 남해 마늘", regionName: "남해 마늘", type: "SCORE", target: 5000, moves: 33, reward: "IT_GN_005", isAd: false, blockTheme: { name: "남해 마늘", emojis: ["🧄", "🌊", "🏝️", "🌾", "☀️"] } },
+        { id: 117, name: "경남 하동 녹차", regionName: "하동 녹차밭", type: "COLLECT", target: 19, moves: 34, reward: "IT_GN_006", isAd: false, blockTheme: { name: "하동 녹차", emojis: ["🍵", "🌱", "⛰️", "🌿", "☕"] } },
+        { id: 118, name: "경남 사천 죽방렴", regionName: "사천 죽방렴", type: "SCORE", target: 5300, moves: 36, reward: "IT_GN_007", isAd: false, blockTheme: { name: "죽방렴", emojis: ["🐟", "🌊", "🎣", "🏖️", "🦀"] } },
+        { id: 119, name: "경남 가야산", regionName: "해인사 팔만대장경", type: "SCORE", target: 6000, moves: 40, reward: "IT_GN_999", isAd: false, blockTheme: { name: "가야산", emojis: ["⛰️", "🛕", "📚", "🌲", "🍂"] } },
+
+        // 제주특별자치도 레벨 (120-125)
+        { id: 120, name: "제주 흑돼지", regionName: "제주 흑돼지거리", type: "SCORE", target: 5000, moves: 28, reward: "IT_JJ_001", isAd: false, blockTheme: { name: "제주 흑돼지", emojis: ["🐷", "🔥", "🥩", "🧄", "🌶️"] } },
+        { id: 121, name: "제주 고등어회", regionName: "제주 고등어축제", type: "COLLECT", target: 18, moves: 30, reward: "IT_JJ_002", isAd: false, blockTheme: { name: "고등어회", emojis: ["🐟", "🌊", "🍱", "🧄", "🌶️"] } },
+        { id: 122, name: "제주 감귤", regionName: "제주 감귤밭", type: "SCORE", target: 5300, moves: 32, reward: "IT_JJ_003", isAd: false, blockTheme: { name: "제주 감귤", emojis: ["🍊", "🌳", "☀️", "🌴", "🏝️"] } },
+        { id: 123, name: "제주 전복죽", regionName: "제주 전복죽", type: "COLLECT", target: 19, moves: 34, reward: "IT_JJ_004", isAd: false, blockTheme: { name: "전복죽", emojis: ["🐚", "🍲", "🌊", "🧄", "🍚"] } },
+        { id: 124, name: "제주 성산일출봉", regionName: "성산일출봉", type: "SCORE", target: 5600, moves: 36, reward: "IT_JJ_005", isAd: false, blockTheme: { name: "성산일출봉", emojis: ["⛰️", "🌅", "🌊", "🏝️", "📸"] } },
+        { id: 125, name: "제주 한라산", regionName: "한라산 백록담", type: "SCORE", target: 6500, moves: 40, reward: "IT_JJ_999", isAd: false, blockTheme: { name: "한라산", emojis: ["🏔️", "🌋", "🦌", "🌲", "☁️"] } }
     ],
 
     items: {
@@ -267,7 +403,144 @@ const GameData = {
         "IT_BS_005": { name: "밀면", rarity: "B", effect: "COOLDOWN", value: -5, desc: "시원한 육수" },
         "IT_BS_006": { name: "씨앗호떡", rarity: "C", effect: "GOLD", value: 80, desc: "달콤 바삭한 간식" },
         "IT_BS_007": { name: "대구탕", rarity: "A", effect: "SKILL_UP", value: 12, desc: "시원한 해장국" },
-        "IT_BS_008": { name: "부산 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "바다 도시를 정복한 증표" }
+        "IT_BS_008": { name: "부산 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "바다 도시를 정복한 증표" },
+
+        // 강원도 아이템
+        "IT_GW_001": { name: "춘천 닭갈비", rarity: "B", effect: "HP_HEAL", value: 15, desc: "강원도의 명물 닭갈비" },
+        "IT_GW_002": { name: "속초 오징어순대", rarity: "C", effect: "ATK", value: 5, desc: "신선한 오징어 요리" },
+        "IT_GW_003": { name: "강릉 커피", rarity: "B", effect: "COOLDOWN", value: -5, desc: "바다가 보이는 커피 한 잔" },
+        "IT_GW_004": { name: "평창 메밀전병", rarity: "C", effect: "GOLD", value: 80, desc: "고소한 메밀의 맛" },
+        "IT_GW_005": { name: "정선 곤드레밥", rarity: "A", effect: "HP_MAX", value: 50, desc: "산나물이 가득한 밥상" },
+        "IT_GW_006": { name: "동해 물회", rarity: "B", effect: "HP_HEAL", value: 12, desc: "시원한 물회" },
+        "IT_GW_007": { name: "막국수", rarity: "B", effect: "GOLD", value: 100, desc: "메밀로 만든 국수" },
+        "IT_GW_999": { name: "강원 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "설악산을 정복한 증표" },
+
+        // 대구 아이템
+        "IT_DG_001": { name: "동인동 찜갈비", rarity: "A", effect: "ATK", value: 8, desc: "대구의 명물 찜갈비" },
+        "IT_DG_002": { name: "서문시장 먹거리", rarity: "C", effect: "GOLD", value: 70, desc: "전통시장의 맛" },
+        "IT_DG_003": { name: "대구 막창", rarity: "B", effect: "HP_HEAL", value: 13, desc: "쫄깃한 막창" },
+        "IT_DG_004": { name: "따로국밥", rarity: "B", effect: "HP_MAX", value: 45, desc: "따로 또 같이" },
+        "IT_DG_005": { name: "납작만두", rarity: "C", effect: "GOLD", value: 75, desc: "대구 스타일 만두" },
+        "IT_DG_006": { name: "팔공산 약수", rarity: "A", effect: "COOLDOWN", value: -8, desc: "팔공산의 천연 약수" },
+        "IT_DG_999": { name: "대구 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "대구를 정복한 증표" },
+
+        // 인천 아이템
+        "IT_IC_001": { name: "짜장면", rarity: "B", effect: "HP_HEAL", value: 14, desc: "차이나타운의 맛" },
+        "IT_IC_002": { name: "신포 닭강정", rarity: "C", effect: "ATK", value: 5, desc: "달콤 매콤한 닭강정" },
+        "IT_IC_003": { name: "송도 디저트", rarity: "B", effect: "GOLD", value: 90, desc: "신도시 감성" },
+        "IT_IC_004": { name: "월미도 추억", rarity: "C", effect: "GOLD", value: 80, desc: "놀이공원의 추억" },
+        "IT_IC_005": { name: "소래 젓갈", rarity: "A", effect: "SKILL_UP", value: 10, desc: "전통 방식의 젓갈" },
+        "IT_IC_006": { name: "강화 순무", rarity: "B", effect: "HP_MAX", value: 48, desc: "강화도 특산물" },
+        "IT_IC_999": { name: "인천 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "인천을 정복한 증표" },
+
+        // 광주 아이템
+        "IT_GJ_001": { name: "양동시장 먹거리", rarity: "C", effect: "GOLD", value: 70, desc: "시장 구경의 즐거움" },
+        "IT_GJ_002": { name: "광주 오리탕", rarity: "A", effect: "HP_MAX", value: 52, desc: "영양 가득 오리탕" },
+        "IT_GJ_003": { name: "송정 떡갈비", rarity: "B", effect: "ATK", value: 7, desc: "광주의 자랑" },
+        "IT_GJ_004": { name: "무등산 약수", rarity: "B", effect: "HP_HEAL", value: 13, desc: "무등산의 천연수" },
+        "IT_GJ_005": { name: "남도 한정식", rarity: "A", effect: "SKILL_UP", value: 11, desc: "정갈한 밥상" },
+        "IT_GJ_999": { name: "광주 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "광주를 정복한 증표" },
+
+        // 대전 아이템
+        "IT_DJ_001": { name: "성심당 빵", rarity: "A", effect: "HP_HEAL", value: 15, desc: "대전의 명물 빵집" },
+        "IT_DJ_002": { name: "은행동 칼국수", rarity: "B", effect: "HP_MAX", value: 47, desc: "진한 육수의 칼국수" },
+        "IT_DJ_003": { name: "중앙시장 먹거리", rarity: "C", effect: "GOLD", value: 75, desc: "시장의 다양한 맛" },
+        "IT_DJ_004": { name: "대청호 은어", rarity: "B", effect: "ATK", value: 6, desc: "은어 구이" },
+        "IT_DJ_005": { name: "수목원 힐링", rarity: "B", effect: "COOLDOWN", value: -6, desc: "자연 속 휴식" },
+        "IT_DJ_999": { name: "대전 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "대전을 정복한 증표" },
+
+        // 울산 아이템
+        "IT_US_001": { name: "언양불고기", rarity: "A", effect: "ATK", value: 9, desc: "불향 가득한 언양불고기" },
+        "IT_US_002": { name: "대왕암 추억", rarity: "C", effect: "GOLD", value: 85, desc: "바다의 아름다움" },
+        "IT_US_003": { name: "태화강 자연", rarity: "B", effect: "HP_HEAL", value: 14, desc: "생태공원의 여유" },
+        "IT_US_004": { name: "울산 방어", rarity: "A", effect: "HP_MAX", value: 50, desc: "겨울 별미 방어" },
+        "IT_US_999": { name: "울산 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "울산을 정복한 증표" },
+
+        // 세종 아이템
+        "IT_SJ_001": { name: "세종 한정식", rarity: "B", effect: "HP_MAX", value: 48, desc: "행정수도의 품격" },
+        "IT_SJ_002": { name: "호수공원", rarity: "C", effect: "GOLD", value: 70, desc: "도심 속 호수" },
+        "IT_SJ_003": { name: "조치원 떡", rarity: "C", effect: "HP_HEAL", value: 12, desc: "전통시장 떡" },
+        "IT_SJ_004": { name: "연기벌 쌀", rarity: "B", effect: "HP_MAX", value: 45, desc: "비옥한 평야의 쌀" },
+        "IT_SJ_999": { name: "세종 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "세종을 정복한 증표" },
+
+        // 경기도 아이템
+        "IT_GG_001": { name: "수원 왕갈비", rarity: "A", effect: "ATK", value: 9, desc: "화성의 명물 왕갈비" },
+        "IT_GG_002": { name: "수원화성 증표", rarity: "A", effect: "SKILL_UP", value: 10, desc: "세계문화유산" },
+        "IT_GG_003": { name: "분당 카페", rarity: "B", effect: "COOLDOWN", value: -5, desc: "신도시 카페" },
+        "IT_GG_004": { name: "에버랜드 추억", rarity: "C", effect: "GOLD", value: 80, desc: "즐거운 놀이공원" },
+        "IT_GG_005": { name: "일산 호수", rarity: "B", effect: "HP_HEAL", value: 13, desc: "호수공원의 여유" },
+        "IT_GG_006": { name: "부대찌개", rarity: "B", effect: "HP_MAX", value: 47, desc: "의정부의 명물" },
+        "IT_GG_007": { name: "임진각 평화", rarity: "B", effect: "GOLD", value: 95, desc: "평화의 메시지" },
+        "IT_GG_008": { name: "가평 닭갈비", rarity: "A", effect: "ATK", value: 7, desc: "가평의 별미" },
+        "IT_GG_009": { name: "평택 소머리국밥", rarity: "B", effect: "HP_MAX", value: 49, desc: "진한 소머리국밥" },
+        "IT_GG_010": { name: "이천 쌀밥", rarity: "A", effect: "HP_HEAL", value: 16, desc: "이천 쌀의 고소함" },
+        "IT_GG_011": { name: "안산 다문화", rarity: "B", effect: "GOLD", value: 100, desc: "세계의 맛" },
+        "IT_GG_999": { name: "경기 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "경기도를 정복한 증표" },
+
+        // 충청북도 아이템
+        "IT_CB_001": { name: "청주 직지", rarity: "A", effect: "GOLD", value: 150, desc: "세계 최초 금속활자" },
+        "IT_CB_002": { name: "충주댐", rarity: "B", effect: "HP_MAX", value: 46, desc: "거대한 댐" },
+        "IT_CB_003": { name: "제천 약초", rarity: "A", effect: "HP_HEAL", value: 18, desc: "전통 약초" },
+        "IT_CB_004": { name: "단양 마늘", rarity: "B", effect: "ATK", value: 6, desc: "단양 특산 마늘" },
+        "IT_CB_005": { name: "괴산 고추", rarity: "C", effect: "ATK", value: 5, desc: "청결고추" },
+        "IT_CB_999": { name: "충북 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "충북을 정복한 증표" },
+
+        // 충청남도 아이템
+        "IT_CN_001": { name: "천안 호두과자", rarity: "B", effect: "GOLD", value: 95, desc: "천안의 명물" },
+        "IT_CN_002": { name: "아산 어리굴젓", rarity: "A", effect: "HP_HEAL", value: 16, desc: "전통 어리굴젓" },
+        "IT_CN_003": { name: "공주 밤", rarity: "C", effect: "GOLD", value: 80, desc: "공주 알밤" },
+        "IT_CN_004": { name: "백제문화", rarity: "B", effect: "COOLDOWN", value: -6, desc: "백제의 역사" },
+        "IT_CN_005": { name: "보령 굴", rarity: "A", effect: "HP_MAX", value: 50, desc: "싱싱한 굴" },
+        "IT_CN_006": { name: "서산 쌀", rarity: "B", effect: "HP_MAX", value: 46, desc: "간척지 쌀" },
+        "IT_CN_999": { name: "충남 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "충남을 정복한 증표" },
+
+        // 전북 아이템
+        "IT_JB_001": { name: "전주 비빔밥", rarity: "SP", effect: "HP_MAX", value: 60, desc: "전주의 자랑" },
+        "IT_JB_002": { name: "콩나물국밥", rarity: "B", effect: "HP_HEAL", value: 14, desc: "해장에 그만" },
+        "IT_JB_003": { name: "군산 빵", rarity: "A", effect: "GOLD", value: 130, desc: "이성당의 명물" },
+        "IT_JB_004": { name: "순창 고추장", rarity: "A", effect: "ATK", value: 8, desc: "전통 고추장" },
+        "IT_JB_005": { name: "내장산 단풍", rarity: "B", effect: "COOLDOWN", value: -7, desc: "가을 단풍" },
+        "IT_JB_006": { name: "김제 쌀", rarity: "A", effect: "HP_MAX", value: 52, desc: "지평선 쌀" },
+        "IT_JB_999": { name: "전북 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "전북을 정복한 증표" },
+
+        // 전남 아이템
+        "IT_JN_001": { name: "여수 게장", rarity: "A", effect: "HP_HEAL", value: 17, desc: "여수 돌게장" },
+        "IT_JN_002": { name: "순천만 갈대", rarity: "B", effect: "GOLD", value: 95, desc: "자연의 아름다움" },
+        "IT_JN_003": { name: "보성 녹차", rarity: "A", effect: "COOLDOWN", value: -8, desc: "향기로운 녹차" },
+        "IT_JN_004": { name: "벌교 꼬막", rarity: "B", effect: "HP_MAX", value: 48, desc: "통통한 꼬막" },
+        "IT_JN_005": { name: "장흥 한우", rarity: "SP", effect: "ATK", value: 12, desc: "최고급 한우" },
+        "IT_JN_006": { name: "목포 낙지", rarity: "A", effect: "HP_HEAL", value: 18, desc: "연포탕의 진미" },
+        "IT_JN_007": { name: "땅끝 추억", rarity: "B", effect: "GOLD", value: 105, desc: "한반도 끝자락" },
+        "IT_JN_999": { name: "전남 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "전남을 정복한 증표" },
+
+        // 경북 아이템
+        "IT_GB_001": { name: "안동 찜닭", rarity: "A", effect: "ATK", value: 9, desc: "안동의 명물" },
+        "IT_GB_002": { name: "경주 빵", rarity: "B", effect: "GOLD", value: 95, desc: "황남빵" },
+        "IT_GB_003": { name: "불국사 증표", rarity: "SP", effect: "SKILL_UP", value: 15, desc: "세계문화유산" },
+        "IT_GB_004": { name: "포항 과메기", rarity: "A", effect: "HP_MAX", value: 53, desc: "겨울 별미" },
+        "IT_GB_005": { name: "구미 소금빵", rarity: "B", effect: "HP_HEAL", value: 14, desc: "버터 향 가득" },
+        "IT_GB_006": { name: "문경 오미자", rarity: "A", effect: "HP_HEAL", value: 17, desc: "다섯 가지 맛" },
+        "IT_GB_007": { name: "청송 사과", rarity: "B", effect: "GOLD", value: 100, desc: "아삭한 사과" },
+        "IT_GB_008": { name: "영주 한우", rarity: "A", effect: "ATK", value: 10, desc: "최고급 한우" },
+        "IT_GB_999": { name: "경북 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "경북을 정복한 증표" },
+
+        // 경남 아이템
+        "IT_GN_001": { name: "통영 굴", rarity: "A", effect: "HP_MAX", value: 51, desc: "통영의 신선한 굴" },
+        "IT_GN_002": { name: "진주 냉면", rarity: "B", effect: "HP_HEAL", value: 15, desc: "진주 특색 냉면" },
+        "IT_GN_003": { name: "거제 멸치", rarity: "B", effect: "ATK", value: 7, desc: "거제 특산 멸치" },
+        "IT_GN_004": { name: "밀양 돼지국밥", rarity: "A", effect: "HP_MAX", value: 50, desc: "진한 육수" },
+        "IT_GN_005": { name: "남해 마늘", rarity: "C", effect: "ATK", value: 6, desc: "남해 특산 마늘" },
+        "IT_GN_006": { name: "하동 녹차", rarity: "A", effect: "COOLDOWN", value: -7, desc: "지리산 녹차" },
+        "IT_GN_007": { name: "죽방렴", rarity: "B", effect: "GOLD", value: 110, desc: "전통 어업" },
+        "IT_GN_999": { name: "경남 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "경남을 정복한 증표" },
+
+        // 제주 아이템
+        "IT_JJ_001": { name: "제주 흑돼지", rarity: "SP", effect: "HP_MAX", value: 70, desc: "제주의 명물" },
+        "IT_JJ_002": { name: "제주 고등어", rarity: "A", effect: "HP_HEAL", value: 18, desc: "통통한 고등어회" },
+        "IT_JJ_003": { name: "제주 감귤", rarity: "B", effect: "GOLD", value: 100, desc: "달콤한 감귤" },
+        "IT_JJ_004": { name: "제주 전복", rarity: "A", effect: "HP_MAX", value: 55, desc: "영양 만점 전복" },
+        "IT_JJ_005": { name: "성산일출", rarity: "SP", effect: "GOLD", value: 180, desc: "아름다운 일출" },
+        "IT_JJ_999": { name: "제주 증표", rarity: "Legendary", effect: "UNLOCK", value: 0, desc: "한라산을 정복한 증표" }
     },
 
     characters: [

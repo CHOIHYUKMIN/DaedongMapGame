@@ -10,8 +10,19 @@ const Puzzle = {
     isAnimating: false,
 
     init(levelId) {
+        console.log(`🎮 Puzzle.init 호출: levelId = ${levelId} (type: ${typeof levelId})`);
+        console.log(`🔍 GameData.levels에서 레벨 검색 중... (총 ${GameData.levels.length}개 레벨)`);
+
         this.currentLevel = GameData.levels.find(l => l.id === levelId);
-        if (!this.currentLevel) return;
+
+        if (!this.currentLevel) {
+            console.error(`❌ 레벨 ID ${levelId}을(를) 찾을 수 없습니다!`);
+            console.log('🔍 사용 가능한 레벨 ID 목록:', GameData.levels.slice(0, 20).map(l => l.id));
+            return;
+        }
+
+        console.log(`✅ 레벨 찾음: ${this.currentLevel.name}`);
+        console.log(`🎨 blockTheme:`, this.currentLevel.blockTheme);
 
         this.movesLeft = this.currentLevel.moves;
         this.score = 0;
@@ -92,31 +103,17 @@ const Puzzle = {
     addDragEvents(block, x, y) {
         let isDragging = false;
         let startX, startY;
-        let draggedBlock = null;
         let dragStartTime = 0;
 
-        // 마우스/터치 시작
-        const onStart = (e) => {
-            if (this.isAnimating) return;
-
-            isDragging = true;
-            draggedBlock = block;
-            dragStartTime = Date.now();
-
-            const touch = e.touches ? e.touches[0] : e;
-            startX = touch.clientX;
-            startY = touch.clientY;
-
-            block.classList.add('selected');
-            block.style.zIndex = '100';
-            block.style.transform = 'scale(1.2)';
-        };
-
-        // 마우스/터치 이동
+        // 마우스/터치 이동 핸들러
         const onMove = (e) => {
             if (!isDragging) return;
 
-            e.preventDefault();
+            // passive: false로 설정했기 때문에 preventDefault 가능
+            if (e.cancelable) {
+                e.preventDefault();
+            }
+
             const touch = e.touches ? e.touches[0] : e;
             const deltaX = touch.clientX - startX;
             const deltaY = touch.clientY - startY;
@@ -125,7 +122,7 @@ const Puzzle = {
             block.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(1.2)`;
         };
 
-        // 마우스/터치 끝
+        // 마우스/터치 종료 핸들러
         const onEnd = (e) => {
             if (!isDragging) return;
 
@@ -139,6 +136,12 @@ const Puzzle = {
             block.style.transform = '';
             block.style.zIndex = '';
             block.classList.remove('selected');
+
+            // 이벤트 리스너 제거
+            window.removeEventListener('mousemove', onMove);
+            window.removeEventListener('touchmove', onMove);
+            window.removeEventListener('mouseup', onEnd);
+            window.removeEventListener('touchend', onEnd);
 
             // 부스터 활성화 중이면 부스터 사용
             if (this.activeBooster && dragDuration < 200 && Math.abs(deltaX) < 10 && Math.abs(deltaY) < 10) {
@@ -170,15 +173,36 @@ const Puzzle = {
             }
         };
 
-        // 이벤트 리스너 등록
-        block.addEventListener('mousedown', onStart);
+        // 마우스/터치 시작 핸들러
+        const onStart = (e) => {
+            if (this.isAnimating) return;
+
+            // 터치 이벤트면 preventDefault로 스크롤 방지
+            if (e.type === 'touchstart' && e.cancelable) {
+                e.preventDefault();
+            }
+
+            isDragging = true;
+            dragStartTime = Date.now();
+
+            const touch = e.touches ? e.touches[0] : e;
+            startX = touch.clientX;
+            startY = touch.clientY;
+
+            block.classList.add('selected');
+            block.style.zIndex = '100';
+            block.style.transform = 'scale(1.2)';
+
+            // move와 end 이벤트를 window에 등록 (드래그가 블록 밖으로 나가도 동작)
+            window.addEventListener('mousemove', onMove, { passive: false });
+            window.addEventListener('touchmove', onMove, { passive: false });
+            window.addEventListener('mouseup', onEnd, { passive: true });
+            window.addEventListener('touchend', onEnd, { passive: true });
+        };
+
+        // 블록에 시작 이벤트만 등록
+        block.addEventListener('mousedown', onStart, { passive: false });
         block.addEventListener('touchstart', onStart, { passive: false });
-
-        document.addEventListener('mousemove', onMove);
-        document.addEventListener('touchmove', onMove, { passive: false });
-
-        document.addEventListener('mouseup', onEnd);
-        document.addEventListener('touchend', onEnd);
     },
 
     // 스와이프 방향 판단
@@ -803,20 +827,22 @@ const Puzzle = {
                 Game.onLevelClear(this.currentLevel.id, this.score);
             }
 
-            // 3초 후 자동으로 다음 레벨로 이동
-            setTimeout(() => {
-                popup.classList.remove('active');
+            // 다음 레벨 버튼 표시 (자동 이동 대신)
+            const nextLevel = GameData.levels.find(l => l.id === this.currentLevel.id + 1);
+            const nextLevelBtn = document.getElementById('next-level-btn');
+            const nextLevelMsg = document.getElementById('next-level-msg');
 
-                const nextLevel = GameData.levels.find(l => l.id === this.currentLevel.id + 1);
-                if (nextLevel) {
-                    // 다음 레벨 시작
-                    Game.showPuzzle(nextLevel.id);
-                } else {
-                    // 마지막 레벨이면 지도로
-                    alert('축하합니다! 모든 레벨을 클리어했습니다! 🎉');
-                    Game.showMap();
+            if (nextLevel && nextLevelBtn) {
+                nextLevelBtn.style.display = 'inline-block';
+                // 현재 레벨 ID를 저장해서 Game.goToNextLevel에서 사용
+                Game.currentLevelId = this.currentLevel.id;
+            } else if (nextLevelBtn) {
+                // 마지막 레벨인 경우
+                nextLevelBtn.style.display = 'none';
+                if (nextLevelMsg) {
+                    nextLevelMsg.textContent = '🎊 모든 레벨을 클리어했습니다!';
                 }
-            }, 3000);
+            }
         } else {
             document.getElementById('result-stars').textContent = '😢';
         }

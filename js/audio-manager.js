@@ -21,12 +21,23 @@ class AudioManager {
         // 실제 음악 파일이 없으므로 간단한 멜로디 생성
         this.createBackgroundMusic();
 
-        // 사용자 인터랙션 후 자동 재생
-        document.addEventListener('click', () => {
+        // 사용자 인터랙션 후 자동 재생 (모바일 호환)
+        const startBGM = () => {
             if (this.bgmEnabled && this.bgm && this.bgm.paused) {
                 this.playBGM();
             }
-        }, { once: true });
+        };
+
+        // 클릭 이벤트 (데스크톱)
+        document.addEventListener('click', startBGM, { once: true });
+
+        // 터치 이벤트 (모바일)
+        document.addEventListener('touchstart', startBGM, { once: true, passive: true });
+
+        // 키보드 이벤트 (대체 방법)
+        document.addEventListener('keydown', startBGM, { once: true });
+
+        console.log('🎵 AudioManager initialized with mobile support');
     }
 
     /**

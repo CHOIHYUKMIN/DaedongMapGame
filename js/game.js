@@ -77,6 +77,7 @@ const Game = {
     },
 
     showPuzzle(levelId) {
+        console.log(`🎮 showPuzzle 호출: levelId = ${levelId} (type: ${typeof levelId})`);
         this.showScreen('puzzle-screen');
         Puzzle.init(levelId);
     },
@@ -407,27 +408,43 @@ const Game = {
         // 지역 데이터 가져오기
         const regionData = typeof RegionData !== 'undefined' ? RegionData.getRegion(region) : null;
 
+        // 지역별 레벨 오프셋 매핑 (data.js 기준)
+        const regionOffsets = {
+            'seoul': 0,      // 1-10
+            'busan': 10,     // 11-18
+            'gangwon': 18,   // 19-26
+            'daegu': 26,     // 27-33
+            'incheon': 33,   // 34-40
+            'gwangju': 40,   // 41-46
+            'daejeon': 46,   // 47-52
+            'ulsan': 52,     // 53-57
+            'sejong': 57,    // 58-62
+            'gyeonggi': 62,  // 63-74
+            'chungbuk': 74,  // 75-80
+            'chungnam': 80,  // 81-87
+            'jeonbuk': 87,   // 88-94
+            'jeonnam': 94,   // 95-102
+            'gyeongbuk': 102, // 103-111
+            'gyeongnam': 111, // 112-119
+            'jeju': 119      // 120-125
+        };
+
         if (region === 'seoul') {
             // 서울: 25개 구 지도 표시
             this.currentRegion = 'seoul';
             this.regionLevelOffset = 0;
             this.showGuMap('seoul'); // 구 지도 표시
-        } else if (region === 'busan') {
-            // 부산: 레벨 11-18 (나중에 구 지도로 변경 예정)
-            this.currentRegion = 'busan';
-            this.regionLevelOffset = 10;
+        } else {
+            // 다른 지역: 해당 지역 레벨로 바로 이동
+            this.currentRegion = region;
+            this.currentDong = null;
+            this.regionLevelOffset = regionOffsets[region] || 0;
 
             if (this.userData.selectedCharacter) {
                 this.showMap();
             } else {
                 this.showCharacterSelect();
             }
-        } else if (region === 'gyeonggi') {
-            alert('경기도 지역은 준비 중입니다!\n곧 업데이트될 예정입니다. 😊');
-        } else {
-            // 기타 지역 (아직 미구현)
-            const regionName = regionData ? regionData.name : region;
-            alert(`${regionName} 지역은 준비 중입니다!\n곧 업데이트될 예정입니다. 😊`);
         }
     },
 
@@ -616,12 +633,20 @@ const Game = {
 
         this.currentGu = guId;
 
-        // 강남구만 동 지도 구현됨
+        // 강남구는 동 지도 표시
         if (guId === 'seoul_gangnam') {
             this.showDongMap(guId);
         } else {
-            // 나머지 구는 아직 미구현
-            alert(`${gu.name}은 준비 중입니다!\n강남구만 플레이 가능합니다. 😊`);
+            // 다른 구들은 바로 레벨 지도로 이동 (기본 서울 레벨 사용)
+            this.currentDong = null;  // 동 선택 없음
+            this.currentRegion = 'seoul';
+            this.regionLevelOffset = 0;  // 서울 레벨 시작점
+
+            if (this.userData.selectedCharacter) {
+                this.showMap();
+            } else {
+                this.showCharacterSelect();
+            }
         }
     },
 
@@ -915,8 +940,8 @@ const Game = {
                 const regions = RegionData.getAllRegions();
 
                 regions.forEach(region => {
-                    // 서울과 부산만 활성화, 나머지는 잠금
-                    const isUnlocked = region.id === 'seoul' || region.id === 'busan';
+                    // 모든 지역 활성화 (전국 플레이 가능)
+                    const isUnlocked = true;
 
                     // 적절한 크기로 조정 (너무 크지 않게)
                     const radius = region.id === 'seoul' || region.id === 'busan' ? 15000 : 18000;
@@ -1103,50 +1128,81 @@ const Game = {
         this.renderLevelMarkers(levels);
     },
 
-    // 동별 레벨 생성 헬퍼 함수
+    // 동별 레벨 생성 헬퍼 함수 - GameData.levels의 실제 레벨 데이터 사용
     generateDongLevels(dong) {
         const levels = [];
         const baseLatLng = dong.center;
 
-        for (let i = 0; i < dong.levelCount; i++) {
+        // GameData.levels에서 서울 레벨 (1-10)을 사용
+        const seoulLevels = GameData.levels.slice(0, 10);
+        const levelsToUse = Math.min(dong.levelCount, seoulLevels.length);
+
+        for (let i = 0; i < levelsToUse; i++) {
             // 동 중심 주변에 레벨 배치 (원형 배치)
-            const angle = (i / dong.levelCount) * 2 * Math.PI;
+            const angle = (i / levelsToUse) * 2 * Math.PI;
             const radius = 0.004; // 약 400m
 
+            const baseLevel = seoulLevels[i];
             levels.push({
-                id: `${dong.id}_level_${i + 1}`,
-                name: `${dong.name} ${i + 1}`,
+                ...baseLevel, // GameData의 실제 레벨 데이터 사용 (id, blockTheme, target 등)
                 lat: baseLatLng[0] + Math.cos(angle) * radius,
                 lng: baseLatLng[1] + Math.sin(angle) * radius,
-                target: 1000 + (i * 200),
-                reward: `IT_${dong.id}_${i + 1}`,
+                name: `${dong.name} ${i + 1}`,
                 dongId: dong.id
             });
         }
 
+        console.log(`📍 ${dong.name} 레벨 생성 완료:`, levels.map(l => l.id));
         return levels;
     },
 
-    // 기본 레벨 가져오기 (부산 등)
+    // 기본 레벨 가져오기 (지역별)
     getDefaultLevels() {
-        const levelLocations = [
-            { lat: 37.5665, lng: 126.9780 },  // 1. 시청
-            { lat: 37.5640, lng: 126.9810 },  // 2. 소공동
-            { lat: 37.5636, lng: 126.9826 },  // 3. 명동
-            { lat: 37.5664, lng: 126.9910 },  // 4. 을지로
-            { lat: 37.5610, lng: 127.0050 },  // 5. 장충동
-            { lat: 37.5730, lng: 126.9850 },  // 6. 인사동
-            { lat: 37.5705, lng: 127.0000 },  // 7. 광장시장
-            { lat: 37.5860, lng: 126.9830 },  // 8. 삼청동
-            { lat: 37.6100, lng: 126.9750 },  // 9. 평창동
-            { lat: 37.5512, lng: 126.9882 }   // 10. 남산
-        ];
+        // 지역별 레벨 수 매핑
+        const regionLevelCounts = {
+            'seoul': 10, 'busan': 8, 'gangwon': 8, 'daegu': 7, 'incheon': 7,
+            'gwangju': 6, 'daejeon': 6, 'ulsan': 5, 'sejong': 5, 'gyeonggi': 12,
+            'chungbuk': 6, 'chungnam': 7, 'jeonbuk': 7, 'jeonnam': 8,
+            'gyeongbuk': 9, 'gyeongnam': 8, 'jeju': 6
+        };
 
-        return GameData.levels.slice(this.regionLevelOffset, this.regionLevelOffset + 10).map((level, index) => ({
-            ...level,
-            lat: levelLocations[index].lat,
-            lng: levelLocations[index].lng
-        }));
+        // 지역별 중심 좌표 매핑
+        const regionCenters = {
+            'seoul': [37.5665, 126.9780],
+            'busan': [35.1796, 129.0756],
+            'gangwon': [37.8228, 128.1555],
+            'daegu': [35.8714, 128.6014],
+            'incheon': [37.4563, 126.7052],
+            'gwangju': [35.1595, 126.8526],
+            'daejeon': [36.3504, 127.3845],
+            'ulsan': [35.5384, 129.3114],
+            'sejong': [36.4800, 127.2890],
+            'gyeonggi': [37.4138, 127.5183],
+            'chungbuk': [36.6357, 127.4912],
+            'chungnam': [36.5184, 126.8000],
+            'jeonbuk': [35.8203, 127.1088],
+            'jeonnam': [34.8161, 126.4629],
+            'gyeongbuk': [36.5760, 128.5056],
+            'gyeongnam': [35.4606, 128.2132],
+            'jeju': [33.4996, 126.5312]
+        };
+
+        const levelCount = regionLevelCounts[this.currentRegion] || 10;
+        const center = regionCenters[this.currentRegion] || [37.5665, 126.9780];
+
+        // 지역 레벨 가져오기
+        const regionLevels = GameData.levels.slice(this.regionLevelOffset, this.regionLevelOffset + levelCount);
+
+        // 원형 배치로 좌표 생성
+        return regionLevels.map((level, index) => {
+            const angle = (index / levelCount) * 2 * Math.PI;
+            const radius = 0.02; // 약 2km 반경
+            return {
+                ...level,
+                lat: center[0] + Math.cos(angle) * radius,
+                lng: center[1] + Math.sin(angle) * radius
+            };
+        });
     },
 
     // 레벨 마커 렌더링 헬퍼 함수
@@ -1275,6 +1331,30 @@ const Game = {
         if (confirm('정말로 게임을 초기화하시겠습니까?')) {
             localStorage.removeItem('daedongMapGame');
             location.reload();
+        }
+    },
+
+    // 다음 레벨로 이동
+    goToNextLevel() {
+        const popup = document.getElementById('result-popup');
+        popup.classList.remove('active');
+
+        // 다음 레벨 버튼 숨기기
+        const nextLevelBtn = document.getElementById('next-level-btn');
+        if (nextLevelBtn) {
+            nextLevelBtn.style.display = 'none';
+        }
+
+        if (this.currentLevelId) {
+            const nextLevel = GameData.levels.find(l => l.id === this.currentLevelId + 1);
+            if (nextLevel) {
+                this.showPuzzle(nextLevel.id);
+            } else {
+                alert('🎊 축하합니다! 모든 레벨을 클리어했습니다!');
+                this.showMap();
+            }
+        } else {
+            this.showMap();
         }
     }
 };
