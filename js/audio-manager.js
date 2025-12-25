@@ -112,6 +112,12 @@ class AudioManager {
     playSFX(soundType) {
         if (!this.sfxEnabled) return;
 
+        // 버블 팝 사운드는 Web Audio API로 생성
+        if (soundType === 'bubblePop') {
+            this.playBubblePopSound();
+            return;
+        }
+
         const sfx = new Audio();
         sfx.volume = this.sfxVolume;
 
@@ -122,9 +128,9 @@ class AudioManager {
                 sfx.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
                 break;
             case 'match':
-                // 매칭 효과음
-                sfx.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
-                break;
+                // 매칭 효과음 - 버블 팝으로 대체
+                this.playBubblePopSound();
+                return;
             case 'success':
                 // 성공 효과음
                 sfx.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
@@ -134,6 +140,47 @@ class AudioManager {
         }
 
         sfx.play().catch(err => console.log('SFX play error:', err));
+    }
+
+    /**
+     * 버블 팝 사운드 재생 (Web Audio API)
+     * 비누방울 터지는 "퐁" 소리를 합성
+     */
+    playBubblePopSound() {
+        try {
+            // AudioContext 생성 (재사용)
+            if (!this.audioContext) {
+                this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+
+            const ctx = this.audioContext;
+            const now = ctx.currentTime;
+
+            // 버블 팝 사운드 - 짧고 부드러운 "퐁" 소리
+            const oscillator = ctx.createOscillator();
+            const gainNode = ctx.createGain();
+
+            // 주파수: 높은 음에서 빠르게 낮아짐 (퐁 효과)
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(800 + Math.random() * 400, now); // 800-1200Hz 랜덤
+            oscillator.frequency.exponentialRampToValueAtTime(200, now + 0.08);
+
+            // 볼륨: 빠르게 커졌다가 사라짐
+            gainNode.gain.setValueAtTime(0, now);
+            gainNode.gain.linearRampToValueAtTime(this.sfxVolume * 0.3, now + 0.01);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+
+            // 연결
+            oscillator.connect(gainNode);
+            gainNode.connect(ctx.destination);
+
+            // 재생
+            oscillator.start(now);
+            oscillator.stop(now + 0.15);
+
+        } catch (err) {
+            console.log('Bubble pop sound error:', err);
+        }
     }
 
     /**

@@ -514,6 +514,7 @@ const Puzzle = {
         this.updateUI();
 
         // 블록 제거 애니메이션 (특수 블록 위치 제외)
+        let soundCount = 0; // 동시에 너무 많은 사운드 방지
         uniqueMatches.forEach(m => {
             // 특수 블록 생성 위치는 제거하지 않음
             if (specialBlocks.some(sb => sb.x === m.x && sb.y === m.y)) {
@@ -527,6 +528,14 @@ const Puzzle = {
             if (block) {
                 block.classList.add('exploding');
                 this.createParticles(block, this.grid[m.y][m.x]);
+
+                // 버블 팝 사운드 (처음 5개만)
+                if (soundCount < 5 && typeof audioManager !== 'undefined') {
+                    setTimeout(() => {
+                        audioManager.playSFX('bubblePop');
+                    }, soundCount * 30); // 살짝 딜레이로 자연스러운 효과
+                    soundCount++;
+                }
             }
 
             this.grid[m.y][m.x] = -1;
