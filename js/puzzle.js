@@ -61,7 +61,10 @@ const Puzzle = {
         // 난이도 계산
         const difficulty = this.calculateDifficulty();
         this.gridSize = difficulty.gridSize;
-        const blockTypeCount = difficulty.blockTypes;
+
+        // 블럭 타입 수를 이모지 개수로 제한 (중복 방지)
+        const maxBlockTypes = this.emojiMapping ? this.emojiMapping.length : 5;
+        const blockTypeCount = Math.min(difficulty.blockTypes, maxBlockTypes);
 
         // 그리드 크기 조정
         board.style.gridTemplateColumns = `repeat(${this.gridSize}, 1fr)`;
@@ -359,50 +362,48 @@ const Puzzle = {
         if (this.isAnimating) return;
         this.isAnimating = true;
 
-        // 블록 요소 가져오기
+        // 블록 요소 가져오기 (캐싱)
         const blocks = document.querySelectorAll('.block');
         const index1 = block1.y * this.gridSize + block1.x;
         const index2 = block2.y * this.gridSize + block2.x;
         const elem1 = blocks[index1];
         const elem2 = blocks[index2];
 
-        // 스와이프 애니메이션 (블록이 서로 교환되는 모습)
-        const gap = 3; // CSS gap과 동일
+        // GPU 가속 활성화
+        elem1.style.willChange = 'transform';
+        elem2.style.willChange = 'transform';
+
+        // 스와이프 애니메이션
+        const gap = 3;
         const dx = (block2.x - block1.x) * (elem1.offsetWidth + gap);
         const dy = (block2.y - block1.y) * (elem1.offsetHeight + gap);
 
-        // 더 부드러운 애니메이션 - cubic-bezier 사용
-        const smoothEasing = 'cubic-bezier(0.34, 1.56, 0.64, 1)';
-        elem1.style.transition = `transform 0.25s ${smoothEasing}`;
-        elem2.style.transition = `transform 0.25s ${smoothEasing}`;
+        // 더 빠른 애니메이션 (0.15s)
+        const smoothEasing = 'cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        elem1.style.transition = `transform 0.15s ${smoothEasing}`;
+        elem2.style.transition = `transform 0.15s ${smoothEasing}`;
         elem1.style.transform = `translate(${dx}px, ${dy}px)`;
         elem2.style.transform = `translate(${-dx}px, ${-dy}px)`;
         elem1.style.zIndex = '10';
         elem2.style.zIndex = '10';
 
-        await this.sleep(250);
+        await this.sleep(150); // 더 짧은 대기
 
         // 그리드에서 교환
         const temp = this.grid[block1.y][block1.x];
         this.grid[block1.y][block1.x] = this.grid[block2.y][block2.x];
         this.grid[block2.y][block2.x] = temp;
 
-        // 애니메이션 초기화
-        elem1.style.transition = '';
-        elem2.style.transition = '';
-        elem1.style.transform = '';
-        elem2.style.transform = '';
-        elem1.style.zIndex = '';
-        elem2.style.zIndex = '';
+        // 스타일 초기화
+        elem1.style.cssText = '';
+        elem2.style.cssText = '';
 
         this.renderBoard();
 
-        // 매칭 확인 (딜레이 줄임)
-        await this.sleep(50);
+        // 매칭 확인
         const matchResult = this.findMatches();
 
         if (matchResult.matches.length > 0) {
-            // 매칭 성공
             this.movesLeft--;
             await this.processMatches(matchResult.matches, matchResult.matchGroups);
             this.checkWinCondition();
@@ -412,26 +413,25 @@ const Puzzle = {
             this.grid[block1.y][block1.x] = this.grid[block2.y][block2.x];
             this.grid[block2.y][block2.x] = temp;
 
-            // 되돌리는 애니메이션 (더 빠르게)
             this.renderBoard();
-            await this.sleep(50);
 
             const blocks2 = document.querySelectorAll('.block');
             const elem1_new = blocks2[index1];
             const elem2_new = blocks2[index2];
 
+            elem1_new.style.willChange = 'transform';
+            elem2_new.style.willChange = 'transform';
+
             const bounceEasing = 'cubic-bezier(0.68, -0.55, 0.27, 1.55)';
-            elem1_new.style.transition = `transform 0.2s ${bounceEasing}`;
-            elem2_new.style.transition = `transform 0.2s ${bounceEasing}`;
+            elem1_new.style.transition = `transform 0.12s ${bounceEasing}`;
+            elem2_new.style.transition = `transform 0.12s ${bounceEasing}`;
             elem1_new.style.transform = `translate(${dx}px, ${dy}px)`;
             elem2_new.style.transform = `translate(${-dx}px, ${-dy}px)`;
 
-            await this.sleep(200);
+            await this.sleep(120);
 
-            elem1_new.style.transition = '';
-            elem2_new.style.transition = '';
-            elem1_new.style.transform = '';
-            elem2_new.style.transform = '';
+            elem1_new.style.cssText = '';
+            elem2_new.style.cssText = '';
 
             this.renderBoard();
         }
@@ -545,6 +545,20 @@ const Puzzle = {
         this.score += baseScore + bonusScore;
         this.updateUI();
 
+        // 화면 흔들림 효과 적용
+        const puzzleBoard = document.querySelector('.puzzle-board');
+        const isCombo = uniqueMatches.length >= 6;
+        if (puzzleBoard) {
+            puzzleBoard.classList.remove('shake', 'shake-strong');
+            void puzzleBoard.offsetWidth; // 애니메이션 리셋
+            puzzleBoard.classList.add(isCombo ? 'shake-strong' : 'shake');
+        }
+
+        // 대량 매칭 시 폭발 플래시 효과
+        if (uniqueMatches.length >= 5) {
+            this.createExplosionFlash();
+        }
+
         // 블록 제거 애니메이션 (특수 블록 위치 제외)
         let soundCount = 0; // 동시에 너무 많은 사운드 방지
         uniqueMatches.forEach(m => {
@@ -561,11 +575,11 @@ const Puzzle = {
                 block.classList.add('exploding');
                 this.createParticles(block, this.grid[m.y][m.x]);
 
-                // 버블 팝 사운드 (처음 5개만)
-                if (soundCount < 5 && typeof audioManager !== 'undefined') {
+                // 강화된 버블 팝 사운드
+                if (soundCount < 8 && typeof audioManager !== 'undefined') {
                     setTimeout(() => {
-                        audioManager.playSFX('bubblePop');
-                    }, soundCount * 30); // 살짝 딜레이로 자연스러운 효과
+                        audioManager.playExplosivePopSound();
+                    }, soundCount * 25);
                     soundCount++;
                 }
             }
@@ -580,10 +594,10 @@ const Puzzle = {
             console.log(`특수 블록 생성! 위치: (${sb.x}, ${sb.y}), 타입: ${typeName}`);
         }
 
-        await this.sleep(500);
+        await this.sleep(280); // 폭발 애니메이션 (더 빠르게)
 
         this.renderBoard();
-        await this.sleep(200);
+        await this.sleep(60); // 렌더링 안정화 (최소화)
 
         // 중력 적용
         await this.applyGravity();
@@ -591,49 +605,100 @@ const Puzzle = {
         // 새 블록 생성
         this.fillEmpty();
         this.renderBoard();
-        await this.sleep(300);
+        await this.sleep(150); // 새 블록 등장 (더 빠르게)
 
-        // 연쇄 매칭 확인
-        const newMatchResult = this.findMatches();
-        if (newMatchResult.matches.length > 0) {
-            await this.processMatches(newMatchResult.matches, newMatchResult.matchGroups);
-        }
+        // 연쇄 매칭 확인 - requestAnimationFrame 사용
+        requestAnimationFrame(async () => {
+            const newMatchResult = this.findMatches();
+            if (newMatchResult.matches.length > 0) {
+                await this.processMatches(newMatchResult.matches, newMatchResult.matchGroups);
+            }
+        });
 
         this.isAnimating = false;
     },
 
-    // 파티클 효과 생성
+    // 폭발 플래시 효과 생성
+    createExplosionFlash() {
+        const flash = document.createElement('div');
+        flash.className = 'explosion-flash';
+        document.body.appendChild(flash);
+        setTimeout(() => flash.remove(), 200);
+    },
+
+    // 파티클 효과 생성 - 임팩트 강화
     createParticles(blockElement, type) {
         const rect = blockElement.getBoundingClientRect();
         const colors = [
-            '#FF69B4', // 빨강
-            '#FFD700', // 노랑
-            '#4682B4', // 파랑
-            '#32CD32', // 초록
-            '#9370DB'  // 보라
+            ['#FF69B4', '#FF1493', '#FF6B81'], // 핑크
+            ['#FFD700', '#FFA500', '#FFEC8B'], // 골드
+            ['#4682B4', '#1E90FF', '#87CEEB'], // 블루
+            ['#32CD32', '#00FF00', '#90EE90'], // 그린
+            ['#9370DB', '#8A2BE2', '#DDA0DD'], // 퍼플
+            ['#FF8C00', '#FF6347', '#FFB347'], // 오렌지
+            ['#FF4500', '#DC143C', '#FF6B6B'], // 레드
+            ['#00CED1', '#20B2AA', '#7FFFD4']  // 시안
         ];
 
-        const color = colors[type];
-        const particleCount = 8;
+        const colorSet = colors[type % colors.length] || colors[0];
+        const particleCount = 8; // 파티클 수 줄임 (성능 개선)
+
+        // DocumentFragment 사용으로 DOM 접근 최소화
+        const fragment = document.createDocumentFragment();
 
         for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
-            particle.style.background = color;
-            particle.style.left = rect.left + rect.width / 2 + 'px';
-            particle.style.top = rect.top + rect.height / 2 + 'px';
 
-            const angle = (Math.PI * 2 * i) / particleCount;
-            const distance = 50 + Math.random() * 50;
-            const tx = Math.cos(angle) * distance;
-            const ty = Math.sin(angle) * distance;
+            const randomColor = colorSet[Math.floor(Math.random() * colorSet.length)];
+            particle.style.cssText = `
+                background: radial-gradient(circle at 30% 30%, white 0%, ${randomColor} 50%, transparent 100%);
+                box-shadow: 0 0 8px ${randomColor};
+                left: ${rect.left + rect.width / 2}px;
+                top: ${rect.top + rect.height / 2}px;
+                width: ${6 + Math.random() * 8}px;
+                height: ${6 + Math.random() * 8}px;
+                will-change: transform, opacity;
+            `;
 
-            particle.style.setProperty('--tx', tx + 'px');
-            particle.style.setProperty('--ty', ty + 'px');
+            const angle = (Math.PI * 2 * i) / particleCount + Math.random() * 0.3;
+            const distance = 50 + Math.random() * 60;
+            particle.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+            particle.style.setProperty('--ty', (Math.sin(angle) * distance - 15) + 'px');
 
-            document.body.appendChild(particle);
+            fragment.appendChild(particle);
+        }
 
-            setTimeout(() => particle.remove(), 1000);
+        document.body.appendChild(fragment);
+
+        // 일괄 삭제로 성능 개선
+        setTimeout(() => {
+            document.querySelectorAll('.particle').forEach(p => p.remove());
+        }, 800);
+
+        // 추가 스파클 효과 (간소화)
+        for (let i = 0; i < 3; i++) {
+            setTimeout(() => {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'particle sparkle';
+                sparkle.style.cssText = `
+                    background: white;
+                    box-shadow: 0 0 10px white, 0 0 20px gold;
+                    left: ${rect.left + rect.width / 2 + (Math.random() - 0.5) * 20}px;
+                    top: ${rect.top + rect.height / 2 + (Math.random() - 0.5) * 20}px;
+                    width: 5px;
+                    height: 5px;
+                    will-change: transform, opacity;
+                `;
+
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 60 + Math.random() * 40;
+                sparkle.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                sparkle.style.setProperty('--ty', (Math.sin(angle) * distance - 20) + 'px');
+
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 600);
+            }, i * 60);
         }
     },
 
@@ -659,7 +724,7 @@ const Puzzle = {
         if (movedBlocks.length > 0) {
             // 떨어지는 애니메이션과 함께 렌더링
             this.renderBoardWithFallAnimation(movedBlocks);
-            await this.sleep(400);
+            await this.sleep(220); // 더 빠른 낙하
         }
     },
 

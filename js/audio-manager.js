@@ -184,6 +184,76 @@ class AudioManager {
     }
 
     /**
+     * 강화된 폭발 사운드 - 더 펀칭감 있는 "빵!" 소리
+     */
+    playExplosivePopSound() {
+        try {
+            if (!this.audioContext) {
+                this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+
+            const ctx = this.audioContext;
+            const now = ctx.currentTime;
+
+            // 메인 폭발음 - 낮은 주파수에서 시작하는 강한 펀치
+            const osc1 = ctx.createOscillator();
+            const gain1 = ctx.createGain();
+
+            osc1.type = 'sine';
+            osc1.frequency.setValueAtTime(300 + Math.random() * 150, now);
+            osc1.frequency.exponentialRampToValueAtTime(80, now + 0.1);
+
+            gain1.gain.setValueAtTime(0, now);
+            gain1.gain.linearRampToValueAtTime(this.sfxVolume * 0.5, now + 0.008);
+            gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+
+            osc1.connect(gain1);
+            gain1.connect(ctx.destination);
+            osc1.start(now);
+            osc1.stop(now + 0.2);
+
+            // 고주파 "찢어지는" 소리 - 버블이 터지는 느낌
+            const osc2 = ctx.createOscillator();
+            const gain2 = ctx.createGain();
+
+            osc2.type = 'sawtooth';
+            osc2.frequency.setValueAtTime(1200 + Math.random() * 600, now);
+            osc2.frequency.exponentialRampToValueAtTime(200, now + 0.06);
+
+            gain2.gain.setValueAtTime(0, now);
+            gain2.gain.linearRampToValueAtTime(this.sfxVolume * 0.15, now + 0.005);
+            gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+
+            osc2.connect(gain2);
+            gain2.connect(ctx.destination);
+            osc2.start(now);
+            osc2.stop(now + 0.1);
+
+            // 노이즈 버스트 - 폭발감 추가
+            const bufferSize = ctx.sampleRate * 0.05;
+            const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+            const output = noiseBuffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                output[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / bufferSize, 2);
+            }
+
+            const noise = ctx.createBufferSource();
+            noise.buffer = noiseBuffer;
+
+            const noiseGain = ctx.createGain();
+            noiseGain.gain.setValueAtTime(this.sfxVolume * 0.2, now);
+            noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+
+            noise.connect(noiseGain);
+            noiseGain.connect(ctx.destination);
+            noise.start(now);
+
+        } catch (err) {
+            console.log('Explosive pop sound error:', err);
+        }
+    }
+
+    /**
      * 효과음 토글
      */
     toggleSFX() {

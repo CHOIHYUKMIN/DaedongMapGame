@@ -5,7 +5,7 @@ const GangnamDongData = {
             id: "seoul_gangnam_yeoksam1",
             name: "역삼1동",
             guId: "seoul_gangnam",
-            center: [37.5006, 127.0364],
+            center: [37.4987, 127.0365],  // 역삼1동 행정복지센터 기준
             zoom: 15,
             color: "#FF69B4",
             icon: "🏢",
@@ -29,7 +29,7 @@ const GangnamDongData = {
             id: "seoul_gangnam_samsung1",
             name: "삼성1동",
             guId: "seoul_gangnam",
-            center: [37.5140, 127.0631],
+            center: [37.5072, 127.0553],  // 코엑스 좌표 기준
             zoom: 15,
             color: "#4682B4",
             icon: "🏢",
@@ -89,7 +89,7 @@ const GangnamDongData = {
             id: "seoul_gangnam_cheongdam",
             name: "청담동",
             guId: "seoul_gangnam",
-            center: [37.5240, 127.0473],
+            center: [37.5205, 127.0471],  // 청담동 명품거리 기준
             zoom: 15,
             color: "#FFD700",
             icon: "💎",
@@ -113,7 +113,7 @@ const GangnamDongData = {
             id: "seoul_gangnam_sinsa",
             name: "신사동",
             guId: "seoul_gangnam",
-            center: [37.5176, 127.0204],
+            center: [37.5175, 127.0188],  // 가로수길 기준
             zoom: 15,
             color: "#DDA0DD",
             icon: "🌳",

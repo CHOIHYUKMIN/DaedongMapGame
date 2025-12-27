@@ -612,7 +612,9 @@ const GameData = {
                     category: "간식/디저트",
                     description: "명동 골목에서 40년간 이어온 전통 꿀떡 맛집. 쫄깃한 떡에 달콤한 꿀이 일품입니다.",
                     naverPlaceId: "0000001",
-                    kakaoPlaceId: "1000001"
+                    kakaoPlaceId: "1000001",
+                    lat: 37.5641,
+                    lng: 126.9770
                 },
                 {
                     itemId: "IT_001_B",
@@ -624,7 +626,9 @@ const GameData = {
                     category: "간식/디저트",
                     description: "덕수궁 돌담길 옆의 전통 떡집. 계절마다 새로운 떡을 선보입니다.",
                     naverPlaceId: "0000002",
-                    kakaoPlaceId: "1000002"
+                    kakaoPlaceId: "1000002",
+                    lat: 37.5657,
+                    lng: 126.9751
                 },
                 {
                     itemId: "IT_001_C",
@@ -636,7 +640,9 @@ const GameData = {
                     category: "분식",
                     description: "직장인들의 사랑방. 저렴하고 푸짐한 김밥과 라면이 인기입니다.",
                     naverPlaceId: "0000003",
-                    kakaoPlaceId: "1000003"
+                    kakaoPlaceId: "1000003",
+                    lat: 37.5635,
+                    lng: 126.9725
                 }
             ]
         },
@@ -653,19 +659,23 @@ const GameData = {
                     category: "간식/디저트",
                     description: "명동의 유명 호떡집. 겨울이면 긴 줄이 늘 서 있는 곳입니다.",
                     naverPlaceId: "11862478",
-                    kakaoPlaceId: "18752033"
+                    kakaoPlaceId: "18752033",
+                    lat: 37.5623,
+                    lng: 126.9855
                 },
                 {
                     itemId: "IT_002_B",
                     name: "소공동 만두",
-                    restaurant: "명동교자",
+                    restaurant: "명동교자 본점",
                     rarity: "B",
                     address: "서울 중구 명동10길 29",
                     phone: "02-776-5348",
                     category: "한식",
-                    description: "1966년부터 이어온 원조 칼국수 맛집. 고소한 육수와 쫄깃한 면이 일품입니다.",
+                    description: "1966년부터 이어온 원조 칼국수·만두 맛집. 진한 육수와 쫄깃한 면이 일품입니다.",
                     naverPlaceId: "11623447",
-                    kakaoPlaceId: "8292127"
+                    kakaoPlaceId: "8292127",
+                    lat: 37.5615,
+                    lng: 126.9869
                 },
                 {
                     itemId: "IT_002_C",
@@ -677,7 +687,9 @@ const GameData = {
                     category: "한식",
                     description: "할머니의 손맛이 느껴지는 칼국수집. 비오는 날이면 생각나는 맛입니다.",
                     naverPlaceId: "0000006",
-                    kakaoPlaceId: "1000006"
+                    kakaoPlaceId: "1000006",
+                    lat: 37.5630,
+                    lng: 126.9870
                 }
             ]
         },
@@ -694,7 +706,9 @@ const GameData = {
                     category: "분식",
                     description: "재료를 아끼지 않는 푸짐한 김밥. 명동 쇼핑 중 한 끼 식사로 제격입니다.",
                     naverPlaceId: "0000007",
-                    kakaoPlaceId: "1000007"
+                    kakaoPlaceId: "1000007",
+                    lat: 37.5635,
+                    lng: 126.9858
                 },
                 {
                     itemId: "IT_003_B",
@@ -706,7 +720,9 @@ const GameData = {
                     category: "한식",
                     description: "경기도 시흥에서 북한 평양냉면집으로 시작한 원조집. 시원한 육수가 일품입니다.",
                     naverPlaceId: "12851684",
-                    kakaoPlaceId: "513255431"
+                    kakaoPlaceId: "513255431",
+                    lat: 37.5618,
+                    lng: 126.9845
                 },
                 {
                     itemId: "IT_003_C",
@@ -718,7 +734,9 @@ const GameData = {
                     category: "한식",
                     description: "매일 아침 직접 빚는 손만두. 고기 육즙이 가득한 만두가 별미입니다.",
                     naverPlaceId: "0000009",
-                    kakaoPlaceId: "1000009"
+                    kakaoPlaceId: "1000009",
+                    lat: 37.5628,
+                    lng: 126.9862
                 }
             ]
         },
@@ -735,19 +753,23 @@ const GameData = {
                     category: "포차/주점",
                     description: "을지로 골목의 노가리 포차. 직장인들의 퇴근 후 단골 명소입니다.",
                     naverPlaceId: "1100000010",
-                    kakaoPlaceId: "2100000010"
+                    kakaoPlaceId: "2100000010",
+                    lat: 37.5665,
+                    lng: 126.9920
                 },
                 {
                     itemId: "IT_004_B",
                     name: "평양냉면",
                     restaurant: "을지면옥",
                     rarity: "A",
-                    address: "서울 중구 을지로3가 299-10",
-                    phone: "02-2267-7784",
+                    address: "서울 종로구 삼일대로30길 12",
+                    phone: "02-2266-7052",
                     category: "한식",
-                    description: "1960년대부터 이어온 평양냉면 전문점. 깔끔한 육수가 일품입니다.",
+                    description: "1985년 창업한 평양냉면 전문점. 익선동으로 이전하여 더 넓은 공간에서 영업 중.",
                     naverPlaceId: "1100000011",
-                    kakaoPlaceId: "2100000011"
+                    kakaoPlaceId: "2100000011",
+                    lat: 37.5708,
+                    lng: 126.9921
                 },
                 {
                     itemId: "IT_004_C",
@@ -769,14 +791,16 @@ const GameData = {
                 {
                     itemId: "IT_005",
                     name: "장충동 왕족발",
-                    restaurant: "장충동족발",
+                    restaurant: "원조1호 장충동 할머니집",
                     rarity: "A",
-                    address: "서울 중구 장충동1가 60-5",
+                    address: "서울 중구 장춘단로 174",
                     phone: "02-2279-9979",
                     category: "한식",
-                    description: "1960년대부터 이어온 족발 전문점. 콜라겐이 풍부한 족발이 일품입니다.",
+                    description: "장충동 족발 골목의 원조. 콜라겐이 풍부한 쫄깃한 족발이 일품입니다.",
                     naverPlaceId: "11623448",
-                    kakaoPlaceId: "8292128"
+                    kakaoPlaceId: "8292128",
+                    lat: 37.5617,
+                    lng: 127.0067
                 },
                 {
                     itemId: "IT_005_B",
@@ -788,7 +812,9 @@ const GameData = {
                     category: "한식",
                     description: "부드러운 순두부찌개가 유명한 골목 맛집입니다.",
                     naverPlaceId: "1100000013",
-                    kakaoPlaceId: "2100000013"
+                    kakaoPlaceId: "2100000013",
+                    lat: 37.5628,
+                    lng: 127.0078
                 },
                 {
                     itemId: "IT_005_C",
@@ -800,7 +826,9 @@ const GameData = {
                     category: "한식",
                     description: "장충동의 유명 냉면집. 시원한 육수가 일품입니다.",
                     naverPlaceId: "1100000014",
-                    kakaoPlaceId: "2100000014"
+                    kakaoPlaceId: "2100000014",
+                    lat: 37.5613,
+                    lng: 127.0063
                 }
             ]
         },
@@ -810,14 +838,16 @@ const GameData = {
                 {
                     itemId: "IT_006",
                     name: "인사동 전통차",
-                    restaurant: "인사동 찻집",
+                    restaurant: "옛찻집",
                     rarity: "B",
-                    address: "서울 종로구 인사동길 30",
-                    phone: "02-733-2211",
+                    address: "서울 종로구 인사동길 33-1 2층",
+                    phone: "0507-1409-8780",
                     category: "카페/차",
                     description: "전통 한옥에서 즐기는 전통차. 마음이 평화로워집니다.",
                     naverPlaceId: "1100000015",
-                    kakaoPlaceId: "2100000015"
+                    kakaoPlaceId: "2100000015",
+                    lat: 37.5731,
+                    lng: 126.9854
                 },
                 {
                     itemId: "IT_006_B",
@@ -851,38 +881,44 @@ const GameData = {
                 {
                     itemId: "IT_100",
                     name: "광장시장 빈대떡",
-                    restaurant: "광장시장 빈대떡",
+                    restaurant: "순희네 빈대떡",
                     rarity: "SP",
-                    address: "서울 종로구 창경동 88",
-                    phone: "02-2267-0291",
+                    address: "서울 종로구 종로32길 5",
+                    phone: "02-2264-5057",
                     category: "전통시장",
                     description: "광장시장의 명물 빈대떡. 바삭하고 고소한 맛이 일품입니다.",
                     naverPlaceId: "13168580",
-                    kakaoPlaceId: "17872893"
+                    kakaoPlaceId: "17872893",
+                    lat: 37.5700,
+                    lng: 126.9992
                 },
                 {
                     itemId: "IT_100_B",
                     name: "마약김밥",
-                    restaurant: "마약김밥",
+                    restaurant: "광장시장 마약김밥",
                     rarity: "B",
-                    address: "서울 종로구 창경동 88-1",
+                    address: "서울 종로구 창경궁로 88",
                     phone: "02-2268-1234",
                     category: "분식",
                     description: "광장시장의 유명 마약김밥. 한번 먹으면 계속 생각나는 맛입니다.",
                     naverPlaceId: "1100000018",
-                    kakaoPlaceId: "2100000018"
+                    kakaoPlaceId: "2100000018",
+                    lat: 37.5698,
+                    lng: 126.9990
                 },
                 {
                     itemId: "IT_100_C",
                     name: "육회",
-                    restaurant: "육회집",
+                    restaurant: "광장시장 육회골목",
                     rarity: "A",
-                    address: "서울 종로구 창경동 88-2",
+                    address: "서울 종로구 창경궁로 88",
                     phone: "02-2269-5678",
                     category: "한식",
                     description: "신선한 육회를 저렴하게 즐길 수 있는 광장시장 명소입니다.",
                     naverPlaceId: "1100000019",
-                    kakaoPlaceId: "2100000019"
+                    kakaoPlaceId: "2100000019",
+                    lat: 37.5702,
+                    lng: 126.9988
                 }
             ]
         },
@@ -894,36 +930,42 @@ const GameData = {
                     name: "삼청동 디저트",
                     restaurant: "삼청동 카페",
                     rarity: "B",
-                    address: "서울 종로구 삼청로 45",
+                    address: "서울 종로구 삼청로 90",
                     phone: "02-722-7777",
                     category: "카페/디저트",
-                    description: "힘한 분위기의 카페. 달콤한 디저트가 일품입니다.",
+                    description: "힙한 분위기의 카페. 달콤한 디저트가 일품입니다.",
                     naverPlaceId: "1100000020",
-                    kakaoPlaceId: "2100000020"
+                    kakaoPlaceId: "2100000020",
+                    lat: 37.5820,
+                    lng: 126.9823
                 },
                 {
                     itemId: "IT_007_B",
                     name: "수제비",
                     restaurant: "삼청동 수제비",
                     rarity: "B",
-                    address: "서울 종로구 삼청로 50",
-                    phone: "02-723-8888",
+                    address: "서울 종로구 삼청로 101-1",
+                    phone: "02-735-2965",
                     category: "한식",
-                    description: "칼칼한 수제비가 일품인 맛집. 손님이 많아 예약 필수입니다.",
+                    description: "칼칼한 수제비가 일품인 맛집. 1982년 창업한 삼청동 터줄대감.",
                     naverPlaceId: "1100000021",
-                    kakaoPlaceId: "2100000021"
+                    kakaoPlaceId: "2100000021",
+                    lat: 37.5825,
+                    lng: 126.9821
                 },
                 {
                     itemId: "IT_007_C",
                     name: "한정식",
                     restaurant: "삼청각",
                     rarity: "A",
-                    address: "서울 종로구 삼청로 55",
-                    phone: "02-724-9999",
+                    address: "서울 성북구 대사관로 3",
+                    phone: "02-765-3700",
                     category: "한식",
                     description: "고급 한정식을 즐길 수 있는 레스토랑. 특별한 날에 추천합니다.",
                     naverPlaceId: "1100000022",
-                    kakaoPlaceId: "2100000022"
+                    kakaoPlaceId: "2100000022",
+                    lat: 37.5835,
+                    lng: 127.0012
                 }
             ]
         },
@@ -947,12 +989,14 @@ const GameData = {
                     name: "삼계탕",
                     restaurant: "토속촌",
                     rarity: "A",
-                    address: "서울 종로구 체부동 85-1",
+                    address: "서울 종로구 자하문로5길 5",
                     phone: "02-737-7444",
                     category: "한식",
-                    description: "경복궁 근처의 유명 삼계탕 맛집. 진한 국물이 일품입니다.",
+                    description: "경복궁 근처의 유명 삼계탕 맛집. 40년 전통의 진한 국물이 일품입니다.",
                     naverPlaceId: "11615367",
-                    kakaoPlaceId: "8215242"
+                    kakaoPlaceId: "8215242",
+                    lat: 37.5790,
+                    lng: 126.9710
                 },
                 {
                     itemId: "IT_008_C",

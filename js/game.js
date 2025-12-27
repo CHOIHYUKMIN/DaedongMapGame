@@ -440,10 +440,35 @@ const Game = {
             this.currentDong = null;
             this.regionLevelOffset = regionOffsets[region] || 0;
 
-            if (this.userData.selectedCharacter) {
-                this.showMap();
+            // 지역 좌표로 지도 포커싱
+            if (regionData && this.regionMap) {
+                console.log(`🗺️ ${region} 지역으로 포커싱: [${regionData.center}], 줌: ${regionData.zoom}`);
+
+                // 지도 크기 먼저 재조정
+                this.regionMap.invalidateSize();
+
+                // flyTo 애니메이션 실행
+                this.regionMap.flyTo(regionData.center, regionData.zoom || 11, {
+                    duration: 1.2,
+                    easeLinearity: 0.25
+                });
+
+                // 포커싱 애니메이션 완료 후 캐릭터 선택 또는 레벨 화면으로 이동
+                setTimeout(() => {
+                    if (this.userData.selectedCharacter) {
+                        this.showMap();
+                    } else {
+                        this.showCharacterSelect();
+                    }
+                }, 1500);
             } else {
-                this.showCharacterSelect();
+                // 지도가 없거나 regionData가 없으면 바로 이동
+                console.log(`⚠️ 지도 또는 지역 데이터 없음, 바로 이동`);
+                if (this.userData.selectedCharacter) {
+                    this.showMap();
+                } else {
+                    this.showCharacterSelect();
+                }
             }
         }
     },
@@ -657,8 +682,10 @@ const Game = {
 
         this.currentGu = guId;
 
-        // 강남구는 동 지도 표시
-        if (guId === 'seoul_gangnam') {
+        // 동 지도가 있는 구들
+        const gusWithDongMap = ['seoul_gangnam', 'seoul_junggu', 'seoul_jongno'];
+
+        if (gusWithDongMap.includes(guId)) {
             this.showDongMap(guId);
         } else {
             // 다른 구들은 바로 레벨 지도로 이동 (기본 서울 레벨 사용)
@@ -770,9 +797,21 @@ const Game = {
                 return baseRadius * Math.pow(0.6, zoom - baseZoom);
             };
 
+            // 구별 동 데이터 소스 선택
+            let dongDataSource = null;
+            if (guId === 'seoul_gangnam' && typeof GangnamDongData !== 'undefined') {
+                dongDataSource = GangnamDongData;
+            } else if (guId === 'seoul_junggu' && typeof JungguDongData !== 'undefined') {
+                dongDataSource = JungguDongData;
+            } else if (guId === 'seoul_jongno' && typeof JongnoguDongData !== 'undefined') {
+                dongDataSource = JongnoguDongData;
+            }
+
             // 동 데이터 로드
-            if (typeof GangnamDongData !== 'undefined') {
-                const dongs = GangnamDongData.getDongsByGu(guId);
+            if (dongDataSource) {
+                const dongs = dongDataSource.getDongsByGu(guId);
+                console.log(`📍 구ID: ${guId}, 동 데이터 소스: ${dongDataSource === GangnamDongData ? 'GangnamDongData' : dongDataSource === JungguDongData ? 'JungguDongData' : 'JongnoguDongData'}`);
+                console.log(`📍 찾은 동 개수: ${dongs.length}`, dongs.map(d => d.name));
                 const completedDongs = this.userData.completedDongs || [];
 
                 dongs.forEach(dong => {
@@ -875,7 +914,18 @@ const Game = {
     selectDong(dongId) {
         console.log(`📍 동 선택: ${dongId}`);
 
-        const dong = typeof GangnamDongData !== 'undefined' ? GangnamDongData.getDong(dongId) : null;
+        // 여러 동 데이터 소스에서 검색
+        let dong = null;
+        if (typeof GangnamDongData !== 'undefined') {
+            dong = GangnamDongData.getDong(dongId);
+        }
+        if (!dong && typeof JungguDongData !== 'undefined') {
+            dong = JungguDongData.getDong(dongId);
+        }
+        if (!dong && typeof JongnoguDongData !== 'undefined') {
+            dong = JongnoguDongData.getDong(dongId);
+        }
+
         if (!dong) {
             console.error('동 데이터를 찾을 수 없습니다:', dongId);
             return;
@@ -990,17 +1040,37 @@ const Game = {
                     // 모든 지역 활성화 (전국 플레이 가능)
                     const isUnlocked = true;
 
-                    // 적절한 크기로 조정 (너무 크지 않게)
-                    const radius = region.id === 'seoul' || region.id === 'busan' ? 15000 : 18000;
+                    // 실제 좌표에 레이블 마커 표시 (원형 대신)
+                    const customIcon = L.divIcon({
+                        html: `
+                            <div class="region-marker ${isUnlocked ? 'unlocked' : 'locked'}" style="
+                                background: ${isUnlocked ? `linear-gradient(135deg, ${region.color}, ${this.darkenColor(region.color)})` : 'linear-gradient(135deg, #999, #666)'};
+                                color: white;
+                                padding: 8px 12px;
+                                border-radius: 20px;
+                                font-weight: bold;
+                                font-size: 13px;
+                                white-space: nowrap;
+                                box-shadow: 0 4px 12px rgba(0,0,0,0.3), 0 0 0 3px rgba(255,255,255,0.3);
+                                text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+                                cursor: pointer;
+                                transition: transform 0.2s, box-shadow 0.2s;
+                                display: flex;
+                                align-items: center;
+                                gap: 4px;
+                            ">
+                                <span style="font-size: 16px;">${region.icon}</span>
+                                <span>${region.shortName}</span>
+                            </div>
+                        `,
+                        className: 'custom-region-marker',
+                        iconSize: [100, 40],
+                        iconAnchor: [50, 20]
+                    });
 
-                    const marker = L.circle(region.center, {
-                        color: isUnlocked ? region.color : '#999',
-                        fillColor: isUnlocked ? region.color : '#ccc',
-                        fillOpacity: isUnlocked ? 0.6 : 0.4,
-                        radius: radius,
-                        weight: 5,
-                        interactive: true,
-                        bubblingMouseEvents: false
+                    const marker = L.marker(region.center, {
+                        icon: customIcon,
+                        interactive: true
                     }).addTo(this.regionMap);
 
                     const popupContent = isUnlocked ? `
@@ -1040,19 +1110,6 @@ const Game = {
                         L.DomEvent.stopPropagation(e);
                         console.log(`🖱️ ${region.shortName} 클릭됨`);
                         this.openPopup();
-                    });
-
-                    // 마우스 오버 시 커서 변경
-                    marker.on('mouseover', function (e) {
-                        this.setStyle({
-                            fillOpacity: isUnlocked ? 0.8 : 0.6
-                        });
-                    });
-
-                    marker.on('mouseout', function (e) {
-                        this.setStyle({
-                            fillOpacity: isUnlocked ? 0.6 : 0.4
-                        });
                     });
                 });
 
@@ -1133,9 +1190,17 @@ const Game = {
         let center, zoom, levels;
 
         if (this.currentDong) {
-            // 동이 선택된 경우 - 동 데이터 사용
-            const dong = typeof GangnamDongData !== 'undefined' ?
-                GangnamDongData.getDong(this.currentDong) : null;
+            // 동이 선택된 경우 - 여러 동 데이터 소스에서 검색
+            let dong = null;
+            if (typeof GangnamDongData !== 'undefined') {
+                dong = GangnamDongData.getDong(this.currentDong);
+            }
+            if (!dong && typeof JungguDongData !== 'undefined') {
+                dong = JungguDongData.getDong(this.currentDong);
+            }
+            if (!dong && typeof JongnoguDongData !== 'undefined') {
+                dong = JongnoguDongData.getDong(this.currentDong);
+            }
 
             if (dong) {
                 center = dong.center;
@@ -1173,6 +1238,14 @@ const Game = {
 
         // 레벨 마커 추가
         this.renderLevelMarkers(levels);
+
+        // 맛집 마커 표시 (레벨 ID 기반)
+        if (typeof RestaurantMap !== 'undefined' && levels.length > 0) {
+            // 현재 지역/동에 해당하는 레벨 ID로 맛집 표시
+            const firstLevelId = levels[0].id;
+            RestaurantMap.showRestaurantsForLevel(this.map, firstLevelId);
+            console.log(`🍽️ 레벨 ${firstLevelId} 맛집 마커 로드`);
+        }
     },
 
     // 동별 레벨 생성 헬퍼 함수 - GameData.levels의 실제 레벨 데이터 사용
