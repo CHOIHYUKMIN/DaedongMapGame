@@ -835,13 +835,159 @@ const Puzzle = {
     },
 
     async checkWinCondition() {
-        if (this.score >= this.currentLevel.target) {
+        const targetScore = this.currentLevel.targetVal || this.currentLevel.target;
+
+        if (this.score >= targetScore) {
             // 목표 달성! 특수 블록 보너스
+            this.isAnimating = true;
+
+            // 1단계: 특수 블록 모두 터트리기
             await this.activateRemainingSpecialBlocks();
-            setTimeout(() => this.showResult(true), 500);
+            await this.sleep(500);
+
+            // 2단계: 남은 이동수를 점수로 환산 (애니메이션)
+            await this.convertMovesToScore();
+            await this.sleep(500);
+
+            // 3단계: 결과 팝업 표시
+            this.showResult(true);
+            this.isAnimating = false;
         } else if (this.movesLeft <= 0) {
             setTimeout(() => this.showResult(false), 500);
         }
+    },
+
+    // 남은 이동수를 점수로 환산 (애니메이션 효과)
+    async convertMovesToScore() {
+        if (this.movesLeft <= 0) return;
+
+        const pointsPerMove = 500; // 이동 1개당 500점
+        const totalBonus = this.movesLeft * pointsPerMove;
+
+        console.log(`🎁 남은 이동수 ${this.movesLeft}개 -> ${totalBonus}점 보너스!`);
+
+        // 보너스 점수 알림 표시
+        const bonusOverlay = document.createElement('div');
+        bonusOverlay.className = 'move-bonus-overlay';
+        bonusOverlay.innerHTML = `
+            <div class="bonus-content">
+                <h2>🎁 남은 이동 보너스!</h2>
+                <div class="bonus-moves">
+                    <span class="moves-count">${this.movesLeft}</span>
+                    <span class="moves-label">개 이동 남음</span>
+                </div>
+                <div class="bonus-arrow">⬇️</div>
+                <div class="bonus-score">+<span id="bonus-score-counter">0</span>점</div>
+            </div>
+        `;
+        bonusOverlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeIn 0.3s ease;
+        `;
+
+        const styleContent = `
+            .bonus-content {
+                text-align: center;
+                color: white;
+            }
+            .bonus-content h2 {
+                font-size: 28px;
+                margin-bottom: 20px;
+                color: #FFD700;
+                text-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
+            }
+            .bonus-moves {
+                font-size: 24px;
+                margin: 15px 0;
+            }
+            .moves-count {
+                font-size: 60px;
+                font-weight: bold;
+                color: #667eea;
+                text-shadow: 0 0 20px rgba(102, 126, 234, 0.8);
+            }
+            .moves-label {
+                display: block;
+                margin-top: 5px;
+                color: #aaa;
+            }
+            .bonus-arrow {
+                font-size: 40px;
+                margin: 15px 0;
+                animation: bounce 0.5s infinite alternate;
+            }
+            .bonus-score {
+                font-size: 48px;
+                font-weight: bold;
+                color: #32CD32;
+                text-shadow: 0 0 20px rgba(50, 205, 50, 0.8);
+            }
+            @keyframes bounce {
+                from { transform: translateY(-5px); }
+                to { transform: translateY(5px); }
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+        `;
+
+        const styleTag = document.createElement('style');
+        styleTag.textContent = styleContent;
+        document.head.appendChild(styleTag);
+        document.body.appendChild(bonusOverlay);
+
+        // 점수 카운터 애니메이션
+        const bonusCounter = document.getElementById('bonus-score-counter');
+        const movesElement = bonusOverlay.querySelector('.moves-count');
+        const duration = 1500; // 1.5초 동안 카운트
+        const steps = this.movesLeft; // 이동수만큼 스텝
+        const interval = duration / steps;
+
+        let currentMoves = this.movesLeft;
+        let accumulatedScore = 0;
+
+        for (let i = 0; i < steps; i++) {
+            await this.sleep(interval);
+
+            currentMoves--;
+            accumulatedScore += pointsPerMove;
+
+            // UI 업데이트
+            movesElement.textContent = currentMoves;
+            bonusCounter.textContent = accumulatedScore.toLocaleString();
+
+            // 실제 점수 업데이트
+            this.score += pointsPerMove;
+            this.movesLeft--;
+            this.updateUI();
+
+            // 사운드 효과 (있으면)
+            if (typeof audioManager !== 'undefined' && i % 2 === 0) {
+                audioManager.playExplosivePopSound();
+            }
+        }
+
+        // 최종 점수 강조
+        bonusCounter.style.transform = 'scale(1.3)';
+        bonusCounter.style.color = '#FFD700';
+        await this.sleep(800);
+
+        // 오버레이 제거
+        bonusOverlay.style.animation = 'fadeOut 0.3s ease';
+        bonusOverlay.style.opacity = '0';
+        await this.sleep(300);
+        bonusOverlay.remove();
+        styleTag.remove();
     },
 
     async activateRemainingSpecialBlocks() {
