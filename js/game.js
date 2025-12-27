@@ -708,22 +708,33 @@ const Game = {
 
         this.currentCity = cityId;
 
+        // 해당 시/군 위치로 포커싱 애니메이션
+        if (this.regionMap && city.center) {
+            this.regionMap.flyTo(city.center, city.zoom || 12, {
+                duration: 0.8,
+                easeLinearity: 0.25
+            });
+        }
+
         // 동 데이터가 있는 시/군들 (추후 확장)
         const citiesWithDongMap = []; // 아직 동 데이터 없음
 
-        if (citiesWithDongMap.includes(cityId)) {
-            // 동 지도 표시
-            this.showCityDongMap(cityId);
-        } else {
-            // 동 데이터 없으면 바로 레벨 지도로 이동
-            this.currentDong = null;
-
-            if (this.userData.selectedCharacter) {
-                this.showMap();
+        // 포커싱 애니메이션 후 다음 화면으로 이동
+        setTimeout(() => {
+            if (citiesWithDongMap.includes(cityId)) {
+                // 동 지도 표시
+                this.showCityDongMap(cityId);
             } else {
-                this.showCharacterSelect();
+                // 동 데이터 없으면 바로 레벨 지도로 이동
+                this.currentDong = null;
+
+                if (this.userData.selectedCharacter) {
+                    this.showMap();
+                } else {
+                    this.showCharacterSelect();
+                }
             }
-        }
+        }, this.regionMap ? 900 : 0);
     },
 
     // 구(區) 지도 표시
@@ -935,23 +946,34 @@ const Game = {
 
         this.currentGu = guId;
 
+        // 해당 구 위치로 포커싱 애니메이션
+        if (this.regionMap && gu.center) {
+            this.regionMap.flyTo(gu.center, gu.zoom || 13, {
+                duration: 0.8,
+                easeLinearity: 0.25
+            });
+        }
+
         // 동 지도가 있는 구들
         const gusWithDongMap = ['seoul_gangnam', 'seoul_junggu', 'seoul_jongno'];
 
-        if (gusWithDongMap.includes(guId)) {
-            this.showDongMap(guId);
-        } else {
-            // 다른 구들은 바로 레벨 지도로 이동 (기본 서울 레벨 사용)
-            this.currentDong = null;  // 동 선택 없음
-            this.currentRegion = 'seoul';
-            this.regionLevelOffset = 0;  // 서울 레벨 시작점
-
-            if (this.userData.selectedCharacter) {
-                this.showMap();
+        // 포커싱 애니메이션 후 다음 화면으로 이동
+        setTimeout(() => {
+            if (gusWithDongMap.includes(guId)) {
+                this.showDongMap(guId);
             } else {
-                this.showCharacterSelect();
+                // 다른 구들은 바로 레벨 지도로 이동 (기본 서울 레벨 사용)
+                this.currentDong = null;  // 동 선택 없음
+                this.currentRegion = 'seoul';
+                this.regionLevelOffset = 0;  // 서울 레벨 시작점
+
+                if (this.userData.selectedCharacter) {
+                    this.showMap();
+                } else {
+                    this.showCharacterSelect();
+                }
             }
-        }
+        }, this.regionMap ? 900 : 0);
     },
 
     // 동(洞) 지도 표시
@@ -1186,12 +1208,23 @@ const Game = {
 
         this.currentDong = dongId;
 
-        // 캐릭터 선택 또는 레벨 지도로 이동
-        if (this.userData.selectedCharacter) {
-            this.showMap();
-        } else {
-            this.showCharacterSelect();
+        // 해당 동 위치로 포커싱 애니메이션
+        if (this.regionMap && dong.center) {
+            this.regionMap.flyTo(dong.center, 15, {
+                duration: 0.8,
+                easeLinearity: 0.25
+            });
         }
+
+        // 포커싱 애니메이션 후 다음 화면으로 이동
+        setTimeout(() => {
+            // 캐릭터 선택 또는 레벨 지도로 이동
+            if (this.userData.selectedCharacter) {
+                this.showMap();
+            } else {
+                this.showCharacterSelect();
+            }
+        }, this.regionMap ? 900 : 0);
     },
 
     initRegionMap() {
