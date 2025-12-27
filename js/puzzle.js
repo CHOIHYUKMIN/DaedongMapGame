@@ -8,6 +8,51 @@ const Puzzle = {
     score: 0,
     currentLevel: null,
     isAnimating: false,
+    vibrationEnabled: true, // 진동 활성화 여부
+
+    // 햅틱 진동 함수
+    vibrate(pattern) {
+        if (!this.vibrationEnabled) return;
+        if ('vibrate' in navigator) {
+            try {
+                navigator.vibrate(pattern);
+            } catch (e) {
+                console.log('진동 지원 안됨:', e);
+            }
+        }
+    },
+
+    // 매칭 진동 (짧은 진동)
+    vibrateMatch(count) {
+        if (count >= 6) {
+            // 대량 매칭 - 강한 진동
+            this.vibrate([50, 30, 50, 30, 80]);
+        } else if (count >= 4) {
+            // 특수 블록 생성 - 중간 진동
+            this.vibrate([40, 20, 40]);
+        } else {
+            // 일반 매칭 - 짧은 진동
+            this.vibrate(30);
+        }
+    },
+
+    // 특수 블록 폭발 진동
+    vibrateExplosion(type) {
+        if (type === 104) {
+            // 레인보우 - 강렬한 진동
+            this.vibrate([80, 50, 80, 50, 100]);
+        } else if (type === 103) {
+            // 3x3 폭탄 - 강한 진동
+            this.vibrate([60, 30, 60, 30, 60]);
+        } else if (type === 102) {
+            // 십자 - 중간 진동
+            this.vibrate([50, 25, 50]);
+        } else {
+            // 가로/세로 줄 - 보통 진동
+            this.vibrate([40, 20, 40]);
+        }
+    },
+
 
     init(levelId) {
         console.log(`🎮 Puzzle.init 호출: levelId = ${levelId} (type: ${typeof levelId})`);
@@ -262,6 +307,9 @@ const Puzzle = {
             104: '같은 색 전체'
         };
         console.log(`특수 블록 활성화! 위치: (${x}, ${y}), 타입: ${typeNames[type]}`);
+
+        // 햅틱 진동 피드백
+        this.vibrateExplosion(type);
 
         const blocksToRemove = [];
 
@@ -558,6 +606,9 @@ const Puzzle = {
         if (uniqueMatches.length >= 5) {
             this.createExplosionFlash();
         }
+
+        // 햅틱 진동 피드백
+        this.vibrateMatch(uniqueMatches.length);
 
         // 블록 제거 애니메이션 (특수 블록 위치 제외)
         let soundCount = 0; // 동시에 너무 많은 사운드 방지
