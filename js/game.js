@@ -440,6 +440,11 @@ const Game = {
             this.currentRegion = 'seoul';
             this.regionLevelOffset = 0;
             this.showGuMap('seoul'); // 구 지도 표시
+        } else if (region === 'incheon') {
+            // 인천: 10개 구/군 지도 표시
+            this.currentRegion = 'incheon';
+            this.regionLevelOffset = regionOffsets['incheon'] || 0;
+            this.showGuMap('incheon'); // 구 지도 표시
         } else if (region === 'gyeonggi') {
             // 경기도: 31개 시/군 지도 표시
             this.currentRegion = 'gyeonggi';
@@ -744,6 +749,9 @@ const Game = {
         const screen = document.getElementById('main-menu');
         if (!screen) return;
 
+        const regionData = typeof RegionData !== 'undefined' ? RegionData.getRegion(cityId) : null;
+        const cityName = regionData?.name || cityId;
+
         // 기존 지도 제거
         if (this.regionMap) {
             this.regionMap.remove();
@@ -766,14 +774,22 @@ const Game = {
                     font-size: 14px;
                     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
                 ">← 뒤로</button>
-                <h1>서울특별시 > 구 선택</h1>
+                <h1>${cityName} > 구 선택</h1>
             `;
+        }
+
+        // 구 개수 계산
+        let guCount = 0;
+        if (cityId === 'seoul' && typeof SeoulGuData !== 'undefined') {
+            guCount = SeoulGuData.getGusByCity(cityId).length;
+        } else if (cityId === 'incheon' && typeof IncheonGuData !== 'undefined') {
+            guCount = IncheonGuData.getGusByCity(cityId).length;
         }
 
         // 지도 컨테이너 업데이트
         const mapContainer = screen.querySelector('.map-selection-container');
         if (mapContainer) {
-            mapContainer.querySelector('h3').textContent = '서울 25개 구';
+            mapContainer.querySelector('h3').textContent = `${cityName} ${guCount}개 구`;
             mapContainer.querySelector('p').textContent = '구를 선택하세요';
         }
 
@@ -793,13 +809,17 @@ const Game = {
             return;
         }
 
-        // 서울 중심 좌표
-        const seoulCenter = [37.5665, 126.9780];
+        // 도시별 중심 좌표와 줌 레벨
+        const cityConfigs = {
+            'seoul': { center: [37.5665, 126.9780], zoom: 11 },
+            'incheon': { center: [37.4563, 126.7052], zoom: 11 }
+        };
+        const config = cityConfigs[cityId] || cityConfigs['seoul'];
 
         try {
             this.regionMap = L.map('region-map', {
-                center: seoulCenter,
-                zoom: 11,
+                center: config.center,
+                zoom: config.zoom,
                 zoomControl: true,
                 scrollWheelZoom: true,
                 dragging: true,
@@ -815,7 +835,7 @@ const Game = {
             const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap',
                 maxZoom: 14,
-                minZoom: 10
+                minZoom: 9
             });
 
             tileLayer.addTo(this.regionMap);
@@ -833,14 +853,26 @@ const Game = {
                 return baseRadius * Math.pow(0.6, zoom - baseZoom);
             };
 
-            // 서울 구 데이터 로드
-            if (typeof SeoulGuData !== 'undefined') {
-                const gus = SeoulGuData.getGusByCity(cityId);
+            // 도시별 구 데이터 소스 선택
+            let guDataSource = null;
+            let startGuId = null;
+
+            if (cityId === 'seoul' && typeof SeoulGuData !== 'undefined') {
+                guDataSource = SeoulGuData;
+                startGuId = 'seoul_junggu'; // 서울 시작 구
+            } else if (cityId === 'incheon' && typeof IncheonGuData !== 'undefined') {
+                guDataSource = IncheonGuData;
+                startGuId = 'incheon_junggu'; // 인천 시작 구
+            }
+
+            // 구 데이터 로드
+            if (guDataSource) {
+                const gus = guDataSource.getGusByCity(cityId);
                 const completedGus = this.userData.completedGus || [];
 
                 gus.forEach(gu => {
-                    // 중구는 항상 해제, 나머지는 조건 확인
-                    const isUnlocked = gu.id === 'seoul_junggu' ||
+                    // 시작 구는 항상 해제, 나머지는 조건 확인
+                    const isUnlocked = gu.id === startGuId ||
                         (gu.unlockCondition === 'NONE') ||
                         (gu.unlockCondition.startsWith('COMPLETE_') &&
                             completedGus.includes(gu.unlockCondition.replace('COMPLETE_', '')));
@@ -938,7 +970,15 @@ const Game = {
     selectGu(guId) {
         console.log(`📍 구 선택: ${guId}`);
 
-        const gu = typeof SeoulGuData !== 'undefined' ? SeoulGuData.getGu(guId) : null;
+        // 서울 또는 인천 구 데이터에서 검색
+        let gu = null;
+        if (typeof SeoulGuData !== 'undefined') {
+            gu = SeoulGuData.getGu(guId);
+        }
+        if (!gu && typeof IncheonGuData !== 'undefined') {
+            gu = IncheonGuData.getGu(guId);
+        }
+
         if (!gu) {
             console.error('구 데이터를 찾을 수 없습니다:', guId);
             return;
@@ -957,15 +997,28 @@ const Game = {
         // 동 지도가 있는 구들
         const gusWithDongMap = ['seoul_gangnam', 'seoul_junggu', 'seoul_jongno'];
 
+        // 지역별 레벨 오프셋
+        const regionOffsets = {
+            'seoul': 0,
+            'incheon': 33
+        };
+
         // 포커싱 애니메이션 후 다음 화면으로 이동
         setTimeout(() => {
             if (gusWithDongMap.includes(guId)) {
                 this.showDongMap(guId);
             } else {
-                // 다른 구들은 바로 레벨 지도로 이동 (기본 서울 레벨 사용)
+                // 다른 구들은 바로 레벨 지도로 이동
                 this.currentDong = null;  // 동 선택 없음
-                this.currentRegion = 'seoul';
-                this.regionLevelOffset = 0;  // 서울 레벨 시작점
+
+                // 인천 구인지 확인
+                if (guId.startsWith('incheon_')) {
+                    this.currentRegion = 'incheon';
+                    this.regionLevelOffset = regionOffsets['incheon'];
+                } else {
+                    this.currentRegion = 'seoul';
+                    this.regionLevelOffset = regionOffsets['seoul'];
+                }
 
                 if (this.userData.selectedCharacter) {
                     this.showMap();
