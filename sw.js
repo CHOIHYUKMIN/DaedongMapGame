@@ -1,5 +1,5 @@
 // Service Worker for 대동맛지도 PWA
-const CACHE_NAME = 'daedong-mapgame-v1.3.0';
+const CACHE_NAME = 'daedong-mapgame-v1.3.1';
 const urlsToCache = [
     '/',
     '/index.html',
