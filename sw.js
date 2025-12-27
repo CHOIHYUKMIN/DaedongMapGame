@@ -1,5 +1,5 @@
 // Service Worker for 대동맛지도 PWA
-const CACHE_NAME = 'daedong-mapgame-v1.3.1';
+const CACHE_NAME = 'daedong-mapgame-v1.4.0';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -21,6 +21,7 @@ const urlsToCache = [
     '/js/gangnam-dong-data.js',
     '/js/junggu-dong-data.js',
     '/js/jongnogu-dong-data.js',
+    '/js/gyeonggi-si-data.js',
     '/js/restaurant.js',
     '/js/restaurant-detail.js',
     '/js/restaurant-collection.js',

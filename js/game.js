@@ -429,46 +429,299 @@ const Game = {
             'jeju': 119      // 120-125
         };
 
+        // 광역시/특별시: 바로 구 선택
+        const metropolitanCities = ['seoul', 'busan', 'daegu', 'incheon', 'gwangju', 'daejeon', 'ulsan'];
+
+        // 도: 시/군 선택 필요
+        const provinces = ['gyeonggi', 'gangwon', 'chungbuk', 'chungnam', 'jeonbuk', 'jeonnam', 'gyeongbuk', 'gyeongnam', 'jeju'];
+
         if (region === 'seoul') {
             // 서울: 25개 구 지도 표시
             this.currentRegion = 'seoul';
             this.regionLevelOffset = 0;
             this.showGuMap('seoul'); // 구 지도 표시
-        } else {
-            // 다른 지역: 해당 지역 레벨로 바로 이동
+        } else if (region === 'gyeonggi') {
+            // 경기도: 31개 시/군 지도 표시
+            this.currentRegion = 'gyeonggi';
+            this.regionLevelOffset = regionOffsets['gyeonggi'] || 0;
+            this.showSiMap('gyeonggi'); // 시/군 지도 표시
+        } else if (provinces.includes(region)) {
+            // 다른 도: 시/군 지도 표시 (추후 데이터 추가)
             this.currentRegion = region;
             this.currentDong = null;
             this.regionLevelOffset = regionOffsets[region] || 0;
 
-            // 지역 좌표로 지도 포커싱
-            if (regionData && this.regionMap) {
-                console.log(`🗺️ ${region} 지역으로 포커싱: [${regionData.center}], 줌: ${regionData.zoom}`);
+            // 아직 시/군 데이터가 없으면 바로 레벨로 이동
+            alert(`${regionData?.name || region} 지역은 준비 중입니다.\n기본 레벨로 이동합니다.`);
 
-                // 지도 크기 먼저 재조정
-                this.regionMap.invalidateSize();
+            if (this.userData.selectedCharacter) {
+                this.showMap();
+            } else {
+                this.showCharacterSelect();
+            }
+        } else if (metropolitanCities.includes(region)) {
+            // 광역시: 구 지도 표시 (추후 데이터 추가)
+            this.currentRegion = region;
+            this.currentDong = null;
+            this.regionLevelOffset = regionOffsets[region] || 0;
 
-                // flyTo 애니메이션 실행
-                this.regionMap.flyTo(regionData.center, regionData.zoom || 11, {
-                    duration: 1.2,
-                    easeLinearity: 0.25
+            // 아직 구 데이터가 없으면 바로 레벨로 이동
+            alert(`${regionData?.name || region} 지역은 준비 중입니다.\n기본 레벨로 이동합니다.`);
+
+            if (this.userData.selectedCharacter) {
+                this.showMap();
+            } else {
+                this.showCharacterSelect();
+            }
+        } else if (region === 'sejong') {
+            // 세종: 동 바로 선택 (단일 행정구역)
+            this.currentRegion = 'sejong';
+            this.currentDong = null;
+            this.regionLevelOffset = regionOffsets['sejong'] || 0;
+
+            if (this.userData.selectedCharacter) {
+                this.showMap();
+            } else {
+                this.showCharacterSelect();
+            }
+        } else {
+            // 기타 지역: 바로 레벨로 이동
+            this.currentRegion = region;
+            this.currentDong = null;
+            this.regionLevelOffset = regionOffsets[region] || 0;
+
+            if (this.userData.selectedCharacter) {
+                this.showMap();
+            } else {
+                this.showCharacterSelect();
+            }
+        }
+    },
+
+    // 시/군 지도 표시 (경기도 등 도 단위)
+    showSiMap(provinceId) {
+        console.log(`🗺️ ${provinceId} 시/군 지도 표시`);
+
+        const screen = document.getElementById('main-menu');
+        if (!screen) return;
+
+        const regionData = typeof RegionData !== 'undefined' ? RegionData.getRegion(provinceId) : null;
+
+        // 기존 지도 제거
+        if (this.regionMap) {
+            this.regionMap.remove();
+            this.regionMap = null;
+        }
+
+        // 타이틀 업데이트
+        const titleDiv = screen.querySelector('.title');
+        if (titleDiv) {
+            titleDiv.innerHTML = `
+                <button onclick="Game.showMainMenu()" style="
+                    position: absolute;
+                    left: 20px;
+                    top: 15px;
+                    background: rgba(255,255,255,0.9);
+                    border: none;
+                    padding: 8px 16px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                ">← 뒤로</button>
+                <h1>${regionData?.name || provinceId} > 시/군 선택</h1>
+            `;
+        }
+
+        // 지도 컨테이너 업데이트
+        const mapContainer = screen.querySelector('.map-selection-container');
+        if (mapContainer) {
+            mapContainer.querySelector('h3').textContent = `${regionData?.name || provinceId} 시/군`;
+            mapContainer.querySelector('p').textContent = '시/군을 선택하세요';
+        }
+
+        // 시/군 지도 초기화
+        setTimeout(() => {
+            this.initSiMap(provinceId);
+        }, 300);
+    },
+
+    // 시/군 지도 초기화
+    initSiMap(provinceId) {
+        console.log(`🗺️ ${provinceId} 시/군 지도 초기화 시작...`);
+
+        const mapContainer = document.getElementById('region-map');
+        if (!mapContainer) {
+            console.error('❌ 지도 컨테이너를 찾을 수 없습니다');
+            return;
+        }
+
+        const regionData = typeof RegionData !== 'undefined' ? RegionData.getRegion(provinceId) : null;
+        const center = regionData?.center || [37.4138, 127.5183]; // 경기도 중심
+        const zoom = regionData?.zoom || 9;
+
+        try {
+            this.regionMap = L.map('region-map', {
+                center: center,
+                zoom: zoom,
+                zoomControl: true,
+                scrollWheelZoom: true,
+                dragging: true,
+                doubleClickZoom: true,
+                touchZoom: true,
+                boxZoom: true,
+                keyboard: true,
+                attributionControl: true,
+                tap: true,
+                tapTolerance: 15
+            });
+
+            const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap',
+                maxZoom: 14,
+                minZoom: 8
+            });
+
+            tileLayer.addTo(this.regionMap);
+            console.log('✅ 타일 레이어 추가 완료');
+
+            // 마커들을 저장할 배열
+            const markers = [];
+
+            // 줌 레벨에 따른 반경 계산 함수
+            const getRadiusByZoom = (zoom) => {
+                const baseRadius = 4000;
+                const baseZoom = 9;
+                return baseRadius * Math.pow(0.6, zoom - baseZoom);
+            };
+
+            // 경기도 시/군 데이터 로드
+            if (provinceId === 'gyeonggi' && typeof GyeonggiSiData !== 'undefined') {
+                const cities = GyeonggiSiData.getCitiesByProvince(provinceId);
+                const completedCities = this.userData.completedCities || [];
+
+                cities.forEach(city => {
+                    // 수원시는 항상 해제, 나머지는 조건 확인
+                    const isUnlocked = city.id === 'gyeonggi_suwon' ||
+                        (city.unlockCondition === 'NONE') ||
+                        (city.unlockCondition.startsWith('COMPLETE_') &&
+                            completedCities.includes(city.unlockCondition.replace('COMPLETE_', '')));
+
+                    const marker = L.circle(city.center, {
+                        color: isUnlocked ? city.color : '#999',
+                        fillColor: isUnlocked ? city.color : '#ccc',
+                        fillOpacity: isUnlocked ? 0.6 : 0.4,
+                        radius: getRadiusByZoom(zoom),
+                        weight: 3,
+                        interactive: true,
+                        bubblingMouseEvents: false
+                    }).addTo(this.regionMap);
+
+                    markers.push(marker);
+
+                    const popupContent = isUnlocked ? `
+                        <div style="text-align: center; padding: 10px; min-width: 150px;">
+                            <strong style="font-size: 18px;">${city.icon} ${city.name}</strong><br>
+                            <p style="margin: 5px 0; font-size: 12px;">${city.description}</p>
+                            <p style="margin: 5px 0;">${city.dongCount > 0 ? city.dongCount + '개 동' : '준비 중'}</p>
+                            <button onclick="Game.selectSi('${city.id}')" style="
+                                background: linear-gradient(135deg, ${city.color}, ${this.darkenColor(city.color)});
+                                color: white;
+                                border: none;
+                                padding: 10px 24px;
+                                border-radius: 20px;
+                                cursor: pointer;
+                                font-weight: bold;
+                                margin-top: 5px;
+                                font-size: 14px;
+                            ">선택하기</button>
+                        </div>
+                    ` : `
+                        <div style="text-align: center; padding: 10px; min-width: 150px;">
+                            <strong style="font-size: 18px; color: #999;">${city.icon} ${city.name}</strong><br>
+                            <p style="margin: 5px 0; color: #999; font-size: 12px;">🔒 잠금</p>
+                            <p style="margin: 5px 0; color: #999; font-size: 11px;">이전 지역을 완료하세요</p>
+                        </div>
+                    `;
+
+                    marker.bindPopup(popupContent, {
+                        closeButton: true,
+                        autoClose: false,
+                        closeOnClick: false
+                    });
+
+                    marker.on('click', function (e) {
+                        L.DomEvent.stopPropagation(e);
+                        console.log(`🖱️ ${city.name} 클릭됨`);
+                        this.openPopup();
+                    });
+
+                    marker.on('mouseover', function (e) {
+                        this.setStyle({
+                            fillOpacity: isUnlocked ? 0.8 : 0.6
+                        });
+                    });
+
+                    marker.on('mouseout', function (e) {
+                        this.setStyle({
+                            fillOpacity: isUnlocked ? 0.6 : 0.4
+                        });
+                    });
                 });
 
-                // 포커싱 애니메이션 완료 후 캐릭터 선택 또는 레벨 화면으로 이동
-                setTimeout(() => {
-                    if (this.userData.selectedCharacter) {
-                        this.showMap();
-                    } else {
-                        this.showCharacterSelect();
-                    }
-                }, 1500);
+                console.log(`✅ ${cities.length}개 시/군 마커 추가 완료`);
             } else {
-                // 지도가 없거나 regionData가 없으면 바로 이동
-                console.log(`⚠️ 지도 또는 지역 데이터 없음, 바로 이동`);
-                if (this.userData.selectedCharacter) {
-                    this.showMap();
-                } else {
-                    this.showCharacterSelect();
+                console.error('❌ 시/군 데이터가 로드되지 않음');
+            }
+
+            // 줌 이벤트 리스너 - 마커 크기 조정
+            this.regionMap.on('zoomend', () => {
+                const currentZoom = this.regionMap.getZoom();
+                const newRadius = getRadiusByZoom(currentZoom);
+                markers.forEach(marker => {
+                    marker.setRadius(newRadius);
+                });
+                console.log(`🔍 줌 레벨: ${currentZoom}, 마커 반경: ${Math.round(newRadius)}m`);
+            });
+
+            // 지도 크기 재조정
+            setTimeout(() => {
+                if (this.regionMap) {
+                    this.regionMap.invalidateSize();
                 }
+            }, 100);
+
+        } catch (error) {
+            console.error('❌ 시/군 지도 초기화 오류:', error);
+        }
+    },
+
+    // 시/군 선택
+    selectSi(cityId) {
+        console.log(`📍 시/군 선택: ${cityId}`);
+
+        const city = typeof GyeonggiSiData !== 'undefined' ? GyeonggiSiData.getCity(cityId) : null;
+        if (!city) {
+            console.error('시/군 데이터를 찾을 수 없습니다:', cityId);
+            return;
+        }
+
+        this.currentCity = cityId;
+
+        // 동 데이터가 있는 시/군들 (추후 확장)
+        const citiesWithDongMap = []; // 아직 동 데이터 없음
+
+        if (citiesWithDongMap.includes(cityId)) {
+            // 동 지도 표시
+            this.showCityDongMap(cityId);
+        } else {
+            // 동 데이터 없으면 바로 레벨 지도로 이동
+            this.currentDong = null;
+
+            if (this.userData.selectedCharacter) {
+                this.showMap();
+            } else {
+                this.showCharacterSelect();
             }
         }
     },
