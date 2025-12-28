@@ -1,0 +1,66 @@
+{
+    "districtId": "chungnam_cheonan",
+    "districtName": "천안시",
+    "cityId": "chungnam",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "cheonan_byeongcheon",
+            "name": "병천순대거리",
+            "center": [
+                36.7304,
+                127.2970
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🍖",
+            "description": "병천순대 본고장",
+            "levelCount": 1,
+            "specialties": [
+                "병천순대",
+                "순대국밥",
+                "막걸리"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "cheonan_station",
+            "name": "천안역",
+            "center": [
+                36.8093,
+                127.1485
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🚉",
+            "description": "역사거리, 상권",
+            "levelCount": 1,
+            "specialties": [
+                "호두과자",
+                "분식",
+                "카페"
+            ],
+            "unlockCondition": "COMPLETE_cheonan_byeongcheon"
+        },
+        {
+            "id": "cheonan_sinbu",
+            "name": "신부동",
+            "center": [
+                36.8143,
+                127.1560
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🍺",
+            "description": "먹자골목",
+            "levelCount": 1,
+            "specialties": [
+                "삼겹살",
+                "치킨",
+                "술집"
+            ],
+            "unlockCondition": "COMPLETE_cheonan_station"
+        }
+    ]
+}

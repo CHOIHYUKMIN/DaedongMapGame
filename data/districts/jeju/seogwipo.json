@@ -1,0 +1,85 @@
+{
+    "districtId": "jeju_seogwipo",
+    "districtName": "서귀포시",
+    "cityId": "jeju",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "seogwipo_jungmun",
+            "name": "중문관광단지",
+            "center": [
+                33.2543,
+                126.4106
+            ],
+            "zoom": 14,
+            "color": "#FF6B6B",
+            "icon": "🏨",
+            "description": "중문 리조트",
+            "levelCount": 1,
+            "specialties": [
+                "호텔다이닝",
+                "갈치조림",
+                "흑돼지"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "seogwipo_maeil",
+            "name": "매일올레시장",
+            "center": [
+                33.2501,
+                126.5627
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🏪",
+            "description": "서귀포 매일올레시장",
+            "levelCount": 1,
+            "specialties": [
+                "흑돼지꼬치",
+                "귤음료",
+                "시장음식"
+            ],
+            "unlockCondition": "COMPLETE_seogwipo_jungmun"
+        },
+        {
+            "id": "seogwipo_seongsan",
+            "name": "성산일출봉",
+            "center": [
+                33.4590,
+                126.9419
+            ],
+            "zoom": 14,
+            "color": "#45B7D1",
+            "icon": "🌅",
+            "description": "유네스코 세계자연유산",
+            "levelCount": 1,
+            "specialties": [
+                "전복죽",
+                "해녀물회",
+                "성게미역국"
+            ],
+            "unlockCondition": "COMPLETE_seogwipo_maeil"
+        },
+        {
+            "id": "seogwipo_udo",
+            "name": "우도",
+            "center": [
+                33.5049,
+                126.9543
+            ],
+            "zoom": 13,
+            "color": "#96CEB4",
+            "icon": "🐚",
+            "description": "우도 땅콩아이스크림",
+            "levelCount": 1,
+            "specialties": [
+                "땅콩아이스크림",
+                "해녀밥상",
+                "오징어땅콩"
+            ],
+            "unlockCondition": "COMPLETE_seogwipo_seongsan"
+        }
+    ]
+}

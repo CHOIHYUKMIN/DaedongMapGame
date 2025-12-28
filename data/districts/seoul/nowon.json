@@ -1,0 +1,85 @@
+{
+    "districtId": "seoul_nowon",
+    "districtName": "노원구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "nowon_sanggye",
+            "name": "상계동",
+            "center": [
+                37.6569,
+                127.0717
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🏠",
+            "description": "노원역, 상계주공",
+            "levelCount": 1,
+            "specialties": [
+                "분식",
+                "치킨",
+                "중식"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "nowon_wolgye",
+            "name": "월계동",
+            "center": [
+                37.6220,
+                127.0618
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🛍️",
+            "description": "광운대역, 롯데백화점",
+            "levelCount": 1,
+            "specialties": [
+                "백화점맛집",
+                "한식",
+                "카페"
+            ],
+            "unlockCondition": "COMPLETE_nowon_sanggye"
+        },
+        {
+            "id": "nowon_gongneung",
+            "name": "공릉동",
+            "center": [
+                37.6259,
+                127.0771
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🎓",
+            "description": "서울과기대, 육사",
+            "levelCount": 1,
+            "specialties": [
+                "분식",
+                "치킨",
+                "삼겹살"
+            ],
+            "unlockCondition": "COMPLETE_nowon_wolgye"
+        },
+        {
+            "id": "nowon_junggye",
+            "name": "중계동",
+            "center": [
+                37.6445,
+                127.0720
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "📚",
+            "description": "학원가, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "분식",
+                "카페",
+                "패스트푸드"
+            ],
+            "unlockCondition": "COMPLETE_nowon_gongneung"
+        }
+    ]
+}

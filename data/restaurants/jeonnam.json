@@ -1,0 +1,158 @@
+{
+    "regionId": "jeonnam",
+    "regionName": "전라남도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_JEONNAM_001",
+            "name": "목포 세발낙지거리",
+            "districtId": "jeonnam_mokpo",
+            "category": "해산물",
+            "address": "전남 목포시 유달동",
+            "coordinates": [
+                34.8118,
+                126.3922
+            ],
+            "rating": 4.6,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "세발낙지",
+                "낙지연포탕"
+            ],
+            "description": "목포 대표 세발낙지",
+            "openHours": "11:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_JEONNAM_002",
+            "name": "목포 홍어삼합",
+            "districtId": "jeonnam_mokpo",
+            "category": "해산물",
+            "address": "전남 목포시 원산동",
+            "coordinates": [
+                34.8018,
+                126.3922
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "홍어삼합",
+                "홍어회"
+            ],
+            "description": "목포 전통 홍어 음식",
+            "openHours": "11:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_JEONNAM_003",
+            "name": "여수 밤바다 회센터",
+            "districtId": "jeonnam_yeosu",
+            "category": "해산물",
+            "address": "전남 여수시 돌산읍",
+            "coordinates": [
+                34.7604,
+                127.6622
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "회",
+                "게장백반",
+                "서대회"
+            ],
+            "description": "여수 돌산대교 회센터",
+            "openHours": "10:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_JEONNAM_004",
+            "name": "순천만 꼬막정식",
+            "districtId": "jeonnam_suncheon",
+            "category": "해산물",
+            "address": "전남 순천시 별량면",
+            "coordinates": [
+                34.9506,
+                127.4872
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "꼬막정식",
+                "꼬막비빔밥"
+            ],
+            "description": "순천만 근처 꼬막 맛집",
+            "openHours": "10:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_JEONNAM_005",
+            "name": "담양 떡갈비",
+            "districtId": "jeonnam_damyang",
+            "category": "한식",
+            "address": "전남 담양군 담양읍",
+            "coordinates": [
+                35.3213,
+                126.9884
+            ],
+            "rating": 4.6,
+            "priceRange": "₩₩",
+            "specialties": [
+                "떡갈비",
+                "대나무밥"
+            ],
+            "description": "담양 대표 떡갈비",
+            "openHours": "11:00-21:00",
+            "closedDays": [
+                "월요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_JEONNAM_006",
+            "name": "벌교 꼬막골목",
+            "districtId": "jeonnam_boseong",
+            "category": "해산물",
+            "address": "전남 보성군 벌교읍",
+            "coordinates": [
+                34.8416,
+                127.3497
+            ],
+            "rating": 4.7,
+            "priceRange": "₩₩",
+            "specialties": [
+                "벌교꼬막",
+                "꼬막정식"
+            ],
+            "description": "벌교 대표 꼬막 거리",
+            "openHours": "09:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_JEONNAM_007",
+            "name": "영광 굴비거리",
+            "districtId": "jeonnam_yeonggwang",
+            "category": "해산물",
+            "address": "전남 영광군 법성면",
+            "coordinates": [
+                35.2772,
+                126.5122
+            ],
+            "rating": 4.6,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "영광굴비",
+                "보리굴비"
+            ],
+            "description": "영광 법성포 굴비",
+            "openHours": "09:00-20:00",
+            "closedDays": [],
+            "imageUrl": null
+        }
+    ]
+}

@@ -1,0 +1,386 @@
+{
+    "cityId": "gyeongnam",
+    "cityName": "경상남도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "gyeongnam_changwon",
+            "name": "창원시",
+            "center": [
+                35.2279,
+                128.6811
+            ],
+            "zoom": 11,
+            "color": "#FF6B6B",
+            "icon": "🏭",
+            "dongCount": 53,
+            "description": "진해군항제, 마산어시장",
+            "population": 1046000,
+            "area": 749.12,
+            "specialties": [
+                "아귀찜",
+                "복국",
+                "해산물"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "gyeongnam_jinju",
+            "name": "진주시",
+            "center": [
+                35.1800,
+                128.1076
+            ],
+            "zoom": 11,
+            "color": "#4ECDC4",
+            "icon": "🏯",
+            "dongCount": 26,
+            "description": "진주성, 유등축제",
+            "population": 350000,
+            "area": 712.62,
+            "specialties": [
+                "진주냉면",
+                "비빔밥",
+                "육회"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_changwon"
+        },
+        {
+            "id": "gyeongnam_tongyeong",
+            "name": "통영시",
+            "center": [
+                34.8545,
+                128.4330
+            ],
+            "zoom": 11,
+            "color": "#45B7D1",
+            "icon": "🎨",
+            "dongCount": 15,
+            "description": "한려수도, 케이블카",
+            "population": 127000,
+            "area": 239.64,
+            "specialties": [
+                "충무김밥",
+                "굴",
+                "해산물"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_jinju"
+        },
+        {
+            "id": "gyeongnam_sacheon",
+            "name": "사천시",
+            "center": [
+                35.0036,
+                128.0644
+            ],
+            "zoom": 11,
+            "color": "#96CEB4",
+            "icon": "✈️",
+            "dongCount": 11,
+            "description": "사천공항, 삼천포대교",
+            "population": 113000,
+            "area": 398.70,
+            "specialties": [
+                "비빔밥",
+                "굴",
+                "실비냉면"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_tongyeong"
+        },
+        {
+            "id": "gyeongnam_gimhae",
+            "name": "김해시",
+            "center": [
+                35.2342,
+                128.8811
+            ],
+            "zoom": 12,
+            "color": "#DDA0DD",
+            "icon": "👑",
+            "dongCount": 22,
+            "description": "수로왕릉, 김해공항",
+            "population": 540000,
+            "area": 463.26,
+            "specialties": [
+                "한우",
+                "돼지국밥",
+                "곱창"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_sacheon"
+        },
+        {
+            "id": "gyeongnam_miryang",
+            "name": "밀양시",
+            "center": [
+                35.5037,
+                128.7486
+            ],
+            "zoom": 11,
+            "color": "#F0E68C",
+            "icon": "🍖",
+            "dongCount": 12,
+            "description": "영남루, 밀양아리랑",
+            "population": 106000,
+            "area": 799.00,
+            "specialties": [
+                "돼지국밥",
+                "수박",
+                "대추"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_gimhae"
+        },
+        {
+            "id": "gyeongnam_geoje",
+            "name": "거제시",
+            "center": [
+                34.8806,
+                128.6211
+            ],
+            "zoom": 11,
+            "color": "#CD853F",
+            "icon": "🚢",
+            "dongCount": 13,
+            "description": "외도, 바람의언덕",
+            "population": 238000,
+            "area": 401.61,
+            "specialties": [
+                "대구탕",
+                "멍게비빔밥",
+                "해산물"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_miryang"
+        },
+        {
+            "id": "gyeongnam_yangsan",
+            "name": "양산시",
+            "center": [
+                35.3350,
+                129.0378
+            ],
+            "zoom": 12,
+            "color": "#FFB6C1",
+            "icon": "⛰️",
+            "dongCount": 14,
+            "description": "통도사, 양산타워",
+            "population": 358000,
+            "area": 485.51,
+            "specialties": [
+                "한우",
+                "곱창",
+                "돼지국밥"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_geoje"
+        },
+        {
+            "id": "gyeongnam_uiryeong",
+            "name": "의령군",
+            "center": [
+                35.3222,
+                128.2617
+            ],
+            "zoom": 11,
+            "color": "#87CEEB",
+            "icon": "🍉",
+            "dongCount": 0,
+            "description": "의령 망개떡",
+            "population": 26000,
+            "area": 481.78,
+            "specialties": [
+                "망개떡",
+                "수박",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_yangsan"
+        },
+        {
+            "id": "gyeongnam_haman",
+            "name": "함안군",
+            "center": [
+                35.2722,
+                128.4069
+            ],
+            "zoom": 11,
+            "color": "#98D8C8",
+            "icon": "🍈",
+            "dongCount": 0,
+            "description": "함안수박, 말이산고분군",
+            "population": 65000,
+            "area": 416.54,
+            "specialties": [
+                "수박",
+                "한우",
+                "딸기"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_uiryeong"
+        },
+        {
+            "id": "gyeongnam_changnyeong",
+            "name": "창녕군",
+            "center": [
+                35.5444,
+                128.4917
+            ],
+            "zoom": 11,
+            "color": "#20B2AA",
+            "icon": "🧅",
+            "dongCount": 0,
+            "description": "우포늪, 창녕양파",
+            "population": 59000,
+            "area": 532.78,
+            "specialties": [
+                "양파",
+                "마늘",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_haman"
+        },
+        {
+            "id": "gyeongnam_goseong",
+            "name": "고성군",
+            "center": [
+                34.9728,
+                128.3225
+            ],
+            "zoom": 11,
+            "color": "#BA55D3",
+            "icon": "🦕",
+            "dongCount": 0,
+            "description": "공룡박물관, 당항포",
+            "population": 52000,
+            "area": 516.66,
+            "specialties": [
+                "한우",
+                "굴",
+                "해산물"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_changnyeong"
+        },
+        {
+            "id": "gyeongnam_namhae",
+            "name": "남해군",
+            "center": [
+                34.8375,
+                127.8925
+            ],
+            "zoom": 11,
+            "color": "#3CB371",
+            "icon": "🏝️",
+            "dongCount": 0,
+            "description": "독일마을, 다랭이마을",
+            "population": 43000,
+            "area": 357.62,
+            "specialties": [
+                "마늘",
+                "멸치",
+                "유자"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_goseong"
+        },
+        {
+            "id": "gyeongnam_hadong",
+            "name": "하동군",
+            "center": [
+                35.0667,
+                127.7514
+            ],
+            "zoom": 11,
+            "color": "#FF8C42",
+            "icon": "🍵",
+            "dongCount": 0,
+            "description": "쌍계사, 하동녹차",
+            "population": 44000,
+            "area": 675.77,
+            "specialties": [
+                "녹차",
+                "재첩국",
+                "참게탕"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_namhae"
+        },
+        {
+            "id": "gyeongnam_sancheong",
+            "name": "산청군",
+            "center": [
+                35.4153,
+                127.8733
+            ],
+            "zoom": 11,
+            "color": "#DAA520",
+            "icon": "🌿",
+            "dongCount": 0,
+            "description": "지리산, 동의보감촌",
+            "population": 34000,
+            "area": 793.90,
+            "specialties": [
+                "한방약초",
+                "한우",
+                "딸기"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_hadong"
+        },
+        {
+            "id": "gyeongnam_hamyang",
+            "name": "함양군",
+            "center": [
+                35.5200,
+                127.7256
+            ],
+            "zoom": 11,
+            "color": "#DC143C",
+            "icon": "⛰️",
+            "dongCount": 0,
+            "description": "지리산, 상림공원",
+            "population": 38000,
+            "area": 725.46,
+            "specialties": [
+                "사과",
+                "한우",
+                "산채비빔밥"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_sancheong"
+        },
+        {
+            "id": "gyeongnam_geochang",
+            "name": "거창군",
+            "center": [
+                35.6867,
+                127.9094
+            ],
+            "zoom": 11,
+            "color": "#FFA07A",
+            "icon": "🍎",
+            "dongCount": 0,
+            "description": "수승대, 가조온천",
+            "population": 61000,
+            "area": 803.68,
+            "specialties": [
+                "사과",
+                "한우",
+                "딸기"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_hamyang"
+        },
+        {
+            "id": "gyeongnam_hapcheon",
+            "name": "합천군",
+            "center": [
+                35.5667,
+                128.1658
+            ],
+            "zoom": 11,
+            "color": "#6B8E23",
+            "icon": "🏛️",
+            "dongCount": 0,
+            "description": "해인사, 팔만대장경",
+            "population": 44000,
+            "area": 983.47,
+            "specialties": [
+                "한우",
+                "율무",
+                "오미자"
+            ],
+            "unlockCondition": "COMPLETE_gyeongnam_geochang"
+        }
+    ]
+}

@@ -1,0 +1,470 @@
+{
+    "cityId": "jeonnam",
+    "cityName": "전라남도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "jeonnam_mokpo",
+            "name": "목포시",
+            "center": [
+                34.8118,
+                126.3922
+            ],
+            "zoom": 12,
+            "color": "#FF6B6B",
+            "icon": "🌊",
+            "dongCount": 20,
+            "description": "유달산, 근대역사거리",
+            "population": 223000,
+            "area": 50.08,
+            "specialties": [
+                "세발낙지",
+                "홍어삼합",
+                "꽃게탕"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "jeonnam_yeosu",
+            "name": "여수시",
+            "center": [
+                34.7604,
+                127.6622
+            ],
+            "zoom": 11,
+            "color": "#4ECDC4",
+            "icon": "🌉",
+            "dongCount": 20,
+            "description": "여수밤바다, 오동도",
+            "population": 281000,
+            "area": 512.28,
+            "specialties": [
+                "갓김치",
+                "게장백반",
+                "서대회"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_mokpo"
+        },
+        {
+            "id": "jeonnam_suncheon",
+            "name": "순천시",
+            "center": [
+                34.9506,
+                127.4872
+            ],
+            "zoom": 11,
+            "color": "#45B7D1",
+            "icon": "🌿",
+            "dongCount": 15,
+            "description": "순천만국가정원, 낙안읍성",
+            "population": 280000,
+            "area": 910.47,
+            "specialties": [
+                "짱뚱어탕",
+                "한정식",
+                "꼬막정식"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_yeosu"
+        },
+        {
+            "id": "jeonnam_naju",
+            "name": "나주시",
+            "center": [
+                35.0159,
+                126.7108
+            ],
+            "zoom": 11,
+            "color": "#96CEB4",
+            "icon": "🍐",
+            "dongCount": 12,
+            "description": "나주배, 나주혁신도시",
+            "population": 115000,
+            "area": 604.08,
+            "specialties": [
+                "나주곰탕",
+                "나주배",
+                "영산포홍어"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_suncheon"
+        },
+        {
+            "id": "jeonnam_gwangyang",
+            "name": "광양시",
+            "center": [
+                34.9406,
+                127.6958
+            ],
+            "zoom": 11,
+            "color": "#DDA0DD",
+            "icon": "🌸",
+            "dongCount": 11,
+            "description": "백운산, 매화마을",
+            "population": 154000,
+            "area": 461.09,
+            "specialties": [
+                "광양불고기",
+                "재첩국",
+                "매실"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_naju"
+        },
+        {
+            "id": "jeonnam_damyang",
+            "name": "담양군",
+            "center": [
+                35.3213,
+                126.9884
+            ],
+            "zoom": 11,
+            "color": "#F0E68C",
+            "icon": "🎋",
+            "dongCount": 0,
+            "description": "죽녹원, 메타세쿼이아길",
+            "population": 46000,
+            "area": 454.86,
+            "specialties": [
+                "떡갈비",
+                "대통밥",
+                "죽순정식"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_gwangyang"
+        },
+        {
+            "id": "jeonnam_gokseong",
+            "name": "곡성군",
+            "center": [
+                35.2819,
+                127.2917
+            ],
+            "zoom": 11,
+            "color": "#CD853F",
+            "icon": "🚂",
+            "dongCount": 0,
+            "description": "섬진강기차마을",
+            "population": 27000,
+            "area": 547.32,
+            "specialties": [
+                "참게탕",
+                "은어회",
+                "토란탕"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_damyang"
+        },
+        {
+            "id": "jeonnam_gurye",
+            "name": "구례군",
+            "center": [
+                35.2026,
+                127.4625
+            ],
+            "zoom": 11,
+            "color": "#FFB6C1",
+            "icon": "🏔️",
+            "dongCount": 0,
+            "description": "지리산, 화엄사",
+            "population": 25000,
+            "area": 443.06,
+            "specialties": [
+                "산수유",
+                "산채비빔밥",
+                "다슬기"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_gokseong"
+        },
+        {
+            "id": "jeonnam_goheung",
+            "name": "고흥군",
+            "center": [
+                34.6111,
+                127.2850
+            ],
+            "zoom": 11,
+            "color": "#87CEEB",
+            "icon": "🚀",
+            "dongCount": 0,
+            "description": "나로우주센터",
+            "population": 62000,
+            "area": 806.35,
+            "specialties": [
+                "유자",
+                "해산물",
+                "장어"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_gurye"
+        },
+        {
+            "id": "jeonnam_boseong",
+            "name": "보성군",
+            "center": [
+                34.7716,
+                127.0797
+            ],
+            "zoom": 11,
+            "color": "#98D8C8",
+            "icon": "🍵",
+            "dongCount": 0,
+            "description": "보성녹차밭, 벌교꼬막",
+            "population": 39000,
+            "area": 663.16,
+            "specialties": [
+                "녹차",
+                "벌교꼬막",
+                "녹돈"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_goheung"
+        },
+        {
+            "id": "jeonnam_hwasun",
+            "name": "화순군",
+            "center": [
+                35.0644,
+                126.9866
+            ],
+            "zoom": 11,
+            "color": "#20B2AA",
+            "icon": "⛰️",
+            "dongCount": 0,
+            "description": "화순적벽, 운주사",
+            "population": 58000,
+            "area": 786.84,
+            "specialties": [
+                "한우",
+                "오미자",
+                "산채정식"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_boseong"
+        },
+        {
+            "id": "jeonnam_jangheung",
+            "name": "장흥군",
+            "center": [
+                34.6817,
+                126.9069
+            ],
+            "zoom": 11,
+            "color": "#BA55D3",
+            "icon": "📚",
+            "dongCount": 0,
+            "description": "정남진, 편백숲우드랜드",
+            "population": 36000,
+            "area": 618.21,
+            "specialties": [
+                "한우",
+                "키조개",
+                "매생이"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_hwasun"
+        },
+        {
+            "id": "jeonnam_gangjin",
+            "name": "강진군",
+            "center": [
+                34.6419,
+                126.7672
+            ],
+            "zoom": 11,
+            "color": "#3CB371",
+            "icon": "🏺",
+            "dongCount": 0,
+            "description": "청자마을, 다산초당",
+            "population": 33000,
+            "area": 500.48,
+            "specialties": [
+                "청자",
+                "한우",
+                "딸기"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_jangheung"
+        },
+        {
+            "id": "jeonnam_haenam",
+            "name": "해남군",
+            "center": [
+                34.5736,
+                126.5992
+            ],
+            "zoom": 11,
+            "color": "#FF8C42",
+            "icon": "🌅",
+            "dongCount": 0,
+            "description": "땅끝마을, 대흥사",
+            "population": 68000,
+            "area": 1012.44,
+            "specialties": [
+                "고구마",
+                "배추",
+                "전복"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_gangjin"
+        },
+        {
+            "id": "jeonnam_yeongam",
+            "name": "영암군",
+            "center": [
+                34.8000,
+                126.6969
+            ],
+            "zoom": 11,
+            "color": "#DAA520",
+            "icon": "🏎️",
+            "dongCount": 0,
+            "description": "F1경기장, 월출산",
+            "population": 54000,
+            "area": 604.56,
+            "specialties": [
+                "무화과",
+                "양송이",
+                "낙지"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_haenam"
+        },
+        {
+            "id": "jeonnam_muan",
+            "name": "무안군",
+            "center": [
+                34.9904,
+                126.4817
+            ],
+            "zoom": 11,
+            "color": "#DC143C",
+            "icon": "✈️",
+            "dongCount": 0,
+            "description": "무안국제공항, 회산백련지",
+            "population": 88000,
+            "area": 448.81,
+            "specialties": [
+                "양파",
+                "낙지",
+                "연잎밥"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_yeongam"
+        },
+        {
+            "id": "jeonnam_hampyeong",
+            "name": "함평군",
+            "center": [
+                35.0656,
+                126.5164
+            ],
+            "zoom": 11,
+            "color": "#FFA07A",
+            "icon": "🦋",
+            "dongCount": 0,
+            "description": "나비축제, 함평천지",
+            "population": 31000,
+            "area": 391.77,
+            "specialties": [
+                "한우",
+                "나비",
+                "딸기"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_muan"
+        },
+        {
+            "id": "jeonnam_yeonggwang",
+            "name": "영광군",
+            "center": [
+                35.2772,
+                126.5122
+            ],
+            "zoom": 11,
+            "color": "#6B8E23",
+            "icon": "🐟",
+            "dongCount": 0,
+            "description": "법성포굴비",
+            "population": 51000,
+            "area": 474.71,
+            "specialties": [
+                "영광굴비",
+                "모시송편",
+                "칠산어장"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_hampyeong"
+        },
+        {
+            "id": "jeonnam_jangseong",
+            "name": "장성군",
+            "center": [
+                35.3019,
+                126.7844
+            ],
+            "zoom": 11,
+            "color": "#CD5C5C",
+            "icon": "📿",
+            "dongCount": 0,
+            "description": "백양사, 축령산",
+            "population": 44000,
+            "area": 518.59,
+            "specialties": [
+                "삼계탕",
+                "한우",
+                "편백숲"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_yeonggwang"
+        },
+        {
+            "id": "jeonnam_wando",
+            "name": "완도군",
+            "center": [
+                34.3108,
+                126.7550
+            ],
+            "zoom": 10,
+            "color": "#FF69B4",
+            "icon": "🏝️",
+            "dongCount": 0,
+            "description": "청해진, 완도수목원",
+            "population": 47000,
+            "area": 396.27,
+            "specialties": [
+                "전복",
+                "미역",
+                "다시마"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_jangseong"
+        },
+        {
+            "id": "jeonnam_jindo",
+            "name": "진도군",
+            "center": [
+                34.4869,
+                126.2631
+            ],
+            "zoom": 10,
+            "color": "#7B68EE",
+            "icon": "🐕",
+            "dongCount": 0,
+            "description": "진도개, 신비의바닷길",
+            "population": 30000,
+            "area": 439.58,
+            "specialties": [
+                "홍주",
+                "대파",
+                "흑미"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_wando"
+        },
+        {
+            "id": "jeonnam_sinan",
+            "name": "신안군",
+            "center": [
+                34.8269,
+                126.1069
+            ],
+            "zoom": 9,
+            "color": "#00CED1",
+            "icon": "🏖️",
+            "dongCount": 0,
+            "description": "퍼플섬, 1004섬",
+            "population": 40000,
+            "area": 656.41,
+            "specialties": [
+                "천일염",
+                "새우젓",
+                "민어"
+            ],
+            "unlockCondition": "COMPLETE_jeonnam_jindo"
+        }
+    ]
+}

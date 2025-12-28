@@ -1,0 +1,66 @@
+{
+    "districtId": "gyeongbuk_gyeongju",
+    "districtName": "경주시",
+    "cityId": "gyeongbuk",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "gyeongju_bulguk",
+            "name": "불국사",
+            "center": [
+                35.7902,
+                129.3316
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🛕",
+            "description": "불국사, 석굴암",
+            "levelCount": 1,
+            "specialties": [
+                "황남빵",
+                "한정식",
+                "전통차"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "gyeongju_daereungwon",
+            "name": "대릉원",
+            "center": [
+                35.8377,
+                129.2194
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🏛️",
+            "description": "대릉원, 첨성대",
+            "levelCount": 1,
+            "specialties": [
+                "교리김밥",
+                "솥밥",
+                "쌈밥"
+            ],
+            "unlockCondition": "COMPLETE_gyeongju_bulguk"
+        },
+        {
+            "id": "gyeongju_hwanglidan",
+            "name": "황리단길",
+            "center": [
+                35.8377,
+                129.2130
+            ],
+            "zoom": 16,
+            "color": "#45B7D1",
+            "icon": "☕",
+            "description": "황리단길 카페거리",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "브런치",
+                "디저트"
+            ],
+            "unlockCondition": "COMPLETE_gyeongju_daereungwon"
+        }
+    ]
+}

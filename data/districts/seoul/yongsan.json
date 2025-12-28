@@ -1,0 +1,123 @@
+{
+    "districtId": "seoul_yongsan",
+    "districtName": "용산구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "yongsan_itaewon",
+            "name": "이태원동",
+            "center": [
+                37.5340,
+                126.9948
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🌍",
+            "description": "다문화거리, 세계음식",
+            "levelCount": 1,
+            "specialties": [
+                "타코",
+                "케밥",
+                "버거"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "yongsan_gyeongridan",
+            "name": "경리단길",
+            "center": [
+                37.5407,
+                126.9877
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "☕",
+            "description": "카페거리, 레스토랑",
+            "levelCount": 1,
+            "specialties": [
+                "브런치",
+                "파스타",
+                "와인바"
+            ],
+            "unlockCondition": "COMPLETE_yongsan_itaewon"
+        },
+        {
+            "id": "yongsan_haebangchon",
+            "name": "해방촌",
+            "center": [
+                37.5447,
+                126.9830
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏔️",
+            "description": "남산뷰, 레트로카페",
+            "levelCount": 1,
+            "specialties": [
+                "레트로카페",
+                "루프탑바",
+                "퓨전요리"
+            ],
+            "unlockCondition": "COMPLETE_yongsan_gyeongridan"
+        },
+        {
+            "id": "yongsan_hannam",
+            "name": "한남동",
+            "center": [
+                37.5338,
+                127.0060
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "✨",
+            "description": "한남더힐, 블루스퀘어",
+            "levelCount": 1,
+            "specialties": [
+                "고급한식",
+                "오마카세",
+                "디저트카페"
+            ],
+            "unlockCondition": "COMPLETE_yongsan_haebangchon"
+        },
+        {
+            "id": "yongsan_samgakji",
+            "name": "삼각지",
+            "center": [
+                37.5349,
+                126.9735
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🥩",
+            "description": "양꼬치거리, 양고기",
+            "levelCount": 1,
+            "specialties": [
+                "양꼬치",
+                "양갈비",
+                "훠궈"
+            ],
+            "unlockCondition": "COMPLETE_yongsan_hannam"
+        },
+        {
+            "id": "yongsan_station",
+            "name": "용산역",
+            "center": [
+                37.5299,
+                126.9648
+            ],
+            "zoom": 15,
+            "color": "#F0E68C",
+            "icon": "🚉",
+            "description": "용산역, 아이파크",
+            "levelCount": 1,
+            "specialties": [
+                "역사내맛집",
+                "한식",
+                "패스트푸드"
+            ],
+            "unlockCondition": "COMPLETE_yongsan_samgakji"
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "districtId": "jeonnam_mokpo",
+    "districtName": "목포시",
+    "cityId": "jeonnam",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "mokpo_yudalsan",
+            "name": "유달산",
+            "center": [
+                34.7899,
+                126.3808
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🏔️",
+            "description": "유달산 야경",
+            "levelCount": 1,
+            "specialties": [
+                "세발낙지",
+                "홍어삼합",
+                "민어회"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "mokpo_station",
+            "name": "목포역",
+            "center": [
+                34.7905,
+                126.3855
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🚉",
+            "description": "목포역, 원도심",
+            "levelCount": 1,
+            "specialties": [
+                "짬뽕",
+                "짜장",
+                "싸다"
+            ],
+            "unlockCondition": "COMPLETE_mokpo_yudalsan"
+        },
+        {
+            "id": "mokpo_suhjung",
+            "name": "서정동",
+            "center": [
+                34.7983,
+                126.4115
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏘️",
+            "description": "근대역사거리",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "빵집"
+            ],
+            "unlockCondition": "COMPLETE_mokpo_station"
+        }
+    ]
+}

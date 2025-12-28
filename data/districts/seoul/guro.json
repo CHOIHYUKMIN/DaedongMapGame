@@ -1,0 +1,104 @@
+{
+    "districtId": "seoul_guro",
+    "districtName": "구로구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "guro_gurodigital",
+            "name": "구로디지털단지",
+            "center": [
+                37.4851,
+                126.9014
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "💼",
+            "description": "G밸리, IT기업밀집",
+            "levelCount": 1,
+            "specialties": [
+                "점심특선",
+                "비즈니스식당",
+                "카페"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "guro_guro",
+            "name": "구로동",
+            "center": [
+                37.5011,
+                126.8822
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🚉",
+            "description": "구로역, 신도림",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "중식"
+            ],
+            "unlockCondition": "COMPLETE_guro_gurodigital"
+        },
+        {
+            "id": "guro_sindorim",
+            "name": "신도림",
+            "center": [
+                37.5087,
+                126.8912
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🛍️",
+            "description": "디큐브시티, 현대백화점",
+            "levelCount": 1,
+            "specialties": [
+                "백화점맛집",
+                "푸드코트",
+                "레스토랑"
+            ],
+            "unlockCondition": "COMPLETE_guro_guro"
+        },
+        {
+            "id": "guro_oryu",
+            "name": "오류동",
+            "center": [
+                37.4932,
+                126.8485
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏠",
+            "description": "오류역, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "치킨"
+            ],
+            "unlockCondition": "COMPLETE_guro_sindorim"
+        },
+        {
+            "id": "guro_hangdong",
+            "name": "항동",
+            "center": [
+                37.4751,
+                126.8352
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🌳",
+            "description": "푸른수목원",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "브런치",
+                "동네맛집"
+            ],
+            "unlockCondition": "COMPLETE_guro_oryu"
+        }
+    ]
+}

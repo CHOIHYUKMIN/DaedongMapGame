@@ -1,0 +1,239 @@
+{
+    "cityId": "chungbuk",
+    "cityName": "충청북도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "chungbuk_cheongju",
+            "name": "청주시",
+            "center": [
+                36.6424,
+                127.4890
+            ],
+            "zoom": 11,
+            "color": "#FF6B6B",
+            "icon": "🏛️",
+            "dongCount": 36,
+            "description": "청주국제공항, 무심천",
+            "population": 843000,
+            "area": 940.30,
+            "specialties": [
+                "청주순대",
+                "올갱이국",
+                "도리뱅뱅이"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "chungbuk_chungju",
+            "name": "충주시",
+            "center": [
+                36.9910,
+                127.9259
+            ],
+            "zoom": 11,
+            "color": "#4ECDC4",
+            "icon": "🍎",
+            "dongCount": 14,
+            "description": "충주호, 수안보온천",
+            "population": 210000,
+            "area": 983.49,
+            "specialties": [
+                "사과",
+                "수안보온천",
+                "앵두"
+            ],
+            "unlockCondition": "COMPLETE_chungbuk_cheongju"
+        },
+        {
+            "id": "chungbuk_jecheon",
+            "name": "제천시",
+            "center": [
+                37.1327,
+                128.1910
+            ],
+            "zoom": 11,
+            "color": "#45B7D1",
+            "icon": "🌿",
+            "dongCount": 10,
+            "description": "의림지, 청풍문화재단지",
+            "population": 134000,
+            "area": 882.97,
+            "specialties": [
+                "약초",
+                "한약재",
+                "닭볶음탕"
+            ],
+            "unlockCondition": "COMPLETE_chungbuk_chungju"
+        },
+        {
+            "id": "chungbuk_boeun",
+            "name": "보은군",
+            "center": [
+                36.4895,
+                127.7293
+            ],
+            "zoom": 11,
+            "color": "#96CEB4",
+            "icon": "🏯",
+            "dongCount": 0,
+            "description": "속리산, 법주사",
+            "population": 32000,
+            "area": 584.25,
+            "specialties": [
+                "대추",
+                "속리산맛집",
+                "산채정식"
+            ],
+            "unlockCondition": "COMPLETE_chungbuk_jecheon"
+        },
+        {
+            "id": "chungbuk_okcheon",
+            "name": "옥천군",
+            "center": [
+                36.3068,
+                127.5714
+            ],
+            "zoom": 11,
+            "color": "#DDA0DD",
+            "icon": "🌸",
+            "dongCount": 0,
+            "description": "금강, 정지용문학관",
+            "population": 51000,
+            "area": 537.11,
+            "specialties": [
+                "옥천냉면",
+                "포도",
+                "올챙이국수"
+            ],
+            "unlockCondition": "COMPLETE_chungbuk_boeun"
+        },
+        {
+            "id": "chungbuk_yeongdong",
+            "name": "영동군",
+            "center": [
+                36.1750,
+                127.7764
+            ],
+            "zoom": 11,
+            "color": "#F0E68C",
+            "icon": "🍇",
+            "dongCount": 0,
+            "description": "포도축제, 난계국악기체험관",
+            "population": 47000,
+            "area": 844.69,
+            "specialties": [
+                "포도",
+                "와인",
+                "감"
+            ],
+            "unlockCondition": "COMPLETE_chungbuk_okcheon"
+        },
+        {
+            "id": "chungbuk_jincheon",
+            "name": "진천군",
+            "center": [
+                36.8553,
+                127.4358
+            ],
+            "zoom": 11,
+            "color": "#CD853F",
+            "icon": "🏭",
+            "dongCount": 0,
+            "description": "생거진천, 진천종박물관",
+            "population": 85000,
+            "area": 406.64,
+            "specialties": [
+                "진천쌀",
+                "감자떡",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_chungbuk_yeongdong"
+        },
+        {
+            "id": "chungbuk_goesan",
+            "name": "괴산군",
+            "center": [
+                36.8153,
+                127.7869
+            ],
+            "zoom": 11,
+            "color": "#FFB6C1",
+            "icon": "🌰",
+            "dongCount": 0,
+            "description": "괴산고추, 산막이옛길",
+            "population": 35000,
+            "area": 842.05,
+            "specialties": [
+                "고추",
+                "미선향",
+                "다슬기해장국"
+            ],
+            "unlockCondition": "COMPLETE_chungbuk_jincheon"
+        },
+        {
+            "id": "chungbuk_eumseong",
+            "name": "음성군",
+            "center": [
+                36.9406,
+                127.6901
+            ],
+            "zoom": 11,
+            "color": "#87CEEB",
+            "icon": "🌾",
+            "dongCount": 0,
+            "description": "미나리마을",
+            "population": 95000,
+            "area": 520.25,
+            "specialties": [
+                "미나리",
+                "고추",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_chungbuk_goesan"
+        },
+        {
+            "id": "chungbuk_danyang",
+            "name": "단양군",
+            "center": [
+                36.9845,
+                128.3654
+            ],
+            "zoom": 11,
+            "color": "#98D8C8",
+            "icon": "🏞️",
+            "dongCount": 0,
+            "description": "도담삼봉, 고수동굴",
+            "population": 30000,
+            "area": 780.82,
+            "specialties": [
+                "마늘",
+                "마늘빵",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_chungbuk_eumseong"
+        },
+        {
+            "id": "chungbuk_jeungpyeong",
+            "name": "증평군",
+            "center": [
+                36.7853,
+                127.5815
+            ],
+            "zoom": 12,
+            "color": "#20B2AA",
+            "icon": "🌳",
+            "dongCount": 0,
+            "description": "좌구산자연휴양림",
+            "population": 36000,
+            "area": 81.82,
+            "specialties": [
+                "인삼",
+                "율무",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_chungbuk_danyang"
+        }
+    ]
+}

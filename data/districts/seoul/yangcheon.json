@@ -1,0 +1,85 @@
+{
+    "districtId": "seoul_yangcheon",
+    "districtName": "양천구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "yangcheon_mokdong",
+            "name": "목동",
+            "center": [
+                37.5270,
+                126.8755
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🏟️",
+            "description": "목동야구장, 현대백화점",
+            "levelCount": 1,
+            "specialties": [
+                "백화점맛집",
+                "한정식",
+                "카페"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "yangcheon_sinjeong",
+            "name": "신정동",
+            "center": [
+                37.5157,
+                126.8657
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "📚",
+            "description": "목동학원가",
+            "levelCount": 1,
+            "specialties": [
+                "분식",
+                "패스트푸드",
+                "카페"
+            ],
+            "unlockCondition": "COMPLETE_yangcheon_mokdong"
+        },
+        {
+            "id": "yangcheon_sindorim",
+            "name": "오목교",
+            "center": [
+                37.5246,
+                126.8630
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🚇",
+            "description": "오목교역, 로데오거리",
+            "levelCount": 1,
+            "specialties": [
+                "삼겹살",
+                "술집",
+                "이자카야"
+            ],
+            "unlockCondition": "COMPLETE_yangcheon_sinjeong"
+        },
+        {
+            "id": "yangcheon_sinwol",
+            "name": "신월동",
+            "center": [
+                37.5193,
+                126.8349
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏠",
+            "description": "신월역, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "치킨"
+            ],
+            "unlockCondition": "COMPLETE_yangcheon_sindorim"
+        }
+    ]
+}

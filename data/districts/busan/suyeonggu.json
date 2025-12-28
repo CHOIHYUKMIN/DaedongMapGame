@@ -1,0 +1,85 @@
+{
+    "districtId": "busan_suyeonggu",
+    "districtName": "수영구",
+    "cityId": "busan",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "busan_gwangalli",
+            "name": "광안동",
+            "center": [
+                35.1534,
+                129.1178
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🌊",
+            "description": "광안리해수욕장, 광안대교",
+            "levelCount": 1,
+            "specialties": [
+                "횟집",
+                "바닷가카페",
+                "칵테일바"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "busan_millak",
+            "name": "민락동",
+            "center": [
+                35.1456,
+                129.1256
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🐟",
+            "description": "민락수변공원, 횟집촌",
+            "levelCount": 1,
+            "specialties": [
+                "활어회",
+                "해물모듬",
+                "조개구이"
+            ],
+            "unlockCondition": "COMPLETE_busan_gwangalli"
+        },
+        {
+            "id": "busan_namsun",
+            "name": "남천동",
+            "center": [
+                35.1389,
+                129.1089
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏖️",
+            "description": "남천역, 해변산책로",
+            "levelCount": 1,
+            "specialties": [
+                "브런치",
+                "디저트",
+                "샌드위치"
+            ],
+            "unlockCondition": "COMPLETE_busan_millak"
+        },
+        {
+            "id": "busan_suyeong",
+            "name": "수영동",
+            "center": [
+                35.1623,
+                129.1134
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏛️",
+            "description": "수영사적공원, F1963",
+            "levelCount": 1,
+            "specialties": [
+                "수제맥주",
+                "피자",
+                "파스타"
+            ],
+            "unlockCondition": "COMPLETE_busan_namsun"
+        }
+    ]
+}

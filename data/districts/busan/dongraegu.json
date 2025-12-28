@@ -1,0 +1,85 @@
+{
+    "districtId": "busan_dongraegu",
+    "districtName": "동래구",
+    "cityId": "busan",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "busan_oncheon",
+            "name": "온천동",
+            "center": [
+                35.2156,
+                129.0789
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "♨️",
+            "description": "동래온천, 허심청",
+            "levelCount": 1,
+            "specialties": [
+                "동래파전",
+                "막걸리",
+                "한정식"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "busan_myeongnyun",
+            "name": "명륜동",
+            "center": [
+                35.2023,
+                129.0812
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🛍️",
+            "description": "동래시장, 전통시장",
+            "levelCount": 1,
+            "specialties": [
+                "떡갈비",
+                "순대",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_busan_oncheon"
+        },
+        {
+            "id": "busan_bokcheon",
+            "name": "복천동",
+            "center": [
+                35.2089,
+                129.0923
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏛️",
+            "description": "복천박물관, 고분군",
+            "levelCount": 1,
+            "specialties": [
+                "전통음식",
+                "한식",
+                "비빔밥"
+            ],
+            "unlockCondition": "COMPLETE_busan_myeongnyun"
+        },
+        {
+            "id": "busan_allak",
+            "name": "안락동",
+            "center": [
+                35.1923,
+                129.0945
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏠",
+            "description": "안락역, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "국밥",
+                "삼겹살",
+                "치킨"
+            ],
+            "unlockCondition": "COMPLETE_busan_bokcheon"
+        }
+    ]
+}

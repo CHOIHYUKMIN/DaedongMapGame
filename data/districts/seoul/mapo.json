@@ -1,0 +1,161 @@
+{
+    "districtId": "seoul_mapo",
+    "districtName": "마포구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "mapo_hongdae",
+            "name": "서교동(홍대)",
+            "center": [
+                37.5563,
+                126.9240
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🎸",
+            "description": "홍대입구, 클럽거리",
+            "levelCount": 1,
+            "specialties": [
+                "치킨",
+                "피자",
+                "수제버거"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "mapo_hapjeong",
+            "name": "합정동",
+            "center": [
+                37.5495,
+                126.9139
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "☕",
+            "description": "합정역, 카페거리",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "브런치",
+                "빵집"
+            ],
+            "unlockCondition": "COMPLETE_mapo_hongdae"
+        },
+        {
+            "id": "mapo_sangsu",
+            "name": "상수동",
+            "center": [
+                37.5478,
+                126.9234
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🎨",
+            "description": "예술인마을, 독립서점",
+            "levelCount": 1,
+            "specialties": [
+                "퓨전요리",
+                "비건",
+                "자연와인"
+            ],
+            "unlockCondition": "COMPLETE_mapo_hapjeong"
+        },
+        {
+            "id": "mapo_yeonnam",
+            "name": "연남동",
+            "center": [
+                37.5662,
+                126.9237
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🌳",
+            "description": "경의선숲길, 연트럴파크",
+            "levelCount": 1,
+            "specialties": [
+                "파스타",
+                "베이커리",
+                "디저트"
+            ],
+            "unlockCondition": "COMPLETE_mapo_sangsu"
+        },
+        {
+            "id": "mapo_yeonhui",
+            "name": "연희동",
+            "center": [
+                37.5676,
+                126.9314
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🏡",
+            "description": "연희동 카페거리",
+            "levelCount": 1,
+            "specialties": [
+                "브런치",
+                "양식",
+                "베이커리"
+            ],
+            "unlockCondition": "COMPLETE_mapo_yeonnam"
+        },
+        {
+            "id": "mapo_mangwon",
+            "name": "망원동",
+            "center": [
+                37.5571,
+                126.9046
+            ],
+            "zoom": 15,
+            "color": "#F0E68C",
+            "icon": "🌅",
+            "description": "망원한강공원, 망원시장",
+            "levelCount": 1,
+            "specialties": [
+                "시장음식",
+                "떡볶이",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_mapo_yeonhui"
+        },
+        {
+            "id": "mapo_gongdeok",
+            "name": "공덕동",
+            "center": [
+                37.5441,
+                126.9518
+            ],
+            "zoom": 15,
+            "color": "#CD853F",
+            "icon": "🚇",
+            "description": "공덕역, 마포역",
+            "levelCount": 1,
+            "specialties": [
+                "족발",
+                "순대국",
+                "한식"
+            ],
+            "unlockCondition": "COMPLETE_mapo_mangwon"
+        },
+        {
+            "id": "mapo_mapogu",
+            "name": "마포동",
+            "center": [
+                37.5389,
+                126.9451
+            ],
+            "zoom": 15,
+            "color": "#FFB6C1",
+            "icon": "🌊",
+            "description": "여의도 근접, 마포나루",
+            "levelCount": 1,
+            "specialties": [
+                "삼겹살",
+                "곱창",
+                "한강뷰"
+            ],
+            "unlockCondition": "COMPLETE_mapo_gongdeok"
+        }
+    ]
+}

@@ -1,0 +1,142 @@
+{
+    "districtId": "seoul_jongno",
+    "districtName": "종로구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "jongno_gwanghwamun",
+            "name": "광화문",
+            "center": [
+                37.5716,
+                126.9768
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🏛️",
+            "description": "경복궁, 광화문광장",
+            "levelCount": 1,
+            "specialties": [
+                "한정식",
+                "궁중요리",
+                "삼계탕"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "jongno_insadong",
+            "name": "인사동",
+            "center": [
+                37.5735,
+                126.9859
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🎨",
+            "description": "인사동길, 전통문화거리",
+            "levelCount": 1,
+            "specialties": [
+                "전통차",
+                "떡카페",
+                "비빔밥"
+            ],
+            "unlockCondition": "COMPLETE_jongno_gwanghwamun"
+        },
+        {
+            "id": "jongno_bukchon",
+            "name": "북촌",
+            "center": [
+                37.5820,
+                126.9850
+            ],
+            "zoom": 16,
+            "color": "#45B7D1",
+            "icon": "🏡",
+            "description": "북촌한옥마을",
+            "levelCount": 1,
+            "specialties": [
+                "전통찻집",
+                "한옥카페",
+                "한정식"
+            ],
+            "unlockCondition": "COMPLETE_jongno_insadong"
+        },
+        {
+            "id": "jongno_samcheong",
+            "name": "삼청동",
+            "center": [
+                37.5797,
+                126.9823
+            ],
+            "zoom": 16,
+            "color": "#96CEB4",
+            "icon": "🌸",
+            "description": "삼청동길, 갤러리거리",
+            "levelCount": 1,
+            "specialties": [
+                "수제비",
+                "파스타",
+                "갤러리카페"
+            ],
+            "unlockCondition": "COMPLETE_jongno_bukchon"
+        },
+        {
+            "id": "jongno_ikseondong",
+            "name": "익선동",
+            "center": [
+                37.5739,
+                126.9895
+            ],
+            "zoom": 16,
+            "color": "#DDA0DD",
+            "icon": "🏮",
+            "description": "익선동 한옥골목",
+            "levelCount": 1,
+            "specialties": [
+                "레트로카페",
+                "한옥바",
+                "퓨전한식"
+            ],
+            "unlockCondition": "COMPLETE_jongno_samcheong"
+        },
+        {
+            "id": "jongno_gwangjang",
+            "name": "광장시장",
+            "center": [
+                37.5701,
+                126.9995
+            ],
+            "zoom": 16,
+            "color": "#F0E68C",
+            "icon": "🥢",
+            "description": "광장시장, 먹거리",
+            "levelCount": 1,
+            "specialties": [
+                "마약김밥",
+                "빈대떡",
+                "육회"
+            ],
+            "unlockCondition": "COMPLETE_jongno_ikseondong"
+        },
+        {
+            "id": "jongno_jongno",
+            "name": "종로",
+            "center": [
+                37.5705,
+                126.9832
+            ],
+            "zoom": 16,
+            "color": "#CD853F",
+            "icon": "🍺",
+            "description": "종로3가, 피맛골",
+            "levelCount": 1,
+            "specialties": [
+                "포장마차",
+                "곱창",
+                "노가리"
+            ],
+            "unlockCondition": "COMPLETE_jongno_gwangjang"
+        }
+    ]
+}

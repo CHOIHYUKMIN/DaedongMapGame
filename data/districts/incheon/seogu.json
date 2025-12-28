@@ -1,0 +1,123 @@
+{
+    "districtId": "incheon_seogu",
+    "districtName": "서구",
+    "cityId": "incheon",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "incheon_cheongna",
+            "name": "청라동",
+            "center": [
+                37.5367,
+                126.6412
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🏙️",
+            "description": "청라국제도시, 호수공원",
+            "levelCount": 1,
+            "specialties": [
+                "브런치",
+                "파스타",
+                "카페"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "incheon_luwon",
+            "name": "루원시티",
+            "center": [
+                37.5234,
+                126.6589
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🏢",
+            "description": "루원시티, 복합단지",
+            "levelCount": 1,
+            "specialties": [
+                "양식",
+                "일식",
+                "디저트"
+            ],
+            "unlockCondition": "COMPLETE_incheon_cheongna"
+        },
+        {
+            "id": "incheon_geomam",
+            "name": "검암동",
+            "center": [
+                37.5456,
+                126.6734
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🚇",
+            "description": "검암역, 공항철도",
+            "levelCount": 1,
+            "specialties": [
+                "공항맛집",
+                "한식",
+                "중식"
+            ],
+            "unlockCondition": "COMPLETE_incheon_luwon"
+        },
+        {
+            "id": "incheon_wanggilj",
+            "name": "왕길동",
+            "center": [
+                37.5578,
+                126.6823
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🌳",
+            "description": "경인아라뱃길, 자연환경",
+            "levelCount": 1,
+            "specialties": [
+                "장어구이",
+                "매운탕",
+                "바베큐"
+            ],
+            "unlockCondition": "COMPLETE_incheon_geomam"
+        },
+        {
+            "id": "incheon_gajwa",
+            "name": "가좌동",
+            "center": [
+                37.4978,
+                126.6756
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🏭",
+            "description": "서구공단, 산업단지",
+            "levelCount": 1,
+            "specialties": [
+                "백반",
+                "돈까스",
+                "찌개"
+            ],
+            "unlockCondition": "COMPLETE_incheon_wanggilj"
+        },
+        {
+            "id": "incheon_simdongj",
+            "name": "심곡동",
+            "center": [
+                37.5123,
+                126.6534
+            ],
+            "zoom": 15,
+            "color": "#F0E68C",
+            "icon": "🏠",
+            "description": "주거지역, 전통시장",
+            "levelCount": 1,
+            "specialties": [
+                "순대",
+                "떡볶이",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_incheon_gajwa"
+        }
+    ]
+}

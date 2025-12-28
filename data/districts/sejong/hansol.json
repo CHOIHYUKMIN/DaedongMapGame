@@ -1,0 +1,65 @@
+{
+    "districtId": "sejong_hansol",
+    "districtName": "한솔동",
+    "cityId": "sejong",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "sejong_government",
+            "name": "정부세종청사",
+            "center": [
+                36.5002,
+                127.2549
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🏛️",
+            "description": "정부청사, 호수공원",
+            "levelCount": 1,
+            "specialties": [
+                "비즈니스점심",
+                "한식"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "sejong_jochiwon",
+            "name": "조치원읍",
+            "center": [
+                36.5993,
+                127.2983
+            ],
+            "zoom": 14,
+            "color": "#4ECDC4",
+            "icon": "🚉",
+            "description": "조치원역, 전통시장",
+            "levelCount": 1,
+            "specialties": [
+                "조치원순대",
+                "국밥",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_sejong_government"
+        },
+        {
+            "id": "sejong_lake",
+            "name": "세종호수공원",
+            "center": [
+                36.4927,
+                127.2608
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🌊",
+            "description": "세종호수공원",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "브런치",
+                "피크닉"
+            ],
+            "unlockCondition": "COMPLETE_sejong_jochiwon"
+        }
+    ]
+}

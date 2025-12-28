@@ -1,0 +1,123 @@
+{
+    "districtId": "busan_haeundae",
+    "districtName": "해운대구",
+    "cityId": "busan",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "haeundae_beach",
+            "name": "해운대해수욕장",
+            "center": [
+                35.1587,
+                129.1604
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🏖️",
+            "description": "해운대 해수욕장, 더베이101",
+            "levelCount": 1,
+            "specialties": [
+                "회",
+                "해산물",
+                "바"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "haeundae_mipo",
+            "name": "미포",
+            "center": [
+                35.1581,
+                129.1686
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🚂",
+            "description": "청사포, 해운대블루라인파크",
+            "levelCount": 1,
+            "specialties": [
+                "횟집",
+                "조개구이",
+                "카페"
+            ],
+            "unlockCondition": "COMPLETE_haeundae_beach"
+        },
+        {
+            "id": "haeundae_marine",
+            "name": "마린시티",
+            "center": [
+                35.1551,
+                129.1456
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏙️",
+            "description": "마린시티, 고층빌딩",
+            "levelCount": 1,
+            "specialties": [
+                "파인다이닝",
+                "호텔레스토랑",
+                "바"
+            ],
+            "unlockCondition": "COMPLETE_haeundae_mipo"
+        },
+        {
+            "id": "haeundae_dalmaji",
+            "name": "달맞이길",
+            "center": [
+                35.1558,
+                129.1759
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🌙",
+            "description": "달맞이언덕, 문탠로드",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "베이커리",
+                "오션뷰"
+            ],
+            "unlockCondition": "COMPLETE_haeundae_marine"
+        },
+        {
+            "id": "haeundae_songjeong",
+            "name": "송정",
+            "center": [
+                35.1788,
+                129.2008
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🏄",
+            "description": "송정해수욕장, 서핑",
+            "levelCount": 1,
+            "specialties": [
+                "서퍼카페",
+                "해산물",
+                "브런치"
+            ],
+            "unlockCondition": "COMPLETE_haeundae_dalmaji"
+        },
+        {
+            "id": "haeundae_centum",
+            "name": "센텀시티",
+            "center": [
+                35.1695,
+                129.1319
+            ],
+            "zoom": 15,
+            "color": "#F0E68C",
+            "icon": "🛍️",
+            "description": "신세계백화점, 벡스코",
+            "levelCount": 1,
+            "specialties": [
+                "백화점레스토랑",
+                "한정식",
+                "양식"
+            ],
+            "unlockCondition": "COMPLETE_haeundae_songjeong"
+        }
+    ]
+}

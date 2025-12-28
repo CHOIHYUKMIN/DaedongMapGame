@@ -1,0 +1,161 @@
+{
+    "districtId": "incheon_junggu",
+    "districtName": "중구",
+    "cityId": "incheon",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "incheon_chinatown",
+            "name": "차이나타운",
+            "center": [
+                37.4737,
+                126.6289
+            ],
+            "zoom": 16,
+            "color": "#FF4444",
+            "icon": "🏮",
+            "description": "인천 개항 역사의 중심, 짜장면 발상지",
+            "levelCount": 1,
+            "specialties": [
+                "짜장면",
+                "탕수육",
+                "공갈빵"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "incheon_sinpo",
+            "name": "신포동",
+            "center": [
+                37.4690,
+                126.6252
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🍗",
+            "description": "신포국제시장, 닭강정 골목",
+            "levelCount": 1,
+            "specialties": [
+                "닭강정",
+                "쫄면",
+                "만두"
+            ],
+            "unlockCondition": "COMPLETE_incheon_chinatown"
+        },
+        {
+            "id": "incheon_bukseong",
+            "name": "북성동",
+            "center": [
+                37.4752,
+                126.6185
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🏛️",
+            "description": "근대 역사 거리, 개항장",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "레트로",
+                "역사맛집"
+            ],
+            "unlockCondition": "COMPLETE_incheon_sinpo"
+        },
+        {
+            "id": "incheon_songwol",
+            "name": "송월동",
+            "center": [
+                37.4762,
+                126.6145
+            ],
+            "zoom": 16,
+            "color": "#45B7D1",
+            "icon": "🎨",
+            "description": "송월동 동화마을, 포토존",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "분식",
+                "아이스크림"
+            ],
+            "unlockCondition": "COMPLETE_incheon_bukseong"
+        },
+        {
+            "id": "incheon_jayu",
+            "name": "자유공원",
+            "center": [
+                37.4780,
+                126.6220
+            ],
+            "zoom": 16,
+            "color": "#96CEB4",
+            "icon": "🗽",
+            "description": "맥아더장군 동상, 인천 전경",
+            "levelCount": 1,
+            "specialties": [
+                "분식",
+                "떡볶이",
+                "아이스크림"
+            ],
+            "unlockCondition": "COMPLETE_incheon_songwol"
+        },
+        {
+            "id": "incheon_wolmi",
+            "name": "월미도",
+            "center": [
+                37.4744,
+                126.5978
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🎡",
+            "description": "놀이공원과 횟집거리",
+            "levelCount": 1,
+            "specialties": [
+                "회",
+                "조개구이",
+                "해물탕"
+            ],
+            "unlockCondition": "COMPLETE_incheon_jayu"
+        },
+        {
+            "id": "incheon_yeongjong",
+            "name": "영종도",
+            "center": [
+                37.5001,
+                126.5358
+            ],
+            "zoom": 13,
+            "color": "#87CEEB",
+            "icon": "✈️",
+            "description": "인천국제공항, 을왕리해수욕장",
+            "levelCount": 1,
+            "specialties": [
+                "조개구이",
+                "바지락칼국수",
+                "회"
+            ],
+            "unlockCondition": "COMPLETE_incheon_wolmi"
+        },
+        {
+            "id": "incheon_unseo",
+            "name": "운서동",
+            "center": [
+                37.4997,
+                126.4865
+            ],
+            "zoom": 14,
+            "color": "#98D8C8",
+            "icon": "🛫",
+            "description": "공항철도, 스카이72 골프장",
+            "levelCount": 1,
+            "specialties": [
+                "공항맛집",
+                "한식뷔페",
+                "커피"
+            ],
+            "unlockCondition": "COMPLETE_incheon_yeongjong"
+        }
+    ]
+}

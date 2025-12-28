@@ -1,0 +1,113 @@
+{
+    "cityId": "ulsan",
+    "cityName": "울산광역시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "ulsan_junggu",
+            "name": "중구",
+            "center": [
+                35.5684,
+                129.3322
+            ],
+            "zoom": 13,
+            "color": "#FF6B6B",
+            "icon": "🏛️",
+            "dongCount": 17,
+            "description": "태화강국가정원, 울산큰애기거리",
+            "population": 222000,
+            "area": 36.63,
+            "specialties": [
+                "태화강맛집",
+                "함박스테이크",
+                "언양불고기"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "ulsan_namgu",
+            "name": "남구",
+            "center": [
+                35.5439,
+                129.3305
+            ],
+            "zoom": 13,
+            "color": "#4ECDC4",
+            "icon": "🏢",
+            "dongCount": 17,
+            "description": "삼산동, 롯데백화점, 울산대공원",
+            "population": 335000,
+            "area": 72.85,
+            "specialties": [
+                "삼산동맛집",
+                "고래고기",
+                "회"
+            ],
+            "unlockCondition": "COMPLETE_ulsan_junggu"
+        },
+        {
+            "id": "ulsan_donggu",
+            "name": "동구",
+            "center": [
+                35.5050,
+                129.4163
+            ],
+            "zoom": 13,
+            "color": "#45B7D1",
+            "icon": "🚢",
+            "dongCount": 8,
+            "description": "현대중공업, 일산해수욕장",
+            "population": 153000,
+            "area": 36.04,
+            "specialties": [
+                "일산해변맛집",
+                "해산물",
+                "조개구이"
+            ],
+            "unlockCondition": "COMPLETE_ulsan_namgu"
+        },
+        {
+            "id": "ulsan_bukgu",
+            "name": "북구",
+            "center": [
+                35.5823,
+                129.3612
+            ],
+            "zoom": 12,
+            "color": "#96CEB4",
+            "icon": "🏭",
+            "dongCount": 11,
+            "description": "현대자동차, 염포산",
+            "population": 192000,
+            "area": 156.19,
+            "specialties": [
+                "공단맛집",
+                "돼지국밥",
+                "갈비탕"
+            ],
+            "unlockCondition": "COMPLETE_ulsan_donggu"
+        },
+        {
+            "id": "ulsan_ulju",
+            "name": "울주군",
+            "center": [
+                35.5225,
+                129.1831
+            ],
+            "zoom": 10,
+            "color": "#DDA0DD",
+            "icon": "⛰️",
+            "dongCount": 0,
+            "description": "영남알프스, 언양, 간월재",
+            "population": 226000,
+            "area": 754.51,
+            "specialties": [
+                "언양불고기",
+                "한우",
+                "산채정식"
+            ],
+            "unlockCondition": "COMPLETE_ulsan_bukgu"
+        }
+    ]
+}

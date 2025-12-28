@@ -1,0 +1,65 @@
+{
+    "districtId": "gwangju_donggu",
+    "districtName": "동구",
+    "cityId": "gwangju",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "gwangju_chungjang",
+            "name": "충장로",
+            "center": [
+                35.1488,
+                126.9166
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🛍️",
+            "description": "광주 최대 번화가",
+            "levelCount": 1,
+            "specialties": [
+                "떡갈비",
+                "주먹밥",
+                "패션"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "gwangju_geumnam",
+            "name": "금남로",
+            "center": [
+                35.1544,
+                126.9175
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🏛️",
+            "description": "5.18민주광장",
+            "levelCount": 1,
+            "specialties": [
+                "한정식",
+                "국밥"
+            ],
+            "unlockCondition": "COMPLETE_gwangju_chungjang"
+        },
+        {
+            "id": "gwangju_taepyeong",
+            "name": "태평동",
+            "center": [
+                35.1467,
+                126.9183
+            ],
+            "zoom": 16,
+            "color": "#45B7D1",
+            "icon": "🍺",
+            "description": "먹자골목",
+            "levelCount": 1,
+            "specialties": [
+                "삼겹살",
+                "곱창",
+                "술집"
+            ],
+            "unlockCondition": "COMPLETE_gwangju_geumnam"
+        }
+    ]
+}

@@ -1,0 +1,104 @@
+{
+    "districtId": "seoul_seodaemun",
+    "districtName": "서대문구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "seodaemun_sinchon",
+            "name": "신촌동",
+            "center": [
+                37.5577,
+                126.9370
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🎓",
+            "description": "연세대, 대학가",
+            "levelCount": 1,
+            "specialties": [
+                "치킨",
+                "피자",
+                "술집"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "seodaemun_changcheon",
+            "name": "창천동",
+            "center": [
+                37.5588,
+                126.9323
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🍺",
+            "description": "신촌로터리, 먹자골목",
+            "levelCount": 1,
+            "specialties": [
+                "호프",
+                "이자카야",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_seodaemun_sinchon"
+        },
+        {
+            "id": "seodaemun_yeonhuidong",
+            "name": "연희동",
+            "center": [
+                37.5676,
+                126.9314
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏡",
+            "description": "연희동 카페마을",
+            "levelCount": 1,
+            "specialties": [
+                "브런치",
+                "베이커리",
+                "양식"
+            ],
+            "unlockCondition": "COMPLETE_seodaemun_changcheon"
+        },
+        {
+            "id": "seodaemun_bukahyeon",
+            "name": "북아현동",
+            "center": [
+                37.5583,
+                126.9543
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏢",
+            "description": "이대역, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "카페"
+            ],
+            "unlockCondition": "COMPLETE_seodaemun_yeonhuidong"
+        },
+        {
+            "id": "seodaemun_hongje",
+            "name": "홍제동",
+            "center": [
+                37.5888,
+                126.9433
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🌳",
+            "description": "인왕산, 안산자락길",
+            "levelCount": 1,
+            "specialties": [
+                "동네맛집",
+                "중식",
+                "한식"
+            ],
+            "unlockCondition": "COMPLETE_seodaemun_bukahyeon"
+        }
+    ]
+}

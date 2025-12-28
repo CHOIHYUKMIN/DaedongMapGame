@@ -1,0 +1,85 @@
+{
+    "districtId": "gyeonggi_suwon",
+    "districtName": "수원시",
+    "cityId": "gyeonggi",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "suwon_hwaseong",
+            "name": "화성행궁",
+            "center": [
+                37.2882,
+                127.0150
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🏯",
+            "description": "수원화성, 행궁동",
+            "levelCount": 1,
+            "specialties": [
+                "수원갈비",
+                "통닭거리",
+                "전통시장"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "suwon_yeongtong",
+            "name": "영통",
+            "center": [
+                37.2510,
+                127.0732
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🏢",
+            "description": "삼성디지털시티",
+            "levelCount": 1,
+            "specialties": [
+                "직장인맛집",
+                "카페",
+                "한식"
+            ],
+            "unlockCondition": "COMPLETE_suwon_hwaseong"
+        },
+        {
+            "id": "suwon_station",
+            "name": "수원역",
+            "center": [
+                37.2663,
+                127.0001
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🚉",
+            "description": "AK플라자, 롯데몰",
+            "levelCount": 1,
+            "specialties": [
+                "백화점맛집",
+                "분식",
+                "술집"
+            ],
+            "unlockCondition": "COMPLETE_suwon_yeongtong"
+        },
+        {
+            "id": "suwon_ingye",
+            "name": "인계동",
+            "center": [
+                37.2697,
+                127.0340
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🍺",
+            "description": "수원 먹자골목",
+            "levelCount": 1,
+            "specialties": [
+                "삼겹살",
+                "곱창",
+                "치킨"
+            ],
+            "unlockCondition": "COMPLETE_suwon_station"
+        }
+    ]
+}

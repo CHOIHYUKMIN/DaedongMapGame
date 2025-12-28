@@ -1,0 +1,237 @@
+{
+    "districtId": "seoul_gangnam",
+    "districtName": "강남구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "gangnam_sinsa",
+            "name": "신사동",
+            "center": [
+                37.5239,
+                127.0225
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🛍️",
+            "description": "가로수길, 압구정로데오",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "패션",
+                "브런치"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "gangnam_nonhyeon",
+            "name": "논현동",
+            "center": [
+                37.5156,
+                127.0293
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🍽️",
+            "description": "먹자골목, 고급 레스토랑",
+            "levelCount": 1,
+            "specialties": [
+                "한우",
+                "이탈리안",
+                "와인바"
+            ],
+            "unlockCondition": "COMPLETE_gangnam_sinsa"
+        },
+        {
+            "id": "gangnam_apgujeong",
+            "name": "압구정동",
+            "center": [
+                37.5273,
+                127.0381
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "💎",
+            "description": "청담동, 갤러리아백화점",
+            "levelCount": 1,
+            "specialties": [
+                "오마카세",
+                "디저트",
+                "고급한식"
+            ],
+            "unlockCondition": "COMPLETE_gangnam_nonhyeon"
+        },
+        {
+            "id": "gangnam_cheongdam",
+            "name": "청담동",
+            "center": [
+                37.5247,
+                127.0506
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "✨",
+            "description": "명품거리, 엔터테인먼트",
+            "levelCount": 1,
+            "specialties": [
+                "고급양식",
+                "파인다이닝",
+                "디저트카페"
+            ],
+            "unlockCondition": "COMPLETE_gangnam_apgujeong"
+        },
+        {
+            "id": "gangnam_samsung",
+            "name": "삼성동",
+            "center": [
+                37.5140,
+                127.0601
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🏢",
+            "description": "코엑스, 봉은사",
+            "levelCount": 1,
+            "specialties": [
+                "호텔레스토랑",
+                "비즈니스식당",
+                "한식"
+            ],
+            "unlockCondition": "COMPLETE_gangnam_cheongdam"
+        },
+        {
+            "id": "gangnam_yeoksam",
+            "name": "역삼동",
+            "center": [
+                37.5008,
+                127.0366
+            ],
+            "zoom": 15,
+            "color": "#F0E68C",
+            "icon": "💼",
+            "description": "테헤란로, IT기업 밀집",
+            "levelCount": 1,
+            "specialties": [
+                "점심특선",
+                "비즈니스미팅",
+                "카페"
+            ],
+            "unlockCondition": "COMPLETE_gangnam_samsung"
+        },
+        {
+            "id": "gangnam_daechi",
+            "name": "대치동",
+            "center": [
+                37.4989,
+                127.0626
+            ],
+            "zoom": 15,
+            "color": "#CD853F",
+            "icon": "📚",
+            "description": "학원가, 은마아파트",
+            "levelCount": 1,
+            "specialties": [
+                "분식",
+                "패밀리레스토랑",
+                "배달음식"
+            ],
+            "unlockCondition": "COMPLETE_gangnam_yeoksam"
+        },
+        {
+            "id": "gangnam_dogok",
+            "name": "도곡동",
+            "center": [
+                37.4880,
+                127.0462
+            ],
+            "zoom": 15,
+            "color": "#FFB6C1",
+            "icon": "🏠",
+            "description": "도곡렉슬, 양재천",
+            "levelCount": 1,
+            "specialties": [
+                "빵집",
+                "브런치카페",
+                "한식"
+            ],
+            "unlockCondition": "COMPLETE_gangnam_daechi"
+        },
+        {
+            "id": "gangnam_gaepo",
+            "name": "개포동",
+            "center": [
+                37.4785,
+                127.0524
+            ],
+            "zoom": 15,
+            "color": "#87CEEB",
+            "icon": "🌳",
+            "description": "대모산, 개포래미안",
+            "levelCount": 1,
+            "specialties": [
+                "등산후식사",
+                "동네맛집",
+                "카페"
+            ],
+            "unlockCondition": "COMPLETE_gangnam_dogok"
+        },
+        {
+            "id": "gangnam_irwon",
+            "name": "일원동",
+            "center": [
+                37.4893,
+                127.0852
+            ],
+            "zoom": 15,
+            "color": "#98D8C8",
+            "icon": "🏥",
+            "description": "삼성서울병원, 일원역",
+            "levelCount": 1,
+            "specialties": [
+                "건강식",
+                "한정식",
+                "동네맛집"
+            ],
+            "unlockCondition": "COMPLETE_gangnam_gaepo"
+        },
+        {
+            "id": "gangnam_suseo",
+            "name": "수서동",
+            "center": [
+                37.4866,
+                127.1016
+            ],
+            "zoom": 15,
+            "color": "#20B2AA",
+            "icon": "🚄",
+            "description": "SRT수서역, 가든파이브",
+            "levelCount": 1,
+            "specialties": [
+                "역세권맛집",
+                "쇼핑몰푸드코트",
+                "한식"
+            ],
+            "unlockCondition": "COMPLETE_gangnam_irwon"
+        },
+        {
+            "id": "gangnam_segok",
+            "name": "세곡동",
+            "center": [
+                37.4656,
+                127.0855
+            ],
+            "zoom": 15,
+            "color": "#BA55D3",
+            "icon": "🏡",
+            "description": "세곡지구, 신규아파트단지",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "빵집",
+                "한식"
+            ],
+            "unlockCondition": "COMPLETE_gangnam_suseo"
+        }
+    ]
+}

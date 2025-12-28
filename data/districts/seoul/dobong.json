@@ -1,0 +1,85 @@
+{
+    "districtId": "seoul_dobong",
+    "districtName": "도봉구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "dobong_dobongsan",
+            "name": "도봉산역",
+            "center": [
+                37.6893,
+                127.0447
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🏔️",
+            "description": "도봉산입구, 등산로",
+            "levelCount": 1,
+            "specialties": [
+                "등산후맛집",
+                "막걸리",
+                "파전"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "dobong_changdong",
+            "name": "창동",
+            "center": [
+                37.6534,
+                127.0472
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🚉",
+            "description": "창동역, 아레나",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "체인점"
+            ],
+            "unlockCondition": "COMPLETE_dobong_dobongsan"
+        },
+        {
+            "id": "dobong_ssangmun",
+            "name": "쌍문동",
+            "center": [
+                37.6486,
+                127.0346
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏠",
+            "description": "쌍문역, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "중식",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_dobong_changdong"
+        },
+        {
+            "id": "dobong_banghak",
+            "name": "방학동",
+            "center": [
+                37.6695,
+                127.0394
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏢",
+            "description": "방학역, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "분식",
+                "치킨",
+                "한식"
+            ],
+            "unlockCondition": "COMPLETE_dobong_ssangmun"
+        }
+    ]
+}

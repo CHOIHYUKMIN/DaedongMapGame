@@ -1,0 +1,104 @@
+{
+    "districtId": "seoul_seongdong",
+    "districtName": "성동구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "seongdong_seongsu",
+            "name": "성수동",
+            "center": [
+                37.5447,
+                127.0555
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🏭",
+            "description": "성수동 카페공장",
+            "levelCount": 1,
+            "specialties": [
+                "로스터리카페",
+                "베이커리",
+                "브런치"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "seongdong_ttukseom",
+            "name": "뚝섬",
+            "center": [
+                37.5476,
+                127.0464
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🌊",
+            "description": "뚝섬한강공원, 서울숲",
+            "levelCount": 1,
+            "specialties": [
+                "한강뷰카페",
+                "피크닉푸드",
+                "맥주"
+            ],
+            "unlockCondition": "COMPLETE_seongdong_seongsu"
+        },
+        {
+            "id": "seongdong_wangsimni",
+            "name": "왕십리",
+            "center": [
+                37.5616,
+                127.0370
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🚇",
+            "description": "왕십리역, 비트플렉스",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "술집"
+            ],
+            "unlockCondition": "COMPLETE_seongdong_ttukseom"
+        },
+        {
+            "id": "seongdong_geumho",
+            "name": "금호동",
+            "center": [
+                37.5484,
+                127.0208
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏠",
+            "description": "응봉산, 금호동언덕",
+            "levelCount": 1,
+            "specialties": [
+                "동네빵집",
+                "카페",
+                "한식"
+            ],
+            "unlockCondition": "COMPLETE_seongdong_wangsimni"
+        },
+        {
+            "id": "seongdong_oksu",
+            "name": "옥수동",
+            "center": [
+                37.5399,
+                127.0162
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🌉",
+            "description": "옥수역, 한강뷰",
+            "levelCount": 1,
+            "specialties": [
+                "한강뷰레스토랑",
+                "카페",
+                "양식"
+            ],
+            "unlockCondition": "COMPLETE_seongdong_geumho"
+        }
+    ]
+}

@@ -1,0 +1,104 @@
+{
+    "districtId": "seoul_seongbuk",
+    "districtName": "성북구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "seongbuk_seongsin",
+            "name": "성신여대입구",
+            "center": [
+                37.5924,
+                127.0166
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🎓",
+            "description": "성신여대, 먹자골목",
+            "levelCount": 1,
+            "specialties": [
+                "치킨",
+                "분식",
+                "카페"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "seongbuk_hansung",
+            "name": "한성대입구",
+            "center": [
+                37.5887,
+                127.0058
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🍺",
+            "description": "한성대, 성곽길",
+            "levelCount": 1,
+            "specialties": [
+                "술집",
+                "삼겹살",
+                "호프"
+            ],
+            "unlockCondition": "COMPLETE_seongbuk_seongsin"
+        },
+        {
+            "id": "seongbuk_bomun",
+            "name": "보문동",
+            "center": [
+                37.5822,
+                127.0133
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏛️",
+            "description": "보문사, 사찰",
+            "levelCount": 1,
+            "specialties": [
+                "사찰음식",
+                "한정식",
+                "채식"
+            ],
+            "unlockCondition": "COMPLETE_seongbuk_hansung"
+        },
+        {
+            "id": "seongbuk_gireum",
+            "name": "길음동",
+            "center": [
+                37.6105,
+                127.0253
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🛍️",
+            "description": "길음역, 현대백화점",
+            "levelCount": 1,
+            "specialties": [
+                "백화점맛집",
+                "한식",
+                "카페"
+            ],
+            "unlockCondition": "COMPLETE_seongbuk_bomun"
+        },
+        {
+            "id": "seongbuk_jeongneung",
+            "name": "정릉동",
+            "center": [
+                37.6123,
+                127.0046
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🌲",
+            "description": "국민대, 북한산",
+            "levelCount": 1,
+            "specialties": [
+                "등산맛집",
+                "막걸리",
+                "파전"
+            ],
+            "unlockCondition": "COMPLETE_seongbuk_gireum"
+        }
+    ]
+}

@@ -1,0 +1,183 @@
+{
+    "regionId": "gyeonggi",
+    "regionName": "경기도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_GYEONGGI_001",
+            "name": "수원 화성 갈비거리",
+            "districtId": "gyeonggi_suwon",
+            "category": "한식",
+            "address": "경기도 수원시 팔달구",
+            "coordinates": [
+                37.2636,
+                127.0286
+            ],
+            "rating": 4.7,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "수원왕갈비",
+                "갈비찜"
+            ],
+            "description": "수원 대표 갈비 거리",
+            "openHours": "11:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGGI_002",
+            "name": "수원 통닭거리",
+            "districtId": "gyeonggi_suwon",
+            "category": "한식",
+            "address": "경기도 수원시 팔달구 영동",
+            "coordinates": [
+                37.2819,
+                127.0132
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "통닭",
+                "생닭",
+                "염통꼬치"
+            ],
+            "description": "수원 전통 통닭 시장",
+            "openHours": "16:00-24:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGGI_003",
+            "name": "판교테크노밸리 맛집",
+            "districtId": "gyeonggi_seongnam",
+            "category": "다양",
+            "address": "경기도 성남시 분당구 판교",
+            "coordinates": [
+                37.3947,
+                127.1112
+            ],
+            "rating": 4.3,
+            "priceRange": "₩₩",
+            "specialties": [
+                "비즈니스점심",
+                "퓨전요리",
+                "카페"
+            ],
+            "description": "IT기업 밀집지 맛집",
+            "openHours": "11:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGGI_004",
+            "name": "의정부 부대찌개거리",
+            "districtId": "gyeonggi_uijeongbu",
+            "category": "한식",
+            "address": "경기도 의정부시 의정부동",
+            "coordinates": [
+                37.7381,
+                127.0337
+            ],
+            "rating": 4.6,
+            "priceRange": "₩₩",
+            "specialties": [
+                "부대찌개",
+                "햄부대"
+            ],
+            "description": "부대찌개 원조 거리",
+            "openHours": "10:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGGI_005",
+            "name": "이천 쌀밥거리",
+            "districtId": "gyeonggi_icheon",
+            "category": "한식",
+            "address": "경기도 이천시",
+            "coordinates": [
+                37.2720,
+                127.4347
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "쌀밥정식",
+                "한정식",
+                "반찬"
+            ],
+            "description": "이천 쌀 정식 거리",
+            "openHours": "11:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGGI_006",
+            "name": "일산 라페스타",
+            "districtId": "gyeonggi_goyang",
+            "category": "다양",
+            "address": "경기도 고양시 일산서구",
+            "coordinates": [
+                37.6594,
+                126.7689
+            ],
+            "rating": 4.2,
+            "priceRange": "₩₩",
+            "specialties": [
+                "카페",
+                "레스토랑",
+                "펍"
+            ],
+            "description": "일산 대표 먹자거리",
+            "openHours": "11:00-24:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGGI_007",
+            "name": "용인 백암순대",
+            "districtId": "gyeonggi_yongin",
+            "category": "한식",
+            "address": "경기도 용인시 백암면",
+            "coordinates": [
+                37.1552,
+                127.3541
+            ],
+            "rating": 4.4,
+            "priceRange": "₩",
+            "specialties": [
+                "순대",
+                "순대국밥",
+                "머릿고기"
+            ],
+            "description": "용인 백암 순대 시장",
+            "openHours": "08:00-20:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGGI_008",
+            "name": "포천 이동갈비",
+            "districtId": "gyeonggi_pocheon",
+            "category": "한식",
+            "address": "경기도 포천시 이동면",
+            "coordinates": [
+                37.9449,
+                127.2303
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "이동갈비",
+                "막걸리"
+            ],
+            "description": "포천 대표 갈비",
+            "openHours": "11:00-21:00",
+            "closedDays": [
+                "월요일"
+            ],
+            "imageUrl": null
+        }
+    ]
+}

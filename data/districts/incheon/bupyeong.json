@@ -1,0 +1,123 @@
+{
+    "districtId": "incheon_bupyeong",
+    "districtName": "부평구",
+    "cityId": "incheon",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "incheon_bupyeong",
+            "name": "부평동",
+            "center": [
+                37.4902,
+                126.7239
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🛍️",
+            "description": "부평역, 지하상가",
+            "levelCount": 1,
+            "specialties": [
+                "떡볶이",
+                "순대",
+                "튀김"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "incheon_bupyeong2",
+            "name": "부평2동",
+            "center": [
+                37.4856,
+                126.7312
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🍺",
+            "description": "부평골목시장, 문화의거리",
+            "levelCount": 1,
+            "specialties": [
+                "포차",
+                "닭발",
+                "곱창"
+            ],
+            "unlockCondition": "COMPLETE_incheon_bupyeong"
+        },
+        {
+            "id": "incheon_galsan",
+            "name": "갈산동",
+            "center": [
+                37.5123,
+                126.7145
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏢",
+            "description": "갈산역, 상업지구",
+            "levelCount": 1,
+            "specialties": [
+                "양식",
+                "중식",
+                "일식"
+            ],
+            "unlockCondition": "COMPLETE_incheon_bupyeong2"
+        },
+        {
+            "id": "incheon_samsanl",
+            "name": "삼산동",
+            "center": [
+                37.5034,
+                126.7398
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏙️",
+            "description": "삼산월드체육관, 뉴타운",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "브런치",
+                "파스타"
+            ],
+            "unlockCondition": "COMPLETE_incheon_galsan"
+        },
+        {
+            "id": "incheon_sipjeong",
+            "name": "십정동",
+            "center": [
+                37.4789,
+                126.7156
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🌳",
+            "description": "부평공원, 캠프마켓",
+            "levelCount": 1,
+            "specialties": [
+                "버거",
+                "스테이크",
+                "멕시칸"
+            ],
+            "unlockCondition": "COMPLETE_incheon_samsanl"
+        },
+        {
+            "id": "incheon_cheongcheon",
+            "name": "청천동",
+            "center": [
+                37.5078,
+                126.7032
+            ],
+            "zoom": 15,
+            "color": "#F0E68C",
+            "icon": "🏠",
+            "description": "청천역, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "동네맛집"
+            ],
+            "unlockCondition": "COMPLETE_incheon_sipjeong"
+        }
+    ]
+}

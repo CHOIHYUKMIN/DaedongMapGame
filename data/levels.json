@@ -1,0 +1,427 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "totalLevels": 150,
+    "levels": [
+        {
+            "id": 1,
+            "name": "종로구 탐험",
+            "regionId": "seoul",
+            "districtId": "seoul_jongno",
+            "difficulty": 1,
+            "targetScore": 1000,
+            "moves": 30,
+            "starThresholds": [
+                1000,
+                2000,
+                3000
+            ],
+            "rewards": {
+                "gold": 100,
+                "exp": 50,
+                "itemId": "IT_001"
+            },
+            "blockTheme": {
+                "emojis": [
+                    "🍚",
+                    "🍲",
+                    "🍜",
+                    "🍛",
+                    "🍱"
+                ],
+                "style": "korean_traditional"
+            },
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": 2,
+            "name": "중구 명동거리",
+            "regionId": "seoul",
+            "districtId": "seoul_junggu",
+            "difficulty": 1,
+            "targetScore": 1200,
+            "moves": 30,
+            "starThresholds": [
+                1200,
+                2400,
+                3600
+            ],
+            "rewards": {
+                "gold": 120,
+                "exp": 60,
+                "itemId": "IT_002"
+            },
+            "blockTheme": {
+                "emojis": [
+                    "🥟",
+                    "🍜",
+                    "🍵",
+                    "🍡",
+                    "🍢"
+                ],
+                "style": "chinatown"
+            },
+            "unlockCondition": "COMPLETE_1"
+        },
+        {
+            "id": 3,
+            "name": "용산 이태원",
+            "regionId": "seoul",
+            "districtId": "seoul_yongsan",
+            "difficulty": 2,
+            "targetScore": 1500,
+            "moves": 28,
+            "starThresholds": [
+                1500,
+                3000,
+                4500
+            ],
+            "rewards": {
+                "gold": 150,
+                "exp": 75,
+                "itemId": "IT_003"
+            },
+            "blockTheme": {
+                "emojis": [
+                    "🍕",
+                    "🌮",
+                    "🍔",
+                    "🌯",
+                    "🥙"
+                ],
+                "style": "world_food"
+            },
+            "unlockCondition": "COMPLETE_2"
+        },
+        {
+            "id": 4,
+            "name": "성동 성수카페",
+            "regionId": "seoul",
+            "districtId": "seoul_seongdong",
+            "difficulty": 2,
+            "targetScore": 1600,
+            "moves": 28,
+            "starThresholds": [
+                1600,
+                3200,
+                4800
+            ],
+            "rewards": {
+                "gold": 160,
+                "exp": 80,
+                "itemId": "IT_004"
+            },
+            "blockTheme": {
+                "emojis": [
+                    "☕",
+                    "🍰",
+                    "🧁",
+                    "🥐",
+                    "🍩"
+                ],
+                "style": "cafe"
+            },
+            "unlockCondition": "COMPLETE_3"
+        },
+        {
+            "id": 5,
+            "name": "마포 홍대거리",
+            "regionId": "seoul",
+            "districtId": "seoul_mapo",
+            "difficulty": 2,
+            "targetScore": 1800,
+            "moves": 26,
+            "starThresholds": [
+                1800,
+                3600,
+                5400
+            ],
+            "rewards": {
+                "gold": 180,
+                "exp": 90,
+                "itemId": "IT_005"
+            },
+            "blockTheme": {
+                "emojis": [
+                    "🍗",
+                    "🍕",
+                    "🍺",
+                    "🎸",
+                    "🎤"
+                ],
+                "style": "hongdae"
+            },
+            "unlockCondition": "COMPLETE_4"
+        },
+        {
+            "id": 6,
+            "name": "강남 압구정",
+            "regionId": "seoul",
+            "districtId": "seoul_gangnam",
+            "difficulty": 3,
+            "targetScore": 2000,
+            "moves": 26,
+            "starThresholds": [
+                2000,
+                4000,
+                6000
+            ],
+            "rewards": {
+                "gold": 200,
+                "exp": 100,
+                "itemId": "IT_006"
+            },
+            "blockTheme": {
+                "emojis": [
+                    "🥩",
+                    "🍷",
+                    "🦐",
+                    "🍣",
+                    "💎"
+                ],
+                "style": "luxury"
+            },
+            "unlockCondition": "COMPLETE_5"
+        },
+        {
+            "id": 7,
+            "name": "송파 잠실",
+            "regionId": "seoul",
+            "districtId": "seoul_songpa",
+            "difficulty": 3,
+            "targetScore": 2200,
+            "moves": 25,
+            "starThresholds": [
+                2200,
+                4400,
+                6600
+            ],
+            "rewards": {
+                "gold": 220,
+                "exp": 110,
+                "itemId": "IT_007"
+            },
+            "blockTheme": {
+                "emojis": [
+                    "🏟️",
+                    "🎢",
+                    "🍖",
+                    "🍻",
+                    "🌃"
+                ],
+                "style": "entertainment"
+            },
+            "unlockCondition": "COMPLETE_6"
+        },
+        {
+            "id": 11,
+            "name": "부산 중구 자갈치",
+            "regionId": "busan",
+            "districtId": "busan_junggu",
+            "difficulty": 1,
+            "targetScore": 1000,
+            "moves": 30,
+            "starThresholds": [
+                1000,
+                2000,
+                3000
+            ],
+            "rewards": {
+                "gold": 100,
+                "exp": 50,
+                "itemId": "IT_BS_001"
+            },
+            "blockTheme": {
+                "emojis": [
+                    "🐟",
+                    "🦐",
+                    "🦀",
+                    "🐙",
+                    "🦑"
+                ],
+                "style": "seafood"
+            },
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": 12,
+            "name": "해운대 해변",
+            "regionId": "busan",
+            "districtId": "busan_haeundaegu",
+            "difficulty": 2,
+            "targetScore": 1500,
+            "moves": 28,
+            "starThresholds": [
+                1500,
+                3000,
+                4500
+            ],
+            "rewards": {
+                "gold": 150,
+                "exp": 75,
+                "itemId": "IT_BS_002"
+            },
+            "blockTheme": {
+                "emojis": [
+                    "🏖️",
+                    "🌊",
+                    "🐚",
+                    "🦞",
+                    "🍺"
+                ],
+                "style": "beach"
+            },
+            "unlockCondition": "COMPLETE_11"
+        },
+        {
+            "id": 13,
+            "name": "서면 전포",
+            "regionId": "busan",
+            "districtId": "busan_busanjingu",
+            "difficulty": 2,
+            "targetScore": 1600,
+            "moves": 28,
+            "starThresholds": [
+                1600,
+                3200,
+                4800
+            ],
+            "rewards": {
+                "gold": 160,
+                "exp": 80,
+                "itemId": "IT_BS_003"
+            },
+            "blockTheme": {
+                "emojis": [
+                    "☕",
+                    "🍰",
+                    "📸",
+                    "🧁",
+                    "🥐"
+                ],
+                "style": "cafe"
+            },
+            "unlockCondition": "COMPLETE_12"
+        },
+        {
+            "id": 34,
+            "name": "인천 차이나타운",
+            "regionId": "incheon",
+            "districtId": "incheon_junggu",
+            "difficulty": 1,
+            "targetScore": 1000,
+            "moves": 30,
+            "starThresholds": [
+                1000,
+                2000,
+                3000
+            ],
+            "rewards": {
+                "gold": 100,
+                "exp": 50,
+                "itemId": "IT_IC_001"
+            },
+            "blockTheme": {
+                "emojis": [
+                    "🥟",
+                    "🍜",
+                    "🥡",
+                    "🏮",
+                    "🐉"
+                ],
+                "style": "chinese"
+            },
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": 35,
+            "name": "신포시장",
+            "regionId": "incheon",
+            "districtId": "incheon_junggu",
+            "difficulty": 1,
+            "targetScore": 1200,
+            "moves": 30,
+            "starThresholds": [
+                1200,
+                2400,
+                3600
+            ],
+            "rewards": {
+                "gold": 120,
+                "exp": 60,
+                "itemId": "IT_IC_002"
+            },
+            "blockTheme": {
+                "emojis": [
+                    "🍗",
+                    "🥟",
+                    "🍢",
+                    "🍡",
+                    "🥧"
+                ],
+                "style": "market"
+            },
+            "unlockCondition": "COMPLETE_34"
+        },
+        {
+            "id": 36,
+            "name": "월미도",
+            "regionId": "incheon",
+            "districtId": "incheon_junggu",
+            "difficulty": 2,
+            "targetScore": 1500,
+            "moves": 28,
+            "starThresholds": [
+                1500,
+                3000,
+                4500
+            ],
+            "rewards": {
+                "gold": 150,
+                "exp": 75,
+                "itemId": "IT_IC_003"
+            },
+            "blockTheme": {
+                "emojis": [
+                    "🎡",
+                    "🎢",
+                    "🐟",
+                    "🦐",
+                    "🌊"
+                ],
+                "style": "amusement"
+            },
+            "unlockCondition": "COMPLETE_35"
+        },
+        {
+            "id": 37,
+            "name": "송도국제도시",
+            "regionId": "incheon",
+            "districtId": "incheon_yeonsu",
+            "difficulty": 2,
+            "targetScore": 1600,
+            "moves": 28,
+            "starThresholds": [
+                1600,
+                3200,
+                4800
+            ],
+            "rewards": {
+                "gold": 160,
+                "exp": 80,
+                "itemId": "IT_IC_004"
+            },
+            "blockTheme": {
+                "emojis": [
+                    "🏙️",
+                    "🌉",
+                    "☕",
+                    "🍷",
+                    "🍽️"
+                ],
+                "style": "modern"
+            },
+            "unlockCondition": "COMPLETE_36"
+        }
+    ]
+}

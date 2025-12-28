@@ -1,0 +1,104 @@
+{
+    "districtId": "seoul_gangdong",
+    "districtName": "강동구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "gangdong_cheonho",
+            "name": "천호동",
+            "center": [
+                37.5383,
+                127.1234
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🛍️",
+            "description": "천호역, 현대백화점",
+            "levelCount": 1,
+            "specialties": [
+                "백화점맛집",
+                "한식",
+                "분식"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "gangdong_gildong",
+            "name": "길동",
+            "center": [
+                37.5342,
+                127.1418
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🌳",
+            "description": "길동생태공원",
+            "levelCount": 1,
+            "specialties": [
+                "가정식",
+                "카페",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_gangdong_cheonho"
+        },
+        {
+            "id": "gangdong_dunchon",
+            "name": "둔촌동",
+            "center": [
+                37.5230,
+                127.1350
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏢",
+            "description": "둔촌주공, 올림픽공원",
+            "levelCount": 1,
+            "specialties": [
+                "한정식",
+                "샤브샤브",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_gangdong_gildong"
+        },
+        {
+            "id": "gangdong_gangil",
+            "name": "강일동",
+            "center": [
+                37.5572,
+                127.1750
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🌊",
+            "description": "강일지구, 한강",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "브런치",
+                "신도시맛집"
+            ],
+            "unlockCondition": "COMPLETE_gangdong_dunchon"
+        },
+        {
+            "id": "gangdong_amsa",
+            "name": "암사동",
+            "center": [
+                37.5522,
+                127.1290
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🏠",
+            "description": "암사선사유적지",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "동네맛집",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_gangdong_gangil"
+        }
+    ]
+}

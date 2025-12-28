@@ -1,0 +1,218 @@
+{
+    "cityId": "incheon",
+    "cityName": "인천광역시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "incheon_junggu",
+            "name": "중구",
+            "center": [
+                37.4643,
+                126.5904
+            ],
+            "zoom": 13,
+            "color": "#FF6B9D",
+            "icon": "✈️",
+            "dongCount": 12,
+            "description": "인천국제공항과 차이나타운",
+            "population": 118000,
+            "area": 136.4,
+            "specialties": [
+                "짜장면",
+                "공갈빵",
+                "월미도회"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "incheon_donggu",
+            "name": "동구",
+            "center": [
+                37.4753,
+                126.6369
+            ],
+            "zoom": 13,
+            "color": "#4682B4",
+            "icon": "🏛️",
+            "dongCount": 6,
+            "description": "인천역과 동인천역 주변",
+            "population": 62000,
+            "area": 7.19,
+            "specialties": [
+                "쫄면",
+                "만두",
+                "냉면"
+            ],
+            "unlockCondition": "COMPLETE_incheon_junggu"
+        },
+        {
+            "id": "incheon_michuhol",
+            "name": "미추홀구",
+            "center": [
+                37.4419,
+                126.6883
+            ],
+            "zoom": 13,
+            "color": "#90EE90",
+            "icon": "🏢",
+            "dongCount": 21,
+            "description": "인천의 구도심, 숭의동과 주안",
+            "population": 415000,
+            "area": 25.87,
+            "specialties": [
+                "주안곱창",
+                "문학경기장맛집",
+                "불고기"
+            ],
+            "unlockCondition": "COMPLETE_incheon_donggu"
+        },
+        {
+            "id": "incheon_yeonsu",
+            "name": "연수구",
+            "center": [
+                37.4172,
+                126.6669
+            ],
+            "zoom": 13,
+            "color": "#FFB6C1",
+            "icon": "🌊",
+            "dongCount": 12,
+            "description": "송도국제도시와 컨벤시아",
+            "population": 384000,
+            "area": 46.02,
+            "specialties": [
+                "송도맛집",
+                "해산물",
+                "퓨전요리"
+            ],
+            "unlockCondition": "COMPLETE_incheon_michuhol"
+        },
+        {
+            "id": "incheon_namdong",
+            "name": "남동구",
+            "center": [
+                37.4093,
+                126.7369
+            ],
+            "zoom": 13,
+            "color": "#DDA0DD",
+            "icon": "🏭",
+            "dongCount": 18,
+            "description": "인천대공원과 남동공단",
+            "population": 532000,
+            "area": 56.94,
+            "specialties": [
+                "인천대공원맛집",
+                "구월동맛집",
+                "양꼬치"
+            ],
+            "unlockCondition": "COMPLETE_incheon_yeonsu"
+        },
+        {
+            "id": "incheon_bupyeong",
+            "name": "부평구",
+            "center": [
+                37.5085,
+                126.7214
+            ],
+            "zoom": 13,
+            "color": "#F0E68C",
+            "icon": "🛍️",
+            "dongCount": 22,
+            "description": "부평 지하상가와 부평역",
+            "population": 515000,
+            "area": 31.98,
+            "specialties": [
+                "부평지하상가맛집",
+                "떡볶이",
+                "순대"
+            ],
+            "unlockCondition": "COMPLETE_incheon_namdong"
+        },
+        {
+            "id": "incheon_gyeyang",
+            "name": "계양구",
+            "center": [
+                37.5074,
+                126.7351
+            ],
+            "zoom": 13,
+            "color": "#CD853F",
+            "icon": "⛰️",
+            "dongCount": 11,
+            "description": "계양산과 아라뱃길",
+            "population": 308000,
+            "area": 45.57,
+            "specialties": [
+                "계양산맛집",
+                "손칼국수",
+                "보쌈"
+            ],
+            "unlockCondition": "COMPLETE_incheon_bupyeong"
+        },
+        {
+            "id": "incheon_seogu",
+            "name": "서구",
+            "center": [
+                37.5377,
+                126.6713
+            ],
+            "zoom": 13,
+            "color": "#FFD700",
+            "icon": "🌆",
+            "dongCount": 16,
+            "description": "청라국제도시와 루원시티",
+            "population": 530000,
+            "area": 113.43,
+            "specialties": [
+                "청라맛집",
+                "루원시티맛집",
+                "카페"
+            ],
+            "unlockCondition": "COMPLETE_incheon_gyeyang"
+        },
+        {
+            "id": "incheon_ganghwa",
+            "name": "강화군",
+            "center": [
+                37.7479,
+                126.4851
+            ],
+            "zoom": 11,
+            "color": "#228B22",
+            "icon": "🏯",
+            "dongCount": 0,
+            "description": "강화도와 마니산, 역사 유적지",
+            "population": 68000,
+            "area": 411.18,
+            "specialties": [
+                "강화순무",
+                "젓갈",
+                "장어구이"
+            ],
+            "unlockCondition": "COMPLETE_incheon_seogu"
+        },
+        {
+            "id": "incheon_ongjin",
+            "name": "옹진군",
+            "center": [
+                37.4527,
+                126.6268
+            ],
+            "zoom": 10,
+            "color": "#20B2AA",
+            "icon": "🏝️",
+            "dongCount": 0,
+            "description": "백령도, 대청도, 연평도",
+            "population": 20000,
+            "area": 164.83,
+            "specialties": [
+                "꽃게",
+                "새우젓",
+                "해삼"
+            ],
+            "unlockCondition": "COMPLETE_incheon_ganghwa"
+        }
+    ]
+}

@@ -1,0 +1,104 @@
+{
+    "districtId": "seoul_yeongdeungpo",
+    "districtName": "영등포구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "yeongdeungpo_yeouido",
+            "name": "여의도동",
+            "center": [
+                37.5218,
+                126.9247
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🏢",
+            "description": "여의도, IFC몰",
+            "levelCount": 1,
+            "specialties": [
+                "비즈니스점심",
+                "고급한식",
+                "바"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "yeongdeungpo_dangsan",
+            "name": "당산동",
+            "center": [
+                37.5348,
+                126.9013
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🍺",
+            "description": "당산역, 술거리",
+            "levelCount": 1,
+            "specialties": [
+                "곱창",
+                "삼겹살",
+                "호프"
+            ],
+            "unlockCondition": "COMPLETE_yeongdeungpo_yeouido"
+        },
+        {
+            "id": "yeongdeungpo_mullae",
+            "name": "문래동",
+            "center": [
+                37.5156,
+                126.8957
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🎨",
+            "description": "문래창작촌, 철공소골목",
+            "levelCount": 1,
+            "specialties": [
+                "와인바",
+                "카페",
+                "퓨전요리"
+            ],
+            "unlockCondition": "COMPLETE_yeongdeungpo_dangsan"
+        },
+        {
+            "id": "yeongdeungpo_times",
+            "name": "타임스퀘어",
+            "center": [
+                37.5175,
+                126.9030
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🛍️",
+            "description": "신세계,롯데백화점",
+            "levelCount": 1,
+            "specialties": [
+                "백화점푸드코트",
+                "레스토랑",
+                "카페"
+            ],
+            "unlockCondition": "COMPLETE_yeongdeungpo_mullae"
+        },
+        {
+            "id": "yeongdeungpo_daerim",
+            "name": "대림동",
+            "center": [
+                37.4932,
+                126.8985
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🥡",
+            "description": "차이나타운, 중식거리",
+            "levelCount": 1,
+            "specialties": [
+                "중국요리",
+                "양꼬치",
+                "마라탕"
+            ],
+            "unlockCondition": "COMPLETE_yeongdeungpo_times"
+        }
+    ]
+}

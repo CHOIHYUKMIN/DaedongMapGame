@@ -1,0 +1,138 @@
+{
+    "regionId": "chungnam",
+    "regionName": "충청남도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_CHUNGNAM_001",
+            "name": "천안 호두과자",
+            "districtId": "chungnam_cheonan",
+            "category": "베이커리",
+            "address": "충남 천안시 동남구 삼룡동",
+            "coordinates": [
+                36.8151,
+                127.1339
+            ],
+            "rating": 4.3,
+            "priceRange": "₩",
+            "specialties": [
+                "호두과자"
+            ],
+            "description": "천안 대표 기념품",
+            "openHours": "09:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_CHUNGNAM_002",
+            "name": "병천 순대거리",
+            "districtId": "chungnam_cheonan",
+            "category": "한식",
+            "address": "충남 천안시 동남구 병천면",
+            "coordinates": [
+                36.7651,
+                127.2139
+            ],
+            "rating": 4.6,
+            "priceRange": "₩",
+            "specialties": [
+                "병천순대",
+                "순대국밥"
+            ],
+            "description": "병천 전통 순대 거리",
+            "openHours": "07:00-20:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_CHUNGNAM_003",
+            "name": "아산 탕정 찜갈비",
+            "districtId": "chungnam_asan",
+            "category": "한식",
+            "address": "충남 아산시 탕정면",
+            "coordinates": [
+                36.7898,
+                127.0518
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "찜갈비",
+                "갈비찜"
+            ],
+            "description": "아산 대표 찜갈비",
+            "openHours": "11:00-22:00",
+            "closedDays": [
+                "월요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_CHUNGNAM_004",
+            "name": "공주 알밤거리",
+            "districtId": "chungnam_gongju",
+            "category": "디저트",
+            "address": "충남 공주시 반죽동",
+            "coordinates": [
+                36.4465,
+                127.1192
+            ],
+            "rating": 4.3,
+            "priceRange": "₩",
+            "specialties": [
+                "알밤",
+                "밤막걸리",
+                "밤빵"
+            ],
+            "description": "공주 밤 특산품",
+            "openHours": "09:00-18:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_CHUNGNAM_005",
+            "name": "태안 간월도 굴거리",
+            "districtId": "chungnam_taean",
+            "category": "해산물",
+            "address": "충남 태안군 안면읍",
+            "coordinates": [
+                36.6055,
+                126.4480
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "굴",
+                "어리굴젓",
+                "굴구이"
+            ],
+            "description": "간월도 굴 특산지",
+            "openHours": "09:00-20:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_CHUNGNAM_006",
+            "name": "금산 인삼거리",
+            "districtId": "chungnam_geumsan",
+            "category": "한식",
+            "address": "충남 금산군 금산읍",
+            "coordinates": [
+                36.1086,
+                127.4881
+            ],
+            "rating": 4.4,
+            "priceRange": "₩₩",
+            "specialties": [
+                "인삼닭",
+                "인삼튀김",
+                "삼계탕"
+            ],
+            "description": "금산 인삼 특산품",
+            "openHours": "10:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        }
+    ]
+}

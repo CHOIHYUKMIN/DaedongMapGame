@@ -1,0 +1,115 @@
+{
+    "regionId": "chungbuk",
+    "regionName": "충청북도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_CHUNGBUK_001",
+            "name": "청주 순대거리",
+            "districtId": "chungbuk_cheongju",
+            "category": "한식",
+            "address": "충북 청주시 상당구 육거리시장",
+            "coordinates": [
+                36.6324,
+                127.4890
+            ],
+            "rating": 4.4,
+            "priceRange": "₩",
+            "specialties": [
+                "청주순대",
+                "순대국밥"
+            ],
+            "description": "청주 육거리시장 순대",
+            "openHours": "08:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_CHUNGBUK_002",
+            "name": "충주 사과한우",
+            "districtId": "chungbuk_chungju",
+            "category": "한식",
+            "address": "충북 충주시 성내동",
+            "coordinates": [
+                36.9910,
+                127.9259
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "한우",
+                "사과소갈비"
+            ],
+            "description": "충주 사과 먹인 한우",
+            "openHours": "11:00-22:00",
+            "closedDays": [
+                "월요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_CHUNGBUK_003",
+            "name": "단양 마늘거리",
+            "districtId": "chungbuk_danyang",
+            "category": "한식",
+            "address": "충북 단양군 단양읍",
+            "coordinates": [
+                36.9845,
+                128.3654
+            ],
+            "rating": 4.4,
+            "priceRange": "₩₩",
+            "specialties": [
+                "마늘삼겹살",
+                "마늘빵"
+            ],
+            "description": "단양 마늘 특산물",
+            "openHours": "10:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_CHUNGBUK_004",
+            "name": "옥천 올챙이국수",
+            "districtId": "chungbuk_okcheon",
+            "category": "한식",
+            "address": "충북 옥천군 옥천읍",
+            "coordinates": [
+                36.3068,
+                127.5714
+            ],
+            "rating": 4.3,
+            "priceRange": "₩",
+            "specialties": [
+                "올챙이국수",
+                "냉면"
+            ],
+            "description": "옥천 전통 올챙이국수",
+            "openHours": "10:00-20:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_CHUNGBUK_005",
+            "name": "수안보 온천닭백숙",
+            "districtId": "chungbuk_chungju",
+            "category": "한식",
+            "address": "충북 충주시 수안보면",
+            "coordinates": [
+                36.8710,
+                127.9759
+            ],
+            "rating": 4.3,
+            "priceRange": "₩₩",
+            "specialties": [
+                "닭백숙",
+                "온천물삼계탕"
+            ],
+            "description": "수안보 온천 닭요리",
+            "openHours": "10:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        }
+    ]
+}

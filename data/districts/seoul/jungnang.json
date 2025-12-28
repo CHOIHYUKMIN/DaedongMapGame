@@ -1,0 +1,85 @@
+{
+    "districtId": "seoul_jungnang",
+    "districtName": "중랑구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "jungnang_mangwoo",
+            "name": "망우동",
+            "center": [
+                37.5970,
+                127.0929
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🌳",
+            "description": "망우리공원, 묘지공원",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "동네맛집"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "jungnang_sangbong",
+            "name": "상봉동",
+            "center": [
+                37.5964,
+                127.0855
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🚉",
+            "description": "상봉터미널, 이마트",
+            "levelCount": 1,
+            "specialties": [
+                "분식",
+                "한식",
+                "패스트푸드"
+            ],
+            "unlockCondition": "COMPLETE_jungnang_mangwoo"
+        },
+        {
+            "id": "jungnang_myeonmok",
+            "name": "면목동",
+            "center": [
+                37.5822,
+                127.0855
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏠",
+            "description": "면목역, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "중식",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_jungnang_sangbong"
+        },
+        {
+            "id": "jungnang_junghwa",
+            "name": "중화동",
+            "center": [
+                37.6010,
+                127.0773
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏢",
+            "description": "중화역, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "분식",
+                "치킨",
+                "한식"
+            ],
+            "unlockCondition": "COMPLETE_jungnang_myeonmok"
+        }
+    ]
+}

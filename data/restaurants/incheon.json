@@ -1,0 +1,229 @@
+{
+    "regionId": "incheon",
+    "regionName": "인천광역시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_INCHEON_001",
+            "name": "차이나타운 짜장면거리",
+            "districtId": "incheon_junggu",
+            "category": "중식",
+            "address": "인천시 중구 차이나타운로",
+            "coordinates": [
+                37.4737,
+                126.6289
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "짜장면",
+                "탕수육",
+                "잡채밥"
+            ],
+            "description": "짜장면 발상지, 인천 차이나타운",
+            "openHours": "10:30-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_INCHEON_002",
+            "name": "공화춘",
+            "districtId": "incheon_junggu",
+            "category": "중식",
+            "address": "인천시 중구 차이나타운로 56-14",
+            "coordinates": [
+                37.4729,
+                126.6281
+            ],
+            "rating": 4.4,
+            "priceRange": "₩₩",
+            "specialties": [
+                "짜장면",
+                "우육면"
+            ],
+            "description": "짜장면 원조집 (현재 박물관)",
+            "openHours": "09:00-18:00",
+            "closedDays": [
+                "월요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_INCHEON_003",
+            "name": "신포국제시장 닭강정",
+            "districtId": "incheon_junggu",
+            "category": "한식",
+            "address": "인천시 중구 신포로27번길",
+            "coordinates": [
+                37.4690,
+                126.6252
+            ],
+            "rating": 4.6,
+            "priceRange": "₩",
+            "specialties": [
+                "닭강정",
+                "만두",
+                "쫄면"
+            ],
+            "description": "인천 명물 신포닭강정",
+            "openHours": "10:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_INCHEON_004",
+            "name": "월미도 조개구이거리",
+            "districtId": "incheon_junggu",
+            "category": "해산물",
+            "address": "인천시 중구 월미로",
+            "coordinates": [
+                37.4744,
+                126.5978
+            ],
+            "rating": 4.3,
+            "priceRange": "₩₩",
+            "specialties": [
+                "조개구이",
+                "회",
+                "해산물"
+            ],
+            "description": "월미도 테마파크 인근 먹거리",
+            "openHours": "11:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_INCHEON_005",
+            "name": "송도 트리플스트리트",
+            "districtId": "incheon_yeonsu",
+            "category": "다양",
+            "address": "인천시 연수구 송도동",
+            "coordinates": [
+                37.3818,
+                126.6574
+            ],
+            "rating": 4.2,
+            "priceRange": "₩₩",
+            "specialties": [
+                "브런치",
+                "양식",
+                "일식"
+            ],
+            "description": "송도국제도시 맛집 거리",
+            "openHours": "10:30-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_INCHEON_006",
+            "name": "부평 지하상가 맛집",
+            "districtId": "incheon_bupyeong",
+            "category": "다양",
+            "address": "인천시 부평구 부평동",
+            "coordinates": [
+                37.5085,
+                126.7214
+            ],
+            "rating": 4.1,
+            "priceRange": "₩",
+            "specialties": [
+                "떡볶이",
+                "순대",
+                "분식"
+            ],
+            "description": "부평역 지하상가 먹거리",
+            "openHours": "10:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_INCHEON_007",
+            "name": "구월동 로데오거리",
+            "districtId": "incheon_namdong",
+            "category": "다양",
+            "address": "인천시 남동구 구월동",
+            "coordinates": [
+                37.4500,
+                126.7228
+            ],
+            "rating": 4.0,
+            "priceRange": "₩₩",
+            "specialties": [
+                "삼겹살",
+                "치킨",
+                "양꼬치"
+            ],
+            "description": "인천 구월동 맛집 거리",
+            "openHours": "16:00-02:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_INCHEON_008",
+            "name": "청라 맛집거리",
+            "districtId": "incheon_seogu",
+            "category": "다양",
+            "address": "인천시 서구 청라동",
+            "coordinates": [
+                37.5377,
+                126.6513
+            ],
+            "rating": 4.3,
+            "priceRange": "₩₩",
+            "specialties": [
+                "카페",
+                "브런치",
+                "이탈리안"
+            ],
+            "description": "청라국제도시 신흥 맛집거리",
+            "openHours": "10:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_INCHEON_009",
+            "name": "강화 젓갈시장",
+            "districtId": "incheon_ganghwa",
+            "category": "해산물",
+            "address": "인천시 강화군 강화읍",
+            "coordinates": [
+                37.7479,
+                126.4851
+            ],
+            "rating": 4.4,
+            "priceRange": "₩₩",
+            "specialties": [
+                "새우젓",
+                "젓갈",
+                "장어구이"
+            ],
+            "description": "강화도 전통 젓갈시장",
+            "openHours": "08:00-18:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_INCHEON_010",
+            "name": "영종도 을왕리 해변 맛집",
+            "districtId": "incheon_junggu",
+            "category": "해산물",
+            "address": "인천시 중구 을왕동",
+            "coordinates": [
+                37.4447,
+                126.3758
+            ],
+            "rating": 4.2,
+            "priceRange": "₩₩",
+            "specialties": [
+                "조개구이",
+                "회",
+                "바지락칼국수"
+            ],
+            "description": "을왕리해수욕장 먹거리",
+            "openHours": "10:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        }
+    ]
+}

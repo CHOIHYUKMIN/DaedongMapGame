@@ -1,0 +1,160 @@
+{
+    "regionId": "gangwon",
+    "regionName": "강원특별자치도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_GANGWON_001",
+            "name": "춘천 닭갈비거리",
+            "districtId": "gangwon_chuncheon",
+            "category": "한식",
+            "address": "강원도 춘천시 중앙로",
+            "coordinates": [
+                37.8813,
+                127.7300
+            ],
+            "rating": 4.6,
+            "priceRange": "₩₩",
+            "specialties": [
+                "닭갈비",
+                "막국수"
+            ],
+            "description": "춘천 대표 닭갈비 골목",
+            "openHours": "11:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GANGWON_002",
+            "name": "춘천 막국수거리",
+            "districtId": "gangwon_chuncheon",
+            "category": "한식",
+            "address": "강원도 춘천시 신북읍",
+            "coordinates": [
+                37.9113,
+                127.7600
+            ],
+            "rating": 4.5,
+            "priceRange": "₩",
+            "specialties": [
+                "막국수",
+                "편육"
+            ],
+            "description": "춘천 전통 막국수",
+            "openHours": "10:00-20:00",
+            "closedDays": [
+                "월요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GANGWON_003",
+            "name": "강릉 안목커피거리",
+            "districtId": "gangwon_gangneung",
+            "category": "카페",
+            "address": "강원도 강릉시 안목해변",
+            "coordinates": [
+                37.7719,
+                128.9460
+            ],
+            "rating": 4.7,
+            "priceRange": "₩₩",
+            "specialties": [
+                "커피",
+                "브런치",
+                "오션뷰"
+            ],
+            "description": "강릉 대표 카페 거리",
+            "openHours": "08:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GANGWON_004",
+            "name": "강릉 초당두부마을",
+            "districtId": "gangwon_gangneung",
+            "category": "한식",
+            "address": "강원도 강릉시 초당동",
+            "coordinates": [
+                37.7930,
+                128.8908
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "초당두부",
+                "순두부",
+                "청국장"
+            ],
+            "description": "강릉 초당두부 마을",
+            "openHours": "08:00-20:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GANGWON_005",
+            "name": "속초 아바이순대",
+            "districtId": "gangwon_sokcho",
+            "category": "한식",
+            "address": "강원도 속초시 청호동",
+            "coordinates": [
+                38.2070,
+                128.5918
+            ],
+            "rating": 4.4,
+            "priceRange": "₩₩",
+            "specialties": [
+                "아바이순대",
+                "오징어순대"
+            ],
+            "description": "속초 명물 아바이순대",
+            "openHours": "09:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GANGWON_006",
+            "name": "속초 물회거리",
+            "districtId": "gangwon_sokcho",
+            "category": "해산물",
+            "address": "강원도 속초시 대포항",
+            "coordinates": [
+                38.1970,
+                128.6018
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "물회",
+                "회",
+                "해산물"
+            ],
+            "description": "속초 대포항 물회",
+            "openHours": "07:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GANGWON_007",
+            "name": "정선 곤드레밥",
+            "districtId": "gangwon_jeongseon",
+            "category": "한식",
+            "address": "강원도 정선군 정선읍",
+            "coordinates": [
+                37.3809,
+                128.6608
+            ],
+            "rating": 4.4,
+            "priceRange": "₩",
+            "specialties": [
+                "곤드레밥",
+                "산채비빔밥"
+            ],
+            "description": "정선 전통 곤드레밥",
+            "openHours": "09:00-19:00",
+            "closedDays": [],
+            "imageUrl": null
+        }
+    ]
+}

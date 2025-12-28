@@ -1,0 +1,104 @@
+{
+    "districtId": "busan_junggu",
+    "districtName": "중구",
+    "cityId": "busan",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "busan_jagalchi",
+            "name": "자갈치",
+            "center": [
+                35.0968,
+                129.0306
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🐟",
+            "description": "자갈치시장, 부산대표어시장",
+            "levelCount": 1,
+            "specialties": [
+                "회",
+                "해산물",
+                "매운탕"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "busan_biff",
+            "name": "남포동(BIFF광장)",
+            "center": [
+                35.0986,
+                129.0287
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🎬",
+            "description": "BIFF광장, 국제시장",
+            "levelCount": 1,
+            "specialties": [
+                "씨앗호떡",
+                "비빔당면",
+                "족발"
+            ],
+            "unlockCondition": "COMPLETE_busan_jagalchi"
+        },
+        {
+            "id": "busan_gukje",
+            "name": "국제시장",
+            "center": [
+                35.1003,
+                129.0267
+            ],
+            "zoom": 16,
+            "color": "#45B7D1",
+            "icon": "🏪",
+            "description": "부산국제시장, 깡통시장",
+            "levelCount": 1,
+            "specialties": [
+                "비빔밥",
+                "어묵",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_busan_biff"
+        },
+        {
+            "id": "busan_yongdusan",
+            "name": "용두산공원",
+            "center": [
+                35.1010,
+                129.0325
+            ],
+            "zoom": 16,
+            "color": "#96CEB4",
+            "icon": "🗼",
+            "description": "부산타워, 전망대",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "간식",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_busan_gukje"
+        },
+        {
+            "id": "busan_bosu",
+            "name": "보수동책방골목",
+            "center": [
+                35.1015,
+                129.0245
+            ],
+            "zoom": 16,
+            "color": "#DDA0DD",
+            "icon": "📚",
+            "description": "헌책방골목, 문화거리",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "분식",
+                "레트로맛집"
+            ],
+            "unlockCondition": "COMPLETE_busan_yongdusan"
+        }
+    ]
+}

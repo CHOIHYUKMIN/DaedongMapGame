@@ -1,0 +1,84 @@
+{
+    "districtId": "daegu_junggu",
+    "districtName": "중구",
+    "cityId": "daegu",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "daegu_dongseong",
+            "name": "동성로",
+            "center": [
+                35.8691,
+                128.5964
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🛍️",
+            "description": "대구 최대 번화가",
+            "levelCount": 1,
+            "specialties": [
+                "막창",
+                "찜갈비",
+                "패션"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "daegu_seomun",
+            "name": "서문시장",
+            "center": [
+                35.8691,
+                128.5822
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🏪",
+            "description": "전통시장, 야시장",
+            "levelCount": 1,
+            "specialties": [
+                "칼국수",
+                "납작만두",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_daegu_dongseong"
+        },
+        {
+            "id": "daegu_yakjeon",
+            "name": "약령시",
+            "center": [
+                35.8700,
+                128.5948
+            ],
+            "zoom": 16,
+            "color": "#45B7D1",
+            "icon": "🌿",
+            "description": "한약재시장",
+            "levelCount": 1,
+            "specialties": [
+                "한방차",
+                "약선요리"
+            ],
+            "unlockCondition": "COMPLETE_daegu_seomun"
+        },
+        {
+            "id": "daegu_gyodong",
+            "name": "교동시장",
+            "center": [
+                35.8710,
+                128.5875
+            ],
+            "zoom": 16,
+            "color": "#96CEB4",
+            "icon": "🍜",
+            "description": "먹자골목",
+            "levelCount": 1,
+            "specialties": [
+                "국수",
+                "찜닭",
+                "튀김"
+            ],
+            "unlockCondition": "COMPLETE_daegu_yakjeon"
+        }
+    ]
+}

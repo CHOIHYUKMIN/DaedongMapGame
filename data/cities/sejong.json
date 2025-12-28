@@ -1,0 +1,175 @@
+{
+    "cityId": "sejong",
+    "cityName": "세종특별자치시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "sejong_main",
+            "name": "세종시",
+            "center": [
+                36.4800,
+                127.2890
+            ],
+            "zoom": 12,
+            "color": "#CD5C5C",
+            "icon": "🏢",
+            "dongCount": 9,
+            "description": "행정중심복합도시, 정부청사",
+            "population": 380000,
+            "area": 465.23,
+            "specialties": [
+                "순대국밥",
+                "조치원순대",
+                "쌀밥정식"
+            ],
+            "unlockCondition": "NONE"
+        }
+    ],
+    "subAreas": [
+        {
+            "id": "sejong_jochiwon",
+            "name": "조치원읍",
+            "center": [
+                36.5950,
+                127.2989
+            ],
+            "zoom": 14,
+            "color": "#FF6B6B",
+            "icon": "🚂",
+            "description": "조치원역, 조치원순대국밥거리",
+            "specialties": [
+                "조치원순대",
+                "순대국밥"
+            ]
+        },
+        {
+            "id": "sejong_hansol",
+            "name": "한솔동",
+            "center": [
+                36.4914,
+                127.2615
+            ],
+            "zoom": 14,
+            "color": "#4ECDC4",
+            "icon": "🏛️",
+            "description": "정부세종청사",
+            "specialties": [
+                "청사맛집",
+                "점심특선"
+            ]
+        },
+        {
+            "id": "sejong_dodam",
+            "name": "도담동",
+            "center": [
+                36.5139,
+                127.2600
+            ],
+            "zoom": 14,
+            "color": "#45B7D1",
+            "icon": "🏢",
+            "description": "세종호수공원, 국립세종도서관",
+            "specialties": [
+                "호수공원카페",
+                "브런치"
+            ]
+        },
+        {
+            "id": "sejong_areum",
+            "name": "아름동",
+            "center": [
+                36.4856,
+                127.2478
+            ],
+            "zoom": 14,
+            "color": "#96CEB4",
+            "icon": "🌳",
+            "description": "BRT정류장, 주거단지",
+            "specialties": [
+                "카페",
+                "치킨"
+            ]
+        },
+        {
+            "id": "sejong_jongchon",
+            "name": "종촌동",
+            "center": [
+                36.5045,
+                127.2478
+            ],
+            "zoom": 14,
+            "color": "#DDA0DD",
+            "icon": "🏠",
+            "description": "세종중앙공원",
+            "specialties": [
+                "가정식",
+                "분식"
+            ]
+        },
+        {
+            "id": "sejong_goun",
+            "name": "고운동",
+            "center": [
+                36.5200,
+                127.2356
+            ],
+            "zoom": 14,
+            "color": "#F0E68C",
+            "icon": "🏫",
+            "description": "세종복합터미널",
+            "specialties": [
+                "편의점",
+                "패스트푸드"
+            ]
+        },
+        {
+            "id": "sejong_sori",
+            "name": "소리동",
+            "center": [
+                36.5098,
+                127.2278
+            ],
+            "zoom": 14,
+            "color": "#CD853F",
+            "icon": "🎵",
+            "description": "세종문화예술회관",
+            "specialties": [
+                "문화시설맛집",
+                "카페"
+            ]
+        },
+        {
+            "id": "sejong_boram",
+            "name": "보람동",
+            "center": [
+                36.4772,
+                127.2789
+            ],
+            "zoom": 14,
+            "color": "#FFB6C1",
+            "icon": "🌸",
+            "description": "세종시청사",
+            "specialties": [
+                "시청맛집",
+                "점심특선"
+            ]
+        },
+        {
+            "id": "sejong_daepi",
+            "name": "대평동",
+            "center": [
+                36.4628,
+                127.2856
+            ],
+            "zoom": 14,
+            "color": "#87CEEB",
+            "icon": "🌾",
+            "description": "세종시민농장",
+            "specialties": [
+                "농가맛집",
+                "산채비빔밥"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "districtId": "busan_busanjingu",
+    "districtName": "부산진구",
+    "cityId": "busan",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "busan_seomyeon",
+            "name": "서면",
+            "center": [
+                37.5077,
+                129.0571
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🌃",
+            "description": "서면역, 부산최대번화가",
+            "levelCount": 1,
+            "specialties": [
+                "삼겹살",
+                "돼지국밥",
+                "술집"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "busan_jeonpo",
+            "name": "전포카페거리",
+            "center": [
+                35.1529,
+                129.0640
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "☕",
+            "description": "부산핫플, 카페골목",
+            "levelCount": 1,
+            "specialties": [
+                "로스터리카페",
+                "디저트",
+                "브런치"
+            ],
+            "unlockCondition": "COMPLETE_busan_seomyeon"
+        },
+        {
+            "id": "busan_bujeon",
+            "name": "부전시장",
+            "center": [
+                35.1572,
+                129.0582
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏪",
+            "description": "부전시장, 전통시장",
+            "levelCount": 1,
+            "specialties": [
+                "순대국밥",
+                "빈대떡",
+                "시장음식"
+            ],
+            "unlockCondition": "COMPLETE_busan_jeonpo"
+        },
+        {
+            "id": "busan_yangjeong",
+            "name": "양정동",
+            "center": [
+                35.1651,
+                129.0657
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏠",
+            "description": "양정역, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "동네맛집"
+            ],
+            "unlockCondition": "COMPLETE_busan_bujeon"
+        }
+    ]
+}

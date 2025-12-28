@@ -1,0 +1,120 @@
+{
+    "regionId": "daejeon",
+    "regionName": "대전광역시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_DAEJEON_001",
+            "name": "성심당 본점",
+            "districtId": "daejeon_junggu",
+            "category": "베이커리",
+            "address": "대전시 중구 은행선화동",
+            "coordinates": [
+                36.3255,
+                127.4270
+            ],
+            "rating": 4.8,
+            "priceRange": "₩₩",
+            "specialties": [
+                "튀김소보로",
+                "부추빵",
+                "판타롱부추빵"
+            ],
+            "description": "대전 대표 베이커리, 전국 유명",
+            "openHours": "08:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_DAEJEON_002",
+            "name": "대전칼국수거리",
+            "districtId": "daejeon_junggu",
+            "category": "한식",
+            "address": "대전시 중구 은행동",
+            "coordinates": [
+                36.3280,
+                127.4290
+            ],
+            "rating": 4.4,
+            "priceRange": "₩",
+            "specialties": [
+                "칼국수",
+                "손만두"
+            ],
+            "description": "대전 전통 칼국수 골목",
+            "openHours": "10:00-21:00",
+            "closedDays": [
+                "일요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_DAEJEON_003",
+            "name": "두부두루치기거리",
+            "districtId": "daejeon_donggu",
+            "category": "한식",
+            "address": "대전시 동구 대동",
+            "coordinates": [
+                36.3121,
+                127.4550
+            ],
+            "rating": 4.3,
+            "priceRange": "₩₩",
+            "specialties": [
+                "두부두루치기",
+                "청국장"
+            ],
+            "description": "대전 명물 두부두루치기",
+            "openHours": "11:00-21:00",
+            "closedDays": [
+                "월요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_DAEJEON_004",
+            "name": "둔산동 맛집거리",
+            "districtId": "daejeon_seogu",
+            "category": "다양",
+            "address": "대전시 서구 둔산동",
+            "coordinates": [
+                36.3553,
+                127.3839
+            ],
+            "rating": 4.2,
+            "priceRange": "₩₩",
+            "specialties": [
+                "점심특선",
+                "한정식",
+                "비즈니스식당"
+            ],
+            "description": "둔산동 직장인 맛집 거리",
+            "openHours": "11:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_DAEJEON_005",
+            "name": "유성온천 맛집거리",
+            "districtId": "daejeon_yuseonggu",
+            "category": "한식",
+            "address": "대전시 유성구 봉명동",
+            "coordinates": [
+                36.3623,
+                127.3462
+            ],
+            "rating": 4.3,
+            "priceRange": "₩₩",
+            "specialties": [
+                "순두부",
+                "닭볶음탕",
+                "삼겹살"
+            ],
+            "description": "유성온천 근처 맛집",
+            "openHours": "11:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        }
+    ]
+}

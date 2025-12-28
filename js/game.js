@@ -22,12 +22,69 @@ const Game = {
         this.loadUserData();
         this.setupCharacterSelect();
 
+        // DataLoader 초기화 및 필수 데이터 프리로드
+        this.initializeDataLoader();
+
+        // 로그인 체크 후 게임 시작
+        this.checkLoginAndStart();
+    },
+
+    // 로그인 체크 후 게임 시작
+    checkLoginAndStart() {
+        // Firebase 초기화 대기
+        const waitForFirebase = () => {
+            if (typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0) {
+                // Firebase 준비됨
+                firebase.auth().onAuthStateChanged((user) => {
+                    if (user) {
+                        console.log('✅ 로그인 상태:', user.displayName || user.email);
+                        this.startGame();
+                    } else {
+                        // 로그인 필요 - 팝업 표시
+                        if (typeof LoginUI !== 'undefined') {
+                            LoginUI.showLoginPopup();
+                        } else {
+                            // LoginUI 없으면 바로 시작 (개발용)
+                            this.startGame();
+                        }
+                    }
+                });
+            } else if (typeof firebase !== 'undefined') {
+                // Firebase 로드됨 but 앱 초기화 안됨 - 잠시 대기
+                console.log('⏳ Firebase 초기화 대기 중...');
+                setTimeout(waitForFirebase, 100);
+            } else {
+                // Firebase 없으면 바로 시작
+                console.log('⚠️ Firebase 없음, 로컬 모드로 시작');
+                this.startGame();
+            }
+        };
+
+        waitForFirebase();
+    },
+
+    // 게임 시작 (로그인 후)
+    startGame() {
         // 이미 캐릭터를 선택한 적이 있으면 메인 메뉴로, 아니면 캐릭터 선택으로
         if (this.userData.selectedCharacter) {
             this.showMainMenu();
         } else {
             // 처음 접속하는 사용자
             this.showCharacterSelect();
+        }
+    },
+
+    // DataLoader 초기화 (비동기)
+    async initializeDataLoader() {
+        if (typeof DataLoader !== 'undefined') {
+            try {
+                console.log('📦 DataLoader 초기화 중...');
+                // 필수 데이터 프리로드 (regions.json)
+                await DataLoader.preloadEssentials();
+                console.log('✅ 필수 데이터 로드 완료');
+            } catch (error) {
+                console.warn('⚠️ DataLoader 초기화 실패, 기존 데이터 사용:', error);
+            }
         }
     },
 
@@ -39,31 +96,40 @@ const Game = {
 
     showMainMenu() {
         this.showScreen('main-menu');
-        // 메인 메뉴가 표시된 후 지도 초기화 (충분한 지연 시간 확보)
-        setTimeout(() => {
+
+        // 지도 초기화 및 크기 재조정
+        const initMap = () => {
+            const mapContainer = document.getElementById('region-map');
+            if (!mapContainer) {
+                console.error('❌ 지도 컨테이너 없음');
+                return;
+            }
+
+            // 컨테이너가 보이는 상태인지 확인
+            const rect = mapContainer.getBoundingClientRect();
+            console.log('📍 지도 컨테이너 크기:', rect.width, 'x', rect.height);
+
+            if (rect.width === 0 || rect.height === 0) {
+                console.log('⏳ 지도 컨테이너 아직 보이지 않음, 재시도...');
+                setTimeout(initMap, 200);
+                return;
+            }
+
             if (!this.regionMap) {
+                console.log('🗺️ 지도 초기화 시작');
                 this.initRegionMap();
-                // 지도 타일이 로드될 시간을 주고 크기 재조정
-                setTimeout(() => {
-                    if (this.regionMap) {
-                        this.regionMap.invalidateSize();
-                        console.log('🔄 지도 크기 재조정 (300ms)');
-                    }
-                }, 300);
-                setTimeout(() => {
-                    if (this.regionMap) {
-                        this.regionMap.invalidateSize();
-                        // 강제로 지도 다시 그리기
-                        this.regionMap.setView([37.5, 127.0], 8);
-                        console.log('🔄 지도 강제 새로고침 (1000ms)');
-                    }
-                }, 1000);
-            } else {
-                // 지도가 이미 있으면 크기 재조정
+            }
+
+            // 지도가 있으면 크기 재조정
+            if (this.regionMap) {
                 this.regionMap.invalidateSize();
                 this.regionMap.setView([37.5, 127.0], 8);
+                console.log('✅ 지도 크기 재조정 완료');
             }
-        }, 300);
+        };
+
+        // 화면 전환 후 지도 초기화
+        setTimeout(initMap, 100);
     },
 
     showCharacterSelect() {
@@ -967,7 +1033,7 @@ const Game = {
     },
 
     // 구 선택
-    selectGu(guId) {
+    async selectGu(guId) {
         console.log(`📍 구 선택: ${guId}`);
 
         // 서울 또는 인천 구 데이터에서 검색
@@ -994,48 +1060,109 @@ const Game = {
             });
         }
 
-        // 동 지도가 있는 구들
-        const gusWithDongMap = ['seoul_gangnam', 'seoul_junggu', 'seoul_jongno'];
+        // 동 데이터가 있는지 동적으로 체크 - JSON 파일 로딩 시도
+        const checkDongData = async (guId) => {
+            // DongDataRegistry가 있으면 먼저 체크
+            if (typeof DongDataRegistry !== 'undefined' && DongDataRegistry.hasDongData(guId)) {
+                return true;
+            }
+
+            // 기존 하드코딩 방식도 체크 (폴백)
+            if (guId === 'seoul_gangnam' && typeof GangnamDongData !== 'undefined') return true;
+            if (guId === 'seoul_junggu' && typeof JungguDongData !== 'undefined') return true;
+            if (guId === 'seoul_jongno' && typeof JongnoguDongData !== 'undefined') return true;
+            if (guId === 'incheon_junggu' && typeof IncheonJungguDongData !== 'undefined') return true;
+
+            // JSON 파일에서 동 데이터 로드 시도
+            if (typeof DongDataRegistry !== 'undefined' && typeof DataLoader !== 'undefined') {
+                try {
+                    // guId에서 regionId와 districtId 추출 (예: 'incheon_yeonsu' -> 'incheon', 'yeonsu')
+                    const parts = guId.split('_');
+                    if (parts.length >= 2) {
+                        const regionId = parts[0];
+                        const districtId = parts.slice(1).join('_');
+
+                        const data = await DongDataRegistry.loadFromJson(regionId, districtId);
+                        if (data && data.neighborhoods && data.neighborhoods.length > 0) {
+                            console.log(`✅ JSON에서 동 데이터 로드 성공: ${guId}`);
+                            return true;
+                        }
+                    }
+                } catch (error) {
+                    console.warn(`⚠️ JSON 동 데이터 없음: ${guId}`);
+                }
+            }
+
+            return false;
+        };
 
         // 지역별 레벨 오프셋
         const regionOffsets = {
             'seoul': 0,
-            'incheon': 33
+            'incheon': 33,
+            'busan': 50
         };
 
         // 포커싱 애니메이션 후 다음 화면으로 이동
-        setTimeout(() => {
-            if (gusWithDongMap.includes(guId)) {
-                this.showDongMap(guId);
+        const hasDong = await checkDongData(guId);
+
+        await new Promise(resolve => setTimeout(resolve, this.regionMap ? 900 : 0));
+
+        if (hasDong) {
+            this.showDongMap(guId);
+        } else {
+            // 다른 구들은 바로 레벨 지도로 이동
+            this.currentDong = null;  // 동 선택 없음
+
+            // 지역 구분
+            if (guId.startsWith('incheon_')) {
+                this.currentRegion = 'incheon';
+                this.regionLevelOffset = regionOffsets['incheon'];
+            } else if (guId.startsWith('busan_')) {
+                this.currentRegion = 'busan';
+                this.regionLevelOffset = regionOffsets['busan'];
             } else {
-                // 다른 구들은 바로 레벨 지도로 이동
-                this.currentDong = null;  // 동 선택 없음
-
-                // 인천 구인지 확인
-                if (guId.startsWith('incheon_')) {
-                    this.currentRegion = 'incheon';
-                    this.regionLevelOffset = regionOffsets['incheon'];
-                } else {
-                    this.currentRegion = 'seoul';
-                    this.regionLevelOffset = regionOffsets['seoul'];
-                }
-
-                if (this.userData.selectedCharacter) {
-                    this.showMap();
-                } else {
-                    this.showCharacterSelect();
-                }
+                this.currentRegion = 'seoul';
+                this.regionLevelOffset = regionOffsets['seoul'];
             }
-        }, this.regionMap ? 900 : 0);
+
+            if (this.userData.selectedCharacter) {
+                this.showMap();
+            } else {
+                this.showCharacterSelect();
+            }
+        }
     },
 
     // 동(洞) 지도 표시
     showDongMap(guId) {
         console.log(`🗺️ ${guId} 동 지도 표시`);
 
-        const gu = typeof SeoulGuData !== 'undefined' ? SeoulGuData.getGu(guId) : null;
+        // 서울 또는 인천 구 데이터에서 검색
+        let gu = null;
+        let cityName = '';
+        let cityId = '';
+
+        if (typeof SeoulGuData !== 'undefined') {
+            gu = SeoulGuData.getGu(guId);
+            if (gu) {
+                cityName = '서울';
+                cityId = 'seoul';
+            }
+        }
+        if (!gu && typeof IncheonGuData !== 'undefined') {
+            gu = IncheonGuData.getGu(guId);
+            if (gu) {
+                cityName = '인천';
+                cityId = 'incheon';
+            }
+        }
+
         const screen = document.getElementById('main-menu');
-        if (!screen || !gu) return;
+        if (!screen || !gu) {
+            console.error('❌ 구 데이터를 찾을 수 없습니다:', guId);
+            return;
+        }
 
         // 기존 지도 제거
         if (this.regionMap) {
@@ -1047,7 +1174,7 @@ const Game = {
         const titleDiv = screen.querySelector('.title');
         if (titleDiv) {
             titleDiv.innerHTML = `
-                <button onclick="Game.showGuMap('seoul')" style="
+                <button onclick="Game.showGuMap('${cityId}')" style="
                     position: absolute;
                     left: 20px;
                     top: 15px;
@@ -1059,7 +1186,7 @@ const Game = {
                     font-size: 14px;
                     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
                 ">← 뒤로</button>
-                <h1>서울 > ${gu.name} > 동 선택</h1>
+                <h1>${cityName} > ${gu.name} > 동 선택</h1>
             `;
         }
 
@@ -1086,7 +1213,14 @@ const Game = {
             return;
         }
 
-        const gu = typeof SeoulGuData !== 'undefined' ? SeoulGuData.getGu(guId) : null;
+        // 서울 또는 인천 구 데이터에서 검색
+        let gu = null;
+        if (typeof SeoulGuData !== 'undefined') {
+            gu = SeoulGuData.getGu(guId);
+        }
+        if (!gu && typeof IncheonGuData !== 'undefined') {
+            gu = IncheonGuData.getGu(guId);
+        }
         if (!gu) return;
 
         try {
@@ -1125,21 +1259,30 @@ const Game = {
                 return baseRadius * Math.pow(0.6, zoom - baseZoom);
             };
 
-            // 구별 동 데이터 소스 선택
-            let dongDataSource = null;
-            if (guId === 'seoul_gangnam' && typeof GangnamDongData !== 'undefined') {
-                dongDataSource = GangnamDongData;
-            } else if (guId === 'seoul_junggu' && typeof JungguDongData !== 'undefined') {
-                dongDataSource = JungguDongData;
-            } else if (guId === 'seoul_jongno' && typeof JongnoguDongData !== 'undefined') {
-                dongDataSource = JongnoguDongData;
+            // 동 데이터 소스 선택 (DongDataRegistry 사용 - JSON 캐시 포함)
+            let dongs = [];
+
+            // DongDataRegistry에서 동 데이터 가져오기 (하드코딩 + JSON 캐시)
+            if (typeof DongDataRegistry !== 'undefined') {
+                dongs = DongDataRegistry.getDongs(guId);
+            }
+
+            // 폴백: 기존 하드코딩 방식
+            if (dongs.length === 0) {
+                if (guId === 'seoul_gangnam' && typeof GangnamDongData !== 'undefined') {
+                    dongs = GangnamDongData.getDongsByGu ? GangnamDongData.getDongsByGu(guId) : (GangnamDongData.dongs || []);
+                } else if (guId === 'seoul_junggu' && typeof JungguDongData !== 'undefined') {
+                    dongs = JungguDongData.getDongsByGu ? JungguDongData.getDongsByGu(guId) : (JungguDongData.dongs || []);
+                } else if (guId === 'seoul_jongno' && typeof JongnoguDongData !== 'undefined') {
+                    dongs = JongnoguDongData.getDongsByGu ? JongnoguDongData.getDongsByGu(guId) : (JongnoguDongData.dongs || []);
+                } else if (guId === 'incheon_junggu' && typeof IncheonJungguDongData !== 'undefined') {
+                    dongs = IncheonJungguDongData.getDongsByGu ? IncheonJungguDongData.getDongsByGu(guId) : (IncheonJungguDongData.dongs || []);
+                }
             }
 
             // 동 데이터 로드
-            if (dongDataSource) {
-                const dongs = dongDataSource.getDongsByGu(guId);
-                console.log(`📍 구ID: ${guId}, 동 데이터 소스: ${dongDataSource === GangnamDongData ? 'GangnamDongData' : dongDataSource === JungguDongData ? 'JungguDongData' : 'JongnoguDongData'}`);
-                console.log(`📍 찾은 동 개수: ${dongs.length}`, dongs.map(d => d.name));
+            if (dongs.length > 0) {
+                console.log(`📍 구ID: ${guId}, 찾은 동 개수: ${dongs.length}`, dongs.map(d => d.name));
                 const completedDongs = this.userData.completedDongs || [];
 
                 dongs.forEach(dong => {
@@ -1242,9 +1385,14 @@ const Game = {
     selectDong(dongId) {
         console.log(`📍 동 선택: ${dongId}`);
 
-        // 여러 동 데이터 소스에서 검색
+        // DongDataRegistry에서 먼저 검색
         let dong = null;
-        if (typeof GangnamDongData !== 'undefined') {
+        if (typeof DongDataRegistry !== 'undefined') {
+            dong = DongDataRegistry.getDong(dongId);
+        }
+
+        // 폴백: 기존 하드코딩 데이터 소스에서 검색
+        if (!dong && typeof GangnamDongData !== 'undefined') {
             dong = GangnamDongData.getDong(dongId);
         }
         if (!dong && typeof JungguDongData !== 'undefined') {
@@ -1252,6 +1400,9 @@ const Game = {
         }
         if (!dong && typeof JongnoguDongData !== 'undefined') {
             dong = JongnoguDongData.getDong(dongId);
+        }
+        if (!dong && typeof IncheonJungguDongData !== 'undefined') {
+            dong = IncheonJungguDongData.getDong(dongId);
         }
 
         if (!dong) {
@@ -1748,6 +1899,11 @@ const Game = {
         }
 
         this.saveUserData();
+
+        // 클라우드 동기화 (로그인 시)
+        if (typeof UserSync !== 'undefined') {
+            UserSync.autoSave();
+        }
     },
 
     retryLevel() {
@@ -1821,6 +1977,6 @@ const Game = {
 // 페이지 로드 시 게임 초기화
 window.addEventListener('DOMContentLoaded', () => {
     console.log('=== 말랑말랑 대동맛지도 ===');
-    console.log('웹 버전 v0.1');
+    console.log('웹 버전 v1.7.2');
     Game.init();
 });

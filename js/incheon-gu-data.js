@@ -1,11 +1,11 @@
-// 인천 10개 구/군 데이터
+// 인천 10개 구/군 데이터 (구청/군청 정확한 좌표 기준)
 const IncheonGuData = {
     gus: [
         {
             id: "incheon_junggu",
             name: "중구",
             cityId: "incheon",
-            center: [37.4738, 126.6217],
+            center: [37.4643, 126.5904], // 중구청 (신포로27번길 80)
             zoom: 13,
             color: "#FF6B9D",
             icon: "✈️",
@@ -17,7 +17,7 @@ const IncheonGuData = {
             id: "incheon_donggu",
             name: "동구",
             cityId: "incheon",
-            center: [37.4737, 126.6432],
+            center: [37.4753, 126.6369], // 동구청
             zoom: 13,
             color: "#4682B4",
             icon: "🏛️",
@@ -29,7 +29,7 @@ const IncheonGuData = {
             id: "incheon_michuhol",
             name: "미추홀구",
             cityId: "incheon",
-            center: [37.4421, 126.6502],
+            center: [37.4419, 126.6883], // 미추홀구청
             zoom: 13,
             color: "#90EE90",
             icon: "🏢",
@@ -41,7 +41,7 @@ const IncheonGuData = {
             id: "incheon_yeonsu",
             name: "연수구",
             cityId: "incheon",
-            center: [37.4102, 126.6783],
+            center: [37.4172, 126.6669], // 연수구청 (원인재로 115)
             zoom: 13,
             color: "#FFB6C1",
             icon: "🌊",
@@ -53,7 +53,7 @@ const IncheonGuData = {
             id: "incheon_namdong",
             name: "남동구",
             cityId: "incheon",
-            center: [37.4486, 126.7317],
+            center: [37.4093, 126.7369], // 남동구청 (소래로 633)
             zoom: 13,
             color: "#DDA0DD",
             icon: "🏭",
@@ -65,7 +65,7 @@ const IncheonGuData = {
             id: "incheon_bupyeong",
             name: "부평구",
             cityId: "incheon",
-            center: [37.5066, 126.7219],
+            center: [37.5085, 126.7214], // 부평구청 (부평대로 168)
             zoom: 13,
             color: "#F0E68C",
             icon: "🛍️",
@@ -77,7 +77,7 @@ const IncheonGuData = {
             id: "incheon_gyeyang",
             name: "계양구",
             cityId: "incheon",
-            center: [37.5371, 126.7377],
+            center: [37.5074, 126.7351], // 계양구청 (계산새로 88)
             zoom: 13,
             color: "#CD853F",
             icon: "⛰️",
@@ -89,7 +89,7 @@ const IncheonGuData = {
             id: "incheon_seogu",
             name: "서구",
             cityId: "incheon",
-            center: [37.5455, 126.6762],
+            center: [37.5377, 126.6713], // 서구청 (서곶로 299)
             zoom: 13,
             color: "#FFD700",
             icon: "🌆",
@@ -101,7 +101,7 @@ const IncheonGuData = {
             id: "incheon_ganghwa",
             name: "강화군",
             cityId: "incheon",
-            center: [37.7467, 126.4877],
+            center: [37.7479, 126.4851], // 강화군청 (강화대로 394)
             zoom: 11,
             color: "#228B22",
             icon: "🏯",
@@ -113,7 +113,7 @@ const IncheonGuData = {
             id: "incheon_ongjin",
             name: "옹진군",
             cityId: "incheon",
-            center: [37.4467, 126.6380],
+            center: [37.4527, 126.6268], // 옹진군청 (미추홀구 매소홀로 120)
             zoom: 10,
             color: "#20B2AA",
             icon: "🏝️",

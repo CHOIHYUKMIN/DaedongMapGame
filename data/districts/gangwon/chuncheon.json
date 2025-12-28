@@ -1,0 +1,65 @@
+{
+    "districtId": "gangwon_chuncheon",
+    "districtName": "춘천시",
+    "cityId": "gangwon",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "chuncheon_myeongdong",
+            "name": "명동닭갈비골목",
+            "center": [
+                37.8790,
+                127.7305
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🍗",
+            "description": "춘천닭갈비거리",
+            "levelCount": 1,
+            "specialties": [
+                "닭갈비",
+                "막국수",
+                "감자전"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "chuncheon_namiseom",
+            "name": "남이섬",
+            "center": [
+                37.7909,
+                127.5256
+            ],
+            "zoom": 14,
+            "color": "#4ECDC4",
+            "icon": "🌲",
+            "description": "남이섬, 자라섬",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "퓨전요리",
+                "피크닉"
+            ],
+            "unlockCondition": "COMPLETE_chuncheon_myeongdong"
+        },
+        {
+            "id": "chuncheon_lake",
+            "name": "의암호",
+            "center": [
+                37.8912,
+                127.7522
+            ],
+            "zoom": 14,
+            "color": "#45B7D1",
+            "icon": "🌊",
+            "description": "의암호, 스카이워크",
+            "levelCount": 1,
+            "specialties": [
+                "호수뷰카페",
+                "브런치"
+            ],
+            "unlockCondition": "COMPLETE_chuncheon_namiseom"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "districtId": "daejeon_junggu",
+    "districtName": "중구",
+    "cityId": "daejeon",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "daejeon_euneungjeong",
+            "name": "은행동",
+            "center": [
+                36.3275,
+                127.4273
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🛍️",
+            "description": "대전 구도심, 성심당",
+            "levelCount": 1,
+            "specialties": [
+                "성심당빵",
+                "두부두루치기",
+                "칼국수"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "daejeon_jungang",
+            "name": "중앙시장",
+            "center": [
+                36.3279,
+                127.4300
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🏪",
+            "description": "전통시장",
+            "levelCount": 1,
+            "specialties": [
+                "순대국밥",
+                "튀김",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_daejeon_euneungjeong"
+        },
+        {
+            "id": "daejeon_daeheung",
+            "name": "대흥동",
+            "center": [
+                36.3290,
+                127.4230
+            ],
+            "zoom": 16,
+            "color": "#45B7D1",
+            "icon": "🍺",
+            "description": "카페거리, 문화예술거리",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "브런치",
+                "맥주"
+            ],
+            "unlockCondition": "COMPLETE_daejeon_jungang"
+        }
+    ]
+}

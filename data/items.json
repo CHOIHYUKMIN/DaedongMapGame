@@ -1,0 +1,239 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "totalItems": 200,
+    "categories": [
+        {
+            "id": "food",
+            "name": "음식",
+            "icon": "🍽️"
+        },
+        {
+            "id": "drink",
+            "name": "음료",
+            "icon": "🍹"
+        },
+        {
+            "id": "dessert",
+            "name": "디저트",
+            "icon": "🍰"
+        },
+        {
+            "id": "special",
+            "name": "특산물",
+            "icon": "⭐"
+        }
+    ],
+    "items": [
+        {
+            "id": "IT_001",
+            "name": "토속촌삼계탕",
+            "category": "food",
+            "regionId": "seoul",
+            "districtId": "seoul_jongno",
+            "rarity": 3,
+            "icon": "🍲",
+            "description": "경복궁 근처 유명 삼계탕",
+            "stats": {
+                "taste": 90,
+                "health": 85,
+                "satisfaction": 88
+            }
+        },
+        {
+            "id": "IT_002",
+            "name": "명동칼국수",
+            "category": "food",
+            "regionId": "seoul",
+            "districtId": "seoul_junggu",
+            "rarity": 2,
+            "icon": "🍜",
+            "description": "명동교자 대표메뉴",
+            "stats": {
+                "taste": 85,
+                "health": 70,
+                "satisfaction": 80
+            }
+        },
+        {
+            "id": "IT_003",
+            "name": "이태원타코",
+            "category": "food",
+            "regionId": "seoul",
+            "districtId": "seoul_yongsan",
+            "rarity": 2,
+            "icon": "🌮",
+            "description": "경리단길 멕시칸 타코",
+            "stats": {
+                "taste": 80,
+                "health": 60,
+                "satisfaction": 75
+            }
+        },
+        {
+            "id": "IT_004",
+            "name": "성수카페라떼",
+            "category": "drink",
+            "regionId": "seoul",
+            "districtId": "seoul_seongdong",
+            "rarity": 2,
+            "icon": "☕",
+            "description": "성수동 로스터리 카페 라떼",
+            "stats": {
+                "taste": 82,
+                "health": 50,
+                "satisfaction": 78
+            }
+        },
+        {
+            "id": "IT_005",
+            "name": "홍대치킨",
+            "category": "food",
+            "regionId": "seoul",
+            "districtId": "seoul_mapo",
+            "rarity": 1,
+            "icon": "🍗",
+            "description": "홍대 유명 치킨집",
+            "stats": {
+                "taste": 88,
+                "health": 40,
+                "satisfaction": 85
+            }
+        },
+        {
+            "id": "IT_006",
+            "name": "압구정오마카세",
+            "category": "food",
+            "regionId": "seoul",
+            "districtId": "seoul_gangnam",
+            "rarity": 4,
+            "icon": "🍣",
+            "description": "청담동 고급 오마카세",
+            "stats": {
+                "taste": 98,
+                "health": 85,
+                "satisfaction": 95
+            }
+        },
+        {
+            "id": "IT_007",
+            "name": "잠실롯데뷔페",
+            "category": "food",
+            "regionId": "seoul",
+            "districtId": "seoul_songpa",
+            "rarity": 3,
+            "icon": "🍽️",
+            "description": "롯데월드타워 뷔페",
+            "stats": {
+                "taste": 85,
+                "health": 70,
+                "satisfaction": 90
+            }
+        },
+        {
+            "id": "IT_BS_001",
+            "name": "자갈치회",
+            "category": "food",
+            "regionId": "busan",
+            "districtId": "busan_junggu",
+            "rarity": 3,
+            "icon": "🐟",
+            "description": "자갈치시장 싱싱한 회",
+            "stats": {
+                "taste": 95,
+                "health": 90,
+                "satisfaction": 92
+            }
+        },
+        {
+            "id": "IT_BS_002",
+            "name": "해운대밀면",
+            "category": "food",
+            "regionId": "busan",
+            "districtId": "busan_haeundaegu",
+            "rarity": 2,
+            "icon": "🍜",
+            "description": "부산 전통 밀면",
+            "stats": {
+                "taste": 85,
+                "health": 75,
+                "satisfaction": 80
+            }
+        },
+        {
+            "id": "IT_BS_003",
+            "name": "전포카페디저트",
+            "category": "dessert",
+            "regionId": "busan",
+            "districtId": "busan_busanjingu",
+            "rarity": 2,
+            "icon": "🍰",
+            "description": "전포카페거리 디저트",
+            "stats": {
+                "taste": 82,
+                "health": 40,
+                "satisfaction": 85
+            }
+        },
+        {
+            "id": "IT_IC_001",
+            "name": "차이나타운짜장면",
+            "category": "food",
+            "regionId": "incheon",
+            "districtId": "incheon_junggu",
+            "rarity": 3,
+            "icon": "🥡",
+            "description": "인천 차이나타운 원조 짜장면",
+            "stats": {
+                "taste": 92,
+                "health": 60,
+                "satisfaction": 88
+            }
+        },
+        {
+            "id": "IT_IC_002",
+            "name": "신포닭강정",
+            "category": "food",
+            "regionId": "incheon",
+            "districtId": "incheon_junggu",
+            "rarity": 3,
+            "icon": "🍗",
+            "description": "신포시장 명물 닭강정",
+            "stats": {
+                "taste": 90,
+                "health": 50,
+                "satisfaction": 92
+            }
+        },
+        {
+            "id": "IT_IC_003",
+            "name": "월미도조개구이",
+            "category": "food",
+            "regionId": "incheon",
+            "districtId": "incheon_junggu",
+            "rarity": 2,
+            "icon": "🦪",
+            "description": "월미도 바닷가 조개구이",
+            "stats": {
+                "taste": 85,
+                "health": 80,
+                "satisfaction": 82
+            }
+        },
+        {
+            "id": "IT_IC_004",
+            "name": "송도브런치",
+            "category": "food",
+            "regionId": "incheon",
+            "districtId": "incheon_yeonsu",
+            "rarity": 2,
+            "icon": "🥗",
+            "description": "송도 트리플스트리트 브런치",
+            "stats": {
+                "taste": 80,
+                "health": 85,
+                "satisfaction": 78
+            }
+        }
+    ]
+}

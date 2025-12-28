@@ -1,0 +1,85 @@
+{
+    "districtId": "busan_yeongdogu",
+    "districtName": "영도구",
+    "cityId": "busan",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "busan_namhang",
+            "name": "남항동",
+            "center": [
+                35.0934,
+                129.0456
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🌉",
+            "description": "영도대교, 수리조선소",
+            "levelCount": 1,
+            "specialties": [
+                "삼치회",
+                "해물탕",
+                "조개구이"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "busan_dongsaml",
+            "name": "동삼동",
+            "center": [
+                35.0678,
+                129.0789
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "⛰️",
+            "description": "태종대, 전망대",
+            "levelCount": 1,
+            "specialties": [
+                "생선회",
+                "해녀촌",
+                "전복"
+            ],
+            "unlockCondition": "COMPLETE_busan_namhang"
+        },
+        {
+            "id": "busan_kkanggangil",
+            "name": "대평동",
+            "center": [
+                35.0845,
+                129.0534
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🎨",
+            "description": "깡깡이마을, 예술마을",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "브런치",
+                "수제버거"
+            ],
+            "unlockCondition": "COMPLETE_busan_dongsaml"
+        },
+        {
+            "id": "busan_bongrae",
+            "name": "봉래동",
+            "center": [
+                35.0912,
+                129.0623
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏠",
+            "description": "흰여울마을, 해안절벽",
+            "levelCount": 1,
+            "specialties": [
+                "뷰카페",
+                "해물칼국수",
+                "횟집"
+            ],
+            "unlockCondition": "COMPLETE_busan_kkanggangil"
+        }
+    ]
+}

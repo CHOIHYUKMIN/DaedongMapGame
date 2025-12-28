@@ -889,23 +889,205 @@ const Puzzle = {
         const targetScore = this.currentLevel.targetVal || this.currentLevel.target;
 
         if (this.score >= targetScore) {
-            // 목표 달성! 특수 블록 보너스
+            // 목표 달성! 단계별 보너스 처리
             this.isAnimating = true;
 
-            // 1단계: 특수 블록 모두 터트리기
-            await this.activateRemainingSpecialBlocks();
-            await this.sleep(500);
+            // 1단계: 목표 달성 축하 메시지
+            await this.showGoalReachedCelebration();
+            await this.sleep(800);
 
-            // 2단계: 남은 이동수를 점수로 환산 (애니메이션)
-            await this.convertMovesToScore();
-            await this.sleep(500);
+            // 2단계: 특수 블록 보너스 (있으면)
+            const hasSpecialBlocks = this.countSpecialBlocks() > 0;
+            if (hasSpecialBlocks) {
+                await this.showSpecialBlocksBonus();
+                await this.sleep(300);
+            }
 
-            // 3단계: 결과 팝업 표시
+            // 3단계: 남은 이동수를 점수로 환산 (애니메이션)
+            if (this.movesLeft > 0) {
+                await this.convertMovesToScore();
+                await this.sleep(500);
+            }
+
+            // 4단계: 결과 팝업 표시
             this.showResult(true);
             this.isAnimating = false;
         } else if (this.movesLeft <= 0) {
             setTimeout(() => this.showResult(false), 500);
         }
+    },
+
+    // 특수 블록 개수 세기
+    countSpecialBlocks() {
+        let count = 0;
+        for (let y = 0; y < this.gridSize; y++) {
+            for (let x = 0; x < this.gridSize; x++) {
+                const type = this.grid[y][x];
+                if (type >= 100 && type <= 104) count++;
+            }
+        }
+        return count;
+    },
+
+    // 목표 달성 축하 메시지
+    async showGoalReachedCelebration() {
+        const overlay = document.createElement('div');
+        overlay.id = 'goal-celebration';
+        overlay.innerHTML = `
+            <div class="celebration-content">
+                <div class="celebration-stars">🌟✨🌟</div>
+                <h1 class="celebration-title">목표 달성!</h1>
+                <div class="celebration-score">${this.score.toLocaleString()}점</div>
+                <p class="celebration-message">보너스를 계산합니다...</p>
+            </div>
+        `;
+        overlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: celebrationFadeIn 0.5s ease;
+        `;
+
+        const style = document.createElement('style');
+        style.id = 'celebration-style';
+        style.textContent = `
+            @keyframes celebrationFadeIn {
+                from { opacity: 0; transform: scale(0.8); }
+                to { opacity: 1; transform: scale(1); }
+            }
+            @keyframes celebrationPulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+            }
+            @keyframes starSpin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            .celebration-content {
+                text-align: center;
+                color: white;
+            }
+            .celebration-stars {
+                font-size: 60px;
+                margin-bottom: 20px;
+                animation: starSpin 2s linear infinite;
+            }
+            .celebration-title {
+                font-size: 48px;
+                color: #FFD700;
+                text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+                margin: 0 0 15px 0;
+                animation: celebrationPulse 0.5s ease infinite;
+            }
+            .celebration-score {
+                font-size: 36px;
+                color: #4ECDC4;
+                font-weight: bold;
+                margin: 10px 0;
+            }
+            .celebration-message {
+                font-size: 18px;
+                color: #aaa;
+                margin-top: 20px;
+            }
+        `;
+
+        document.head.appendChild(style);
+        document.body.appendChild(overlay);
+
+        // 진동 효과
+        this.vibrate([100, 50, 100, 50, 200]);
+
+        await this.sleep(1500);
+
+        // 페이드 아웃
+        overlay.style.animation = 'celebrationFadeIn 0.3s ease reverse';
+        await this.sleep(300);
+        overlay.remove();
+        style.remove();
+    },
+
+    // 특수 블록 보너스 단계
+    async showSpecialBlocksBonus() {
+        const specialCount = this.countSpecialBlocks();
+        if (specialCount === 0) return;
+
+        const overlay = document.createElement('div');
+        overlay.id = 'special-bonus';
+        overlay.innerHTML = `
+            <div class="special-content">
+                <h2>💥 특수 블록 보너스!</h2>
+                <div class="special-count">${specialCount}개 발견</div>
+                <p>남은 특수 블록을 모두 터트립니다!</p>
+            </div>
+        `;
+        overlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9998;
+            animation: fadeIn 0.3s ease;
+        `;
+
+        const style = document.createElement('style');
+        style.id = 'special-bonus-style';
+        style.textContent = `
+            .special-content {
+                text-align: center;
+                color: white;
+                padding: 30px;
+                background: rgba(255, 107, 157, 0.2);
+                border-radius: 20px;
+                border: 2px solid #FF6B9D;
+            }
+            .special-content h2 {
+                font-size: 28px;
+                color: #FF6B9D;
+                margin: 0 0 10px 0;
+            }
+            .special-count {
+                font-size: 40px;
+                font-weight: bold;
+                color: #FFD700;
+            }
+            .special-content p {
+                color: #ccc;
+                margin-top: 10px;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+        `;
+
+        document.head.appendChild(style);
+        document.body.appendChild(overlay);
+
+        await this.sleep(1000);
+
+        // 오버레이 투명도 낮추고 실제 블록 터트리기
+        overlay.style.background = 'rgba(0, 0, 0, 0.3)';
+        overlay.querySelector('.special-content').style.opacity = '0.5';
+
+        // 특수 블록 터트리기
+        await this.activateRemainingSpecialBlocks();
+
+        await this.sleep(500);
+        overlay.remove();
+        style.remove();
     },
 
     // 남은 이동수를 점수로 환산 (애니메이션 효과)

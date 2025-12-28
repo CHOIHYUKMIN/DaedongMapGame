@@ -1,0 +1,159 @@
+{
+    "regionId": "gyeongbuk",
+    "regionName": "경상북도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_GYEONGBUK_001",
+            "name": "안동 찜닭골목",
+            "districtId": "gyeongbuk_andong",
+            "category": "한식",
+            "address": "경북 안동시 옥야동",
+            "coordinates": [
+                36.5684,
+                128.7294
+            ],
+            "rating": 4.6,
+            "priceRange": "₩₩",
+            "specialties": [
+                "안동찜닭",
+                "간장찜닭"
+            ],
+            "description": "안동 대표 찜닭 골목",
+            "openHours": "11:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGBUK_002",
+            "name": "안동 헛제사밥",
+            "districtId": "gyeongbuk_andong",
+            "category": "한식",
+            "address": "경북 안동시 풍천면",
+            "coordinates": [
+                36.5884,
+                128.6494
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "헛제사밥",
+                "간고등어"
+            ],
+            "description": "안동 전통 헛제사밥",
+            "openHours": "11:00-20:00",
+            "closedDays": [
+                "월요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGBUK_003",
+            "name": "경주 황남빵",
+            "districtId": "gyeongbuk_gyeongju",
+            "category": "베이커리",
+            "address": "경북 경주시 황남동",
+            "coordinates": [
+                35.8362,
+                129.2147
+            ],
+            "rating": 4.4,
+            "priceRange": "₩",
+            "specialties": [
+                "황남빵",
+                "경주빵"
+            ],
+            "description": "경주 대표 기념품 빵",
+            "openHours": "08:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGBUK_004",
+            "name": "경주 쌈밥거리",
+            "districtId": "gyeongbuk_gyeongju",
+            "category": "한식",
+            "address": "경북 경주시 교동",
+            "coordinates": [
+                35.8462,
+                129.2247
+            ],
+            "rating": 4.3,
+            "priceRange": "₩₩",
+            "specialties": [
+                "쌈밥정식",
+                "한정식"
+            ],
+            "description": "경주 전통 쌈밥",
+            "openHours": "11:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGBUK_005",
+            "name": "포항 과메기거리",
+            "districtId": "gyeongbuk_pohang",
+            "category": "해산물",
+            "address": "경북 포항시 북구 구룡포",
+            "coordinates": [
+                35.9890,
+                129.5535
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "과메기",
+                "물회"
+            ],
+            "description": "포항 구룡포 과메기",
+            "openHours": "09:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGBUK_006",
+            "name": "영덕 대게거리",
+            "districtId": "gyeongbuk_yeongdeok",
+            "category": "해산물",
+            "address": "경북 영덕군 강구면",
+            "coordinates": [
+                36.4150,
+                129.3658
+            ],
+            "rating": 4.7,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "영덕대게",
+                "대게찜"
+            ],
+            "description": "영덕 대게 원조 거리",
+            "openHours": "09:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGBUK_007",
+            "name": "문경 약돌한우",
+            "districtId": "gyeongbuk_mungyeong",
+            "category": "한식",
+            "address": "경북 문경시 문경읍",
+            "coordinates": [
+                36.5868,
+                128.1867
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "약돌한우",
+                "한우구이"
+            ],
+            "description": "문경 약돌먹인 한우",
+            "openHours": "11:00-22:00",
+            "closedDays": [
+                "월요일"
+            ],
+            "imageUrl": null
+        }
+    ]
+}

@@ -1,0 +1,339 @@
+{
+    "regionId": "seoul",
+    "regionName": "서울특별시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_SEOUL_001",
+            "name": "을지로노가리골목",
+            "districtId": "seoul_junggu",
+            "category": "포장마차",
+            "address": "서울시 중구 을지로3가",
+            "coordinates": [
+                37.5660,
+                126.9920
+            ],
+            "rating": 4.5,
+            "priceRange": "₩",
+            "specialties": [
+                "노가리",
+                "오뎅탕",
+                "과일소주"
+            ],
+            "description": "을지로 레트로 감성의 노가리 골목",
+            "openHours": "18:00-24:00",
+            "closedDays": [
+                "일요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEOUL_002",
+            "name": "명동교자",
+            "districtId": "seoul_junggu",
+            "category": "한식",
+            "address": "서울시 중구 명동10길 29",
+            "coordinates": [
+                37.5636,
+                126.9852
+            ],
+            "rating": 4.3,
+            "priceRange": "₩₩",
+            "specialties": [
+                "칼국수",
+                "만두"
+            ],
+            "description": "명동 대표 칼국수 맛집",
+            "openHours": "10:30-21:30",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEOUL_003",
+            "name": "하동관",
+            "districtId": "seoul_junggu",
+            "category": "한식",
+            "address": "서울시 중구 명동 9길 12",
+            "coordinates": [
+                37.5625,
+                126.9835
+            ],
+            "rating": 4.4,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "곰탕"
+            ],
+            "description": "1939년부터 이어져온 곰탕 전문점",
+            "openHours": "07:00-16:00",
+            "closedDays": [
+                "일요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEOUL_004",
+            "name": "광장시장 마약김밥",
+            "districtId": "seoul_jongno",
+            "category": "분식",
+            "address": "서울시 종로구 종로4가 광장시장",
+            "coordinates": [
+                37.5701,
+                126.9995
+            ],
+            "rating": 4.2,
+            "priceRange": "₩",
+            "specialties": [
+                "마약김밥",
+                "떡볶이"
+            ],
+            "description": "광장시장 명물 마약김밥",
+            "openHours": "09:00-22:00",
+            "closedDays": [
+                "일요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEOUL_005",
+            "name": "토속촌삼계탕",
+            "districtId": "seoul_jongno",
+            "category": "한식",
+            "address": "서울시 종로구 자하문로5길 5",
+            "coordinates": [
+                37.5799,
+                126.9715
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "삼계탕",
+                "전복삼계탕"
+            ],
+            "description": "경복궁 근처 유명 삼계탕집",
+            "openHours": "10:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEOUL_006",
+            "name": "이태원 경리단길",
+            "districtId": "seoul_yongsan",
+            "category": "세계음식",
+            "address": "서울시 용산구 회나무로",
+            "coordinates": [
+                37.5407,
+                126.9877
+            ],
+            "rating": 4.3,
+            "priceRange": "₩₩",
+            "specialties": [
+                "타코",
+                "파스타",
+                "브런치"
+            ],
+            "description": "다양한 세계음식이 모인 거리",
+            "openHours": "11:00-24:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEOUL_007",
+            "name": "압구정 로데오거리",
+            "districtId": "seoul_gangnam",
+            "category": "카페/디저트",
+            "address": "서울시 강남구 압구정로",
+            "coordinates": [
+                37.5273,
+                127.0381
+            ],
+            "rating": 4.4,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "브런치",
+                "디저트카페",
+                "와인바"
+            ],
+            "description": "고급 레스토랑과 카페 밀집지역",
+            "openHours": "10:00-24:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEOUL_008",
+            "name": "신촌 연세로 맛집거리",
+            "districtId": "seoul_seodaemun",
+            "category": "다양",
+            "address": "서울시 서대문구 연세로",
+            "coordinates": [
+                37.5577,
+                126.9370
+            ],
+            "rating": 4.1,
+            "priceRange": "₩",
+            "specialties": [
+                "치킨",
+                "피자",
+                "삼겹살"
+            ],
+            "description": "대학가 맛집 거리",
+            "openHours": "11:00-02:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEOUL_009",
+            "name": "홍대 연남동 맛집거리",
+            "districtId": "seoul_mapo",
+            "category": "다양",
+            "address": "서울시 마포구 연남동",
+            "coordinates": [
+                37.5662,
+                126.9237
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "파스타",
+                "카페",
+                "베이커리"
+            ],
+            "description": "연남동 경의선숲길 맛집거리",
+            "openHours": "10:00-24:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEOUL_010",
+            "name": "강남 봉은사로 맛집거리",
+            "districtId": "seoul_gangnam",
+            "category": "다양",
+            "address": "서울시 강남구 봉은사로",
+            "coordinates": [
+                37.5064,
+                127.0231
+            ],
+            "rating": 4.3,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "한우",
+                "일식",
+                "이탈리안"
+            ],
+            "description": "코엑스 인근 고급 맛집 거리",
+            "openHours": "11:00-23:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEOUL_011",
+            "name": "성수동 카페거리",
+            "districtId": "seoul_seongdong",
+            "category": "카페",
+            "address": "서울시 성동구 성수동",
+            "coordinates": [
+                37.5447,
+                127.0555
+            ],
+            "rating": 4.6,
+            "priceRange": "₩₩",
+            "specialties": [
+                "로스터리카페",
+                "베이커리",
+                "브런치"
+            ],
+            "description": "핫한 성수동 카페 골목",
+            "openHours": "09:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEOUL_012",
+            "name": "송파 잠실 롯데타워 맛집",
+            "districtId": "seoul_songpa",
+            "category": "다양",
+            "address": "서울시 송파구 올림픽로 300",
+            "coordinates": [
+                37.5126,
+                127.1025
+            ],
+            "rating": 4.4,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "한식",
+                "일식",
+                "양식"
+            ],
+            "description": "롯데월드타워 맛집 모음",
+            "openHours": "10:30-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEOUL_013",
+            "name": "방이먹자골목",
+            "districtId": "seoul_songpa",
+            "category": "다양",
+            "address": "서울시 송파구 방이동",
+            "coordinates": [
+                37.5152,
+                127.1234
+            ],
+            "rating": 4.2,
+            "priceRange": "₩₩",
+            "specialties": [
+                "곱창",
+                "삼겹살",
+                "치킨"
+            ],
+            "description": "방이동 유명 먹자골목",
+            "openHours": "17:00-02:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEOUL_014",
+            "name": "마포 공덕 맛집거리",
+            "districtId": "seoul_mapo",
+            "category": "한식",
+            "address": "서울시 마포구 공덕동",
+            "coordinates": [
+                37.5441,
+                126.9518
+            ],
+            "rating": 4.3,
+            "priceRange": "₩₩",
+            "specialties": [
+                "순대국",
+                "족발",
+                "곱창"
+            ],
+            "description": "공덕역 근처 한식 맛집 거리",
+            "openHours": "11:00-23:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEOUL_015",
+            "name": "신림 순대타운",
+            "districtId": "seoul_gwanak",
+            "category": "한식",
+            "address": "서울시 관악구 신림동",
+            "coordinates": [
+                37.4847,
+                126.9299
+            ],
+            "rating": 4.1,
+            "priceRange": "₩",
+            "specialties": [
+                "순대국",
+                "순대볶음",
+                "백순대"
+            ],
+            "description": "서울대 근처 순대타운",
+            "openHours": "24시간",
+            "closedDays": [],
+            "imageUrl": null
+        }
+    ]
+}

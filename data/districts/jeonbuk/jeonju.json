@@ -1,0 +1,66 @@
+{
+    "districtId": "jeonbuk_jeonju",
+    "districtName": "전주시",
+    "cityId": "jeonbuk",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "jeonju_hanok",
+            "name": "전주한옥마을",
+            "center": [
+                35.8157,
+                127.1529
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🏡",
+            "description": "전주한옥마을",
+            "levelCount": 1,
+            "specialties": [
+                "전주비빔밥",
+                "콩나물국밥",
+                "막걸리"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "jeonju_gaeksa",
+            "name": "객사거리",
+            "center": [
+                35.8220,
+                127.1450
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🛍️",
+            "description": "전주객사, 번화가",
+            "levelCount": 1,
+            "specialties": [
+                "PNB초코파이",
+                "카페",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_jeonju_hanok"
+        },
+        {
+            "id": "jeonju_nambu",
+            "name": "남부시장",
+            "center": [
+                35.8135,
+                127.1430
+            ],
+            "zoom": 16,
+            "color": "#45B7D1",
+            "icon": "🏪",
+            "description": "남부시장 청년몰",
+            "levelCount": 1,
+            "specialties": [
+                "피순대",
+                "김밥",
+                "야시장"
+            ],
+            "unlockCondition": "COMPLETE_jeonju_gaeksa"
+        }
+    ]
+}

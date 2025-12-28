@@ -1,0 +1,6 @@
+name = "daedong-api"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+DATABASE_URL = "postgresql://neondb_owner:npg_imK2eDbpxVs9@ep-autumn-dawn-a19595o7-pooler.ap-southeast-1.aws.neon.tech/game_data?sslmode=require"

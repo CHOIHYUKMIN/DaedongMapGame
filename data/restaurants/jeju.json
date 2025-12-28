@@ -1,0 +1,184 @@
+{
+    "regionId": "jeju",
+    "regionName": "제주특별자치도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_JEJU_001",
+            "name": "흑돼지거리",
+            "districtId": "jeju_jejusi",
+            "category": "한식",
+            "address": "제주시 연동",
+            "coordinates": [
+                33.4873,
+                126.4858
+            ],
+            "rating": 4.6,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "흑돼지",
+                "오겹살",
+                "멜젓"
+            ],
+            "description": "제주 대표 흑돼지 거리",
+            "openHours": "16:00-24:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_JEJU_002",
+            "name": "동문시장",
+            "districtId": "jeju_jejusi",
+            "category": "시장",
+            "address": "제주시 이도1동",
+            "coordinates": [
+                33.5114,
+                126.5266
+            ],
+            "rating": 4.4,
+            "priceRange": "₩₩",
+            "specialties": [
+                "회",
+                "흑돼지",
+                "갈치조림"
+            ],
+            "description": "제주 최대 전통시장",
+            "openHours": "07:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_JEJU_003",
+            "name": "애월 카페거리",
+            "districtId": "jeju_jejusi",
+            "category": "카페",
+            "address": "제주시 애월읍",
+            "coordinates": [
+                33.4631,
+                126.3106
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "오션뷰카페",
+                "브런치",
+                "디저트"
+            ],
+            "description": "제주 대표 카페 거리",
+            "openHours": "09:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_JEJU_004",
+            "name": "함덕 해녀촌",
+            "districtId": "jeju_jejusi",
+            "category": "해산물",
+            "address": "제주시 조천읍 함덕리",
+            "coordinates": [
+                33.5431,
+                126.6696
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "전복죽",
+                "성게미역국",
+                "회"
+            ],
+            "description": "함덕해변 해녀 음식",
+            "openHours": "08:00-20:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_JEJU_005",
+            "name": "중문 대포포구",
+            "districtId": "jeju_seogwipo",
+            "category": "해산물",
+            "address": "서귀포시 중문동",
+            "coordinates": [
+                33.2429,
+                126.4125
+            ],
+            "rating": 4.4,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "갈치조림",
+                "옥돔구이",
+                "전복뚝배기"
+            ],
+            "description": "중문 대포항 해산물",
+            "openHours": "09:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_JEJU_006",
+            "name": "성산 해녀촌",
+            "districtId": "jeju_seogwipo",
+            "category": "해산물",
+            "address": "서귀포시 성산읍",
+            "coordinates": [
+                33.4581,
+                126.9144
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "해녀밥상",
+                "전복",
+                "성게"
+            ],
+            "description": "성산일출봉 근처 해녀 음식",
+            "openHours": "08:00-19:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_JEJU_007",
+            "name": "우도 땅콩아이스크림",
+            "districtId": "jeju_jejusi",
+            "category": "디저트",
+            "address": "제주시 우도면",
+            "coordinates": [
+                33.5028,
+                126.9528
+            ],
+            "rating": 4.3,
+            "priceRange": "₩",
+            "specialties": [
+                "땅콩아이스크림",
+                "땅콩막걸리"
+            ],
+            "description": "우도 명물 땅콩 디저트",
+            "openHours": "09:00-18:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_JEJU_008",
+            "name": "고기국수",
+            "districtId": "jeju_jejusi",
+            "category": "한식",
+            "address": "제주시 삼도2동",
+            "coordinates": [
+                33.5097,
+                126.5119
+            ],
+            "rating": 4.4,
+            "priceRange": "₩",
+            "specialties": [
+                "고기국수",
+                "몸국"
+            ],
+            "description": "제주 전통 고기국수",
+            "openHours": "07:00-15:00",
+            "closedDays": [
+                "일요일"
+            ],
+            "imageUrl": null
+        }
+    ]
+}

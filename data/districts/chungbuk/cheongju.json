@@ -1,0 +1,65 @@
+{
+    "districtId": "chungbuk_cheongju",
+    "districtName": "청주시",
+    "cityId": "chungbuk",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "cheongju_seongandong",
+            "name": "성안길",
+            "center": [
+                36.6372,
+                127.4897
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🛍️",
+            "description": "청주 최대 번화가",
+            "levelCount": 1,
+            "specialties": [
+                "순대국밥",
+                "쌀국수",
+                "분식"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "cheongju_yongam",
+            "name": "용암동",
+            "center": [
+                36.6213,
+                127.4714
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🍺",
+            "description": "충북대 먹자골목",
+            "levelCount": 1,
+            "specialties": [
+                "치킨",
+                "삼겹살",
+                "술집"
+            ],
+            "unlockCondition": "COMPLETE_cheongju_seongandong"
+        },
+        {
+            "id": "cheongju_suamgol",
+            "name": "수암골",
+            "center": [
+                36.6423,
+                127.4831
+            ],
+            "zoom": 16,
+            "color": "#45B7D1",
+            "icon": "🏘️",
+            "description": "벽화마을",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "레트로"
+            ],
+            "unlockCondition": "COMPLETE_cheongju_yongam"
+        }
+    ]
+}

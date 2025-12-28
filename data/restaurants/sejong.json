@@ -1,0 +1,76 @@
+{
+    "regionId": "sejong",
+    "regionName": "세종특별자치시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_SEJONG_001",
+            "name": "조치원 순대거리",
+            "districtId": "sejong_main",
+            "category": "한식",
+            "address": "세종시 조치원읍",
+            "coordinates": [
+                36.5950,
+                127.2989
+            ],
+            "rating": 4.5,
+            "priceRange": "₩",
+            "specialties": [
+                "조치원순대",
+                "순대국밥"
+            ],
+            "description": "조치원역 앞 순대 거리",
+            "openHours": "06:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEJONG_002",
+            "name": "세종호수공원 카페거리",
+            "districtId": "sejong_main",
+            "category": "카페",
+            "address": "세종시 도담동",
+            "coordinates": [
+                36.5139,
+                127.2600
+            ],
+            "rating": 4.3,
+            "priceRange": "₩₩",
+            "specialties": [
+                "브런치",
+                "카페",
+                "디저트"
+            ],
+            "description": "호수공원 뷰 카페",
+            "openHours": "10:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_SEJONG_003",
+            "name": "정부세종청사 맛집",
+            "districtId": "sejong_main",
+            "category": "한식",
+            "address": "세종시 한솔동",
+            "coordinates": [
+                36.4914,
+                127.2615
+            ],
+            "rating": 4.1,
+            "priceRange": "₩₩",
+            "specialties": [
+                "점심특선",
+                "한정식",
+                "비즈니스점심"
+            ],
+            "description": "정부청사 직장인 맛집",
+            "openHours": "11:00-14:00",
+            "closedDays": [
+                "토요일",
+                "일요일"
+            ],
+            "imageUrl": null
+        }
+    ]
+}

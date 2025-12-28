@@ -1,0 +1,85 @@
+{
+    "districtId": "seoul_dongjak",
+    "districtName": "동작구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "dongjak_noryangjin",
+            "name": "노량진동",
+            "center": [
+                37.5133,
+                126.9422
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🐟",
+            "description": "노량진수산시장",
+            "levelCount": 1,
+            "specialties": [
+                "회",
+                "해산물",
+                "스시"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "dongjak_sadang",
+            "name": "사당동",
+            "center": [
+                37.4768,
+                126.9816
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🍺",
+            "description": "사당역, 먹자골목",
+            "levelCount": 1,
+            "specialties": [
+                "술집",
+                "곱창",
+                "치킨"
+            ],
+            "unlockCondition": "COMPLETE_dongjak_noryangjin"
+        },
+        {
+            "id": "dongjak_heukseok",
+            "name": "흑석동",
+            "center": [
+                37.5084,
+                126.9625
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🎓",
+            "description": "중앙대, 대학가",
+            "levelCount": 1,
+            "specialties": [
+                "치킨",
+                "분식",
+                "피자"
+            ],
+            "unlockCondition": "COMPLETE_dongjak_sadang"
+        },
+        {
+            "id": "dongjak_dongjak",
+            "name": "동작동",
+            "center": [
+                37.4956,
+                126.9715
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "⛩️",
+            "description": "국립서울현충원",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "동네맛집"
+            ],
+            "unlockCondition": "COMPLETE_dongjak_heukseok"
+        }
+    ]
+}

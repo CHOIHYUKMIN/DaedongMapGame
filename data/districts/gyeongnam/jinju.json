@@ -1,0 +1,65 @@
+{
+    "districtId": "gyeongnam_jinju",
+    "districtName": "진주시",
+    "cityId": "gyeongnam",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "jinju_fortress",
+            "name": "진주성",
+            "center": [
+                35.1909,
+                128.0858
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🏯",
+            "description": "진주성, 촉석루",
+            "levelCount": 1,
+            "specialties": [
+                "진주냉면",
+                "한정식"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "jinju_jungang",
+            "name": "중앙시장",
+            "center": [
+                35.1943,
+                128.0815
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🏪",
+            "description": "진주 중앙시장",
+            "levelCount": 1,
+            "specialties": [
+                "비빔밥",
+                "분식",
+                "시장음식"
+            ],
+            "unlockCondition": "COMPLETE_jinju_fortress"
+        },
+        {
+            "id": "jinju_pyeonggeo",
+            "name": "평거동",
+            "center": [
+                35.1730,
+                128.0880
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🍺",
+            "description": "먹자골목",
+            "levelCount": 1,
+            "specialties": [
+                "삼겹살",
+                "치킨",
+                "술집"
+            ],
+            "unlockCondition": "COMPLETE_jinju_jungang"
+        }
+    ]
+}

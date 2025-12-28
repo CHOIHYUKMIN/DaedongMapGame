@@ -1,0 +1,386 @@
+{
+    "cityId": "gangwon",
+    "cityName": "강원특별자치도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "gangwon_chuncheon",
+            "name": "춘천시",
+            "center": [
+                37.8813,
+                127.7300
+            ],
+            "zoom": 12,
+            "color": "#FF6B6B",
+            "icon": "🍗",
+            "dongCount": 24,
+            "description": "춘천닭갈비, 소양호",
+            "population": 285000,
+            "area": 1116.41,
+            "specialties": [
+                "춘천닭갈비",
+                "막국수",
+                "소양댐"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "gangwon_wonju",
+            "name": "원주시",
+            "center": [
+                37.3422,
+                127.9202
+            ],
+            "zoom": 11,
+            "color": "#4ECDC4",
+            "icon": "🏥",
+            "dongCount": 16,
+            "description": "치악산국립공원",
+            "population": 355000,
+            "area": 867.77,
+            "specialties": [
+                "한우",
+                "생선구이",
+                "산채비빔밥"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_chuncheon"
+        },
+        {
+            "id": "gangwon_gangneung",
+            "name": "강릉시",
+            "center": [
+                37.7519,
+                128.8760
+            ],
+            "zoom": 11,
+            "color": "#45B7D1",
+            "icon": "☕",
+            "dongCount": 13,
+            "description": "경포대, 안목해변카페거리",
+            "population": 213000,
+            "area": 1040.08,
+            "specialties": [
+                "초당두부",
+                "회",
+                "커피"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_wonju"
+        },
+        {
+            "id": "gangwon_donghae",
+            "name": "동해시",
+            "center": [
+                37.5247,
+                129.1143
+            ],
+            "zoom": 12,
+            "color": "#96CEB4",
+            "icon": "🌊",
+            "dongCount": 10,
+            "description": "망상해수욕장, 무릉계곡",
+            "population": 91000,
+            "area": 180.17,
+            "specialties": [
+                "물회",
+                "회",
+                "해산물"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_gangneung"
+        },
+        {
+            "id": "gangwon_taebaek",
+            "name": "태백시",
+            "center": [
+                37.1640,
+                128.9857
+            ],
+            "zoom": 12,
+            "color": "#DDA0DD",
+            "icon": "⛏️",
+            "dongCount": 8,
+            "description": "태백산, 탄광역사촌",
+            "population": 42000,
+            "area": 303.52,
+            "specialties": [
+                "한우",
+                "감자옹심이",
+                "닭갈비"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_donghae"
+        },
+        {
+            "id": "gangwon_sokcho",
+            "name": "속초시",
+            "center": [
+                38.2070,
+                128.5918
+            ],
+            "zoom": 12,
+            "color": "#F0E68C",
+            "icon": "🏖️",
+            "dongCount": 8,
+            "description": "속초해수욕장, 설악산",
+            "population": 82000,
+            "area": 105.25,
+            "specialties": [
+                "아바이순대",
+                "오징어순대",
+                "물회"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_taebaek"
+        },
+        {
+            "id": "gangwon_samcheok",
+            "name": "삼척시",
+            "center": [
+                37.4499,
+                129.1652
+            ],
+            "zoom": 11,
+            "color": "#CD853F",
+            "icon": "🏞️",
+            "dongCount": 10,
+            "description": "환선굴, 해신당공원",
+            "population": 65000,
+            "area": 1185.95,
+            "specialties": [
+                "곰치국",
+                "회",
+                "해산물"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_sokcho"
+        },
+        {
+            "id": "gangwon_hongcheon",
+            "name": "홍천군",
+            "center": [
+                37.6972,
+                127.8886
+            ],
+            "zoom": 10,
+            "color": "#FFB6C1",
+            "icon": "🌿",
+            "dongCount": 0,
+            "description": "홍천강, 살둔계곡",
+            "population": 69000,
+            "area": 1819.51,
+            "specialties": [
+                "한우",
+                "찰옥수수",
+                "더덕구이"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_samcheok"
+        },
+        {
+            "id": "gangwon_hoengseong",
+            "name": "횡성군",
+            "center": [
+                37.4912,
+                127.9848
+            ],
+            "zoom": 10,
+            "color": "#87CEEB",
+            "icon": "🐄",
+            "dongCount": 0,
+            "description": "횡성한우축제",
+            "population": 44000,
+            "area": 997.66,
+            "specialties": [
+                "횡성한우",
+                "더덕",
+                "산채정식"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_hongcheon"
+        },
+        {
+            "id": "gangwon_yeongwol",
+            "name": "영월군",
+            "center": [
+                37.1837,
+                128.4617
+            ],
+            "zoom": 10,
+            "color": "#98D8C8",
+            "icon": "📿",
+            "dongCount": 0,
+            "description": "청령포, 동강래프팅",
+            "population": 38000,
+            "area": 1127.48,
+            "specialties": [
+                "곤드레밥",
+                "서부시장",
+                "메밀"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_hoengseong"
+        },
+        {
+            "id": "gangwon_pyeongchang",
+            "name": "평창군",
+            "center": [
+                37.3705,
+                128.3903
+            ],
+            "zoom": 10,
+            "color": "#20B2AA",
+            "icon": "⛷️",
+            "dongCount": 0,
+            "description": "알펜시아, 2018동계올림픽",
+            "population": 41000,
+            "area": 1463.58,
+            "specialties": [
+                "황태구이",
+                "산채비빔밥",
+                "송어회"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_yeongwol"
+        },
+        {
+            "id": "gangwon_jeongseon",
+            "name": "정선군",
+            "center": [
+                37.3809,
+                128.6608
+            ],
+            "zoom": 10,
+            "color": "#BA55D3",
+            "icon": "🏔️",
+            "dongCount": 0,
+            "description": "정선5일장, 아리랑",
+            "population": 35000,
+            "area": 1220.43,
+            "specialties": [
+                "곤드레밥",
+                "콧등치기국수",
+                "황기족발"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_pyeongchang"
+        },
+        {
+            "id": "gangwon_cheorwon",
+            "name": "철원군",
+            "center": [
+                38.1468,
+                127.3133
+            ],
+            "zoom": 10,
+            "color": "#3CB371",
+            "icon": "🦅",
+            "dongCount": 0,
+            "description": "철원평야, DMZ",
+            "population": 44000,
+            "area": 898.64,
+            "specialties": [
+                "오대쌀밥",
+                "철원한우",
+                "토종닭백숙"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_jeongseon"
+        },
+        {
+            "id": "gangwon_hwacheon",
+            "name": "화천군",
+            "center": [
+                38.1062,
+                127.7082
+            ],
+            "zoom": 10,
+            "color": "#FF8C42",
+            "icon": "❄️",
+            "dongCount": 0,
+            "description": "산천어축제",
+            "population": 24000,
+            "area": 909.43,
+            "specialties": [
+                "산천어회",
+                "토종닭",
+                "버섯전골"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_cheorwon"
+        },
+        {
+            "id": "gangwon_yanggu",
+            "name": "양구군",
+            "center": [
+                38.1104,
+                127.9895
+            ],
+            "zoom": 10,
+            "color": "#DAA520",
+            "icon": "🏞️",
+            "dongCount": 0,
+            "description": "펀치볼, DMZ",
+            "population": 24000,
+            "area": 699.07,
+            "specialties": [
+                "시래기밥",
+                "한우",
+                "산나물"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_hwacheon"
+        },
+        {
+            "id": "gangwon_inje",
+            "name": "인제군",
+            "center": [
+                38.0691,
+                128.1706
+            ],
+            "zoom": 10,
+            "color": "#DC143C",
+            "icon": "🏕️",
+            "dongCount": 0,
+            "description": "내린천래프팅, 원대리자작나무숲",
+            "population": 31000,
+            "area": 1646.38,
+            "specialties": [
+                "황태구이",
+                "산채정식",
+                "막국수"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_yanggu"
+        },
+        {
+            "id": "gangwon_goseong",
+            "name": "고성군",
+            "center": [
+                38.3803,
+                128.4675
+            ],
+            "zoom": 10,
+            "color": "#FFA07A",
+            "icon": "🌅",
+            "dongCount": 0,
+            "description": "통일전망대, 화진포",
+            "population": 27000,
+            "area": 663.37,
+            "specialties": [
+                "대게",
+                "오징어순대",
+                "물회"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_inje"
+        },
+        {
+            "id": "gangwon_yangyang",
+            "name": "양양군",
+            "center": [
+                38.0754,
+                128.6189
+            ],
+            "zoom": 11,
+            "color": "#6B8E23",
+            "icon": "🏄",
+            "dongCount": 0,
+            "description": "낙산사, 서피비치",
+            "population": 28000,
+            "area": 628.80,
+            "specialties": [
+                "송이버섯",
+                "회",
+                "해산물"
+            ],
+            "unlockCondition": "COMPLETE_gangwon_goseong"
+        }
+    ]
+}

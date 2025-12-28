@@ -1,0 +1,659 @@
+{
+    "cityId": "gyeonggi",
+    "cityName": "경기도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "gyeonggi_suwon",
+            "name": "수원시",
+            "center": [
+                37.2636,
+                127.0286
+            ],
+            "zoom": 12,
+            "color": "#FF6B6B",
+            "icon": "🏯",
+            "dongCount": 44,
+            "description": "수원화성, 행궁동",
+            "population": 1194000,
+            "area": 121.01,
+            "specialties": [
+                "수원갈비",
+                "통닭거리",
+                "순대국"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "gyeonggi_seongnam",
+            "name": "성남시",
+            "center": [
+                37.4200,
+                127.1267
+            ],
+            "zoom": 12,
+            "color": "#4ECDC4",
+            "icon": "💼",
+            "dongCount": 45,
+            "description": "판교테크노밸리, 분당",
+            "population": 948000,
+            "area": 141.82,
+            "specialties": [
+                "분당맛집",
+                "판교맛집",
+                "모란시장"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_suwon"
+        },
+        {
+            "id": "gyeonggi_goyang",
+            "name": "고양시",
+            "center": [
+                37.6584,
+                126.8320
+            ],
+            "zoom": 12,
+            "color": "#45B7D1",
+            "icon": "🌸",
+            "dongCount": 39,
+            "description": "킨텍스, 일산호수공원",
+            "population": 1073000,
+            "area": 267.31,
+            "specialties": [
+                "일산맛집",
+                "라페스타",
+                "웨스턴돔"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_seongnam"
+        },
+        {
+            "id": "gyeonggi_yongin",
+            "name": "용인시",
+            "center": [
+                37.2410,
+                127.1775
+            ],
+            "zoom": 11,
+            "color": "#96CEB4",
+            "icon": "🎢",
+            "dongCount": 31,
+            "description": "에버랜드, 한국민속촌",
+            "population": 1082000,
+            "area": 591.31,
+            "specialties": [
+                "용인맛집",
+                "백암순대",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_goyang"
+        },
+        {
+            "id": "gyeonggi_bucheon",
+            "name": "부천시",
+            "center": [
+                37.5034,
+                126.7660
+            ],
+            "zoom": 13,
+            "color": "#DDA0DD",
+            "icon": "🎬",
+            "dongCount": 37,
+            "description": "한국만화박물관, 아인스월드",
+            "population": 830000,
+            "area": 53.45,
+            "specialties": [
+                "부천맛집",
+                "오정동순대",
+                "떡볶이"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_yongin"
+        },
+        {
+            "id": "gyeonggi_ansan",
+            "name": "안산시",
+            "center": [
+                37.3219,
+                126.8309
+            ],
+            "zoom": 12,
+            "color": "#F0E68C",
+            "icon": "🌊",
+            "dongCount": 25,
+            "description": "대부도, 다문화음식거리",
+            "population": 658000,
+            "area": 149.06,
+            "specialties": [
+                "대부도바지락칼국수",
+                "외국음식",
+                "해산물"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_bucheon"
+        },
+        {
+            "id": "gyeonggi_anyang",
+            "name": "안양시",
+            "center": [
+                37.3943,
+                126.9568
+            ],
+            "zoom": 13,
+            "color": "#CD853F",
+            "icon": "🎨",
+            "dongCount": 31,
+            "description": "안양예술공원, 평촌",
+            "population": 557000,
+            "area": 58.50,
+            "specialties": [
+                "평촌맛집",
+                "안양역맛집",
+                "삼겹살"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_ansan"
+        },
+        {
+            "id": "gyeonggi_namyangju",
+            "name": "남양주시",
+            "center": [
+                37.6360,
+                127.2165
+            ],
+            "zoom": 11,
+            "color": "#FFB6C1",
+            "icon": "🌲",
+            "dongCount": 22,
+            "description": "다산신도시, 북한강",
+            "population": 729000,
+            "area": 458.54,
+            "specialties": [
+                "북한강맛집",
+                "유기농",
+                "왕숙천카페"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_anyang"
+        },
+        {
+            "id": "gyeonggi_hwaseong",
+            "name": "화성시",
+            "center": [
+                37.1994,
+                126.8312
+            ],
+            "zoom": 11,
+            "color": "#87CEEB",
+            "icon": "🚀",
+            "dongCount": 22,
+            "description": "동탄신도시, 제부도",
+            "population": 916000,
+            "area": 688.26,
+            "specialties": [
+                "동탄맛집",
+                "제부도조개구이",
+                "궁평항회"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_namyangju"
+        },
+        {
+            "id": "gyeonggi_pyeongtaek",
+            "name": "평택시",
+            "center": [
+                36.9921,
+                127.1128
+            ],
+            "zoom": 11,
+            "color": "#98D8C8",
+            "icon": "🎖️",
+            "dongCount": 23,
+            "description": "평택항, 평택미군기지",
+            "population": 538000,
+            "area": 459.16,
+            "specialties": [
+                "평택소머리국밥",
+                "미국음식",
+                "안중젓갈"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_hwaseong"
+        },
+        {
+            "id": "gyeonggi_uijeongbu",
+            "name": "의정부시",
+            "center": [
+                37.7381,
+                127.0337
+            ],
+            "zoom": 13,
+            "color": "#20B2AA",
+            "icon": "🍖",
+            "dongCount": 15,
+            "description": "부대찌개거리",
+            "population": 460000,
+            "area": 81.54,
+            "specialties": [
+                "의정부부대찌개",
+                "제일시장",
+                "닭볶음탕"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_pyeongtaek"
+        },
+        {
+            "id": "gyeonggi_siheung",
+            "name": "시흥시",
+            "center": [
+                37.3800,
+                126.8028
+            ],
+            "zoom": 12,
+            "color": "#BA55D3",
+            "icon": "🌿",
+            "dongCount": 18,
+            "description": "갯골생태공원, 시화호",
+            "population": 507000,
+            "area": 139.00,
+            "specialties": [
+                "시흥맛집",
+                "오이도회",
+                "조개구이"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_uijeongbu"
+        },
+        {
+            "id": "gyeonggi_paju",
+            "name": "파주시",
+            "center": [
+                37.7594,
+                126.7802
+            ],
+            "zoom": 11,
+            "color": "#3CB371",
+            "icon": "📚",
+            "dongCount": 15,
+            "description": "파주출판도시, 헤이리마을",
+            "population": 487000,
+            "area": 672.68,
+            "specialties": [
+                "농가맛집",
+                "파주장단콩",
+                "임진각맛집"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_siheung"
+        },
+        {
+            "id": "gyeonggi_gimpo",
+            "name": "김포시",
+            "center": [
+                37.6152,
+                126.7156
+            ],
+            "zoom": 12,
+            "color": "#FF8C42",
+            "icon": "✈️",
+            "dongCount": 12,
+            "description": "김포공항근처, 장기동",
+            "population": 485000,
+            "area": 276.60,
+            "specialties": [
+                "김포맛집",
+                "대명항회",
+                "애기봉"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_paju"
+        },
+        {
+            "id": "gyeonggi_gwangmyeong",
+            "name": "광명시",
+            "center": [
+                37.4786,
+                126.8644
+            ],
+            "zoom": 13,
+            "color": "#DAA520",
+            "icon": "⛏️",
+            "dongCount": 18,
+            "description": "광명동굴, 이케아",
+            "population": 300000,
+            "area": 38.50,
+            "specialties": [
+                "광명맛집",
+                "이케아맛집",
+                "삼겹살"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_gimpo"
+        },
+        {
+            "id": "gyeonggi_gwangju",
+            "name": "광주시",
+            "center": [
+                37.4294,
+                127.2550
+            ],
+            "zoom": 12,
+            "color": "#DC143C",
+            "icon": "🏺",
+            "dongCount": 10,
+            "description": "남한산성, 도자기축제",
+            "population": 392000,
+            "area": 431.01,
+            "specialties": [
+                "도예마을맛집",
+                "남한산성맛집",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_gwangmyeong"
+        },
+        {
+            "id": "gyeonggi_gunpo",
+            "name": "군포시",
+            "center": [
+                37.3616,
+                126.9351
+            ],
+            "zoom": 13,
+            "color": "#FFA07A",
+            "icon": "🛒",
+            "dongCount": 15,
+            "description": "산본신도시",
+            "population": 270000,
+            "area": 36.38,
+            "specialties": [
+                "산본맛집",
+                "수리산맛집",
+                "갈비"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_gwangju"
+        },
+        {
+            "id": "gyeonggi_hanam",
+            "name": "하남시",
+            "center": [
+                37.5393,
+                127.2144
+            ],
+            "zoom": 13,
+            "color": "#6B8E23",
+            "icon": "🏬",
+            "dongCount": 12,
+            "description": "스타필드하남, 미사리",
+            "population": 306000,
+            "area": 93.04,
+            "specialties": [
+                "미사리조정경기장맛집",
+                "스타필드맛집",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_gunpo"
+        },
+        {
+            "id": "gyeonggi_osan",
+            "name": "오산시",
+            "center": [
+                37.1497,
+                127.0770
+            ],
+            "zoom": 13,
+            "color": "#CD5C5C",
+            "icon": "🌺",
+            "dongCount": 6,
+            "description": "오산세교신도시",
+            "population": 234000,
+            "area": 42.76,
+            "specialties": [
+                "오산맛집",
+                "세교삼겹살",
+                "닭갈비"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_hanam"
+        },
+        {
+            "id": "gyeonggi_icheon",
+            "name": "이천시",
+            "center": [
+                37.2720,
+                127.4347
+            ],
+            "zoom": 11,
+            "color": "#FF69B4",
+            "icon": "🍚",
+            "dongCount": 13,
+            "description": "이천쌀밥, 도자기마을",
+            "population": 223000,
+            "area": 461.36,
+            "specialties": [
+                "이천쌀밥정식",
+                "도자기마을맛집",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_osan"
+        },
+        {
+            "id": "gyeonggi_anseong",
+            "name": "안성시",
+            "center": [
+                37.0080,
+                127.2797
+            ],
+            "zoom": 11,
+            "color": "#7B68EE",
+            "icon": "🎭",
+            "dongCount": 14,
+            "description": "안성맞춤랜드, 남사당놀이",
+            "population": 184000,
+            "area": 553.45,
+            "specialties": [
+                "안성한우",
+                "포도",
+                "배"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_icheon"
+        },
+        {
+            "id": "gyeonggi_uiwang",
+            "name": "의왕시",
+            "center": [
+                37.3445,
+                126.9685
+            ],
+            "zoom": 13,
+            "color": "#00CED1",
+            "icon": "🚂",
+            "dongCount": 6,
+            "description": "철도박물관, 백운호수",
+            "population": 173000,
+            "area": 54.00,
+            "specialties": [
+                "백운호수맛집",
+                "오봉산맛집",
+                "칼국수"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_anseong"
+        },
+        {
+            "id": "gyeonggi_yangpyeong",
+            "name": "양평군",
+            "center": [
+                37.4917,
+                127.4875
+            ],
+            "zoom": 10,
+            "color": "#FF1493",
+            "icon": "🌊",
+            "dongCount": 0,
+            "description": "두물머리, 용문사",
+            "population": 123000,
+            "area": 877.80,
+            "specialties": [
+                "두물머리카페",
+                "한우",
+                "산채비빔밥"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_uiwang"
+        },
+        {
+            "id": "gyeonggi_yeoju",
+            "name": "여주시",
+            "center": [
+                37.2982,
+                127.6370
+            ],
+            "zoom": 11,
+            "color": "#32CD32",
+            "icon": "👑",
+            "dongCount": 10,
+            "description": "세종대왕릉, 여주도자기",
+            "population": 112000,
+            "area": 608.64,
+            "specialties": [
+                "여주쌀밥",
+                "도자기마을",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_yangpyeong"
+        },
+        {
+            "id": "gyeonggi_dongducheon",
+            "name": "동두천시",
+            "center": [
+                37.9036,
+                127.0608
+            ],
+            "zoom": 13,
+            "color": "#FF6347",
+            "icon": "🎖️",
+            "dongCount": 8,
+            "description": "소요산, 미군부대",
+            "population": 92000,
+            "area": 95.66,
+            "specialties": [
+                "미국음식",
+                "부대찌개",
+                "닭볶음탕"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_yeoju"
+        },
+        {
+            "id": "gyeonggi_guri",
+            "name": "구리시",
+            "center": [
+                37.5943,
+                127.1295
+            ],
+            "zoom": 13,
+            "color": "#4169E1",
+            "icon": "🌷",
+            "dongCount": 8,
+            "description": "동구릉, 구리시장",
+            "population": 201000,
+            "area": 33.31,
+            "specialties": [
+                "구리시장곱창",
+                "한강공원맛집",
+                "삼겹살"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_dongducheon"
+        },
+        {
+            "id": "gyeonggi_pocheon",
+            "name": "포천시",
+            "center": [
+                37.8949,
+                127.2003
+            ],
+            "zoom": 10,
+            "color": "#8B4513",
+            "icon": "🏔️",
+            "dongCount": 12,
+            "description": "산정호수, 허브아일랜드",
+            "population": 146000,
+            "area": 826.43,
+            "specialties": [
+                "이동갈비",
+                "막걸리",
+                "버섯전골"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_guri"
+        },
+        {
+            "id": "gyeonggi_yangju",
+            "name": "양주시",
+            "center": [
+                37.7852,
+                127.0458
+            ],
+            "zoom": 11,
+            "color": "#9932CC",
+            "icon": "🎪",
+            "dongCount": 9,
+            "description": "장흥조각공원, 나리공원",
+            "population": 230000,
+            "area": 310.09,
+            "specialties": [
+                "장흥맛집",
+                "오리백숙",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_pocheon"
+        },
+        {
+            "id": "gyeonggi_gapyeong",
+            "name": "가평군",
+            "center": [
+                37.8315,
+                127.5097
+            ],
+            "zoom": 10,
+            "color": "#FF4500",
+            "icon": "🌲",
+            "dongCount": 0,
+            "description": "아침고요수목원, 쁘띠프랑스",
+            "population": 64000,
+            "area": 843.68,
+            "specialties": [
+                "잣막걸리",
+                "닭백숙",
+                "송어회"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_yangju"
+        },
+        {
+            "id": "gyeonggi_yeoncheon",
+            "name": "연천군",
+            "center": [
+                38.0964,
+                127.0748
+            ],
+            "zoom": 10,
+            "color": "#2F4F4F",
+            "icon": "🦆",
+            "dongCount": 0,
+            "description": "재인폭포, DMZ",
+            "population": 43000,
+            "area": 675.22,
+            "specialties": [
+                "민통선맛집",
+                "율무",
+                "장단콩"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_gapyeong"
+        },
+        {
+            "id": "gyeonggi_gwacheon",
+            "name": "과천시",
+            "center": [
+                37.4292,
+                126.9876
+            ],
+            "zoom": 14,
+            "color": "#00BFFF",
+            "icon": "🐘",
+            "dongCount": 6,
+            "description": "서울대공원, 국립과천과학관",
+            "population": 72000,
+            "area": 35.86,
+            "specialties": [
+                "과천맛집",
+                "관악산맛집",
+                "칼국수"
+            ],
+            "unlockCondition": "COMPLETE_gyeonggi_yeoncheon"
+        }
+    ]
+}

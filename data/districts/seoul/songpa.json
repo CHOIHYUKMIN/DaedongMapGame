@@ -1,0 +1,123 @@
+{
+    "districtId": "seoul_songpa",
+    "districtName": "송파구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "songpa_jamsil",
+            "name": "잠실동",
+            "center": [
+                37.5126,
+                127.1025
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🏟️",
+            "description": "롯데월드, 석촌호수",
+            "levelCount": 1,
+            "specialties": [
+                "롯데타워맛집",
+                "호수뷰카페",
+                "고급한식"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "songpa_bangi",
+            "name": "방이동",
+            "center": [
+                37.5152,
+                127.1234
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🍖",
+            "description": "먹자골목, 맛집거리",
+            "levelCount": 1,
+            "specialties": [
+                "곱창",
+                "삼겹살",
+                "치킨"
+            ],
+            "unlockCondition": "COMPLETE_songpa_jamsil"
+        },
+        {
+            "id": "songpa_garag",
+            "name": "가락동",
+            "center": [
+                37.4972,
+                127.1181
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🥬",
+            "description": "가락시장, 농수산물시장",
+            "levelCount": 1,
+            "specialties": [
+                "신선회",
+                "반찬",
+                "과일"
+            ],
+            "unlockCondition": "COMPLETE_songpa_bangi"
+        },
+        {
+            "id": "songpa_munjeong",
+            "name": "문정동",
+            "center": [
+                37.4858,
+                127.1228
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏢",
+            "description": "문정법조타운, 가든파이브",
+            "levelCount": 1,
+            "specialties": [
+                "비즈니스점심",
+                "쇼핑몰푸드코트",
+                "한식"
+            ],
+            "unlockCondition": "COMPLETE_songpa_garag"
+        },
+        {
+            "id": "songpa_sincheon",
+            "name": "신천동",
+            "center": [
+                37.5143,
+                127.0866
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🌸",
+            "description": "석촌호수, 벚꽃거리",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "브런치",
+                "디저트"
+            ],
+            "unlockCondition": "COMPLETE_songpa_munjeong"
+        },
+        {
+            "id": "songpa_ogeum",
+            "name": "오금동",
+            "center": [
+                37.5016,
+                127.1311
+            ],
+            "zoom": 15,
+            "color": "#F0E68C",
+            "icon": "🏠",
+            "description": "오금공원, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "동네맛집",
+                "분식",
+                "한식"
+            ],
+            "unlockCondition": "COMPLETE_songpa_sincheon"
+        }
+    ]
+}

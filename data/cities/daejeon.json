@@ -1,0 +1,113 @@
+{
+    "cityId": "daejeon",
+    "cityName": "대전광역시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "daejeon_donggu",
+            "name": "동구",
+            "center": [
+                36.3121,
+                127.4550
+            ],
+            "zoom": 13,
+            "color": "#FF6B6B",
+            "icon": "🚂",
+            "dongCount": 14,
+            "description": "대전역, 중앙시장",
+            "population": 227000,
+            "area": 136.68,
+            "specialties": [
+                "중앙시장맛집",
+                "칼국수",
+                "두부두루치기"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "daejeon_junggu",
+            "name": "중구",
+            "center": [
+                36.3255,
+                127.4214
+            ],
+            "zoom": 13,
+            "color": "#4ECDC4",
+            "icon": "🏛️",
+            "dongCount": 16,
+            "description": "은행동 성심당, 대전시청",
+            "population": 238000,
+            "area": 62.11,
+            "specialties": [
+                "성심당빵",
+                "은행동맛집",
+                "칼국수"
+            ],
+            "unlockCondition": "COMPLETE_daejeon_donggu"
+        },
+        {
+            "id": "daejeon_seogu",
+            "name": "서구",
+            "center": [
+                36.3553,
+                127.3839
+            ],
+            "zoom": 13,
+            "color": "#45B7D1",
+            "icon": "🎓",
+            "dongCount": 23,
+            "description": "둔산동, 갤러리아백화점",
+            "population": 482000,
+            "area": 95.49,
+            "specialties": [
+                "둔산동맛집",
+                "정부청사맛집",
+                "점심특선"
+            ],
+            "unlockCondition": "COMPLETE_daejeon_junggu"
+        },
+        {
+            "id": "daejeon_yuseonggu",
+            "name": "유성구",
+            "center": [
+                36.3623,
+                127.3562
+            ],
+            "zoom": 12,
+            "color": "#96CEB4",
+            "icon": "♨️",
+            "dongCount": 18,
+            "description": "유성온천, 카이스트, 대덕연구단지",
+            "population": 358000,
+            "area": 176.95,
+            "specialties": [
+                "유성온천맛집",
+                "대전칼국수",
+                "순두부"
+            ],
+            "unlockCondition": "COMPLETE_daejeon_seogu"
+        },
+        {
+            "id": "daejeon_daedeokgu",
+            "name": "대덕구",
+            "center": [
+                36.3467,
+                127.4156
+            ],
+            "zoom": 12,
+            "color": "#DDA0DD",
+            "icon": "🔬",
+            "dongCount": 13,
+            "description": "대덕연구개발특구, 신탄진",
+            "population": 185000,
+            "area": 68.44,
+            "specialties": [
+                "연구단지맛집",
+                "한우",
+                "삼겹살"
+            ],
+            "unlockCondition": "COMPLETE_daejeon_yuseonggu"
+        }
+    ]
+}

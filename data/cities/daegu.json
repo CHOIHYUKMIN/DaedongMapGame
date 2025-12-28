@@ -1,0 +1,176 @@
+{
+    "cityId": "daegu",
+    "cityName": "대구광역시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "daegu_junggu",
+            "name": "중구",
+            "center": [
+                35.8694,
+                128.6062
+            ],
+            "zoom": 14,
+            "color": "#FF6B6B",
+            "icon": "🏛️",
+            "dongCount": 14,
+            "description": "동성로, 대구근대골목",
+            "population": 79000,
+            "area": 7.06,
+            "specialties": [
+                "동성로맛집",
+                "막창",
+                "납작만두"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "daegu_donggu",
+            "name": "동구",
+            "center": [
+                35.8863,
+                128.6355
+            ],
+            "zoom": 13,
+            "color": "#4ECDC4",
+            "icon": "🏔️",
+            "dongCount": 23,
+            "description": "팔공산, 동화사",
+            "population": 348000,
+            "area": 182.17,
+            "specialties": [
+                "팔공산맛집",
+                "닭볶음탕",
+                "산채비빔밥"
+            ],
+            "unlockCondition": "COMPLETE_daegu_junggu"
+        },
+        {
+            "id": "daegu_seogu",
+            "name": "서구",
+            "center": [
+                35.8717,
+                128.5591
+            ],
+            "zoom": 13,
+            "color": "#45B7D1",
+            "icon": "🏭",
+            "dongCount": 15,
+            "description": "염색공단, 비산동",
+            "population": 182000,
+            "area": 17.51,
+            "specialties": [
+                "칼국수",
+                "수제비",
+                "떡볶이"
+            ],
+            "unlockCondition": "COMPLETE_daegu_donggu"
+        },
+        {
+            "id": "daegu_namgu",
+            "name": "남구",
+            "center": [
+                35.8460,
+                128.5971
+            ],
+            "zoom": 13,
+            "color": "#96CEB4",
+            "icon": "🎓",
+            "dongCount": 12,
+            "description": "앞산, 경북대",
+            "population": 150000,
+            "area": 17.45,
+            "specialties": [
+                "대학가맛집",
+                "치킨",
+                "피자"
+            ],
+            "unlockCondition": "COMPLETE_daegu_seogu"
+        },
+        {
+            "id": "daegu_bukgu",
+            "name": "북구",
+            "center": [
+                35.8858,
+                128.5829
+            ],
+            "zoom": 13,
+            "color": "#DDA0DD",
+            "icon": "🏢",
+            "dongCount": 26,
+            "description": "칠성시장, 엑스코",
+            "population": 437000,
+            "area": 93.96,
+            "specialties": [
+                "칠성시장국밥",
+                "막창",
+                "곱창"
+            ],
+            "unlockCondition": "COMPLETE_daegu_namgu"
+        },
+        {
+            "id": "daegu_suseonggu",
+            "name": "수성구",
+            "center": [
+                35.8582,
+                128.6309
+            ],
+            "zoom": 13,
+            "color": "#F0E68C",
+            "icon": "🌊",
+            "dongCount": 23,
+            "description": "수성못, 범어동",
+            "population": 435000,
+            "area": 76.53,
+            "specialties": [
+                "수성못카페",
+                "범어동맛집",
+                "파스타"
+            ],
+            "unlockCondition": "COMPLETE_daegu_bukgu"
+        },
+        {
+            "id": "daegu_dalseogu",
+            "name": "달서구",
+            "center": [
+                35.8299,
+                128.5328
+            ],
+            "zoom": 13,
+            "color": "#CD853F",
+            "icon": "🎢",
+            "dongCount": 31,
+            "description": "이월드, 월성동",
+            "population": 567000,
+            "area": 62.34,
+            "specialties": [
+                "월성동맛집",
+                "뼈다귀해장국",
+                "감자탕"
+            ],
+            "unlockCondition": "COMPLETE_daegu_suseonggu"
+        },
+        {
+            "id": "daegu_dalseonggun",
+            "name": "달성군",
+            "center": [
+                35.7747,
+                128.4314
+            ],
+            "zoom": 11,
+            "color": "#FFB6C1",
+            "icon": "🏯",
+            "dongCount": 0,
+            "description": "비슬산, 도동서원",
+            "population": 280000,
+            "area": 426.61,
+            "specialties": [
+                "한우",
+                "오골계",
+                "산채정식"
+            ],
+            "unlockCondition": "COMPLETE_daegu_dalseogu"
+        }
+    ]
+}

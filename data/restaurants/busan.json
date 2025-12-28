@@ -1,0 +1,275 @@
+{
+    "regionId": "busan",
+    "regionName": "부산광역시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_BUSAN_001",
+            "name": "자갈치시장",
+            "districtId": "busan_junggu",
+            "category": "해산물",
+            "address": "부산시 중구 자갈치해안로 52",
+            "coordinates": [
+                35.0968,
+                129.0306
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "회",
+                "조개구이",
+                "해산물"
+            ],
+            "description": "부산 대표 수산시장",
+            "openHours": "05:00-22:00",
+            "closedDays": [
+                "첫째/셋째 화요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_BUSAN_002",
+            "name": "BIFF광장 씨앗호떡",
+            "districtId": "busan_junggu",
+            "category": "길거리음식",
+            "address": "부산시 중구 남포동",
+            "coordinates": [
+                35.0986,
+                129.0287
+            ],
+            "rating": 4.3,
+            "priceRange": "₩",
+            "specialties": [
+                "씨앗호떡",
+                "회오리감자"
+            ],
+            "description": "부산 명물 씨앗호떡",
+            "openHours": "10:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_BUSAN_003",
+            "name": "해운대 미포 횟집거리",
+            "districtId": "busan_haeundaegu",
+            "category": "해산물",
+            "address": "부산시 해운대구 미포동",
+            "coordinates": [
+                35.1581,
+                129.1686
+            ],
+            "rating": 4.4,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "회",
+                "매운탕",
+                "조개구이"
+            ],
+            "description": "해운대 해변 횟집 거리",
+            "openHours": "11:00-23:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_BUSAN_004",
+            "name": "서면 전포카페거리",
+            "districtId": "busan_busanjingu",
+            "category": "카페",
+            "address": "부산시 부산진구 전포동",
+            "coordinates": [
+                35.1529,
+                129.0640
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "로스터리카페",
+                "디저트",
+                "브런치"
+            ],
+            "description": "부산 핫플레이스 카페거리",
+            "openHours": "09:00-23:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_BUSAN_005",
+            "name": "돼지국밥 본가",
+            "districtId": "busan_donggu",
+            "category": "한식",
+            "address": "부산시 동구 초량동",
+            "coordinates": [
+                35.1288,
+                129.0445
+            ],
+            "rating": 4.3,
+            "priceRange": "₩",
+            "specialties": [
+                "돼지국밥",
+                "순대국밥"
+            ],
+            "description": "부산역 근처 유명 돼지국밥",
+            "openHours": "24시간",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_BUSAN_006",
+            "name": "밀면집",
+            "districtId": "busan_namgu",
+            "category": "한식",
+            "address": "부산시 남구 대연동",
+            "coordinates": [
+                35.1339,
+                129.0889
+            ],
+            "rating": 4.2,
+            "priceRange": "₩",
+            "specialties": [
+                "밀면",
+                "비빔밀면"
+            ],
+            "description": "부산 전통 밀면",
+            "openHours": "11:00-21:00",
+            "closedDays": [
+                "일요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_BUSAN_007",
+            "name": "동래파전골목",
+            "districtId": "busan_dongraegu",
+            "category": "한식",
+            "address": "부산시 동래구 동래동",
+            "coordinates": [
+                35.2044,
+                129.0799
+            ],
+            "rating": 4.4,
+            "priceRange": "₩₩",
+            "specialties": [
+                "동래파전",
+                "막걸리"
+            ],
+            "description": "전통 동래파전 골목",
+            "openHours": "11:30-22:00",
+            "closedDays": [
+                "월요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_BUSAN_008",
+            "name": "광안리 민락회센터",
+            "districtId": "busan_suyeonggu",
+            "category": "해산물",
+            "address": "부산시 수영구 민락동",
+            "coordinates": [
+                35.1468,
+                129.1248
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "회",
+                "매운탕",
+                "해산물"
+            ],
+            "description": "광안대교 뷰 횟집거리",
+            "openHours": "10:00-24:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_BUSAN_009",
+            "name": "기장 대변항 대게거리",
+            "districtId": "busan_gijanggun",
+            "category": "해산물",
+            "address": "부산시 기장군 기장읍 대변리",
+            "coordinates": [
+                35.2269,
+                129.2243
+            ],
+            "rating": 4.6,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "대게",
+                "랍스터",
+                "해산물"
+            ],
+            "description": "기장 대변항 대게 맛집거리",
+            "openHours": "09:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_BUSAN_010",
+            "name": "감천문화마을 맛집",
+            "districtId": "busan_sahagu",
+            "category": "다양",
+            "address": "부산시 사하구 감천동",
+            "coordinates": [
+                35.0972,
+                129.0101
+            ],
+            "rating": 4.2,
+            "priceRange": "₩",
+            "specialties": [
+                "어묵",
+                "빙수",
+                "카페"
+            ],
+            "description": "감천문화마을 내 맛집",
+            "openHours": "10:00-18:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_BUSAN_011",
+            "name": "금정산 산성막걸리",
+            "districtId": "busan_geumjeonggu",
+            "category": "주류",
+            "address": "부산시 금정구 금성동",
+            "coordinates": [
+                35.2688,
+                129.0503
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "산성막걸리",
+                "파전",
+                "도토리묵"
+            ],
+            "description": "금정산성 전통 막걸리마을",
+            "openHours": "10:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_BUSAN_012",
+            "name": "구포국수거리",
+            "districtId": "busan_bukgu",
+            "category": "한식",
+            "address": "부산시 북구 구포동",
+            "coordinates": [
+                35.2017,
+                128.9884
+            ],
+            "rating": 4.1,
+            "priceRange": "₩",
+            "specialties": [
+                "구포국수",
+                "멸치국수"
+            ],
+            "description": "구포 전통 국수거리",
+            "openHours": "10:00-21:00",
+            "closedDays": [
+                "일요일"
+            ],
+            "imageUrl": null
+        }
+    ]
+}

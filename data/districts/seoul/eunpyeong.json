@@ -1,0 +1,104 @@
+{
+    "districtId": "seoul_eunpyeong",
+    "districtName": "은평구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "eunpyeong_yeonsinnae",
+            "name": "연신내",
+            "center": [
+                37.6190,
+                126.9210
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🛍️",
+            "description": "연신내역, 상업지구",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "술집"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "eunpyeong_bulgwang",
+            "name": "불광동",
+            "center": [
+                37.6108,
+                126.9300
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🚇",
+            "description": "불광역, 롯데몰",
+            "levelCount": 1,
+            "specialties": [
+                "쇼핑몰맛집",
+                "카페",
+                "레스토랑"
+            ],
+            "unlockCondition": "COMPLETE_eunpyeong_yeonsinnae"
+        },
+        {
+            "id": "eunpyeong_gupabal",
+            "name": "구파발",
+            "center": [
+                37.6377,
+                126.9186
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏔️",
+            "description": "북한산입구, 은평한옥마을",
+            "levelCount": 1,
+            "specialties": [
+                "등산맛집",
+                "막걸리",
+                "한식"
+            ],
+            "unlockCondition": "COMPLETE_eunpyeong_bulgwang"
+        },
+        {
+            "id": "eunpyeong_eunpyeong_newtown",
+            "name": "은평뉴타운",
+            "center": [
+                37.6283,
+                126.9116
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏢",
+            "description": "은평뉴타운, 신도시",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "브런치",
+                "신도시맛집"
+            ],
+            "unlockCondition": "COMPLETE_eunpyeong_gupabal"
+        },
+        {
+            "id": "eunpyeong_suyuri",
+            "name": "응암동",
+            "center": [
+                37.5987,
+                126.9177
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🏠",
+            "description": "응암역, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "동네맛집"
+            ],
+            "unlockCondition": "COMPLETE_eunpyeong_eunpyeong_newtown"
+        }
+    ]
+}

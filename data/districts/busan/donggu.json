@@ -1,0 +1,85 @@
+{
+    "districtId": "busan_donggu",
+    "districtName": "동구",
+    "cityId": "busan",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "busan_choryang",
+            "name": "초량동",
+            "center": [
+                35.1167,
+                129.0389
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🚂",
+            "description": "부산역, 초량이바구길",
+            "levelCount": 1,
+            "specialties": [
+                "밀면",
+                "돼지국밥",
+                "족발"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "busan_jwacheon",
+            "name": "좌천동",
+            "center": [
+                35.1234,
+                129.0512
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🏛️",
+            "description": "부산진시장, 역사거리",
+            "levelCount": 1,
+            "specialties": [
+                "한복집맛집",
+                "한식",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_busan_choryang"
+        },
+        {
+            "id": "busan_sujeong",
+            "name": "수정동",
+            "center": [
+                35.1089,
+                129.0534
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "⛰️",
+            "description": "수정산, 산복도로",
+            "levelCount": 1,
+            "specialties": [
+                "막걸리",
+                "전",
+                "국밥"
+            ],
+            "unlockCondition": "COMPLETE_busan_jwacheon"
+        },
+        {
+            "id": "busan_beomil",
+            "name": "범일동",
+            "center": [
+                35.1356,
+                129.0567
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏢",
+            "description": "범일역, 상업지구",
+            "levelCount": 1,
+            "specialties": [
+                "곱창",
+                "소주방",
+                "포차"
+            ],
+            "unlockCondition": "COMPLETE_busan_sujeong"
+        }
+    ]
+}

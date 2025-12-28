@@ -1,0 +1,104 @@
+{
+    "districtId": "seoul_gangseo",
+    "districtName": "강서구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "gangseo_magok",
+            "name": "마곡동",
+            "center": [
+                37.5618,
+                126.8285
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🏢",
+            "description": "마곡지구, LG사이언스파크",
+            "levelCount": 1,
+            "specialties": [
+                "비즈니스점심",
+                "카페",
+                "레스토랑"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "gangseo_balsan",
+            "name": "발산역",
+            "center": [
+                37.5580,
+                126.8378
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🛍️",
+            "description": "우장산역, 홈플러스",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "마트푸드"
+            ],
+            "unlockCondition": "COMPLETE_gangseo_magok"
+        },
+        {
+            "id": "gangseo_hwagok",
+            "name": "화곡동",
+            "center": [
+                37.5413,
+                126.8424
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏠",
+            "description": "화곡역, 주거밀집지역",
+            "levelCount": 1,
+            "specialties": [
+                "분식",
+                "치킨",
+                "중식"
+            ],
+            "unlockCondition": "COMPLETE_gangseo_balsan"
+        },
+        {
+            "id": "gangseo_gaehwa",
+            "name": "개화동",
+            "center": [
+                37.5819,
+                126.8036
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "✈️",
+            "description": "김포공항, 개화산",
+            "levelCount": 1,
+            "specialties": [
+                "공항맛집",
+                "한식",
+                "면세점푸드코트"
+            ],
+            "unlockCondition": "COMPLETE_gangseo_hwagok"
+        },
+        {
+            "id": "gangseo_banghwa",
+            "name": "방화동",
+            "center": [
+                37.5752,
+                126.8138
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🌳",
+            "description": "방화대교, 한강",
+            "levelCount": 1,
+            "specialties": [
+                "한강뷰",
+                "카페",
+                "한식"
+            ],
+            "unlockCondition": "COMPLETE_gangseo_gaehwa"
+        }
+    ]
+}

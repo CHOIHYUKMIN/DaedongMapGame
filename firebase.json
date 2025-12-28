@@ -18,7 +18,8 @@
       "QUICKSTART.md",
       "docs/**",
       "web/**",
-      "data/**"
+      "api-worker/**",
+      "database/**"
     ],
     "rewrites": [
       {

@@ -1,0 +1,104 @@
+{
+    "districtId": "incheon_gyeyang",
+    "districtName": "계양구",
+    "cityId": "incheon",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "incheon_gyesan",
+            "name": "계산동",
+            "center": [
+                37.5356,
+                126.7256
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🏠",
+            "description": "계산역, 주거밀집지역",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "중식",
+                "분식"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "incheon_jakjeon",
+            "name": "작전동",
+            "center": [
+                37.5234,
+                126.7198
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🛒",
+            "description": "작전역, 상업지구",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "양식",
+                "샐러드"
+            ],
+            "unlockCondition": "COMPLETE_incheon_gyesan"
+        },
+        {
+            "id": "incheon_gyeyangsan",
+            "name": "계양산동",
+            "center": [
+                37.5478,
+                126.7012
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "⛰️",
+            "description": "계양산, 등산코스",
+            "levelCount": 1,
+            "specialties": [
+                "손칼국수",
+                "파전",
+                "막걸리"
+            ],
+            "unlockCondition": "COMPLETE_incheon_jakjeon"
+        },
+        {
+            "id": "incheon_imhak",
+            "name": "임학동",
+            "center": [
+                37.5167,
+                126.7367
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🚇",
+            "description": "임학역, 아라뱃길",
+            "levelCount": 1,
+            "specialties": [
+                "해물탕",
+                "조개구이",
+                "회"
+            ],
+            "unlockCondition": "COMPLETE_incheon_gyeyangsan"
+        },
+        {
+            "id": "incheon_hyoja",
+            "name": "효성동",
+            "center": [
+                37.5312,
+                126.7145
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🏢",
+            "description": "효성동행정복지센터",
+            "levelCount": 1,
+            "specialties": [
+                "보쌈",
+                "족발",
+                "막국수"
+            ],
+            "unlockCondition": "COMPLETE_incheon_imhak"
+        }
+    ]
+}

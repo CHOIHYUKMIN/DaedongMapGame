@@ -1,0 +1,96 @@
+{
+    "regionId": "ulsan",
+    "regionName": "울산광역시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_ULSAN_001",
+            "name": "언양 불고기거리",
+            "districtId": "ulsan_ulju",
+            "category": "한식",
+            "address": "울산시 울주군 언양읍",
+            "coordinates": [
+                35.5625,
+                129.1231
+            ],
+            "rating": 4.7,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "언양불고기",
+                "한우"
+            ],
+            "description": "울산 대표 언양불고기",
+            "openHours": "11:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_ULSAN_002",
+            "name": "태화강 맛집거리",
+            "districtId": "ulsan_junggu",
+            "category": "다양",
+            "address": "울산시 중구 태화동",
+            "coordinates": [
+                35.5684,
+                129.3322
+            ],
+            "rating": 4.3,
+            "priceRange": "₩₩",
+            "specialties": [
+                "함박스테이크",
+                "한식",
+                "분식"
+            ],
+            "description": "태화강 국가정원 근처",
+            "openHours": "11:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_ULSAN_003",
+            "name": "장생포 고래고기",
+            "districtId": "ulsan_namgu",
+            "category": "해산물",
+            "address": "울산시 남구 장생포",
+            "coordinates": [
+                35.4939,
+                129.3705
+            ],
+            "rating": 4.2,
+            "priceRange": "₩₩₩",
+            "specialties": [
+                "고래고기",
+                "고래수육"
+            ],
+            "description": "장생포 고래박물관 근처",
+            "openHours": "11:00-21:00",
+            "closedDays": [
+                "월요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_ULSAN_004",
+            "name": "삼산동 맛집거리",
+            "districtId": "ulsan_namgu",
+            "category": "다양",
+            "address": "울산시 남구 삼산동",
+            "coordinates": [
+                35.5339,
+                129.3305
+            ],
+            "rating": 4.2,
+            "priceRange": "₩₩",
+            "specialties": [
+                "삼겹살",
+                "치킨",
+                "술집"
+            ],
+            "description": "울산 대표 먹자거리",
+            "openHours": "17:00-02:00",
+            "closedDays": [],
+            "imageUrl": null
+        }
+    ]
+}

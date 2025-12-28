@@ -1,0 +1,533 @@
+{
+    "cityId": "seoul",
+    "cityName": "서울특별시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "seoul_jongno",
+            "name": "종로구",
+            "center": [
+                37.5735,
+                126.9788
+            ],
+            "zoom": 13,
+            "color": "#FF6B6B",
+            "icon": "🏛️",
+            "dongCount": 17,
+            "description": "경복궁과 북촌한옥마을, 인사동",
+            "population": 151000,
+            "area": 23.91,
+            "specialties": [
+                "피맛골맛집",
+                "전통한식",
+                "삼계탕"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "seoul_junggu",
+            "name": "중구",
+            "center": [
+                37.5641,
+                126.9979
+            ],
+            "zoom": 13,
+            "color": "#4ECDC4",
+            "icon": "🏙️",
+            "dongCount": 15,
+            "description": "명동과 남대문시장, 을지로골목",
+            "population": 134000,
+            "area": 9.96,
+            "specialties": [
+                "을지로노가리",
+                "중화요리",
+                "칼국수"
+            ],
+            "unlockCondition": "COMPLETE_seoul_jongno"
+        },
+        {
+            "id": "seoul_yongsan",
+            "name": "용산구",
+            "center": [
+                37.5326,
+                126.9906
+            ],
+            "zoom": 13,
+            "color": "#45B7D1",
+            "icon": "🚂",
+            "dongCount": 16,
+            "description": "이태원과 용산전자상가, 국립중앙박물관",
+            "population": 244000,
+            "area": 21.87,
+            "specialties": [
+                "이태원맛집",
+                "세계음식",
+                "스테이크"
+            ],
+            "unlockCondition": "COMPLETE_seoul_junggu"
+        },
+        {
+            "id": "seoul_seongdong",
+            "name": "성동구",
+            "center": [
+                37.5634,
+                127.0369
+            ],
+            "zoom": 13,
+            "color": "#96CEB4",
+            "icon": "🌉",
+            "dongCount": 17,
+            "description": "성수동 카페거리, 뚝섬",
+            "population": 311000,
+            "area": 16.86,
+            "specialties": [
+                "성수카페",
+                "수제버거",
+                "브런치"
+            ],
+            "unlockCondition": "COMPLETE_seoul_yongsan"
+        },
+        {
+            "id": "seoul_gwangjin",
+            "name": "광진구",
+            "center": [
+                37.5385,
+                127.0823
+            ],
+            "zoom": 13,
+            "color": "#DDA0DD",
+            "icon": "🎡",
+            "dongCount": 15,
+            "description": "건대입구, 뚝섬유원지",
+            "population": 357000,
+            "area": 17.06,
+            "specialties": [
+                "양꼬치거리",
+                "맥주",
+                "치킨"
+            ],
+            "unlockCondition": "COMPLETE_seoul_seongdong"
+        },
+        {
+            "id": "seoul_dongdaemun",
+            "name": "동대문구",
+            "center": [
+                37.5744,
+                127.0395
+            ],
+            "zoom": 13,
+            "color": "#F0E68C",
+            "icon": "👕",
+            "dongCount": 14,
+            "description": "동대문시장, 경동시장",
+            "population": 369000,
+            "area": 14.22,
+            "specialties": [
+                "족발",
+                "닭한마리",
+                "약재료리"
+            ],
+            "unlockCondition": "COMPLETE_seoul_gwangjin"
+        },
+        {
+            "id": "seoul_jungnang",
+            "name": "중랑구",
+            "center": [
+                37.6065,
+                127.0927
+            ],
+            "zoom": 13,
+            "color": "#CD853F",
+            "icon": "🌳",
+            "dongCount": 16,
+            "description": "중랑천, 용마랜드",
+            "population": 414000,
+            "area": 18.50,
+            "specialties": [
+                "곱창",
+                "소머리국밥",
+                "삼겹살"
+            ],
+            "unlockCondition": "COMPLETE_seoul_dongdaemun"
+        },
+        {
+            "id": "seoul_seongbuk",
+            "name": "성북구",
+            "center": [
+                37.5894,
+                127.0167
+            ],
+            "zoom": 13,
+            "color": "#FFB6C1",
+            "icon": "📚",
+            "dongCount": 20,
+            "description": "성북동 북악스카이웨이, 고려대",
+            "population": 461000,
+            "area": 24.57,
+            "specialties": [
+                "족발",
+                "삼계탕",
+                "한정식"
+            ],
+            "unlockCondition": "COMPLETE_seoul_jungnang"
+        },
+        {
+            "id": "seoul_gangbuk",
+            "name": "강북구",
+            "center": [
+                37.6396,
+                127.0255
+            ],
+            "zoom": 13,
+            "color": "#87CEEB",
+            "icon": "⛰️",
+            "dongCount": 13,
+            "description": "북한산국립공원",
+            "population": 330000,
+            "area": 23.60,
+            "specialties": [
+                "등산후맛집",
+                "막걸리",
+                "파전"
+            ],
+            "unlockCondition": "COMPLETE_seoul_seongbuk"
+        },
+        {
+            "id": "seoul_dobong",
+            "name": "도봉구",
+            "center": [
+                37.6688,
+                127.0471
+            ],
+            "zoom": 13,
+            "color": "#98D8C8",
+            "icon": "🏔️",
+            "dongCount": 14,
+            "description": "도봉산",
+            "population": 348000,
+            "area": 20.70,
+            "specialties": [
+                "산채비빔밥",
+                "보쌈",
+                "닭볶음탕"
+            ],
+            "unlockCondition": "COMPLETE_seoul_gangbuk"
+        },
+        {
+            "id": "seoul_nowon",
+            "name": "노원구",
+            "center": [
+                37.6542,
+                127.0568
+            ],
+            "zoom": 13,
+            "color": "#20B2AA",
+            "icon": "🏠",
+            "dongCount": 19,
+            "description": "수락산, 불암산",
+            "population": 558000,
+            "area": 35.44,
+            "specialties": [
+                "떡볶이",
+                "순대",
+                "튀김"
+            ],
+            "unlockCondition": "COMPLETE_seoul_dobong"
+        },
+        {
+            "id": "seoul_eunpyeong",
+            "name": "은평구",
+            "center": [
+                37.6027,
+                126.9291
+            ],
+            "zoom": 13,
+            "color": "#BA55D3",
+            "icon": "🏡",
+            "dongCount": 16,
+            "description": "북한산 둘레길, 은평한옥마을",
+            "population": 494000,
+            "area": 29.70,
+            "specialties": [
+                "순두부",
+                "손칼국수",
+                "만두"
+            ],
+            "unlockCondition": "COMPLETE_seoul_nowon"
+        },
+        {
+            "id": "seoul_seodaemun",
+            "name": "서대문구",
+            "center": [
+                37.5791,
+                126.9368
+            ],
+            "zoom": 13,
+            "color": "#3CB371",
+            "icon": "🎓",
+            "dongCount": 14,
+            "description": "신촌, 연세대, 이화여대",
+            "population": 327000,
+            "area": 17.61,
+            "specialties": [
+                "신촌맛집",
+                "이자카야",
+                "치킨"
+            ],
+            "unlockCondition": "COMPLETE_seoul_eunpyeong"
+        },
+        {
+            "id": "seoul_mapo",
+            "name": "마포구",
+            "center": [
+                37.5663,
+                126.9014
+            ],
+            "zoom": 13,
+            "color": "#FF8C42",
+            "icon": "🌆",
+            "dongCount": 16,
+            "description": "홍대, 합정, 망원동",
+            "population": 389000,
+            "area": 23.84,
+            "specialties": [
+                "홍대맛집",
+                "연남동카페",
+                "연남동맛집"
+            ],
+            "unlockCondition": "COMPLETE_seoul_seodaemun"
+        },
+        {
+            "id": "seoul_yangcheon",
+            "name": "양천구",
+            "center": [
+                37.5170,
+                126.8664
+            ],
+            "zoom": 13,
+            "color": "#DAA520",
+            "icon": "🏢",
+            "dongCount": 18,
+            "description": "목동, SBS",
+            "population": 479000,
+            "area": 17.41,
+            "specialties": [
+                "중식",
+                "일식",
+                "한정식"
+            ],
+            "unlockCondition": "COMPLETE_seoul_mapo"
+        },
+        {
+            "id": "seoul_gangseo",
+            "name": "강서구",
+            "center": [
+                37.5509,
+                126.8495
+            ],
+            "zoom": 13,
+            "color": "#DC143C",
+            "icon": "✈️",
+            "dongCount": 20,
+            "description": "김포공항, 마곡지구",
+            "population": 603000,
+            "area": 41.44,
+            "specialties": [
+                "마곡맛집",
+                "공항맛집",
+                "오리요리"
+            ],
+            "unlockCondition": "COMPLETE_seoul_yangcheon"
+        },
+        {
+            "id": "seoul_guro",
+            "name": "구로구",
+            "center": [
+                37.4954,
+                126.8874
+            ],
+            "zoom": 13,
+            "color": "#FFA07A",
+            "icon": "💼",
+            "dongCount": 15,
+            "description": "디지털단지, 구로시장",
+            "population": 440000,
+            "area": 20.12,
+            "specialties": [
+                "곱창",
+                "삼겹살",
+                "한식뷔페"
+            ],
+            "unlockCondition": "COMPLETE_seoul_gangseo"
+        },
+        {
+            "id": "seoul_geumcheon",
+            "name": "금천구",
+            "center": [
+                37.4519,
+                126.8955
+            ],
+            "zoom": 13,
+            "color": "#6B8E23",
+            "icon": "🏭",
+            "dongCount": 10,
+            "description": "가산디지털단지",
+            "population": 253000,
+            "area": 13.01,
+            "specialties": [
+                "직장인맛집",
+                "점심특선",
+                "뷔페"
+            ],
+            "unlockCondition": "COMPLETE_seoul_guro"
+        },
+        {
+            "id": "seoul_yeongdeungpo",
+            "name": "영등포구",
+            "center": [
+                37.5264,
+                126.8963
+            ],
+            "zoom": 13,
+            "color": "#CD5C5C",
+            "icon": "📺",
+            "dongCount": 18,
+            "description": "여의도, 타임스퀘어",
+            "population": 402000,
+            "area": 24.55,
+            "specialties": [
+                "여의도맛집",
+                "양꼬치",
+                "고급한식"
+            ],
+            "unlockCondition": "COMPLETE_seoul_geumcheon"
+        },
+        {
+            "id": "seoul_dongjak",
+            "name": "동작구",
+            "center": [
+                37.5124,
+                126.9393
+            ],
+            "zoom": 13,
+            "color": "#FF69B4",
+            "icon": "🎭",
+            "dongCount": 15,
+            "description": "흑석동, 중앙대, 국립현충원",
+            "population": 412000,
+            "area": 16.35,
+            "specialties": [
+                "대학로맛집",
+                "분식",
+                "카페"
+            ],
+            "unlockCondition": "COMPLETE_seoul_yeongdeungpo"
+        },
+        {
+            "id": "seoul_gwanak",
+            "name": "관악구",
+            "center": [
+                37.4784,
+                126.9516
+            ],
+            "zoom": 13,
+            "color": "#7B68EE",
+            "icon": "🎓",
+            "dongCount": 21,
+            "description": "서울대, 관악산, 신림동",
+            "population": 520000,
+            "area": 29.57,
+            "specialties": [
+                "순대타운",
+                "고시촌맛집",
+                "떡볶이"
+            ],
+            "unlockCondition": "COMPLETE_seoul_dongjak"
+        },
+        {
+            "id": "seoul_seocho",
+            "name": "서초구",
+            "center": [
+                37.4837,
+                127.0324
+            ],
+            "zoom": 13,
+            "color": "#00CED1",
+            "icon": "⚖️",
+            "dongCount": 18,
+            "description": "강남역, 예술의전당, 법원",
+            "population": 450000,
+            "area": 47.00,
+            "specialties": [
+                "강남맛집",
+                "이탈리안",
+                "일식"
+            ],
+            "unlockCondition": "COMPLETE_seoul_gwanak"
+        },
+        {
+            "id": "seoul_gangnam",
+            "name": "강남구",
+            "center": [
+                37.5172,
+                127.0473
+            ],
+            "zoom": 13,
+            "color": "#FF1493",
+            "icon": "💎",
+            "dongCount": 22,
+            "description": "압구정, 청담, 코엑스",
+            "population": 561000,
+            "area": 39.50,
+            "specialties": [
+                "고급한식",
+                "스테이크",
+                "오마카세"
+            ],
+            "unlockCondition": "COMPLETE_seoul_seocho"
+        },
+        {
+            "id": "seoul_songpa",
+            "name": "송파구",
+            "center": [
+                37.5145,
+                127.1066
+            ],
+            "zoom": 13,
+            "color": "#32CD32",
+            "icon": "🏟️",
+            "dongCount": 27,
+            "description": "잠실, 롯데월드, 올림픽공원",
+            "population": 678000,
+            "area": 33.88,
+            "specialties": [
+                "석촌호수카페",
+                "롯데맛집",
+                "방이먹자골목"
+            ],
+            "unlockCondition": "COMPLETE_seoul_gangnam"
+        },
+        {
+            "id": "seoul_gangdong",
+            "name": "강동구",
+            "center": [
+                37.5301,
+                127.1238
+            ],
+            "zoom": 13,
+            "color": "#FF6347",
+            "icon": "🌿",
+            "dongCount": 18,
+            "description": "암사동 선사유적지, 천호동",
+            "population": 476000,
+            "area": 24.59,
+            "specialties": [
+                "천호맛집",
+                "한우",
+                "곱창"
+            ],
+            "unlockCondition": "COMPLETE_seoul_songpa"
+        }
+    ]
+}

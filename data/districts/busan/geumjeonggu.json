@@ -1,0 +1,85 @@
+{
+    "districtId": "busan_geumjeonggu",
+    "districtName": "금정구",
+    "cityId": "busan",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "busan_beomeosa",
+            "name": "청룡동",
+            "center": [
+                35.2823,
+                129.0678
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🏯",
+            "description": "범어사, 청룡동산",
+            "levelCount": 1,
+            "specialties": [
+                "사찰음식",
+                "산채비빔밥",
+                "막걸리"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "busan_oncheonjang",
+            "name": "온천장동",
+            "center": [
+                35.2134,
+                129.0845
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "♨️",
+            "description": "금정산온천, 스파",
+            "levelCount": 1,
+            "specialties": [
+                "오리구이",
+                "닭볶음탕",
+                "한정식"
+            ],
+            "unlockCondition": "COMPLETE_busan_beomeosa"
+        },
+        {
+            "id": "busan_busandae",
+            "name": "장전동",
+            "center": [
+                35.2312,
+                129.0867
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "📚",
+            "description": "부산대학교, 대학가",
+            "levelCount": 1,
+            "specialties": [
+                "대학가맛집",
+                "떡볶이",
+                "피자"
+            ],
+            "unlockCondition": "COMPLETE_busan_oncheonjang"
+        },
+        {
+            "id": "busan_sanseong",
+            "name": "금성동",
+            "center": [
+                35.2567,
+                129.0756
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏔️",
+            "description": "금정산성, 등산코스",
+            "levelCount": 1,
+            "specialties": [
+                "산성막걸리",
+                "파전",
+                "흑염소"
+            ],
+            "unlockCondition": "COMPLETE_busan_busandae"
+        }
+    ]
+}

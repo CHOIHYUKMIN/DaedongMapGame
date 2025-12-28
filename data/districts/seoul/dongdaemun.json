@@ -1,0 +1,85 @@
+{
+    "districtId": "seoul_dongdaemun",
+    "districtName": "동대문구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "dongdaemun_cheongnyangni",
+            "name": "청량리",
+            "center": [
+                37.5804,
+                127.0467
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🚉",
+            "description": "청량리역, 롯데백화점",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "백화점맛집",
+                "분식"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "dongdaemun_hoegi",
+            "name": "회기동",
+            "center": [
+                37.5895,
+                127.0575
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🎓",
+            "description": "경희대, 외대",
+            "levelCount": 1,
+            "specialties": [
+                "치킨",
+                "피자",
+                "술집"
+            ],
+            "unlockCondition": "COMPLETE_dongdaemun_cheongnyangni"
+        },
+        {
+            "id": "dongdaemun_janghanpyeong",
+            "name": "장한평",
+            "center": [
+                37.5612,
+                127.0648
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🚗",
+            "description": "자동차매매단지",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "국밥"
+            ],
+            "unlockCondition": "COMPLETE_dongdaemun_hoegi"
+        },
+        {
+            "id": "dongdaemun_imun",
+            "name": "이문동",
+            "center": [
+                37.5968,
+                127.0613
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏠",
+            "description": "외대앞, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "분식",
+                "카페",
+                "치킨"
+            ],
+            "unlockCondition": "COMPLETE_dongdaemun_janghanpyeong"
+        }
+    ]
+}

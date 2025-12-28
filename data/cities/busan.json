@@ -1,0 +1,344 @@
+{
+    "cityId": "busan",
+    "cityName": "부산광역시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "busan_junggu",
+            "name": "중구",
+            "center": [
+                35.1064,
+                129.0324
+            ],
+            "zoom": 14,
+            "color": "#FF6B6B",
+            "icon": "🏛️",
+            "dongCount": 8,
+            "description": "남포동, 자갈치시장, BIFF광장",
+            "population": 43000,
+            "area": 2.82,
+            "specialties": [
+                "자갈치회",
+                "씨앗호떡",
+                "비빔당면"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "busan_seogu",
+            "name": "서구",
+            "center": [
+                35.0977,
+                129.0244
+            ],
+            "zoom": 13,
+            "color": "#4ECDC4",
+            "icon": "🌅",
+            "dongCount": 8,
+            "description": "암남공원, 송도해수욕장",
+            "population": 108000,
+            "area": 13.89,
+            "specialties": [
+                "송도횟집",
+                "해물탕",
+                "조개구이"
+            ],
+            "unlockCondition": "COMPLETE_busan_junggu"
+        },
+        {
+            "id": "busan_donggu",
+            "name": "동구",
+            "center": [
+                35.1294,
+                129.0452
+            ],
+            "zoom": 13,
+            "color": "#45B7D1",
+            "icon": "⛴️",
+            "dongCount": 8,
+            "description": "부산역, 초량이바구길",
+            "population": 88000,
+            "area": 9.72,
+            "specialties": [
+                "초량밀면",
+                "돼지국밥",
+                "족발"
+            ],
+            "unlockCondition": "COMPLETE_busan_seogu"
+        },
+        {
+            "id": "busan_yeongdogu",
+            "name": "영도구",
+            "center": [
+                35.0912,
+                129.0686
+            ],
+            "zoom": 13,
+            "color": "#96CEB4",
+            "icon": "🌉",
+            "dongCount": 11,
+            "description": "태종대, 영도대교, 깡깡이마을",
+            "population": 118000,
+            "area": 14.20,
+            "specialties": [
+                "조개구이",
+                "회",
+                "해물찜"
+            ],
+            "unlockCondition": "COMPLETE_busan_donggu"
+        },
+        {
+            "id": "busan_busanjingu",
+            "name": "부산진구",
+            "center": [
+                35.1631,
+                129.0530
+            ],
+            "zoom": 13,
+            "color": "#DDA0DD",
+            "icon": "🛍️",
+            "dongCount": 19,
+            "description": "서면, 전포카페거리",
+            "population": 380000,
+            "area": 29.68,
+            "specialties": [
+                "서면맛집",
+                "전포카페",
+                "양곱창"
+            ],
+            "unlockCondition": "COMPLETE_busan_yeongdogu"
+        },
+        {
+            "id": "busan_dongraegu",
+            "name": "동래구",
+            "center": [
+                35.2044,
+                129.0837
+            ],
+            "zoom": 13,
+            "color": "#F0E68C",
+            "icon": "♨️",
+            "dongCount": 13,
+            "description": "동래온천, 동래읍성",
+            "population": 275000,
+            "area": 16.63,
+            "specialties": [
+                "동래파전",
+                "온천족욕",
+                "한정식"
+            ],
+            "unlockCondition": "COMPLETE_busan_busanjingu"
+        },
+        {
+            "id": "busan_namgu",
+            "name": "남구",
+            "center": [
+                35.1366,
+                129.0849
+            ],
+            "zoom": 13,
+            "color": "#CD853F",
+            "icon": "🏖️",
+            "dongCount": 15,
+            "description": "경성대, 이기대, UN기념공원",
+            "population": 268000,
+            "area": 25.95,
+            "specialties": [
+                "경성대맛집",
+                "이기대횟집",
+                "떡볶이"
+            ],
+            "unlockCondition": "COMPLETE_busan_dongraegu"
+        },
+        {
+            "id": "busan_bukgu",
+            "name": "북구",
+            "center": [
+                35.1974,
+                128.9903
+            ],
+            "zoom": 13,
+            "color": "#FFB6C1",
+            "icon": "🏭",
+            "dongCount": 10,
+            "description": "구포시장, 화명동",
+            "population": 305000,
+            "area": 39.43,
+            "specialties": [
+                "구포국수",
+                "돼지국밥",
+                "순대국"
+            ],
+            "unlockCondition": "COMPLETE_busan_namgu"
+        },
+        {
+            "id": "busan_haeundaegu",
+            "name": "해운대구",
+            "center": [
+                35.1631,
+                129.1635
+            ],
+            "zoom": 12,
+            "color": "#87CEEB",
+            "icon": "🏝️",
+            "dongCount": 12,
+            "description": "해운대해수욕장, 마린시티, 동백섬",
+            "population": 412000,
+            "area": 51.45,
+            "specialties": [
+                "해운대회",
+                "마린시티맛집",
+                "씨푸드"
+            ],
+            "unlockCondition": "COMPLETE_busan_bukgu"
+        },
+        {
+            "id": "busan_sahagu",
+            "name": "사하구",
+            "center": [
+                35.1043,
+                128.9750
+            ],
+            "zoom": 13,
+            "color": "#98D8C8",
+            "icon": "🎨",
+            "dongCount": 16,
+            "description": "감천문화마을, 다대포해수욕장",
+            "population": 328000,
+            "area": 41.75,
+            "specialties": [
+                "감천맛집",
+                "다대포회",
+                "해물칼국수"
+            ],
+            "unlockCondition": "COMPLETE_busan_haeundaegu"
+        },
+        {
+            "id": "busan_geumjeonggu",
+            "name": "금정구",
+            "center": [
+                35.2428,
+                129.0922
+            ],
+            "zoom": 12,
+            "color": "#20B2AA",
+            "icon": "🏔️",
+            "dongCount": 11,
+            "description": "금정산, 범어사, 부산대",
+            "population": 238000,
+            "area": 65.27,
+            "specialties": [
+                "산성막걸리",
+                "오리불고기",
+                "닭볶음탕"
+            ],
+            "unlockCondition": "COMPLETE_busan_sahagu"
+        },
+        {
+            "id": "busan_gangseogu",
+            "name": "강서구",
+            "center": [
+                35.1122,
+                128.8679
+            ],
+            "zoom": 11,
+            "color": "#BA55D3",
+            "icon": "🌾",
+            "dongCount": 7,
+            "description": "김해공항, 명지국제신도시",
+            "population": 132000,
+            "area": 181.44,
+            "specialties": [
+                "대저토마토",
+                "솥뚜껑삼겹",
+                "장어구이"
+            ],
+            "unlockCondition": "COMPLETE_busan_geumjeonggu"
+        },
+        {
+            "id": "busan_yeonjegu",
+            "name": "연제구",
+            "center": [
+                35.1762,
+                129.0798
+            ],
+            "zoom": 13,
+            "color": "#3CB371",
+            "icon": "🏢",
+            "dongCount": 13,
+            "description": "부산시청, 부산아시아드주경기장",
+            "population": 210000,
+            "area": 12.08,
+            "specialties": [
+                "연산동굴",
+                "배달맛집",
+                "순대국밥"
+            ],
+            "unlockCondition": "COMPLETE_busan_gangseogu"
+        },
+        {
+            "id": "busan_suyeonggu",
+            "name": "수영구",
+            "center": [
+                35.1455,
+                129.1134
+            ],
+            "zoom": 13,
+            "color": "#FF8C42",
+            "icon": "🌊",
+            "dongCount": 10,
+            "description": "광안리해수욕장, 광안대교",
+            "population": 180000,
+            "area": 10.21,
+            "specialties": [
+                "광안리횟집",
+                "민락회센터",
+                "수변공원맛집"
+            ],
+            "unlockCondition": "COMPLETE_busan_yeonjegu"
+        },
+        {
+            "id": "busan_sasanggu",
+            "name": "사상구",
+            "center": [
+                35.1526,
+                128.9827
+            ],
+            "zoom": 13,
+            "color": "#DAA520",
+            "icon": "🚃",
+            "dongCount": 10,
+            "description": "사상역, 삼락생태공원",
+            "population": 229000,
+            "area": 36.06,
+            "specialties": [
+                "삼락곡물골목",
+                "돼지국밥",
+                "곱창전골"
+            ],
+            "unlockCondition": "COMPLETE_busan_suyeonggu"
+        },
+        {
+            "id": "busan_gijanggun",
+            "name": "기장군",
+            "center": [
+                35.2445,
+                129.2223
+            ],
+            "zoom": 11,
+            "color": "#DC143C",
+            "icon": "🦀",
+            "dongCount": 5,
+            "description": "기장시장, 해동용궁사, 아난티코브",
+            "population": 192000,
+            "area": 218.04,
+            "specialties": [
+                "기장대게",
+                "해녀촌",
+                "미역국"
+            ],
+            "unlockCondition": "COMPLETE_busan_sasanggu"
+        }
+    ]
+}

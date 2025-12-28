@@ -1,5 +1,5 @@
 // Service Worker for 대동맛지도 PWA
-const CACHE_NAME = 'daedong-mapgame-v1.5.0';
+const CACHE_NAME = 'daedong-mapgame-v1.6.2';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -23,6 +23,7 @@ const urlsToCache = [
     '/js/jongnogu-dong-data.js',
     '/js/gyeonggi-si-data.js',
     '/js/incheon-gu-data.js',
+    '/js/incheon-junggu-dong-data.js',
     '/js/restaurant.js',
     '/js/restaurant-detail.js',
     '/js/restaurant-collection.js',
@@ -31,13 +32,14 @@ const urlsToCache = [
     '/js/costume-ui.js',
     '/js/audio-manager.js',
     '/js/audio-ui.js',
+    '/js/pwa-update.js',
     '/js/firebase-config.js',
     '/manifest.json'
 ];
 
 // 설치 이벤트 - 캐시 저장
 self.addEventListener('install', event => {
-    console.log('🔧 Service Worker 설치 중...');
+    console.log('🔧 Service Worker 설치 중... (v1.6.0)');
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {
@@ -46,6 +48,7 @@ self.addEventListener('install', event => {
             })
             .then(() => {
                 console.log('✅ Service Worker 설치 완료');
+                // 즉시 활성화하여 대기 상태 건너뛰기
                 return self.skipWaiting();
             })
             .catch(err => {

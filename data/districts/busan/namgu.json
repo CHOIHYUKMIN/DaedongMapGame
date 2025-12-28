@@ -1,0 +1,85 @@
+{
+    "districtId": "busan_namgu",
+    "districtName": "남구",
+    "cityId": "busan",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "busan_daeyeon",
+            "name": "대연동",
+            "center": [
+                35.1367,
+                129.0845
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "📚",
+            "description": "경성대부경대역, 대학가",
+            "levelCount": 1,
+            "specialties": [
+                "대학가맛집",
+                "떡볶이",
+                "피자"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "busan_yongho",
+            "name": "용호동",
+            "center": [
+                35.1089,
+                129.1034
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🏝️",
+            "description": "이기대, 오륙도",
+            "levelCount": 1,
+            "specialties": [
+                "횟집",
+                "해물탕",
+                "전복죽"
+            ],
+            "unlockCondition": "COMPLETE_busan_daeyeon"
+        },
+        {
+            "id": "busan_un",
+            "name": "대연UN동",
+            "center": [
+                35.1234,
+                129.0912
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🌍",
+            "description": "UN기념공원, 평화공원",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "양식",
+                "브런치"
+            ],
+            "unlockCondition": "COMPLETE_busan_yongho"
+        },
+        {
+            "id": "busan_munhyun",
+            "name": "문현동",
+            "center": [
+                35.1445,
+                129.0723
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏢",
+            "description": "국제금융센터, 문현금융단지",
+            "levelCount": 1,
+            "specialties": [
+                "점심특선",
+                "일식",
+                "스테이크"
+            ],
+            "unlockCondition": "COMPLETE_busan_un"
+        }
+    ]
+}

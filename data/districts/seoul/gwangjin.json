@@ -1,0 +1,104 @@
+{
+    "districtId": "seoul_gwangjin",
+    "districtName": "광진구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "gwangjin_gunja",
+            "name": "군자동",
+            "center": [
+                37.5573,
+                127.0796
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🛍️",
+            "description": "군자역, 테크노마트",
+            "levelCount": 1,
+            "specialties": [
+                "쇼핑몰맛집",
+                "한식",
+                "분식"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "gwangjin_konkuk",
+            "name": "건대입구",
+            "center": [
+                37.5404,
+                127.0694
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🎉",
+            "description": "건대입구역, 먹자골목",
+            "levelCount": 1,
+            "specialties": [
+                "술집",
+                "삼겹살",
+                "치킨"
+            ],
+            "unlockCondition": "COMPLETE_gwangjin_gunja"
+        },
+        {
+            "id": "gwangjin_starfield",
+            "name": "스타시티",
+            "center": [
+                37.5358,
+                127.0756
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏬",
+            "description": "스타시티몰, 이마트",
+            "levelCount": 1,
+            "specialties": [
+                "푸드코트",
+                "레스토랑",
+                "카페"
+            ],
+            "unlockCondition": "COMPLETE_gwangjin_konkuk"
+        },
+        {
+            "id": "gwangjin_jayang",
+            "name": "자양동",
+            "center": [
+                37.5336,
+                127.0710
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🥟",
+            "description": "양꼬치거리, 중국음식",
+            "levelCount": 1,
+            "specialties": [
+                "양꼬치",
+                "마라탕",
+                "중화요리"
+            ],
+            "unlockCondition": "COMPLETE_gwangjin_starfield"
+        },
+        {
+            "id": "gwangjin_ttukseom",
+            "name": "뚝섬유원지",
+            "center": [
+                37.5319,
+                127.0662
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🌊",
+            "description": "뚝섬한강공원",
+            "levelCount": 1,
+            "specialties": [
+                "한강뷰카페",
+                "치맥",
+                "피크닉"
+            ],
+            "unlockCondition": "COMPLETE_gwangjin_jayang"
+        }
+    ]
+}

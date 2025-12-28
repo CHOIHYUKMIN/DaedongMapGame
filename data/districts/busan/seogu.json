@@ -1,0 +1,66 @@
+{
+    "districtId": "busan_seogu",
+    "districtName": "서구",
+    "cityId": "busan",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "busan_gamcheon",
+            "name": "감천문화마을",
+            "center": [
+                35.0972,
+                129.0101
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🎨",
+            "description": "마추픽추마을, 벽화마을",
+            "levelCount": 1,
+            "specialties": [
+                "어묵",
+                "빙수",
+                "카페"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "busan_songdo",
+            "name": "송도해수욕장",
+            "center": [
+                35.0768,
+                129.0205
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🏖️",
+            "description": "송도케이블카, 해수욕장",
+            "levelCount": 1,
+            "specialties": [
+                "해산물",
+                "조개구이",
+                "횟집"
+            ],
+            "unlockCondition": "COMPLETE_busan_gamcheon"
+        },
+        {
+            "id": "busan_ami",
+            "name": "아미동",
+            "center": [
+                35.1024,
+                129.0178
+            ],
+            "zoom": 16,
+            "color": "#45B7D1",
+            "icon": "🏘️",
+            "description": "비석문화마을, 역사거리",
+            "levelCount": 1,
+            "specialties": [
+                "분식",
+                "한식",
+                "동네맛집"
+            ],
+            "unlockCondition": "COMPLETE_busan_songdo"
+        }
+    ]
+}

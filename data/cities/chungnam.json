@@ -1,0 +1,323 @@
+{
+    "cityId": "chungnam",
+    "cityName": "충청남도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "chungnam_cheonan",
+            "name": "천안시",
+            "center": [
+                36.8151,
+                127.1139
+            ],
+            "zoom": 11,
+            "color": "#FF6B6B",
+            "icon": "🚆",
+            "dongCount": 25,
+            "description": "독립기념관, 천안아산역",
+            "population": 666000,
+            "area": 636.29,
+            "specialties": [
+                "호두과자",
+                "병천순대",
+                "아우내장터"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "chungnam_gongju",
+            "name": "공주시",
+            "center": [
+                36.4465,
+                127.1192
+            ],
+            "zoom": 11,
+            "color": "#4ECDC4",
+            "icon": "👑",
+            "dongCount": 11,
+            "description": "무령왕릉, 공산성",
+            "population": 106000,
+            "area": 864.68,
+            "specialties": [
+                "밤",
+                "알밤막걸리",
+                "한정식"
+            ],
+            "unlockCondition": "COMPLETE_chungnam_cheonan"
+        },
+        {
+            "id": "chungnam_boryeong",
+            "name": "보령시",
+            "center": [
+                36.3334,
+                126.6129
+            ],
+            "zoom": 11,
+            "color": "#45B7D1",
+            "icon": "🏖️",
+            "dongCount": 10,
+            "description": "머드축제, 대천해수욕장",
+            "population": 97000,
+            "area": 572.50,
+            "specialties": [
+                "굴",
+                "조개구이",
+                "해산물"
+            ],
+            "unlockCondition": "COMPLETE_chungnam_gongju"
+        },
+        {
+            "id": "chungnam_asan",
+            "name": "아산시",
+            "center": [
+                36.7898,
+                127.0018
+            ],
+            "zoom": 11,
+            "color": "#96CEB4",
+            "icon": "♨️",
+            "dongCount": 14,
+            "description": "온양온천, 현충사",
+            "population": 330000,
+            "area": 542.15,
+            "specialties": [
+                "온양온천",
+                "아산탕정찜갈비",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_chungnam_boryeong"
+        },
+        {
+            "id": "chungnam_seosan",
+            "name": "서산시",
+            "center": [
+                36.7849,
+                126.4503
+            ],
+            "zoom": 11,
+            "color": "#DDA0DD",
+            "icon": "🌅",
+            "dongCount": 11,
+            "description": "해미읍성, 서산마애삼존불",
+            "population": 175000,
+            "area": 740.35,
+            "specialties": [
+                "어리굴젓",
+                "육쪽마늘",
+                "게국지"
+            ],
+            "unlockCondition": "COMPLETE_chungnam_asan"
+        },
+        {
+            "id": "chungnam_nonsan",
+            "name": "논산시",
+            "center": [
+                36.1872,
+                127.0987
+            ],
+            "zoom": 11,
+            "color": "#F0E68C",
+            "icon": "🎖️",
+            "dongCount": 11,
+            "description": "관촉사, 논산훈련소",
+            "population": 120000,
+            "area": 554.85,
+            "specialties": [
+                "딸기",
+                "짬뽕",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_chungnam_seosan"
+        },
+        {
+            "id": "chungnam_gyeryong",
+            "name": "계룡시",
+            "center": [
+                36.2746,
+                127.2485
+            ],
+            "zoom": 12,
+            "color": "#CD853F",
+            "icon": "🎖️",
+            "dongCount": 3,
+            "description": "계룡대, 국방부",
+            "population": 44000,
+            "area": 60.74,
+            "specialties": [
+                "군부대맛집",
+                "순두부",
+                "백숙"
+            ],
+            "unlockCondition": "COMPLETE_chungnam_nonsan"
+        },
+        {
+            "id": "chungnam_dangjin",
+            "name": "당진시",
+            "center": [
+                36.8898,
+                126.6293
+            ],
+            "zoom": 11,
+            "color": "#FFB6C1",
+            "icon": "🏭",
+            "dongCount": 10,
+            "description": "삽교호관광지, 왜목마을",
+            "population": 167000,
+            "area": 693.33,
+            "specialties": [
+                "조개구이",
+                "실치회",
+                "굴"
+            ],
+            "unlockCondition": "COMPLETE_chungnam_gyeryong"
+        },
+        {
+            "id": "chungnam_geumsan",
+            "name": "금산군",
+            "center": [
+                36.1086,
+                127.4881
+            ],
+            "zoom": 11,
+            "color": "#87CEEB",
+            "icon": "🌿",
+            "dongCount": 0,
+            "description": "금산인삼축제",
+            "population": 52000,
+            "area": 576.79,
+            "specialties": [
+                "인삼",
+                "인삼닭",
+                "인삼튀김"
+            ],
+            "unlockCondition": "COMPLETE_chungnam_dangjin"
+        },
+        {
+            "id": "chungnam_buyeo",
+            "name": "부여군",
+            "center": [
+                36.2756,
+                126.9098
+            ],
+            "zoom": 11,
+            "color": "#98D8C8",
+            "icon": "👑",
+            "dongCount": 0,
+            "description": "부소산성, 정림사지",
+            "population": 65000,
+            "area": 624.51,
+            "specialties": [
+                "연잎밥",
+                "백제한정식",
+                "굳은이막걸리"
+            ],
+            "unlockCondition": "COMPLETE_chungnam_geumsan"
+        },
+        {
+            "id": "chungnam_seocheon",
+            "name": "서천군",
+            "center": [
+                36.0803,
+                126.6919
+            ],
+            "zoom": 11,
+            "color": "#20B2AA",
+            "icon": "🌊",
+            "dongCount": 0,
+            "description": "국립해양생물자원관",
+            "population": 52000,
+            "area": 357.97,
+            "specialties": [
+                "동백꽃축제",
+                "김",
+                "전어"
+            ],
+            "unlockCondition": "COMPLETE_chungnam_buyeo"
+        },
+        {
+            "id": "chungnam_cheongyang",
+            "name": "청양군",
+            "center": [
+                36.4590,
+                126.8022
+            ],
+            "zoom": 11,
+            "color": "#BA55D3",
+            "icon": "🌶️",
+            "dongCount": 0,
+            "description": "칠갑산, 청양고추",
+            "population": 30000,
+            "area": 479.09,
+            "specialties": [
+                "청양고추",
+                "구기자",
+                "고추장"
+            ],
+            "unlockCondition": "COMPLETE_chungnam_seocheon"
+        },
+        {
+            "id": "chungnam_hongseong",
+            "name": "홍성군",
+            "center": [
+                36.6012,
+                126.6609
+            ],
+            "zoom": 11,
+            "color": "#3CB371",
+            "icon": "🐄",
+            "dongCount": 0,
+            "description": "홍성한우, 김좌진장군생가",
+            "population": 94000,
+            "area": 443.99,
+            "specialties": [
+                "홍성한우",
+                "새조개",
+                "광어"
+            ],
+            "unlockCondition": "COMPLETE_chungnam_cheongyang"
+        },
+        {
+            "id": "chungnam_yesan",
+            "name": "예산군",
+            "center": [
+                36.6819,
+                126.8448
+            ],
+            "zoom": 11,
+            "color": "#FF8C42",
+            "icon": "🍎",
+            "dongCount": 0,
+            "description": "예당호, 수덕사",
+            "population": 78000,
+            "area": 542.66,
+            "specialties": [
+                "사과",
+                "예산장터",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_chungnam_hongseong"
+        },
+        {
+            "id": "chungnam_taean",
+            "name": "태안군",
+            "center": [
+                36.7455,
+                126.2980
+            ],
+            "zoom": 11,
+            "color": "#DAA520",
+            "icon": "🌊",
+            "dongCount": 0,
+            "description": "안면도, 태안해안국립공원",
+            "population": 64000,
+            "area": 504.94,
+            "specialties": [
+                "굴",
+                "해산물",
+                "간월도어리굴젓"
+            ],
+            "unlockCondition": "COMPLETE_chungnam_yesan"
+        }
+    ]
+}

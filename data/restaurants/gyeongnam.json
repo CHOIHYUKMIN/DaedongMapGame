@@ -1,0 +1,157 @@
+{
+    "regionId": "gyeongnam",
+    "regionName": "경상남도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_GYEONGNAM_001",
+            "name": "진주 냉면거리",
+            "districtId": "gyeongnam_jinju",
+            "category": "한식",
+            "address": "경남 진주시 중앙동",
+            "coordinates": [
+                35.1800,
+                128.1076
+            ],
+            "rating": 4.6,
+            "priceRange": "₩₩",
+            "specialties": [
+                "진주냉면",
+                "육회비빔밥"
+            ],
+            "description": "진주 대표 냉면 거리",
+            "openHours": "10:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGNAM_002",
+            "name": "통영 충무김밥",
+            "districtId": "gyeongnam_tongyeong",
+            "category": "한식",
+            "address": "경남 통영시 항남동",
+            "coordinates": [
+                34.8545,
+                128.4330
+            ],
+            "rating": 4.5,
+            "priceRange": "₩",
+            "specialties": [
+                "충무김밥",
+                "오징어무침"
+            ],
+            "description": "통영 대표 충무김밥",
+            "openHours": "07:00-20:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGNAM_003",
+            "name": "통영 굴거리",
+            "districtId": "gyeongnam_tongyeong",
+            "category": "해산물",
+            "address": "경남 통영시 강구안",
+            "coordinates": [
+                34.8445,
+                128.4230
+            ],
+            "rating": 4.6,
+            "priceRange": "₩₩",
+            "specialties": [
+                "굴",
+                "굴전",
+                "해산물"
+            ],
+            "description": "통영 신선한 굴",
+            "openHours": "08:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGNAM_004",
+            "name": "마산어시장",
+            "districtId": "gyeongnam_changwon",
+            "category": "해산물",
+            "address": "경남 창원시 마산합포구",
+            "coordinates": [
+                35.1922,
+                128.5711
+            ],
+            "rating": 4.4,
+            "priceRange": "₩₩",
+            "specialties": [
+                "아귀찜",
+                "복국",
+                "회"
+            ],
+            "description": "마산 어시장 먹거리",
+            "openHours": "06:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGNAM_005",
+            "name": "밀양 돼지국밥",
+            "districtId": "gyeongnam_miryang",
+            "category": "한식",
+            "address": "경남 밀양시 내일동",
+            "coordinates": [
+                35.5037,
+                128.7486
+            ],
+            "rating": 4.5,
+            "priceRange": "₩",
+            "specialties": [
+                "돼지국밥",
+                "수육"
+            ],
+            "description": "밀양 전통 돼지국밥",
+            "openHours": "06:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGNAM_006",
+            "name": "하동 재첩국",
+            "districtId": "gyeongnam_hadong",
+            "category": "한식",
+            "address": "경남 하동군 하동읍",
+            "coordinates": [
+                35.0667,
+                127.7514
+            ],
+            "rating": 4.5,
+            "priceRange": "₩",
+            "specialties": [
+                "재첩국",
+                "재첩무침"
+            ],
+            "description": "하동 섬진강 재첩",
+            "openHours": "07:00-20:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GYEONGNAM_007",
+            "name": "남해 멸치거리",
+            "districtId": "gyeongnam_namhae",
+            "category": "해산물",
+            "address": "경남 남해군 남해읍",
+            "coordinates": [
+                34.8375,
+                127.8925
+            ],
+            "rating": 4.4,
+            "priceRange": "₩₩",
+            "specialties": [
+                "멸치쌈밥",
+                "멸치회"
+            ],
+            "description": "남해 신선한 멸치",
+            "openHours": "10:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        }
+    ]
+}

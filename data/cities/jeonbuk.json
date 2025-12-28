@@ -1,0 +1,302 @@
+{
+    "cityId": "jeonbuk",
+    "cityName": "전북특별자치도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "jeonbuk_jeonju",
+            "name": "전주시",
+            "center": [
+                35.8242,
+                127.1480
+            ],
+            "zoom": 12,
+            "color": "#FF6B6B",
+            "icon": "🏛️",
+            "dongCount": 33,
+            "description": "전주한옥마을, 비빔밥",
+            "population": 658000,
+            "area": 206.22,
+            "specialties": [
+                "전주비빔밥",
+                "한정식",
+                "막걸리"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "jeonbuk_gunsan",
+            "name": "군산시",
+            "center": [
+                35.9676,
+                126.7369
+            ],
+            "zoom": 11,
+            "color": "#4ECDC4",
+            "icon": "🚢",
+            "dongCount": 17,
+            "description": "근대문화유산, 선유도",
+            "population": 267000,
+            "area": 395.74,
+            "specialties": [
+                "이성당빵",
+                "짬뽕",
+                "해산물"
+            ],
+            "unlockCondition": "COMPLETE_jeonbuk_jeonju"
+        },
+        {
+            "id": "jeonbuk_iksan",
+            "name": "익산시",
+            "center": [
+                35.9483,
+                126.9576
+            ],
+            "zoom": 11,
+            "color": "#45B7D1",
+            "icon": "💎",
+            "dongCount": 14,
+            "description": "미륵사지, 보석박물관",
+            "population": 288000,
+            "area": 506.63,
+            "specialties": [
+                "보석",
+                "한우",
+                "숯불갈비"
+            ],
+            "unlockCondition": "COMPLETE_jeonbuk_gunsan"
+        },
+        {
+            "id": "jeonbuk_jeongeup",
+            "name": "정읍시",
+            "center": [
+                35.5700,
+                126.8560
+            ],
+            "zoom": 11,
+            "color": "#96CEB4",
+            "icon": "🌸",
+            "dongCount": 11,
+            "description": "내장산국립공원",
+            "population": 110000,
+            "area": 693.33,
+            "specialties": [
+                "쌍화차",
+                "떡갈비",
+                "산채정식"
+            ],
+            "unlockCondition": "COMPLETE_jeonbuk_iksan"
+        },
+        {
+            "id": "jeonbuk_namwon",
+            "name": "남원시",
+            "center": [
+                35.4164,
+                127.3905
+            ],
+            "zoom": 11,
+            "color": "#DDA0DD",
+            "icon": "💑",
+            "dongCount": 10,
+            "description": "광한루, 춘향테마파크",
+            "population": 81000,
+            "area": 752.61,
+            "specialties": [
+                "추어탕",
+                "흑돼지",
+                "산채정식"
+            ],
+            "unlockCondition": "COMPLETE_jeonbuk_jeongeup"
+        },
+        {
+            "id": "jeonbuk_gimje",
+            "name": "김제시",
+            "center": [
+                35.8036,
+                126.8808
+            ],
+            "zoom": 11,
+            "color": "#F0E68C",
+            "icon": "🌾",
+            "dongCount": 9,
+            "description": "지평선축제, 벽골제",
+            "population": 84000,
+            "area": 545.02,
+            "specialties": [
+                "쌀",
+                "보리밥정식",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_jeonbuk_namwon"
+        },
+        {
+            "id": "jeonbuk_wanju",
+            "name": "완주군",
+            "center": [
+                35.9044,
+                127.1620
+            ],
+            "zoom": 11,
+            "color": "#CD853F",
+            "icon": "🌳",
+            "dongCount": 0,
+            "description": "대둔산도립공원",
+            "population": 95000,
+            "area": 820.98,
+            "specialties": [
+                "한우",
+                "포도",
+                "야생화꿀"
+            ],
+            "unlockCondition": "COMPLETE_jeonbuk_gimje"
+        },
+        {
+            "id": "jeonbuk_jinan",
+            "name": "진안군",
+            "center": [
+                35.7916,
+                127.4249
+            ],
+            "zoom": 11,
+            "color": "#FFB6C1",
+            "icon": "⛰️",
+            "dongCount": 0,
+            "description": "마이산, 운장산",
+            "population": 24000,
+            "area": 788.82,
+            "specialties": [
+                "홍삼",
+                "산채비빔밥",
+                "흑돼지"
+            ],
+            "unlockCondition": "COMPLETE_jeonbuk_wanju"
+        },
+        {
+            "id": "jeonbuk_muju",
+            "name": "무주군",
+            "center": [
+                36.0068,
+                127.6606
+            ],
+            "zoom": 11,
+            "color": "#87CEEB",
+            "icon": "⛷️",
+            "dongCount": 0,
+            "description": "무주리조트, 덕유산",
+            "population": 24000,
+            "area": 631.86,
+            "specialties": [
+                "반딧불이",
+                "사과",
+                "머루와인"
+            ],
+            "unlockCondition": "COMPLETE_jeonbuk_jinan"
+        },
+        {
+            "id": "jeonbuk_jangsu",
+            "name": "장수군",
+            "center": [
+                35.6474,
+                127.5208
+            ],
+            "zoom": 11,
+            "color": "#98D8C8",
+            "icon": "🍎",
+            "dongCount": 0,
+            "description": "장안산, 한우",
+            "population": 21000,
+            "area": 533.46,
+            "specialties": [
+                "사과",
+                "한우",
+                "산채정식"
+            ],
+            "unlockCondition": "COMPLETE_jeonbuk_muju"
+        },
+        {
+            "id": "jeonbuk_imsil",
+            "name": "임실군",
+            "center": [
+                35.6178,
+                127.2892
+            ],
+            "zoom": 11,
+            "color": "#20B2AA",
+            "icon": "🧀",
+            "dongCount": 0,
+            "description": "임실치즈마을, 사선대",
+            "population": 27000,
+            "area": 597.03,
+            "specialties": [
+                "임실치즈",
+                "치즈피자",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_jeonbuk_jangsu"
+        },
+        {
+            "id": "jeonbuk_sunchang",
+            "name": "순창군",
+            "center": [
+                35.3744,
+                127.1378
+            ],
+            "zoom": 11,
+            "color": "#BA55D3",
+            "icon": "🫙",
+            "dongCount": 0,
+            "description": "순창고추장, 강천산",
+            "population": 27000,
+            "area": 495.93,
+            "specialties": [
+                "순창고추장",
+                "된장",
+                "한정식"
+            ],
+            "unlockCondition": "COMPLETE_jeonbuk_imsil"
+        },
+        {
+            "id": "jeonbuk_gochang",
+            "name": "고창군",
+            "center": [
+                35.4358,
+                126.7019
+            ],
+            "zoom": 11,
+            "color": "#3CB371",
+            "icon": "🏯",
+            "dongCount": 0,
+            "description": "고창읍성, 선운사",
+            "population": 55000,
+            "area": 607.61,
+            "specialties": [
+                "복분자",
+                "장어",
+                "풍천장어"
+            ],
+            "unlockCondition": "COMPLETE_jeonbuk_sunchang"
+        },
+        {
+            "id": "jeonbuk_buan",
+            "name": "부안군",
+            "center": [
+                35.7314,
+                126.7332
+            ],
+            "zoom": 11,
+            "color": "#FF8C42",
+            "icon": "🌊",
+            "dongCount": 0,
+            "description": "변산반도국립공원",
+            "population": 52000,
+            "area": 493.35,
+            "specialties": [
+                "조개구이",
+                "새우젓",
+                "해산물"
+            ],
+            "unlockCondition": "COMPLETE_jeonbuk_gochang"
+        }
+    ]
+}

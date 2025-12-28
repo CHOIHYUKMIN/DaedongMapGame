@@ -1,0 +1,65 @@
+{
+    "districtId": "ulsan_junggu",
+    "districtName": "중구",
+    "cityId": "ulsan",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "ulsan_seongnam",
+            "name": "성남동",
+            "center": [
+                35.5484,
+                129.3145
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🛍️",
+            "description": "울산 번화가",
+            "levelCount": 1,
+            "specialties": [
+                "언양불고기",
+                "한우",
+                "막창"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "ulsan_taehwa",
+            "name": "태화시장",
+            "center": [
+                35.5545,
+                129.3114
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🏪",
+            "description": "전통시장",
+            "levelCount": 1,
+            "specialties": [
+                "분식",
+                "국밥",
+                "튀김"
+            ],
+            "unlockCondition": "COMPLETE_ulsan_seongnam"
+        },
+        {
+            "id": "ulsan_taehwagang",
+            "name": "태화강공원",
+            "center": [
+                35.5510,
+                129.3033
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🌳",
+            "description": "십리대숲",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "피크닉"
+            ],
+            "unlockCondition": "COMPLETE_ulsan_taehwa"
+        }
+    ]
+}

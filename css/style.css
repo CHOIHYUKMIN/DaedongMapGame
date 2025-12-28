@@ -58,10 +58,11 @@ body {
 /* 메인 메뉴 */
 #main-menu {
     background: linear-gradient(180deg, #FFD1DC 0%, #FFE4E9 100%);
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 10px 15px;
     overflow: hidden;
+    gap: 8px;
 }
 
 .title {
@@ -135,16 +136,21 @@ body {
     padding: 0 15px;
     margin-bottom: 10px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .map-selection-container {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
-    padding: 12px;
-    margin: 0 15px 8px;
-    width: calc(100% - 30px);
+    padding: 10px;
+    margin: 0 10px;
+    width: calc(100% - 20px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    flex-shrink: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .map-selection-container h3 {
@@ -156,8 +162,8 @@ body {
 
 #region-map {
     width: 100%;
-    height: 250px !important;
-    min-height: 250px;
+    flex: 1;
+    min-height: 200px;
     border-radius: 10px;
     overflow: hidden;
     background: #e0e0e0;

@@ -1,0 +1,161 @@
+{
+    "districtId": "seoul_junggu",
+    "districtName": "중구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "junggu_myeongdong",
+            "name": "명동",
+            "center": [
+                37.5636,
+                126.9853
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🛍️",
+            "description": "명동거리, 명동성당",
+            "levelCount": 1,
+            "specialties": [
+                "칼국수",
+                "만두",
+                "중화요리"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "junggu_euljiro",
+            "name": "을지로",
+            "center": [
+                37.5660,
+                126.9920
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🍺",
+            "description": "을지로3가, 노가리골목",
+            "levelCount": 1,
+            "specialties": [
+                "노가리",
+                "포장마차",
+                "레트로"
+            ],
+            "unlockCondition": "COMPLETE_junggu_myeongdong"
+        },
+        {
+            "id": "junggu_chungmuro",
+            "name": "충무로",
+            "center": [
+                37.5610,
+                126.9940
+            ],
+            "zoom": 16,
+            "color": "#45B7D1",
+            "icon": "🎬",
+            "description": "필동, 남산케이블카",
+            "levelCount": 1,
+            "specialties": [
+                "떡볶이",
+                "족발",
+                "돈까스"
+            ],
+            "unlockCondition": "COMPLETE_junggu_euljiro"
+        },
+        {
+            "id": "junggu_namdaemun",
+            "name": "남대문시장",
+            "center": [
+                37.5596,
+                126.9776
+            ],
+            "zoom": 16,
+            "color": "#96CEB4",
+            "icon": "🏪",
+            "description": "남대문시장, 칼국수골목",
+            "levelCount": 1,
+            "specialties": [
+                "칼국수",
+                "갈치조림",
+                "족발"
+            ],
+            "unlockCondition": "COMPLETE_junggu_chungmuro"
+        },
+        {
+            "id": "junggu_hoehyeon",
+            "name": "회현동",
+            "center": [
+                37.5573,
+                126.9815
+            ],
+            "zoom": 16,
+            "color": "#DDA0DD",
+            "icon": "🏛️",
+            "description": "숭례문, 신세계백화점",
+            "levelCount": 1,
+            "specialties": [
+                "백화점푸드코트",
+                "한식",
+                "중식"
+            ],
+            "unlockCondition": "COMPLETE_junggu_namdaemun"
+        },
+        {
+            "id": "junggu_donhwamun",
+            "name": "을지로입구",
+            "center": [
+                37.5659,
+                126.9826
+            ],
+            "zoom": 16,
+            "color": "#F0E68C",
+            "icon": "💼",
+            "description": "롯데백화점, 비즈니스빌딩",
+            "levelCount": 1,
+            "specialties": [
+                "점심특선",
+                "일식",
+                "양식"
+            ],
+            "unlockCondition": "COMPLETE_junggu_hoehyeon"
+        },
+        {
+            "id": "junggu_sogong",
+            "name": "소공동",
+            "center": [
+                37.5651,
+                126.9804
+            ],
+            "zoom": 16,
+            "color": "#CD853F",
+            "icon": "🏨",
+            "description": "롯데호텔, 프라자호텔",
+            "levelCount": 1,
+            "specialties": [
+                "호텔뷔페",
+                "고급한식",
+                "바"
+            ],
+            "unlockCondition": "COMPLETE_junggu_donhwamun"
+        },
+        {
+            "id": "junggu_dongdaemun",
+            "name": "동대문역사문화공원",
+            "center": [
+                37.5658,
+                127.0074
+            ],
+            "zoom": 16,
+            "color": "#FFB6C1",
+            "icon": "🏛️",
+            "description": "DDP, 동대문디자인플라자",
+            "levelCount": 1,
+            "specialties": [
+                "닭한마리",
+                "두루치기",
+                "24시간맛집"
+            ],
+            "unlockCondition": "COMPLETE_junggu_sogong"
+        }
+    ]
+}

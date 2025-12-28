@@ -1,0 +1,142 @@
+{
+    "regionId": "daegu",
+    "regionName": "대구광역시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_DAEGU_001",
+            "name": "동성로 막창골목",
+            "districtId": "daegu_junggu",
+            "category": "한식",
+            "address": "대구시 중구 동성로",
+            "coordinates": [
+                35.8694,
+                128.5962
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "막창",
+                "곱창",
+                "소주"
+            ],
+            "description": "대구 대표 막창 골목",
+            "openHours": "17:00-02:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_DAEGU_002",
+            "name": "서문시장 칼국수거리",
+            "districtId": "daegu_junggu",
+            "category": "한식",
+            "address": "대구시 중구 서문시장",
+            "coordinates": [
+                35.8692,
+                128.5816
+            ],
+            "rating": 4.3,
+            "priceRange": "₩",
+            "specialties": [
+                "칼국수",
+                "수제비",
+                "김밥"
+            ],
+            "description": "서문시장 내 칼국수 골목",
+            "openHours": "09:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_DAEGU_003",
+            "name": "동인동찜갈비",
+            "districtId": "daegu_donggu",
+            "category": "한식",
+            "address": "대구시 동구 동인동",
+            "coordinates": [
+                35.8699,
+                128.6172
+            ],
+            "rating": 4.6,
+            "priceRange": "₩₩",
+            "specialties": [
+                "찜갈비",
+                "갈비찜"
+            ],
+            "description": "대구 3대 음식 중 하나",
+            "openHours": "11:00-22:00",
+            "closedDays": [
+                "월요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_DAEGU_004",
+            "name": "팔공산 맛집거리",
+            "districtId": "daegu_donggu",
+            "category": "한식",
+            "address": "대구시 동구 팔공산",
+            "coordinates": [
+                35.9521,
+                128.6948
+            ],
+            "rating": 4.2,
+            "priceRange": "₩₩",
+            "specialties": [
+                "산채비빔밥",
+                "닭볶음탕",
+                "막걸리"
+            ],
+            "description": "팔공산 등산 후 맛집",
+            "openHours": "10:00-21:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_DAEGU_005",
+            "name": "수성못 카페거리",
+            "districtId": "daegu_suseonggu",
+            "category": "카페",
+            "address": "대구시 수성구 수성동",
+            "coordinates": [
+                35.8265,
+                128.6173
+            ],
+            "rating": 4.4,
+            "priceRange": "₩₩",
+            "specialties": [
+                "브런치",
+                "커피",
+                "디저트"
+            ],
+            "description": "수성못 뷰 카페 거리",
+            "openHours": "09:00-23:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_DAEGU_006",
+            "name": "납작만두거리",
+            "districtId": "daegu_junggu",
+            "category": "한식",
+            "address": "대구시 중구 향촌동",
+            "coordinates": [
+                35.8703,
+                128.5908
+            ],
+            "rating": 4.3,
+            "priceRange": "₩",
+            "specialties": [
+                "납작만두",
+                "만두국"
+            ],
+            "description": "대구 전통 납작만두",
+            "openHours": "10:00-21:00",
+            "closedDays": [
+                "일요일"
+            ],
+            "imageUrl": null
+        }
+    ]
+}

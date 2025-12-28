@@ -1,0 +1,491 @@
+{
+    "cityId": "gyeongbuk",
+    "cityName": "경상북도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "gyeongbuk_pohang",
+            "name": "포항시",
+            "center": [
+                36.0190,
+                129.3435
+            ],
+            "zoom": 11,
+            "color": "#FF6B6B",
+            "icon": "🏭",
+            "dongCount": 36,
+            "description": "호미곶, 포스코",
+            "population": 509000,
+            "area": 1128.76,
+            "specialties": [
+                "과메기",
+                "물회",
+                "해산물"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "gyeongbuk_gyeongju",
+            "name": "경주시",
+            "center": [
+                35.8562,
+                129.2247
+            ],
+            "zoom": 11,
+            "color": "#4ECDC4",
+            "icon": "👑",
+            "dongCount": 24,
+            "description": "불국사, 석굴암, 첨성대",
+            "population": 255000,
+            "area": 1324.80,
+            "specialties": [
+                "황남빵",
+                "쌈밥정식",
+                "한정식"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_pohang"
+        },
+        {
+            "id": "gyeongbuk_gimcheon",
+            "name": "김천시",
+            "center": [
+                36.1398,
+                128.1136
+            ],
+            "zoom": 11,
+            "color": "#45B7D1",
+            "icon": "🍇",
+            "dongCount": 12,
+            "description": "직지사, 김천역",
+            "population": 142000,
+            "area": 1009.52,
+            "specialties": [
+                "포도",
+                "자두",
+                "오미자"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_gyeongju"
+        },
+        {
+            "id": "gyeongbuk_andong",
+            "name": "안동시",
+            "center": [
+                36.5684,
+                128.7294
+            ],
+            "zoom": 11,
+            "color": "#96CEB4",
+            "icon": "🏛️",
+            "dongCount": 18,
+            "description": "하회마을, 도산서원",
+            "population": 158000,
+            "area": 1521.26,
+            "specialties": [
+                "안동찜닭",
+                "헛제사밥",
+                "간고등어"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_gimcheon"
+        },
+        {
+            "id": "gyeongbuk_gumi",
+            "name": "구미시",
+            "center": [
+                36.1195,
+                128.3446
+            ],
+            "zoom": 11,
+            "color": "#DDA0DD",
+            "icon": "💻",
+            "dongCount": 19,
+            "description": "구미공단, 금오산",
+            "population": 418000,
+            "area": 615.30,
+            "specialties": [
+                "구미생고기",
+                "우동",
+                "짜장면"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_andong"
+        },
+        {
+            "id": "gyeongbuk_yeongju",
+            "name": "영주시",
+            "center": [
+                36.8057,
+                128.6240
+            ],
+            "zoom": 11,
+            "color": "#F0E68C",
+            "icon": "🍎",
+            "dongCount": 10,
+            "description": "부석사, 소백산",
+            "population": 105000,
+            "area": 669.11,
+            "specialties": [
+                "사과",
+                "한우",
+                "인삼"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_gumi"
+        },
+        {
+            "id": "gyeongbuk_yeongcheon",
+            "name": "영천시",
+            "center": [
+                35.9732,
+                128.9386
+            ],
+            "zoom": 11,
+            "color": "#CD853F",
+            "icon": "🍇",
+            "dongCount": 10,
+            "description": "보현산천문대, 은해사",
+            "population": 100000,
+            "area": 920.31,
+            "specialties": [
+                "포도",
+                "와인",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_yeongju"
+        },
+        {
+            "id": "gyeongbuk_sangju",
+            "name": "상주시",
+            "center": [
+                36.4110,
+                128.1590
+            ],
+            "zoom": 11,
+            "color": "#FFB6C1",
+            "icon": "🚴",
+            "dongCount": 11,
+            "description": "자전거박물관, 경천대",
+            "population": 98000,
+            "area": 1254.75,
+            "specialties": [
+                "곶감",
+                "한우",
+                "사과"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_yeongcheon"
+        },
+        {
+            "id": "gyeongbuk_mungyeong",
+            "name": "문경시",
+            "center": [
+                36.5868,
+                128.1867
+            ],
+            "zoom": 11,
+            "color": "#87CEEB",
+            "icon": "⛰️",
+            "dongCount": 8,
+            "description": "문경새재, 레일바이크",
+            "population": 70000,
+            "area": 911.18,
+            "specialties": [
+                "약돌한우",
+                "오미자",
+                "사과"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_sangju"
+        },
+        {
+            "id": "gyeongbuk_gyeongsan",
+            "name": "경산시",
+            "center": [
+                35.8251,
+                128.7413
+            ],
+            "zoom": 12,
+            "color": "#98D8C8",
+            "icon": "🎓",
+            "dongCount": 10,
+            "description": "영남대, 삼성현",
+            "population": 270000,
+            "area": 411.66,
+            "specialties": [
+                "대추",
+                "복숭아",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_mungyeong"
+        },
+        {
+            "id": "gyeongbuk_gunwi",
+            "name": "군위군",
+            "center": [
+                36.2428,
+                128.5728
+            ],
+            "zoom": 11,
+            "color": "#20B2AA",
+            "icon": "🌾",
+            "dongCount": 0,
+            "description": "삼존석굴, 화산산성",
+            "population": 22000,
+            "area": 614.23,
+            "specialties": [
+                "한우",
+                "사과",
+                "딸기"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_gyeongsan"
+        },
+        {
+            "id": "gyeongbuk_uiseong",
+            "name": "의성군",
+            "center": [
+                36.3528,
+                128.6972
+            ],
+            "zoom": 11,
+            "color": "#BA55D3",
+            "icon": "🧄",
+            "dongCount": 0,
+            "description": "의성마늘",
+            "population": 51000,
+            "area": 1176.27,
+            "specialties": [
+                "마늘",
+                "한우",
+                "사과"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_gunwi"
+        },
+        {
+            "id": "gyeongbuk_cheongsong",
+            "name": "청송군",
+            "center": [
+                36.4361,
+                129.0569
+            ],
+            "zoom": 11,
+            "color": "#3CB371",
+            "icon": "🍎",
+            "dongCount": 0,
+            "description": "주왕산국립공원",
+            "population": 24000,
+            "area": 845.71,
+            "specialties": [
+                "사과",
+                "한우",
+                "고추"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_uiseong"
+        },
+        {
+            "id": "gyeongbuk_yeongyang",
+            "name": "영양군",
+            "center": [
+                36.6667,
+                129.1125
+            ],
+            "zoom": 11,
+            "color": "#FF8C42",
+            "icon": "🌶️",
+            "dongCount": 0,
+            "description": "영양고추",
+            "population": 16000,
+            "area": 815.11,
+            "specialties": [
+                "청결고추",
+                "한우",
+                "사과"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_cheongsong"
+        },
+        {
+            "id": "gyeongbuk_yeongdeok",
+            "name": "영덕군",
+            "center": [
+                36.4150,
+                129.3658
+            ],
+            "zoom": 11,
+            "color": "#DAA520",
+            "icon": "🦀",
+            "dongCount": 0,
+            "description": "영덕대게",
+            "population": 36000,
+            "area": 741.21,
+            "specialties": [
+                "대게",
+                "해산물",
+                "복숭아"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_yeongyang"
+        },
+        {
+            "id": "gyeongbuk_cheongdo",
+            "name": "청도군",
+            "center": [
+                35.6472,
+                128.7339
+            ],
+            "zoom": 11,
+            "color": "#DC143C",
+            "icon": "🐂",
+            "dongCount": 0,
+            "description": "청도소싸움축제",
+            "population": 42000,
+            "area": 693.99,
+            "specialties": [
+                "반시",
+                "미나리",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_yeongdeok"
+        },
+        {
+            "id": "gyeongbuk_goryeong",
+            "name": "고령군",
+            "center": [
+                35.7256,
+                128.2633
+            ],
+            "zoom": 11,
+            "color": "#FFA07A",
+            "icon": "🏺",
+            "dongCount": 0,
+            "description": "대가야박물관",
+            "population": 32000,
+            "area": 386.62,
+            "specialties": [
+                "딸기",
+                "참외",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_cheongdo"
+        },
+        {
+            "id": "gyeongbuk_seongju",
+            "name": "성주군",
+            "center": [
+                35.9189,
+                128.2831
+            ],
+            "zoom": 11,
+            "color": "#6B8E23",
+            "icon": "🍈",
+            "dongCount": 0,
+            "description": "성주참외",
+            "population": 43000,
+            "area": 615.78,
+            "specialties": [
+                "참외",
+                "한우",
+                "사과"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_goryeong"
+        },
+        {
+            "id": "gyeongbuk_chilgok",
+            "name": "칠곡군",
+            "center": [
+                35.9956,
+                128.4017
+            ],
+            "zoom": 12,
+            "color": "#CD5C5C",
+            "icon": "🌳",
+            "dongCount": 0,
+            "description": "가산산성, 팔공산",
+            "population": 118000,
+            "area": 450.68,
+            "specialties": [
+                "복숭아",
+                "사과",
+                "한우"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_seongju"
+        },
+        {
+            "id": "gyeongbuk_yecheon",
+            "name": "예천군",
+            "center": [
+                36.6575,
+                128.4528
+            ],
+            "zoom": 11,
+            "color": "#FF69B4",
+            "icon": "🎣",
+            "dongCount": 0,
+            "description": "회룡포, 삼강주막",
+            "population": 53000,
+            "area": 660.23,
+            "specialties": [
+                "사과",
+                "한우",
+                "참외"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_chilgok"
+        },
+        {
+            "id": "gyeongbuk_bonghwa",
+            "name": "봉화군",
+            "center": [
+                36.8931,
+                128.7322
+            ],
+            "zoom": 10,
+            "color": "#7B68EE",
+            "icon": "🌲",
+            "dongCount": 0,
+            "description": "청량산, 분천역산타마을",
+            "population": 30000,
+            "area": 1201.41,
+            "specialties": [
+                "송이버섯",
+                "한우",
+                "사과"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_yecheon"
+        },
+        {
+            "id": "gyeongbuk_uljin",
+            "name": "울진군",
+            "center": [
+                36.9931,
+                129.4006
+            ],
+            "zoom": 10,
+            "color": "#00CED1",
+            "icon": "🦀",
+            "dongCount": 0,
+            "description": "대게, 불영사",
+            "population": 48000,
+            "area": 988.91,
+            "specialties": [
+                "대게",
+                "송이",
+                "해산물"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_bonghwa"
+        },
+        {
+            "id": "gyeongbuk_ulleung",
+            "name": "울릉군",
+            "center": [
+                37.4844,
+                130.9057
+            ],
+            "zoom": 11,
+            "color": "#32CD32",
+            "icon": "🏝️",
+            "dongCount": 0,
+            "description": "독도, 울릉도",
+            "population": 9000,
+            "area": 72.86,
+            "specialties": [
+                "오징어",
+                "호박엿",
+                "독도새우"
+            ],
+            "unlockCondition": "COMPLETE_gyeongbuk_uljin"
+        }
+    ]
+}

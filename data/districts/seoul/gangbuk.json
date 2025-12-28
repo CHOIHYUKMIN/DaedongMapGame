@@ -1,0 +1,66 @@
+{
+    "districtId": "seoul_gangbuk",
+    "districtName": "강북구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "gangbuk_mia",
+            "name": "미아동",
+            "center": [
+                37.6252,
+                127.0266
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🛍️",
+            "description": "미아사거리역, 현대백화점",
+            "levelCount": 1,
+            "specialties": [
+                "백화점맛집",
+                "한식",
+                "분식"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "gangbuk_suyu",
+            "name": "수유동",
+            "center": [
+                37.6385,
+                127.0247
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🏔️",
+            "description": "북한산입구, 수유리먹자골목",
+            "levelCount": 1,
+            "specialties": [
+                "삼겹살",
+                "막걸리",
+                "곱창"
+            ],
+            "unlockCondition": "COMPLETE_gangbuk_mia"
+        },
+        {
+            "id": "gangbuk_ui",
+            "name": "우이동",
+            "center": [
+                37.6588,
+                127.0108
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🌲",
+            "description": "우이령길, 북한산",
+            "levelCount": 1,
+            "specialties": [
+                "등산후맛집",
+                "막걸리",
+                "파전"
+            ],
+            "unlockCondition": "COMPLETE_gangbuk_suyu"
+        }
+    ]
+}

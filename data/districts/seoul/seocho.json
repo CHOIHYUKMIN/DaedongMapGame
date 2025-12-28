@@ -1,0 +1,123 @@
+{
+    "districtId": "seoul_seocho",
+    "districtName": "서초구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "seocho_gangnam_station",
+            "name": "서초동(강남역)",
+            "center": [
+                37.4979,
+                127.0276
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🌃",
+            "description": "강남역, 먹자골목",
+            "levelCount": 1,
+            "specialties": [
+                "삼겹살",
+                "이자카야",
+                "술집"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "seocho_bangbae",
+            "name": "방배동",
+            "center": [
+                37.4816,
+                126.9903
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "☕",
+            "description": "방배카페골목",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "브런치",
+                "베이커리"
+            ],
+            "unlockCondition": "COMPLETE_seocho_gangnam_station"
+        },
+        {
+            "id": "seocho_jamwon",
+            "name": "잠원동",
+            "center": [
+                37.5170,
+                127.0073
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🌊",
+            "description": "신사역, 한강",
+            "levelCount": 1,
+            "specialties": [
+                "고급한식",
+                "이탈리안",
+                "바"
+            ],
+            "unlockCondition": "COMPLETE_seocho_bangbae"
+        },
+        {
+            "id": "seocho_yangjae",
+            "name": "양재동",
+            "center": [
+                37.4836,
+                127.0343
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🌳",
+            "description": "양재시민의숲, 화훼단지",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "삼겹살",
+                "고깃집"
+            ],
+            "unlockCondition": "COMPLETE_seocho_jamwon"
+        },
+        {
+            "id": "seocho_umyeon",
+            "name": "우면동",
+            "center": [
+                37.4645,
+                127.0184
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🏔️",
+            "description": "우면산, 예술의전당",
+            "levelCount": 1,
+            "specialties": [
+                "갤러리카페",
+                "한정식",
+                "레스토랑"
+            ],
+            "unlockCondition": "COMPLETE_seocho_yangjae"
+        },
+        {
+            "id": "seocho_naegok",
+            "name": "내곡동",
+            "center": [
+                37.4582,
+                127.0593
+            ],
+            "zoom": 15,
+            "color": "#F0E68C",
+            "icon": "🏡",
+            "description": "국립묘지, 청계산",
+            "levelCount": 1,
+            "specialties": [
+                "등산후맛집",
+                "한식",
+                "국밥"
+            ],
+            "unlockCondition": "COMPLETE_seocho_umyeon"
+        }
+    ]
+}

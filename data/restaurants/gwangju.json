@@ -1,0 +1,117 @@
+{
+    "regionId": "gwangju",
+    "regionName": "광주광역시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "restaurants": [
+        {
+            "id": "RS_GWANGJU_001",
+            "name": "송정떡갈비거리",
+            "districtId": "gwangju_gwangsangu",
+            "category": "한식",
+            "address": "광주시 광산구 송정동",
+            "coordinates": [
+                35.1394,
+                126.7936
+            ],
+            "rating": 4.6,
+            "priceRange": "₩₩",
+            "specialties": [
+                "떡갈비",
+                "한정식"
+            ],
+            "description": "광주 대표 떡갈비 골목",
+            "openHours": "11:00-21:00",
+            "closedDays": [
+                "월요일"
+            ],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GWANGJU_002",
+            "name": "충장로 상추튀김",
+            "districtId": "gwangju_donggu",
+            "category": "한식",
+            "address": "광주시 동구 충장로",
+            "coordinates": [
+                35.1460,
+                126.9231
+            ],
+            "rating": 4.4,
+            "priceRange": "₩",
+            "specialties": [
+                "상추튀김",
+                "길거리음식"
+            ],
+            "description": "광주 명물 상추튀김",
+            "openHours": "10:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GWANGJU_003",
+            "name": "오리탕거리",
+            "districtId": "gwangju_bukgu",
+            "category": "한식",
+            "address": "광주시 북구 오치동",
+            "coordinates": [
+                35.1744,
+                126.9120
+            ],
+            "rating": 4.5,
+            "priceRange": "₩₩",
+            "specialties": [
+                "오리탕",
+                "오리불고기"
+            ],
+            "description": "광주 유명 오리탕 거리",
+            "openHours": "11:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GWANGJU_004",
+            "name": "양림동 역사문화마을",
+            "districtId": "gwangju_namgu",
+            "category": "카페",
+            "address": "광주시 남구 양림동",
+            "coordinates": [
+                35.1325,
+                126.9025
+            ],
+            "rating": 4.3,
+            "priceRange": "₩₩",
+            "specialties": [
+                "카페",
+                "베이커리",
+                "브런치"
+            ],
+            "description": "양림동 역사마을 카페거리",
+            "openHours": "10:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        },
+        {
+            "id": "RS_GWANGJU_005",
+            "name": "상무지구 맛집거리",
+            "districtId": "gwangju_seogu",
+            "category": "다양",
+            "address": "광주시 서구 상무동",
+            "coordinates": [
+                35.1519,
+                126.8895
+            ],
+            "rating": 4.2,
+            "priceRange": "₩₩",
+            "specialties": [
+                "한정식",
+                "일식",
+                "양식"
+            ],
+            "description": "광주 상무지구 레스토랑 거리",
+            "openHours": "11:00-22:00",
+            "closedDays": [],
+            "imageUrl": null
+        }
+    ]
+}

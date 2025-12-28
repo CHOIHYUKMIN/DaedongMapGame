@@ -1,0 +1,309 @@
+{
+    "cityId": "jeju",
+    "cityName": "제주특별자치도",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "jeju_jejusi",
+            "name": "제주시",
+            "center": [
+                33.4996,
+                126.5312
+            ],
+            "zoom": 11,
+            "color": "#FF6B6B",
+            "icon": "🌺",
+            "dongCount": 31,
+            "description": "제주공항, 한라산북쪽, 협재해수욕장",
+            "population": 493000,
+            "area": 977.80,
+            "specialties": [
+                "흑돼지",
+                "고기국수",
+                "회"
+            ],
+            "unlockCondition": "NONE",
+            "subAreas": [
+                {
+                    "id": "jeju_oldtown",
+                    "name": "제주시원도심",
+                    "center": [
+                        33.5097,
+                        126.5219
+                    ],
+                    "zoom": 14,
+                    "color": "#FF6B6B",
+                    "icon": "🏛️",
+                    "description": "동문시장, 탑동",
+                    "specialties": [
+                        "흑돼지",
+                        "전복죽",
+                        "회"
+                    ]
+                },
+                {
+                    "id": "jeju_yeon",
+                    "name": "연동",
+                    "center": [
+                        33.4873,
+                        126.4858
+                    ],
+                    "zoom": 14,
+                    "color": "#4ECDC4",
+                    "icon": "🛍️",
+                    "description": "누웨마루, 신라면세점",
+                    "specialties": [
+                        "카페",
+                        "맛집거리",
+                        "바"
+                    ]
+                },
+                {
+                    "id": "jeju_nohyeong",
+                    "name": "노형동",
+                    "center": [
+                        33.4867,
+                        126.4758
+                    ],
+                    "zoom": 14,
+                    "color": "#45B7D1",
+                    "icon": "🏢",
+                    "description": "갤러리아, 주거지역",
+                    "specialties": [
+                        "브런치",
+                        "카페",
+                        "로컬맛집"
+                    ]
+                },
+                {
+                    "id": "jeju_aewol",
+                    "name": "애월읍",
+                    "center": [
+                        33.4631,
+                        126.3106
+                    ],
+                    "zoom": 12,
+                    "color": "#96CEB4",
+                    "icon": "☕",
+                    "description": "애월카페거리, 협재해수욕장",
+                    "specialties": [
+                        "카페",
+                        "흑돼지",
+                        "해녀촌"
+                    ]
+                },
+                {
+                    "id": "jeju_hallim",
+                    "name": "한림읍",
+                    "center": [
+                        33.4147,
+                        126.2650
+                    ],
+                    "zoom": 12,
+                    "color": "#DDA0DD",
+                    "icon": "🌴",
+                    "description": "협재해수욕장, 한림공원",
+                    "specialties": [
+                        "해산물",
+                        "갈치조림",
+                        "성게"
+                    ]
+                },
+                {
+                    "id": "jeju_jocheon",
+                    "name": "조천읍",
+                    "center": [
+                        33.5397,
+                        126.6406
+                    ],
+                    "zoom": 12,
+                    "color": "#F0E68C",
+                    "icon": "🌊",
+                    "description": "함덕해수욕장",
+                    "specialties": [
+                        "해녀촌",
+                        "전복",
+                        "해산물"
+                    ]
+                },
+                {
+                    "id": "jeju_gujwa",
+                    "name": "구좌읍",
+                    "center": [
+                        33.5256,
+                        126.8553
+                    ],
+                    "zoom": 11,
+                    "color": "#CD853F",
+                    "icon": "🥕",
+                    "description": "세화해변, 월정리",
+                    "specialties": [
+                        "당근",
+                        "해녀촌",
+                        "카페"
+                    ]
+                },
+                {
+                    "id": "jeju_udo",
+                    "name": "우도면",
+                    "center": [
+                        33.5028,
+                        126.9528
+                    ],
+                    "zoom": 13,
+                    "color": "#FFB6C1",
+                    "icon": "🏝️",
+                    "description": "우도, 땅콩아이스크림",
+                    "specialties": [
+                        "땅콩",
+                        "해녀촌",
+                        "회"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "jeju_seogwipo",
+            "name": "서귀포시",
+            "center": [
+                33.2542,
+                126.5600
+            ],
+            "zoom": 11,
+            "color": "#4ECDC4",
+            "icon": "🍊",
+            "dongCount": 23,
+            "description": "중문관광단지, 성산일출봉, 올레길",
+            "population": 182000,
+            "area": 870.81,
+            "specialties": [
+                "감귤",
+                "갈치조림",
+                "옥돔"
+            ],
+            "unlockCondition": "COMPLETE_jeju_jejusi",
+            "subAreas": [
+                {
+                    "id": "seogwipo_downtown",
+                    "name": "서귀포시원도심",
+                    "center": [
+                        33.2497,
+                        126.5614
+                    ],
+                    "zoom": 14,
+                    "color": "#4ECDC4",
+                    "icon": "🏛️",
+                    "description": "이중섭거리, 천지연폭포",
+                    "specialties": [
+                        "흑돼지",
+                        "갈치조림",
+                        "회"
+                    ]
+                },
+                {
+                    "id": "seogwipo_jungmun",
+                    "name": "중문동",
+                    "center": [
+                        33.2500,
+                        126.4097
+                    ],
+                    "zoom": 13,
+                    "color": "#45B7D1",
+                    "icon": "🏨",
+                    "description": "중문관광단지, 대포포구",
+                    "specialties": [
+                        "흑돼지",
+                        "해산물",
+                        "고급한식"
+                    ]
+                },
+                {
+                    "id": "seogwipo_seongsan",
+                    "name": "성산읍",
+                    "center": [
+                        33.4581,
+                        126.9144
+                    ],
+                    "zoom": 12,
+                    "color": "#96CEB4",
+                    "icon": "🌅",
+                    "description": "성산일출봉, 섭지코지",
+                    "specialties": [
+                        "해녀촌",
+                        "전복죽",
+                        "해산물"
+                    ]
+                },
+                {
+                    "id": "seogwipo_pyoseon",
+                    "name": "표선면",
+                    "center": [
+                        33.3264,
+                        126.8319
+                    ],
+                    "zoom": 12,
+                    "color": "#DDA0DD",
+                    "icon": "🏖️",
+                    "description": "표선해수욕장, 민속촌",
+                    "specialties": [
+                        "흑돼지",
+                        "갈치",
+                        "해산물"
+                    ]
+                },
+                {
+                    "id": "seogwipo_namwon",
+                    "name": "남원읍",
+                    "center": [
+                        33.2769,
+                        126.7175
+                    ],
+                    "zoom": 12,
+                    "color": "#F0E68C",
+                    "icon": "🌺",
+                    "description": "위미리, 제주허브동산",
+                    "specialties": [
+                        "감귤",
+                        "한라봉",
+                        "해산물"
+                    ]
+                },
+                {
+                    "id": "seogwipo_andeok",
+                    "name": "안덕면",
+                    "center": [
+                        33.2544,
+                        126.3269
+                    ],
+                    "zoom": 12,
+                    "color": "#CD853F",
+                    "icon": "⛰️",
+                    "description": "산방산, 용머리해안",
+                    "specialties": [
+                        "흑돼지",
+                        "해산물",
+                        "카페"
+                    ]
+                },
+                {
+                    "id": "seogwipo_daejeong",
+                    "name": "대정읍",
+                    "center": [
+                        33.2186,
+                        126.2531
+                    ],
+                    "zoom": 12,
+                    "color": "#FFB6C1",
+                    "icon": "🌬️",
+                    "description": "송악산, 마라도",
+                    "specialties": [
+                        "자리물회",
+                        "옥돔",
+                        "해산물"
+                    ]
+                }
+            ]
+        }
+    ]
+}

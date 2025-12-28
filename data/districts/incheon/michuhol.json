@@ -1,0 +1,123 @@
+{
+    "districtId": "incheon_michuhol",
+    "districtName": "미추홀구",
+    "cityId": "incheon",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "incheon_juan",
+            "name": "주안동",
+            "center": [
+                37.4467,
+                126.6754
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "🚇",
+            "description": "주안역, 주안시장",
+            "levelCount": 1,
+            "specialties": [
+                "곱창",
+                "족발",
+                "닭발"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "incheon_sungui",
+            "name": "숭의동",
+            "center": [
+                37.4589,
+                126.6423
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "⚽",
+            "description": "인천축구전용경기장",
+            "levelCount": 1,
+            "specialties": [
+                "치킨",
+                "피자",
+                "펍"
+            ],
+            "unlockCondition": "COMPLETE_incheon_juan"
+        },
+        {
+            "id": "incheon_munhak",
+            "name": "문학동",
+            "center": [
+                37.4339,
+                126.6982
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏟️",
+            "description": "문학경기장, 인천유나이티드",
+            "levelCount": 1,
+            "specialties": [
+                "스포츠펍",
+                "한식",
+                "패밀리레스토랑"
+            ],
+            "unlockCondition": "COMPLETE_incheon_sungui"
+        },
+        {
+            "id": "incheon_yonghyun",
+            "name": "용현동",
+            "center": [
+                37.4512,
+                126.6521
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "📚",
+            "description": "인하대학교, 대학가",
+            "levelCount": 1,
+            "specialties": [
+                "대학가맛집",
+                "떡볶이",
+                "순대"
+            ],
+            "unlockCondition": "COMPLETE_incheon_munhak"
+        },
+        {
+            "id": "incheon_hakik",
+            "name": "학익동",
+            "center": [
+                37.4298,
+                126.6712
+            ],
+            "zoom": 15,
+            "color": "#DDA0DD",
+            "icon": "🏢",
+            "description": "인천지방법원, 관공서",
+            "levelCount": 1,
+            "specialties": [
+                "점심특선",
+                "한정식",
+                "비빔밥"
+            ],
+            "unlockCondition": "COMPLETE_incheon_yonghyun"
+        },
+        {
+            "id": "incheon_gwangyo",
+            "name": "관교동",
+            "center": [
+                37.4623,
+                126.6589
+            ],
+            "zoom": 15,
+            "color": "#F0E68C",
+            "icon": "🏠",
+            "description": "주거밀집지역",
+            "levelCount": 1,
+            "specialties": [
+                "동네맛집",
+                "분식",
+                "중식"
+            ],
+            "unlockCondition": "COMPLETE_incheon_hakik"
+        }
+    ]
+}

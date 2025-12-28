@@ -1,0 +1,85 @@
+{
+    "districtId": "seoul_geumcheon",
+    "districtName": "금천구",
+    "cityId": "seoul",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "geumcheon_gasan",
+            "name": "가산디지털단지",
+            "center": [
+                37.4810,
+                126.8827
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "💻",
+            "description": "마리오아울렛, IT밸리",
+            "levelCount": 1,
+            "specialties": [
+                "점심특선",
+                "아울렛푸드코트",
+                "카페"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "geumcheon_doksan",
+            "name": "독산동",
+            "center": [
+                37.4716,
+                126.8953
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🏠",
+            "description": "독산역, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "치킨"
+            ],
+            "unlockCondition": "COMPLETE_geumcheon_gasan"
+        },
+        {
+            "id": "geumcheon_siheung",
+            "name": "시흥동",
+            "center": [
+                37.4557,
+                126.9091
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🌳",
+            "description": "호압사, 은행나무길",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "동네맛집",
+                "국밥"
+            ],
+            "unlockCondition": "COMPLETE_geumcheon_doksan"
+        },
+        {
+            "id": "geumcheon_geumcheon",
+            "name": "금천구청",
+            "center": [
+                37.4569,
+                126.8953
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🏛️",
+            "description": "금천구청역",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "중식"
+            ],
+            "unlockCondition": "COMPLETE_geumcheon_siheung"
+        }
+    ]
+}

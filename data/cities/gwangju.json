@@ -1,0 +1,113 @@
+{
+    "cityId": "gwangju",
+    "cityName": "광주광역시",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "districts": [
+        {
+            "id": "gwangju_donggu",
+            "name": "동구",
+            "center": [
+                35.1460,
+                126.9231
+            ],
+            "zoom": 13,
+            "color": "#FF6B6B",
+            "icon": "🎨",
+            "dongCount": 13,
+            "description": "충장로, 국립아시아문화전당",
+            "population": 97000,
+            "area": 49.22,
+            "specialties": [
+                "충장로맛집",
+                "송정떡갈비",
+                "오리탕"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "gwangju_seogu",
+            "name": "서구",
+            "center": [
+                35.1519,
+                126.8895
+            ],
+            "zoom": 13,
+            "color": "#4ECDC4",
+            "icon": "🏙️",
+            "dongCount": 17,
+            "description": "상무지구, 광주종합버스터미널",
+            "population": 303000,
+            "area": 47.80,
+            "specialties": [
+                "상무지구맛집",
+                "한정식",
+                "보쌈"
+            ],
+            "unlockCondition": "COMPLETE_gwangju_donggu"
+        },
+        {
+            "id": "gwangju_namgu",
+            "name": "남구",
+            "center": [
+                35.1325,
+                126.9025
+            ],
+            "zoom": 13,
+            "color": "#45B7D1",
+            "icon": "🎓",
+            "dongCount": 11,
+            "description": "전남대, 양림동역사문화마을",
+            "population": 215000,
+            "area": 60.95,
+            "specialties": [
+                "대학가맛집",
+                "양림동카페",
+                "국밥"
+            ],
+            "unlockCondition": "COMPLETE_gwangju_seogu"
+        },
+        {
+            "id": "gwangju_bukgu",
+            "name": "북구",
+            "center": [
+                35.1744,
+                126.9120
+            ],
+            "zoom": 13,
+            "color": "#96CEB4",
+            "icon": "🏛️",
+            "dongCount": 24,
+            "description": "용봉동, 전남대",
+            "population": 445000,
+            "area": 120.03,
+            "specialties": [
+                "용봉동맛집",
+                "닭볶음탕",
+                "순대국"
+            ],
+            "unlockCondition": "COMPLETE_gwangju_namgu"
+        },
+        {
+            "id": "gwangju_gwangsangu",
+            "name": "광산구",
+            "center": [
+                35.1394,
+                126.7936
+            ],
+            "zoom": 12,
+            "color": "#DDA0DD",
+            "icon": "✈️",
+            "dongCount": 20,
+            "description": "광주공항, 송정역",
+            "population": 410000,
+            "area": 222.55,
+            "specialties": [
+                "송정떡갈비",
+                "상추튀김",
+                "오리탕"
+            ],
+            "unlockCondition": "COMPLETE_gwangju_bukgu"
+        }
+    ]
+}

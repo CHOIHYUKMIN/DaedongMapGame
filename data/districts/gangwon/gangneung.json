@@ -1,0 +1,66 @@
+{
+    "districtId": "gangwon_gangneung",
+    "districtName": "강릉시",
+    "cityId": "gangwon",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "gangneung_anmok",
+            "name": "안목해변",
+            "center": [
+                37.7732,
+                128.9464
+            ],
+            "zoom": 15,
+            "color": "#FF6B6B",
+            "icon": "☕",
+            "description": "강릉 커피거리",
+            "levelCount": 1,
+            "specialties": [
+                "핸드드립",
+                "카페",
+                "바다뷰"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "gangneung_gyeongpo",
+            "name": "경포대",
+            "center": [
+                37.7965,
+                128.9080
+            ],
+            "zoom": 14,
+            "color": "#4ECDC4",
+            "icon": "🏖️",
+            "description": "경포대, 경포호",
+            "levelCount": 1,
+            "specialties": [
+                "회",
+                "물회",
+                "해산물"
+            ],
+            "unlockCondition": "COMPLETE_gangneung_anmok"
+        },
+        {
+            "id": "gangneung_jungang",
+            "name": "중앙시장",
+            "center": [
+                37.7540,
+                128.8996
+            ],
+            "zoom": 16,
+            "color": "#45B7D1",
+            "icon": "🏪",
+            "description": "강릉 중앙시장",
+            "levelCount": 1,
+            "specialties": [
+                "닭강정",
+                "순두부",
+                "분식"
+            ],
+            "unlockCondition": "COMPLETE_gangneung_gyeongpo"
+        }
+    ]
+}

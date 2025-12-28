@@ -1,0 +1,85 @@
+{
+    "districtId": "jeju_jejusi",
+    "districtName": "제주시",
+    "cityId": "jeju",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "jeju_dongmun",
+            "name": "동문시장",
+            "center": [
+                33.5121,
+                126.5295
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🏪",
+            "description": "제주 동문시장",
+            "levelCount": 1,
+            "specialties": [
+                "흑돼지",
+                "갈치조림",
+                "오메기떡"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "jeju_aewol",
+            "name": "애월",
+            "center": [
+                33.4629,
+                126.3315
+            ],
+            "zoom": 14,
+            "color": "#4ECDC4",
+            "icon": "🌊",
+            "description": "애월 카페거리",
+            "levelCount": 1,
+            "specialties": [
+                "오션뷰카페",
+                "브런치",
+                "해산물"
+            ],
+            "unlockCondition": "COMPLETE_jeju_dongmun"
+        },
+        {
+            "id": "jeju_hamdeok",
+            "name": "함덕해수욕장",
+            "center": [
+                33.5430,
+                126.6706
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏖️",
+            "description": "함덕 에메랄드빛 바다",
+            "levelCount": 1,
+            "specialties": [
+                "회",
+                "물회",
+                "바다뷰카페"
+            ],
+            "unlockCondition": "COMPLETE_jeju_aewol"
+        },
+        {
+            "id": "jeju_hallasan",
+            "name": "한라산",
+            "center": [
+                33.3625,
+                126.5333
+            ],
+            "zoom": 12,
+            "color": "#96CEB4",
+            "icon": "🏔️",
+            "description": "한라산 국립공원",
+            "levelCount": 1,
+            "specialties": [
+                "등산맛집",
+                "흑돼지",
+                "고기국수"
+            ],
+            "unlockCondition": "COMPLETE_jeju_hamdeok"
+        }
+    ]
+}

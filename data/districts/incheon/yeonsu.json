@@ -1,0 +1,85 @@
+{
+    "districtId": "incheon_yeonsu",
+    "districtName": "연수구",
+    "cityId": "incheon",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-28",
+    "neighborhoods": [
+        {
+            "id": "incheon_songdo",
+            "name": "송도국제도시",
+            "center": [
+                37.3818,
+                126.6574
+            ],
+            "zoom": 14,
+            "color": "#FF6B6B",
+            "icon": "🏙️",
+            "description": "송도센트럴파크, 트리플스트리트",
+            "levelCount": 1,
+            "specialties": [
+                "브런치",
+                "양식",
+                "카페"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "incheon_centralpark",
+            "name": "센트럴파크",
+            "center": [
+                37.3920,
+                126.6401
+            ],
+            "zoom": 15,
+            "color": "#4ECDC4",
+            "icon": "🌳",
+            "description": "센트럴파크, 수상레저",
+            "levelCount": 1,
+            "specialties": [
+                "공원뷰카페",
+                "레스토랑",
+                "피크닉"
+            ],
+            "unlockCondition": "COMPLETE_incheon_songdo"
+        },
+        {
+            "id": "incheon_yeonsu",
+            "name": "연수동",
+            "center": [
+                37.4096,
+                126.6787
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "🏠",
+            "description": "연수역, 주거지역",
+            "levelCount": 1,
+            "specialties": [
+                "한식",
+                "분식",
+                "동네맛집"
+            ],
+            "unlockCondition": "COMPLETE_incheon_centralpark"
+        },
+        {
+            "id": "incheon_dongchun",
+            "name": "동춘동",
+            "center": [
+                37.4010,
+                126.6956
+            ],
+            "zoom": 15,
+            "color": "#96CEB4",
+            "icon": "🛍️",
+            "description": "이마트타운, 상업지역",
+            "levelCount": 1,
+            "specialties": [
+                "패밀리레스토랑",
+                "한식",
+                "중식"
+            ],
+            "unlockCondition": "COMPLETE_incheon_yeonsu"
+        }
+    ]
+}
