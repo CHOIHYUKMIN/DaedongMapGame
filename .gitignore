@@ -23,3 +23,8 @@ Thumbs.db
 # 빌드 결과물
 build/
 dist/
+
+# Node.js
+node_modules/
+api-worker/node_modules/
+database/node_modules/
