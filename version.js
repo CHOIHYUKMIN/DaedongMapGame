@@ -1,5 +1,5 @@
 ﻿// 버전 관리 및 캐시 버스터
-const APP_VERSION = '1.7.3';
+const APP_VERSION = '1.7.4';
 const BUILD_DATE = '2025-12-30';
 
 // 버전 정보를 콘솔에 출력

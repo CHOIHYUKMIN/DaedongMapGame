@@ -8,12 +8,18 @@ param(
     [string]$Version
 )
 
+# PowerShell 콘솔 인코딩을 UTF-8로 설정 (한글 깨짐 방지)
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
+chcp 65001 | Out-Null
+
 # version.js에서 현재 버전 읽기
 $versionFile = Get-Content "version.js" -Raw -Encoding UTF8
 if ($versionFile -match "APP_VERSION = '([^']+)'") {
     $currentVersion = $Matches[1]
     Write-Host "현재 버전: v$currentVersion" -ForegroundColor Cyan
-} else {
+}
+else {
     Write-Host "오류: version.js에서 버전을 찾을 수 없습니다" -ForegroundColor Red
     exit 1
 }
@@ -21,16 +27,19 @@ if ($versionFile -match "APP_VERSION = '([^']+)'") {
 # 새 버전 결정
 if ($Version) {
     $newVersion = $Version
-} elseif ($BumpMinor) {
+}
+elseif ($BumpMinor) {
     $parts = $currentVersion -split '\.'
     $parts[1] = [int]$parts[1] + 1
     $parts[2] = 0
     $newVersion = $parts -join '.'
-} elseif ($BumpPatch) {
+}
+elseif ($BumpPatch) {
     $parts = $currentVersion -split '\.'
     $parts[2] = [int]$parts[2] + 1
     $newVersion = $parts -join '.'
-} else {
+}
+else {
     # 버전 변경 없이 현재 버전으로 배포
     $newVersion = $currentVersion
 }
