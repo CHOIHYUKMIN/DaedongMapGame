@@ -1,8 +1,11 @@
 // Service Worker for 대동맛지도 PWA
-const CACHE_NAME = 'daedong-mapgame-v1.6.2';
+// ⚠️ 버전 업데이트 시 version.js의 APP_VERSION과 동일하게 맞춰주세요!
+const CACHE_VERSION = '1.7.3';
+const CACHE_NAME = `daedong-mapgame-v${CACHE_VERSION}`;
 const urlsToCache = [
     '/',
     '/index.html',
+    '/version.js',
     '/css/style.css',
     '/css/mobile.css',
     '/css/blocks.css',
@@ -13,9 +16,12 @@ const urlsToCache = [
     '/css/restaurant-collection.css',
     '/css/restaurant-map.css',
     '/css/audio-controls.css',
+    '/js/data-loader.js',
+    '/js/performance-utils.js',
     '/js/data.js',
     '/js/game.js',
     '/js/puzzle.js',
+    '/js/region.js',
     '/js/region-data.js',
     '/js/seoul-gu-data.js',
     '/js/gangnam-dong-data.js',
@@ -24,6 +30,7 @@ const urlsToCache = [
     '/js/gyeonggi-si-data.js',
     '/js/incheon-gu-data.js',
     '/js/incheon-junggu-dong-data.js',
+    '/js/dong-registry.js',
     '/js/restaurant.js',
     '/js/restaurant-detail.js',
     '/js/restaurant-collection.js',
@@ -34,12 +41,14 @@ const urlsToCache = [
     '/js/audio-ui.js',
     '/js/pwa-update.js',
     '/js/firebase-config.js',
+    '/js/user-sync.js',
+    '/js/login-ui.js',
     '/manifest.json'
 ];
 
 // 설치 이벤트 - 캐시 저장
 self.addEventListener('install', event => {
-    console.log('🔧 Service Worker 설치 중... (v1.6.0)');
+    console.log(`🔧 Service Worker 설치 중... (v${CACHE_VERSION})`);
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {

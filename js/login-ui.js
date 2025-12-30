@@ -1,14 +1,14 @@
 // 로그인 UI 컴포넌트
 
 const LoginUI = {
-    // 로그인 팝업 표시
-    showLoginPopup() {
-        // 이미 로그인되어 있으면 무시
-        if (UserSync.currentUser) return;
+  // 로그인 팝업 표시
+  showLoginPopup() {
+    // 이미 로그인되어 있으면 무시
+    if (UserSync.currentUser) return;
 
-        const popup = document.createElement('div');
-        popup.id = 'login-popup';
-        popup.innerHTML = `
+    const popup = document.createElement('div');
+    popup.id = 'login-popup';
+    popup.innerHTML = `
       <div class="login-overlay">
         <div class="login-content">
           <h2>🗺️ 대동맛집지도</h2>
@@ -32,10 +32,10 @@ const LoginUI = {
       </div>
     `;
 
-        // 스타일 추가
-        const style = document.createElement('style');
-        style.id = 'login-popup-style';
-        style.textContent = `
+    // 스타일 추가
+    const style = document.createElement('style');
+    style.id = 'login-popup-style';
+    style.textContent = `
       .login-overlay {
         position: fixed;
         top: 0;
@@ -122,46 +122,54 @@ const LoginUI = {
       }
     `;
 
-        document.head.appendChild(style);
-        document.body.appendChild(popup);
-    },
+    document.head.appendChild(style);
+    document.body.appendChild(popup);
+  },
 
-    // 로그인 팝업 닫기
-    hideLoginPopup() {
-        const popup = document.getElementById('login-popup');
-        const style = document.getElementById('login-popup-style');
-        if (popup) popup.remove();
-        if (style) style.remove();
-    },
+  // 로그인 팝업 닫기
+  hideLoginPopup() {
+    const popup = document.getElementById('login-popup');
+    const style = document.getElementById('login-popup-style');
+    if (popup) popup.remove();
+    if (style) style.remove();
+  },
 
-    // Google 로그인
-    async loginGoogle() {
-        try {
-            await UserSync.loginWithGoogle();
-            this.hideLoginPopup();
-        } catch (error) {
-            console.error('로그인 실패:', error);
-        }
-    },
-
-    // 게스트 로그인
-    async loginGuest() {
-        try {
-            await UserSync.loginAsGuest();
-            this.hideLoginPopup();
-        } catch (error) {
-            console.error('게스트 로그인 실패:', error);
-        }
-    },
-
-    // 로그인 필요 체크
-    requireLogin(callback) {
-        if (UserSync.currentUser) {
-            callback();
-        } else {
-            this.showLoginPopup();
-        }
+  // Google 로그인
+  async loginGoogle() {
+    try {
+      await UserSync.loginWithGoogle();
+      this.hideLoginPopup();
+      // 게임 시작 - 메인 메뉴로 이동
+      if (typeof Game !== 'undefined') {
+        Game.startGame();
+      }
+    } catch (error) {
+      console.error('로그인 실패:', error);
     }
+  },
+
+  // 게스트 로그인
+  async loginGuest() {
+    try {
+      await UserSync.loginAsGuest();
+      this.hideLoginPopup();
+      // 게임 시작 - 메인 메뉴로 이동
+      if (typeof Game !== 'undefined') {
+        Game.startGame();
+      }
+    } catch (error) {
+      console.error('게스트 로그인 실패:', error);
+    }
+  },
+
+  // 로그인 필요 체크
+  requireLogin(callback) {
+    if (UserSync.currentUser) {
+      callback();
+    } else {
+      this.showLoginPopup();
+    }
+  }
 };
 
 window.LoginUI = LoginUI;

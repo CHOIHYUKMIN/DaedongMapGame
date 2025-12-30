@@ -215,6 +215,21 @@ body {
     border: none !important;
 }
 
+/* Leaflet divIcon 기본 스타일 오버라이드 */
+#region-map .leaflet-div-icon {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Leaflet 마커 레이어 z-index 보장 */
+#region-map .leaflet-marker-pane {
+    z-index: 600 !important;
+}
+
+#region-map .leaflet-popup-pane {
+    z-index: 700 !important;
+}
+
 .region-marker {
     transition: all 0.2s ease;
     position: relative;
