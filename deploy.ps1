@@ -1,4 +1,4 @@
-# deploy.ps1
+﻿# deploy.ps1
 # 배포 자동화 스크립트 - 버전 동기화 + Firebase 배포
 # 사용법: .\deploy.ps1 [-BumpMinor] [-BumpPatch] [-Version "1.7.4"]
 
