@@ -1,0 +1,66 @@
+{
+    "districtId": "daegu_donggu",
+    "districtName": "동구",
+    "cityId": "daegu",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-30",
+    "neighborhoods": [
+        {
+            "id": "daegu_donggu_sincheon",
+            "name": "신천동",
+            "center": [
+                35.8770,
+                128.6350
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🌊",
+            "description": "신천대로 카페거리",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "브런치",
+                "디저트"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "daegu_donggu_dongchon",
+            "name": "동촌동",
+            "center": [
+                35.9050,
+                128.6850
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🛩️",
+            "description": "동촌유원지",
+            "levelCount": 1,
+            "specialties": [
+                "유원지맛집",
+                "닭볶음탕",
+                "매운탕"
+            ],
+            "unlockCondition": "COMPLETE_daegu_donggu_sincheon"
+        },
+        {
+            "id": "daegu_donggu_palgongsan",
+            "name": "팔공산",
+            "center": [
+                35.9850,
+                128.6950
+            ],
+            "zoom": 15,
+            "color": "#45B7D1",
+            "icon": "⛰️",
+            "description": "팔공산 등산로",
+            "levelCount": 1,
+            "specialties": [
+                "산채비빔밥",
+                "도토리묵",
+                "파전"
+            ],
+            "unlockCondition": "COMPLETE_daegu_donggu_dongchon"
+        }
+    ]
+}

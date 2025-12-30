@@ -1,0 +1,66 @@
+{
+    "districtId": "gwangju_seogu",
+    "districtName": "서구",
+    "cityId": "gwangju",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-30",
+    "neighborhoods": [
+        {
+            "id": "gwangju_seogu_sangmu",
+            "name": "상무지구",
+            "center": [
+                35.1522,
+                126.8523
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🏙️",
+            "description": "광주 신도심 중심",
+            "levelCount": 1,
+            "specialties": [
+                "한정식",
+                "고급레스토랑",
+                "카페"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "gwangju_seogu_chimsan",
+            "name": "치평동",
+            "center": [
+                35.1560,
+                126.8780
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🏡",
+            "description": "주거 및 상업지역",
+            "levelCount": 1,
+            "specialties": [
+                "보쌈",
+                "족발",
+                "국밥"
+            ],
+            "unlockCondition": "COMPLETE_gwangju_seogu_sangmu"
+        },
+        {
+            "id": "gwangju_seogu_gwangcheon",
+            "name": "광천동",
+            "center": [
+                35.1480,
+                126.8920
+            ],
+            "zoom": 16,
+            "color": "#45B7D1",
+            "icon": "🍜",
+            "description": "광천터미널 먹거리",
+            "levelCount": 1,
+            "specialties": [
+                "칼국수",
+                "순대국",
+                "떡볶이"
+            ],
+            "unlockCondition": "COMPLETE_gwangju_seogu_chimsan"
+        }
+    ]
+}

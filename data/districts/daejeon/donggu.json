@@ -1,0 +1,66 @@
+{
+    "districtId": "daejeon_donggu",
+    "districtName": "동구",
+    "cityId": "daejeon",
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-30",
+    "neighborhoods": [
+        {
+            "id": "daejeon_donggu_jungang",
+            "name": "중앙시장",
+            "center": [
+                36.3280,
+                127.4290
+            ],
+            "zoom": 16,
+            "color": "#FF6B6B",
+            "icon": "🏪",
+            "description": "대전 대표 전통시장",
+            "levelCount": 1,
+            "specialties": [
+                "칼국수",
+                "순대국",
+                "떡볶이"
+            ],
+            "unlockCondition": "NONE"
+        },
+        {
+            "id": "daejeon_donggu_daejeon_station",
+            "name": "대전역",
+            "center": [
+                36.3315,
+                127.4350
+            ],
+            "zoom": 16,
+            "color": "#4ECDC4",
+            "icon": "🚂",
+            "description": "대전역 주변 먹거리",
+            "levelCount": 1,
+            "specialties": [
+                "역전맛집",
+                "두부두루치기",
+                "보쌈"
+            ],
+            "unlockCondition": "COMPLETE_daejeon_donggu_jungang"
+        },
+        {
+            "id": "daejeon_donggu_hanbat",
+            "name": "한밭수목원",
+            "center": [
+                36.3680,
+                127.3890
+            ],
+            "zoom": 16,
+            "color": "#45B7D1",
+            "icon": "🌳",
+            "description": "수목원 주변 카페거리",
+            "levelCount": 1,
+            "specialties": [
+                "카페",
+                "브런치",
+                "샌드위치"
+            ],
+            "unlockCondition": "COMPLETE_daejeon_donggu_daejeon_station"
+        }
+    ]
+}
